@@ -1,0 +1,24 @@
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-12);
+}
+
+.kickerLight .kickerText {
+  color: var(--c-white);
+}
+
+.kickerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-green-deep-0_100_58);
+  background: var(--bg-success-0_12);
+  border-radius: var(--r-100);
+  padding: var(--sp-8);
+}
+
+.kickerText {
+  composes: t-14-lh-20 t-medium text-muted from global;
+}

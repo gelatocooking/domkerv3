@@ -1,0 +1,175 @@
+.section {
+  composes: section from global;
+  padding-left: var(--sp-0);
+  padding-right: var(--sp-0);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: var(--gap-40);
+  composes: padding-global-2 from global;
+}
+
+.headingGroup {
+  composes: title-subtitle-5 from global;
+}
+
+.title {
+  composes: h2 from global;
+  text-align: center;
+}
+
+.titleLine {
+  display: block;
+}
+
+.subtitle {
+  composes: t-16-24-400 text-muted from global;
+  text-align: center;
+  margin: var(--sp-0);
+}
+
+.content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.25fr);
+  gap: var(--gap-32);
+  align-items: start;
+}
+
+.list {
+  list-style: none;
+  margin: var(--sp-0);
+  padding: var(--sp-0);
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  grid-auto-columns: 1fr;
+  gap: var(--gap-14);
+  width: auto;
+  margin-right: var(--sp-35);
+}
+
+.listItem {
+  display: flex;
+  width: 100%;
+}
+
+.listButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-8);
+  padding: var(--sp-11) var(--sp-19);
+  border: none;
+  background: var(--bg-transparent);
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--r-400);
+}
+
+.listButtonActive {
+  background: var(--bg-success-0_12);
+  border: var(--sp-1) solid var(--bg-success-0_12);
+}
+
+.listIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.listText {
+  composes: t-16-24-400 text-muted from global;
+  text-align: left;
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-0);
+}
+
+.listButton:focus-visible {
+  outline: var(--sp-2) solid var(--c-primary-47_84_235);
+  outline-offset: var(--sp-2);
+}
+
+.card {
+  background: var(--bg-soft);
+  border-radius: var(--r-24);
+  padding: var(--sp-40);
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  column-gap: var(--gap-16);
+  row-gap: var(--gap-10);
+  justify-content: space-between;
+  place-items: center stretch;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+}
+
+.cardTitle {
+  composes: h3-smaller from global;
+}
+
+.cardText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.cardButton {
+  background: var(--bg-dark);
+  color: var(--c-white);
+}
+
+.cardMedia {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mediaFrame {
+  position: relative;
+  width: 100%;
+  max-width: calc(var(--sp-210) + var(--sp-80));
+  height: calc(var(--sp-210) + var(--sp-40));
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  overflow: hidden;
+}
+
+.mediaImage {
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    grid-template-columns: 1fr;
+    padding: var(--sp-25);
+    height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .list {
+    width: auto;
+    margin-bottom: var(--sp-20);
+    margin-right: var(--sp-0);
+  }
+}

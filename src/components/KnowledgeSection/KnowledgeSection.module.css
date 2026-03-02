@@ -1,0 +1,141 @@
+.section {
+  composes: section from global;
+  padding-left: var(--sp-0);
+  padding-right: var(--sp-0);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: var(--gap-40);
+  composes: padding-global-2 from global;
+}
+
+.headingGroup {
+  composes: title-subtitle-5 from global;
+}
+.title {
+  composes: h2 from global;
+  text-align: center;
+}
+
+.titleLine {
+  display: block;
+}
+
+.subtitle {
+  composes: t-16-24-400 text-muted from global;
+  text-align: center;
+  margin: var(--sp-0);
+  padding: var(--sp-0);
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-24);
+}
+
+.card {
+  background: var(--bg-white);
+  border-radius: var(--r-24);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(var(--sp-210) + var(--sp-210) + var(--sp-88));
+}
+.cardContent {
+  display: grid;
+  gap: var(--gap-16);
+  grid-row-gap: var(--gap-16);
+}
+
+.preview {
+  background: var(--bg-success-0_12);
+  padding: var(--sp-32);
+  border-bottom: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+}
+
+.previewStack {
+  position: relative;
+  width: 100%;
+  height: calc(var(--sp-210) + var(--sp-88));
+}
+
+.previewCard,
+.previewCardAlt {
+  position: absolute;
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  overflow: hidden;
+}
+
+.previewCard {
+  width: 78%;
+  height: 60%;
+  left: var(--sp-0);
+  top: var(--sp-0);
+}
+
+.previewCardAlt {
+  width: 82%;
+  height: 62%;
+  left: var(--sp-16);
+  bottom: var(--sp-0);
+}
+
+.previewImage {
+  object-fit: cover;
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  height: calc(var(--sp-210) + var(--sp-88));
+  background: var(--bg-soft);
+}
+
+.mediaImage {
+  object-fit: cover;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+  padding: var(--sp-32);
+  flex: 1;
+}
+
+.cardTitle {
+  composes: t-20 t-strong text-dark from global;
+  margin: var(--sp-0);
+}
+
+.cardText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.cardButton {
+  background: var(--bg-dark);
+  color: var(--c-white);
+  margin-top: auto;
+}
+
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .previewStack,
+  .media {
+    height: calc(var(--sp-210) + var(--sp-40));
+  }
+}

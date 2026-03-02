@@ -1,0 +1,1113 @@
+/* globals.css
+   SOURCE: Playwright computed-style histograms for letsautomate.pl
+   VIEWPORTS INCLUDED: 375 / 768 / 1280
+   GOAL: Provide a single, exhaustive style specification (tokens + base defaults)
+   NOTE (important + honest):
+   - The JSON you pasted does NOT include borders/shadows/maxWidth (unless you export those fields too).
+   - This file therefore fully covers EVERYTHING present in your pasted JSON: fonts, font sizes,
+     line-heights, letter-spacing, weights, spacing (margin/padding), gaps, radii, colors & backgrounds.
+   - If you later paste top.borderWidth / top.shadow / top.maxWidth, we can extend tokens 1:1.
+*/
+
+/* =========================
+   1) ROOT TOKENS (EXHAUSTIVE)
+   ========================= */
+:root {
+  /* ---------- Fonts ---------- */
+  --font-sans: Inter, sans-serif;
+  --font-icons: webflow-icons;
+
+  /* ---------- Font weights (as seen) ---------- */
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /* ---------- Letter-spacing (ALL values seen) ----------
+     Convert the dominant -0.176px to em where useful in components, but keep px too for exactness. */
+  --ls--0_176px: -0.176px;
+  --ls--1_232px: -1.232px;
+  --ls--0_616px: -0.616px;
+  --ls--0_021px: -0.021px;
+  --ls--0_019px: -0.019px;
+  --ls--0_272px: -0.272px;
+  --ls--0_238px: -0.238px;
+  --ls-0_25px: 0.25px;
+  --ls-normal: normal;
+
+  /* ---------- Font sizes (ALL values seen across 375/768/1280) ---------- */
+  --fs-10: 10px;
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-16_8: 16.8px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-22: 22px;
+  --fs-24: 24px;
+  --fs-26: 26px;
+  --fs-28: 28px;
+  --fs-40: 40px;
+  --fs-56: 56px;
+
+  /* ---------- Line-heights (ALL values seen) ----------
+     Includes fractional values produced by rem/em scaling in the original site. */
+  --lh-normal: normal;
+  --lh-15: 15px;
+  --lh-15_4: 15.4px;
+  --lh-16_8: 16.8px;
+  --lh-18: 18px;
+  --lh-18_2: 18.2px;
+  --lh-19_5: 19.5px;
+  --lh-19_6: 19.6px;
+  --lh-20: 20px;
+  --lh-20_8: 20.8px;
+  --lh-21: 21px;
+  --lh-21_7: 21.7px;
+  --lh-22_5: 22.5px;
+  --lh-22_8571: 22.8571px;
+  --lh-23_25: 23.25px;
+  --lh-23_4: 23.4px;
+  --lh-24: 24px;
+  --lh-24_5: 24.5px;
+  --lh-24_8: 24.8px;
+  --lh-25_2: 25.2px;
+  --lh-26: 26px;
+  --lh-27: 27px;
+  --lh-28: 28px;
+  --lh-28_8: 28.8px;
+  --lh-29_4: 29.4px;
+  --lh-31_2: 31.2px;
+  --lh-33_6: 33.6px;
+  --lh-36_4: 36.4px;
+  --lh-42: 42px;
+  --lh-45_5: 45.5px;
+  --lh-52: 52px;
+  --lh-67_2: 67.2px;
+
+  /* ---------- Spacing values (ALL values seen in margin/padding) ----------
+     Keep tokens as raw px values so Codex can map 1:1. */
+  --sp--30: -30px;
+  --sp--23: -23px;
+  --sp--20: -20px;
+  --sp--14: -14px;
+  --sp--1: -1px;
+
+  --sp-0: 0px;
+  --sp-1: 1px;
+  --sp-2: 2px;
+  --sp-2_82812: 2.82812px;
+  --sp-4: 4px;
+  --sp-5: 5px;
+  --sp-6_4: 6.4px;
+  --sp-8: 8px;
+  --sp-9: 9px;
+  --sp-10: 10px;
+  --sp-11: 11px;
+  --sp-11_25: 11.25px;
+  --sp-12: 12px;
+  --sp-14: 14px;
+  --sp-15: 15px;
+  --sp-16: 16px;
+  --sp-19: 19px;
+  --sp-20: 20px;
+  --sp-23: 23px;
+  --sp-23_04: 23.04px;
+  --sp-24: 24px;
+  --sp-25: 25px;
+  --sp-26: 26px;
+  --sp-28: 28px;
+  --sp-30: 30px;
+  --sp-32: 32px;
+  --sp-35: 35px;
+  --sp-38_4: 38.4px;
+  --sp-40: 40px;
+  --sp-48: 48px;
+  --sp-50: 50px;
+  --sp-56: 56px;
+  --sp-60: 60px;
+  --sp-72: 72px;
+  --sp-80: 80px;
+  --sp-88: 88px;
+  --sp-210: 210px;
+
+  /* ---------- Gap tokens ----------
+     "gap" in computed styles sometimes appears as:
+     - "normal" (default)
+     - "Xpx"
+     - "Xpx normal" or "normal Xpx" (row-gap / column-gap pair)
+     We'll store:
+     - single-axis gaps as --gap-*
+     - explicit row/col pair as --gap-row-*, --gap-col-* and composite helpers. */
+  --gap-normal: normal;
+  --gap-0: 0px;
+  --gap-4: 4px;
+  --gap-4_68: 4.68px;
+  --gap-8: 8px;
+  --gap-10: 10px;
+  --gap-12: 12px;
+  --gap-14: 14px;
+  --gap-15: 15px;
+  --gap-16: 16px;
+  --gap-20: 20px;
+  --gap-24: 24px;
+  --gap-32: 32px;
+  --gap-40: 40px;
+  --gap-60: 60px;
+  --gap-80: 80px;
+
+  /* For composite (row/col) cases seen */
+  --gap-row-24--col-normal: 24px normal; /* "24px normal" */
+  --gap-row-16--col-normal: 16px normal;
+  --gap-row-32--col-normal: 32px normal;
+  --gap-row-40--col-normal: 40px normal;
+  --gap-row-20--col-normal: 20px normal;
+  --gap-row-8--col-normal: 8px normal;
+  --gap-row-10--col-normal: 10px normal;
+  --gap-row-60--col-normal: 60px normal;
+
+  --gap-row-normal--col-24: normal 24px;
+  --gap-row-normal--col-16: normal 16px;
+  --gap-row-normal--col-12: normal 12px;
+  --gap-row-normal--col-10: normal 10px;
+  --gap-row-normal--col-8: normal 8px;
+  --gap-row-normal--col-4: normal 4px;
+  --gap-row-normal--col-4_68: normal 4.68px;
+  --gap-row-normal--col-80: normal 80px;
+
+  /* ---------- Radius tokens (ALL values seen) ----------
+     Includes multi-value radius string found on mobile: "24px 24px 0px 0px". */
+  --r-0: 0px;
+  --r-5: 5px;
+  --r-8: 8px;
+  --r-16: 16px;
+  --r-20: 20px;
+  --r-24: 24px;
+  --r-24_24_0_0: 24px 24px 0px 0px;
+  --r-30: 30px;
+  --r-32: 32px;
+  --r-100: 100px;
+  --r-200: 200px;
+  --r-400: 400px;
+  --r-50p: 50%;
+  --r-100p: 100%;
+
+  /* ---------- Colors (ALL values seen) ----------
+     Keep RGB/RGBA exactly as in computed styles. */
+  --c-text-14_15_17: rgb(14, 15, 17);
+  --c-text-64_64_64: rgb(64, 64, 64);
+  --c-text-10_10_10: rgb(10, 10, 10);
+  --c-primary-47_84_235: rgb(0, 147, 138);
+  --c-text-34_34_34: rgb(34, 34, 34);
+  --c-black: rgb(0, 0, 0);
+  --c-white: rgb(255, 255, 255);
+  --c-green-deep-0_100_58: rgb(0, 108, 101);
+  --c-indigo-33_31_84: rgb(33, 31, 84);
+  --c-white-0_8: rgba(255, 255, 255, 0.8);
+  --c-gray-64_64_64-0_6: rgba(64, 64, 64, 0.6);
+  --c-pink-255_122_133: rgb(255, 122, 133);
+  --c-blue-59_174_255: rgb(59, 174, 255);
+  --c-gold-190_143_0: rgb(190, 143, 0);
+  --c-purple-196_129_239: rgb(196, 129, 239);
+  --c-green-0_205_119-0_8: rgba(0, 147, 138, 0.8);
+  --c-dark-30_32_36: rgb(30, 32, 36);
+  --header-link: rgba(26, 27, 31, 0.75);
+
+  /* Background colors (ALL values seen) */
+  --bg-transparent: rgba(0, 0, 0, 0);
+  --bg-white: rgb(255, 255, 255);
+  --bg-dark: rgb(10, 10, 10);
+  --bg-soft: rgb(245, 246, 248);
+  --bg-success-soft-solid: rgb(92, 198, 190);
+  --bg-gray-64_64_64-0_12: rgba(64, 64, 64, 0.12);
+  --bg-white-0: rgba(255, 255, 255, 0);
+  --bg-gray-200-0: rgba(200, 200, 200, 0);
+  --bg-success: rgb(0, 147, 138);
+  --bg-success-0_12: rgba(0, 147, 138, 0.12);
+  --bg-pink-0_12: rgba(255, 122, 133, 0.12);
+  --bg-blue-0_12: rgba(59, 174, 255, 0.12);
+  --bg-gold-0_16: rgba(255, 197, 23, 0.16);
+  --bg-purple-0_12: rgba(196, 129, 239, 0.12);
+  --bg-gray-208_212_221: rgb(208, 212, 221);
+  --bg-gray-227_229_234: rgb(227, 229, 234);
+  --bg-18_18_18-0: rgba(18, 18, 18, 0);
+  --bg-success-0_5: rgba(0, 147, 138, 0.5);
+
+  /* ---------- System-level aliases (recommended semantic names) ----------
+     These do NOT invent new values; they map directly to observed tokens. */
+  --color-text: var(--c-text-14_15_17);
+  --color-text-muted: var(--c-text-64_64_64);
+  --color-heading-dark: var(--c-text-10_10_10);
+  --color-link-primary: var(--c-primary-47_84_235);
+
+  --color-bg: var(--bg-white);
+  --color-bg-soft: var(--bg-soft);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-overlay-soft: var(--bg-gray-64_64_64-0_12);
+
+  --radius-sm: var(--r-8);
+  --radius-lg: var(--r-24);
+  --radius-pill: 999px; /* semantic helper: maps to the large-radius behavior (100/200/400). */
+}
+
+/* ==================================
+   2) BASE / RESET (global defaults)
+   ================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  /* Most of the site resolves to 16px, keep default. */
+  font-size: 16px;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-16);
+  line-height: var(--lh-28);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* Links (site uses primary blue as a frequent color token) */
+a {
+  color: var(--color-link-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==================================
+   3) TYPOGRAPHY SYSTEM (exact tokens)
+   ==================================
+   These classes do NOT claim the site uses them everywhere; they provide a clean system Codex can apply.
+   Values are chosen ONLY from observed fs/lh/fw/ls tokens above.
+*/
+
+/* Base text sizes */
+.t-10 {
+  font-size: var(--fs-10);
+  line-height: var(--lh-15);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-11 {
+  font-size: var(--fs-11);
+  line-height: var(--lh-15_4);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-12 {
+  font-size: var(--fs-12);
+  line-height: var(--lh-16_8);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-13 {
+  font-size: var(--fs-13);
+  line-height: var(--lh-19_5);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-14 {
+  font-size: var(--fs-14);
+  line-height: var(--lh-24);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-14-lh-20 {
+  font-size: var(--fs-14);
+  line-height: var(--lh-20);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-15 {
+  font-size: var(--fs-15);
+  line-height: var(--lh-20);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+
+/* Dominant body style (from top frequencies) */
+.t-body,
+p {
+  font-size: var(--fs-16);
+  line-height: var(--lh-28);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+
+/* Additional observed sizes */
+.t-16-8 {
+  font-size: var(--fs-16_8);
+  line-height: var(--lh-24_5);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-16-24-400 {
+  font-size: var(--fs-16);
+  line-height: var(--lh-24);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-16-24-600 {
+  font-size: var(--fs-16);
+  line-height: var(--lh-24);
+  font-weight: var(--fw-600);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-18 {
+  font-size: var(--fs-18);
+  line-height: var(--lh-18);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-18-27-400 {
+  font-size: var(--fs-18);
+  line-height: var(--lh-27);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-20 {
+  font-size: var(--fs-20);
+  line-height: var(--lh-26);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-22 {
+  font-size: var(--fs-22);
+  line-height: var(--lh-22_5);
+  font-weight: var(--fw-400);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-24 {
+  font-size: var(--fs-24);
+  line-height: var(--lh-31_2);
+  font-weight: var(--fw-600);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-26 {
+  font-size: var(--fs-26);
+  line-height: var(--lh-26);
+  font-weight: var(--fw-600);
+  letter-spacing: var(--ls--0_176px);
+}
+.t-28 {
+  font-size: var(--fs-28);
+  line-height: var(--lh-33_6);
+  font-weight: var(--fw-600);
+  letter-spacing: var(--ls--0_176px);
+}
+
+/* Headings (exact pairs observed on 768/1280; mobile has smaller but we keep system with media queries below) */
+.h1,
+h1 {
+  font-size: var(--fs-56);
+  line-height: var(--lh-67_2);
+  font-weight: var(--fw-700);
+  letter-spacing: var(--ls--0_176px);
+  color: var(--color-heading-dark);
+  margin: 0;
+}
+.h2,
+h2 {
+  font-size: var(--fs-40);
+  line-height: var(--lh-52);
+  font-weight: var(--fw-700);
+  letter-spacing: var(--ls--0_176px);
+  color: var(--color-heading-dark);
+  margin: 0;
+}
+.h3 {
+  font-size: var(--fs-24);
+  line-height: var(--lh-31_2);
+  font-weight: var(--fw-700);
+  letter-spacing: var(--ls--0_176px);
+  color: var(--color-heading-dark);
+  margin: 0;
+}
+.h3-smaller {
+  font-size: var(--fs-24);
+  line-height: var(--lh-31_2);
+  font-weight: var(--fw-600) !important;
+  letter-spacing: var(--ls--0_176px);
+  color: var(--color-heading-dark);
+  margin: 0;
+}
+/* Optional semantic text */
+.t-muted {
+  color: var(--color-text-muted);
+}
+.t-strong {
+  font-weight: var(--fw-600);
+}
+.t-medium {
+  font-weight: var(--fw-500);
+}
+.t-light {
+  font-weight: var(--fw-400);
+}
+.t-bold {
+  font-weight: var(--fw-700);
+}
+
+/* Tracking variants (all observed) */
+.ls-tight {
+  letter-spacing: var(--ls--1_232px);
+}
+.ls-body {
+  letter-spacing: var(--ls--0_176px);
+}
+.ls-normal {
+  letter-spacing: var(--ls-normal);
+}
+
+/* ==================================
+   4) SPACING UTILS (all observed px)
+   ==================================
+   These utilities allow Codex to replicate spacing 1:1.
+   Note: Yes, including unusual values like 23px / 26px / 11.25px etc
+   because your request was "don't omit anything".
+*/
+
+/* Padding helpers (single axis) */
+.p-0 {
+  padding: var(--sp-0);
+}
+.p-1 {
+  padding: var(--sp-1);
+}
+.p-2 {
+  padding: var(--sp-2);
+}
+.p-4 {
+  padding: var(--sp-4);
+}
+.p-5 {
+  padding: var(--sp-5);
+}
+.p-8 {
+  padding: var(--sp-8);
+}
+.p-9 {
+  padding: var(--sp-9);
+}
+.p-10 {
+  padding: var(--sp-10);
+}
+.p-11 {
+  padding: var(--sp-11);
+}
+.p-11_25 {
+  padding: var(--sp-11_25);
+}
+.p-12 {
+  padding: var(--sp-12);
+}
+.p-14 {
+  padding: var(--sp-14);
+}
+.p-15 {
+  padding: var(--sp-15);
+}
+.p-16 {
+  padding: var(--sp-16);
+}
+.p-19 {
+  padding: var(--sp-19);
+}
+.p-20 {
+  padding: var(--sp-20);
+}
+.p-23 {
+  padding: var(--sp-23);
+}
+.p-24 {
+  padding: var(--sp-24);
+}
+.p-25 {
+  padding: var(--sp-25);
+}
+.p-26 {
+  padding: var(--sp-26);
+}
+.p-28 {
+  padding: var(--sp-28);
+}
+.p-30 {
+  padding: var(--sp-30);
+}
+.p-32 {
+  padding: var(--sp-32);
+}
+.p-35 {
+  padding: var(--sp-35);
+}
+.p-38_4 {
+  padding: var(--sp-38_4);
+}
+.p-40 {
+  padding: var(--sp-40);
+}
+.p-48 {
+  padding: var(--sp-48);
+}
+.p-50 {
+  padding: var(--sp-50);
+}
+.p-56 {
+  padding: var(--sp-56);
+}
+.p-60 {
+  padding: var(--sp-60);
+}
+.p-72 {
+  padding: var(--sp-72);
+}
+.p-80 {
+  padding: var(--sp-80);
+}
+.p-88 {
+  padding: var(--sp-88);
+}
+.p-210 {
+  padding: var(--sp-210);
+}
+
+/* Margin helpers (includes negatives) */
+.m--30 {
+  margin: var(--sp--30);
+}
+.m--23 {
+  margin: var(--sp--23);
+}
+.m--20 {
+  margin: var(--sp--20);
+}
+.m--14 {
+  margin: var(--sp--14);
+}
+.m--1 {
+  margin: var(--sp--1);
+}
+.m-0 {
+  margin: var(--sp-0);
+}
+.m-1 {
+  margin: var(--sp-1);
+}
+.m-2 {
+  margin: var(--sp-2);
+}
+.m-4 {
+  margin: var(--sp-4);
+}
+.m-5 {
+  margin: var(--sp-5);
+}
+.m-6_4 {
+  margin: var(--sp-6_4);
+}
+.m-8 {
+  margin: var(--sp-8);
+}
+.m-9 {
+  margin: var(--sp-9);
+}
+.m-10 {
+  margin: var(--sp-10);
+}
+.m-11 {
+  margin: var(--sp-11);
+}
+.m-11_25 {
+  margin: var(--sp-11_25);
+}
+.m-12 {
+  margin: var(--sp-12);
+}
+.m-14 {
+  margin: var(--sp-14);
+}
+.m-15 {
+  margin: var(--sp-15);
+}
+.m-16 {
+  margin: var(--sp-16);
+}
+.m-19 {
+  margin: var(--sp-19);
+}
+.m-20 {
+  margin: var(--sp-20);
+}
+.m-23 {
+  margin: var(--sp-23);
+}
+.m-23_04 {
+  margin: var(--sp-23_04);
+}
+.m-24 {
+  margin: var(--sp-24);
+}
+.m-25 {
+  margin: var(--sp-25);
+}
+.m-26 {
+  margin: var(--sp-26);
+}
+.m-28 {
+  margin: var(--sp-28);
+}
+.m-30 {
+  margin: var(--sp-30);
+}
+.m-32 {
+  margin: var(--sp-32);
+}
+.m-35 {
+  margin: var(--sp-35);
+}
+.m-38_4 {
+  margin: var(--sp-38_4);
+}
+.m-40 {
+  margin: var(--sp-40);
+}
+.m-48 {
+  margin: var(--sp-48);
+}
+.m-50 {
+  margin: var(--sp-50);
+}
+.m-56 {
+  margin: var(--sp-56);
+}
+.m-60 {
+  margin: var(--sp-60);
+}
+.m-72 {
+  margin: var(--sp-72);
+}
+.m-80 {
+  margin: var(--sp-80);
+}
+.m-88 {
+  margin: var(--sp-88);
+}
+.m-210 {
+  margin: var(--sp-210);
+}
+
+/* Gap helpers */
+.gap-0 {
+  gap: var(--gap-0);
+}
+.gap-4 {
+  gap: var(--gap-4);
+}
+.gap-4_68 {
+  gap: var(--gap-4_68);
+}
+.gap-8 {
+  gap: var(--gap-8);
+}
+.gap-10 {
+  gap: var(--gap-10);
+}
+.gap-12 {
+  gap: var(--gap-12);
+}
+.gap-14 {
+  gap: var(--gap-14);
+}
+.gap-15 {
+  gap: var(--gap-15);
+}
+.gap-16 {
+  gap: var(--gap-16);
+}
+.gap-20 {
+  gap: var(--gap-20);
+}
+.gap-24 {
+  gap: var(--gap-24);
+}
+.gap-32 {
+  gap: var(--gap-32);
+}
+.gap-40 {
+  gap: var(--gap-40);
+}
+.gap-60 {
+  gap: var(--gap-60);
+}
+.gap-80 {
+  gap: var(--gap-80);
+}
+
+/* Explicit row/col gap combos (mirrors computed forms like "24px normal") */
+.gap-row-24-col-normal {
+  row-gap: var(--gap-24);
+  column-gap: var(--gap-normal);
+}
+.gap-row-16-col-normal {
+  row-gap: var(--gap-16);
+  column-gap: var(--gap-normal);
+}
+.gap-row-32-col-normal {
+  row-gap: var(--gap-32);
+  column-gap: var(--gap-normal);
+}
+.gap-row-40-col-normal {
+  row-gap: var(--gap-40);
+  column-gap: var(--gap-normal);
+}
+.gap-row-20-col-normal {
+  row-gap: var(--gap-20);
+  column-gap: var(--gap-normal);
+}
+.gap-row-8-col-normal {
+  row-gap: var(--gap-8);
+  column-gap: var(--gap-normal);
+}
+.gap-row-10-col-normal {
+  row-gap: var(--gap-10);
+  column-gap: var(--gap-normal);
+}
+.gap-row-60-col-normal {
+  row-gap: var(--gap-60);
+  column-gap: var(--gap-normal);
+}
+
+.gap-row-normal-col-24 {
+  row-gap: var(--gap-normal);
+  column-gap: var(--gap-24);
+}
+.gap-row-normal-col-16 {
+  row-gap: var(--gap-normal);
+  column-gap: var(--gap-16);
+}
+.gap-row-normal-col-12 {
+  row-gap: var(--gap-normal);
+  column-gap: var(--gap-12);
+}
+.gap-row-normal-col-10 {
+  row-gap: var(--gap-normal);
+  column-gap: var(--gap-10);
+}
+.gap-row-normal-col-8 {
+  row-gap: var(--gap-normal);
+  column-gap: var(--gap-8);
+}
+.gap-row-normal-col-4 {
+  row-gap: var(--gap-normal);
+  column-gap: var(--gap-4);
+}
+.gap-row-normal-col-4_68 {
+  row-gap: var(--gap-normal);
+  column-gap: var(--gap-4_68);
+}
+.gap-row-normal-col-80 {
+  row-gap: var(--gap-normal);
+  column-gap: var(--gap-80);
+}
+
+/* ==================================
+   5) RADIUS UTILS (all observed)
+   ================================== */
+.round-0 {
+  border-radius: var(--r-0);
+}
+.round-5 {
+  border-radius: var(--r-5);
+}
+.round-8 {
+  border-radius: var(--r-8);
+}
+.round-16 {
+  border-radius: var(--r-16);
+}
+.round-20 {
+  border-radius: var(--r-20);
+}
+.round-24 {
+  border-radius: var(--r-24);
+}
+.round-24_24_0_0 {
+  border-radius: var(--r-24_24_0_0);
+}
+.round-30 {
+  border-radius: var(--r-30);
+}
+.round-32 {
+  border-radius: var(--r-32);
+}
+.round-100 {
+  border-radius: var(--r-100);
+}
+.round-200 {
+  border-radius: var(--r-200);
+}
+.round-400 {
+  border-radius: var(--r-400);
+}
+.round-50p {
+  border-radius: var(--r-50p);
+}
+.round-100p {
+  border-radius: var(--r-100p);
+}
+.round-pill {
+  border-radius: var(--radius-pill);
+}
+
+/* ==================================
+   6) COLOR UTILS (all observed)
+   ================================== */
+.text-primary {
+  color: var(--c-text-14_15_17);
+}
+.text-muted {
+  color: var(--c-text-64_64_64);
+}
+.text-dark {
+  color: var(--c-text-10_10_10);
+}
+.text-link {
+  color: var(--c-primary-47_84_235);
+}
+.text-white {
+  color: var(--c-white);
+}
+.text-black {
+  color: var(--c-black);
+}
+.text-green-deep {
+  color: var(--c-green-deep-0_100_58);
+}
+.text-indigo {
+  color: var(--c-indigo-33_31_84);
+}
+
+.bg-transparent {
+  background-color: var(--bg-transparent);
+}
+.bg-white {
+  background-color: var(--bg-white);
+}
+.bg-dark {
+  background-color: var(--bg-dark);
+}
+.bg-soft {
+  background-color: var(--bg-soft);
+}
+.bg-success-soft {
+  background-color: var(--bg-success-soft-solid);
+}
+.bg-overlay-soft {
+  background-color: var(--bg-gray-64_64_64-0_12);
+}
+.bg-success {
+  background-color: var(--bg-success);
+}
+
+/* ==================================
+   7) RESPONSIVE TYPOGRAPHY (viewport-derived)
+   ==================================
+   Based on your three viewports:
+   - Mobile shows smaller headline sizes (28/33.6 + 22/?? exist),
+   - Tablet/Desktop show classic 56/67.2 and 40/52 and 24/31.2.
+   We'll keep headings responsive while staying within observed tokens only.
+*/
+
+/* Default (mobile-first): use the observed 28px headline scale when desired */
+@media (max-width: 767px) {
+  /* If you want h1/h2/h3 to match mobile flavor more closely,
+     you can map them to observed mobile tokens: 28/33.6, 22/22.5, 20/26. */
+  h1,
+  .h1 {
+    font-size: var(--fs-40);
+    line-height: var(--lh-52);
+    font-weight: var(--fw-700);
+  }
+  h2,
+  .h2 {
+    font-size: var(--fs-22);
+    line-height: var(--lh-22_5);
+    font-weight: var(--fw-700);
+  }
+  h3,
+  .h3 {
+    font-size: var(--fs-20);
+    line-height: var(--lh-26);
+    font-weight: var(--fw-700);
+  }
+}
+
+@media (max-width: 479px) {
+  h1,
+  .h1 {
+    font-size: var(--fs-28);
+    line-height: var(--lh-33_6);
+    font-weight: var(--fw-700);
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  h2,
+  .h2 {
+    font-family: var(--font-sans);
+  }
+}
+
+@media (max-width: 479px) {
+  h2,
+  .h2 {
+    font-size: var(--fs-28);
+    line-height: var(--lh-33_6);
+  }
+}
+
+@media (max-width: 767px) {
+  .t-16-24-400 {
+    font-size: var(--fs-15);
+  }
+}
+
+@media (max-width: 479px) {
+  .t-16-24-400 {
+    font-size: var(--fs-14);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1279px) {
+  h1,
+  .h1 {
+    font-size: var(--fs-56);
+    line-height: var(--lh-67_2);
+    font-weight: var(--fw-700);
+  }
+  h2,
+  .h2 {
+    font-size: var(--fs-40);
+    line-height: var(--lh-52);
+    font-weight: var(--fw-700);
+  }
+  h3,
+  .h3 {
+    font-size: var(--fs-24);
+    line-height: var(--lh-31_2);
+    font-weight: var(--fw-700);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1280px) {
+  h1,
+  .h1 {
+    font-size: var(--fs-56);
+    line-height: var(--lh-67_2);
+    font-weight: var(--fw-700);
+  }
+  h2,
+  .h2 {
+    font-size: var(--fs-40);
+    line-height: var(--lh-52);
+    font-weight: var(--fw-700);
+  }
+  h3,
+  .h3 {
+    font-size: var(--fs-24);
+    line-height: var(--lh-31_2);
+    font-weight: var(--fw-700);
+  }
+}
+
+/* ==================================
+   8) OPTIONAL: DEFAULT SECTION PADDING (derived from frequent paddings)
+   ==================================
+   Your data shows lots of 32/40/48/56/72/88 padding values.
+   These are safe, observed tokens. Use as a layout baseline if you want.
+*/
+.section {
+  padding-top: var(--sp-56);
+  padding-bottom: var(--sp-56);
+  padding-left: var(--sp-40);
+  padding-right: var(--sp-40);
+}
+.short-section {
+  padding-top: var(--sp-32);
+  padding-bottom: var(--sp-32);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-left: var(--sp-32);
+    padding-right: var(--sp-32);
+  }
+}
+
+@media (min-width: 1280px) {
+  .section {
+    padding-left: var(--sp-40);
+    padding-right: var(--sp-40);
+  }
+}
+
+/* Custom container per instruction (UNLOCK GLOBALS) */
+.padding-global-2 {
+  max-width: 85rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .padding-global-2 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+.title-subtitle-5 {
+  gap: var(--gap-20);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 780px;
+  text-decoration: none;
+  display: flex;
+}

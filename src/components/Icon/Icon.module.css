@@ -1,0 +1,26 @@
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.sm {
+  width: var(--sp-16);
+  height: var(--sp-16);
+}
+
+.md {
+  width: var(--sp-20);
+  height: var(--sp-20);
+}
+
+.lg {
+  width: var(--sp-24);
+  height: var(--sp-24);
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}

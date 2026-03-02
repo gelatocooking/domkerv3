@@ -1,0 +1,47 @@
+.social {
+  composes: short-section from global;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: var(--gap-40);
+  composes: padding-global-2 short-section from global;
+}
+
+.labelRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-12);
+}
+
+.labelText {
+  composes: t-14 t-medium text-muted from global;
+}
+
+.labelMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-green-deep-0_100_58);
+  background: var(--bg-success-0_12);
+  padding: var(--sp-8);
+  border-radius: var(--r-100);
+}
+
+.logoRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-32);
+}
+
+.logoItem {
+  letter-spacing: var(--ls--0_176px);
+}
+
+.logoText {
+  composes: t-13 text-muted from global;
+}

@@ -1,0 +1,252 @@
+.section {
+  composes: section from global;
+  padding-left: var(--sp-0);
+  padding-right: var(--sp-0);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: var(--gap-40);
+  composes: padding-global-2 from global;
+}
+
+.headingGroup {
+  composes: title-subtitle-5 from global;
+}
+
+.title {
+  composes: h2 from global;
+  text-align: center;
+}
+
+.titleLine {
+  display: block;
+}
+
+.subtitle {
+  composes: t-16-24-400 text-muted from global;
+  text-align: center;
+  margin: var(--sp-0);
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+}
+
+.cardTitle {
+  composes: h3 from global;
+}
+
+.cardText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-0);
+}
+
+.cardWrap {
+  position: relative;
+  min-height: calc(var(--sp-210) + var(--sp-210) + var(--sp-80));
+  padding-top: var(--sp-40);
+  padding-bottom: var(--sp-40);
+}
+
+.card {
+  width: 100%;
+  background: var(--bg-success-0_12);
+  border-radius: var(--r-24);
+  padding: var(--sp-40);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: var(--gap-32);
+  align-items: center;
+  overflow: hidden;
+  position: sticky;
+  top: var(--sp-72);
+}
+
+.visual {
+  position: relative;
+  width: 100%;
+  min-height: calc(var(--sp-210) + var(--sp-80));
+}
+
+.trendLine {
+  position: absolute;
+  left: var(--sp-0);
+  top: 50%;
+  width: 120%;
+  height: var(--sp-4);
+  background: var(--bg-success);
+  transform: rotate(-12deg);
+  transform-origin: left center;
+  opacity: 0.8;
+}
+
+.consultation {
+  position: absolute;
+  right: var(--sp-40);
+  top: 55%;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.leafIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-green-deep-0_100_58);
+  transform: rotate(90deg);
+}
+
+.consultationText {
+  composes: t-12 t-medium text-green-deep from global;
+}
+
+.callout {
+  position: absolute;
+  right: var(--sp-20);
+  top: 20%;
+  background: var(--bg-dark);
+  color: var(--c-white);
+  border-radius: var(--r-16);
+  padding: var(--sp-12) var(--sp-16);
+  max-width: 240px;
+  composes: t-12 t-medium from global;
+}
+
+.bubble {
+  position: absolute;
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  padding: var(--sp-8) var(--sp-12);
+  composes: t-12 text-muted from global;
+  box-shadow: none;
+}
+
+.bubbleLeft {
+  left: var(--sp-0);
+  top: 45%;
+}
+
+.bubbleTop {
+  right: var(--sp-60);
+  top: 35%;
+}
+
+.bubbleRight {
+  right: var(--sp-0);
+  bottom: 30%;
+}
+
+.bubbleBottom {
+  left: 35%;
+  bottom: 10%;
+}
+
+.visualTeam {
+  position: relative;
+  width: 100%;
+  min-height: calc(var(--sp-210) + var(--sp-60));
+}
+
+.profileCard {
+  position: absolute;
+  right: var(--sp-0);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-12);
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  padding: var(--sp-12) var(--sp-16);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+}
+
+.profile1 {
+  top: var(--sp-0);
+}
+
+.profile2 {
+  top: var(--sp-60);
+}
+
+.profile3 {
+  top: calc(var(--sp-210) - var(--sp-24));
+}
+
+.profileAvatar {
+  width: var(--sp-40);
+  height: var(--sp-40);
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-64_64_64);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  composes: t-12 t-medium from global;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+}
+
+.profileName {
+  composes: t-14 t-medium text-dark from global;
+}
+
+.profileRole {
+  composes: t-12 t-medium text-green-deep from global;
+  background: var(--bg-success-0_12);
+  border-radius: var(--r-100);
+  padding: var(--sp-4) var(--sp-8);
+  width: fit-content;
+}
+
+.visualDashboard {
+  position: relative;
+  width: 100%;
+  min-height: calc(var(--sp-210) + var(--sp-60));
+}
+
+.dashboardFrame {
+  position: relative;
+  width: 100%;
+  height: calc(var(--sp-210) + var(--sp-60));
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  overflow: hidden;
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+}
+
+.dashboardImage {
+  object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .card {
+    position: static;
+    grid-template-columns: 1fr;
+  }
+
+  .cardWrap {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: var(--sp-32);
+  }
+}

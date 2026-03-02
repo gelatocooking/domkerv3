@@ -1,0 +1,220 @@
+.header {
+  width: 100%;
+  position: sticky;
+  top: var(--sp-0);
+  z-index: 50;
+  background: var(--c-white);
+  backdrop-filter: blur(var(--sp-60));
+  -webkit-backdrop-filter: blur(var(--sp-s60));
+  isolation: isolate;
+}
+
+.header::before {
+  content: none;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--sp-1);
+  padding-bottom: var(--sp-1);
+  composes: padding-global-2 from global;
+}
+
+.logoBox {
+  display: inline-flex;
+  align-items: center;
+  border: var(--sp-0) solid var(--bg-gray-64_64_64-0_12);
+  padding: var(--sp-0);
+  border-radius: var(--r-0);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.logoMark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 100px;
+
+  color: var(--c-dark-30_32_36);
+  border-radius: var(--r-100);
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+.navArea {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-24);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-8);
+  padding: var(--sp-8) var(--sp-12);
+  text-decoration: none;
+  color: var(--c-text-10_10_10);
+}
+
+.navText {
+  composes: t-16-24-400 text-dark from global;
+}
+
+.navIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuIcon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-dark-30_32_36);
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-24);
+  list-style: none;
+  margin: var(--sp-0);
+  padding: var(--sp-0);
+}
+
+.navItem {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: var(--sp-0);
+  margin-top: var(--sp-12);
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  padding: var(--sp-12) var(--sp-16);
+  display: none;
+  z-index: 10;
+}
+
+.dropdownList {
+  list-style: none;
+  margin: var(--sp-0);
+  padding: var(--sp-0);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-12);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  padding: var(--sp-8) var(--sp-12);
+  border-radius: var(--r-16);
+  text-decoration: none;
+  color: var(--c-text-10_10_10);
+  min-width: calc(var(--sp-210) + var(--sp-210));
+}
+
+.navItem:hover .dropdown,
+.navItem:focus-within .dropdown {
+  display: block;
+}
+
+.dropdownIconWrap {
+  width: calc(var(--sp-50) + var(--sp-4));
+  height: calc(var(--sp-50) + var(--sp-4));
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-success);
+  background: var(--bg-white);
+  color: var(--c-green-deep-0_100_58);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+}
+
+.dropdownTitle {
+  display: inline-block;
+  padding: var(--sp-4) var(--sp-8);
+  border-radius: var(--r-8);
+  composes: t-16-24-600 t-strong text-dark from global;
+  text-decoration: none;
+}
+
+.dropdownDesc {
+  composes: t-14-lh-20 text-muted from global;
+  text-decoration: none;
+}
+
+.dropdownArrow {
+  margin-left: auto;
+  opacity: 0;
+  color: var(--c-green-deep-0_100_58);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdownItem:hover .dropdownArrow,
+.dropdownItem:focus-visible .dropdownArrow {
+  opacity: 1;
+}
+
+.dropdownItem:hover .dropdownTitle,
+.dropdownItem:focus-visible .dropdownTitle {
+  color: var(--bg-success);
+}
+
+.dropdownItem:hover,
+.dropdownItem:focus-visible {
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-16);
+  }
+
+  .navArea {
+    display: none;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: var(--gap-12);
+  }
+
+  .menuIcon {
+    display: inline-flex;
+    align-self: flex-end;
+  }
+}

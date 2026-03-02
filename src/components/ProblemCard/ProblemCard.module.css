@@ -1,0 +1,68 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  background: var(--bg-white);
+  border-radius: var(--r-24);
+  padding: var(--sp-32) var(--sp-32) var(--sp-40);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-8);
+  border-radius: var(--r-8);
+  padding: var(--sp-8) var(--sp-12);
+  width: fit-content;
+  color: var(--c-text-14_15_17);
+}
+
+.badgeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeText {
+  composes: t-12 t-strong from global;
+  color: inherit;
+}
+
+.title {
+  composes: t-20 t-strong text-dark from global;
+}
+
+.description {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.toneData {
+  background: var(--bg-success-0_12);
+  color: var(--c-green-deep-0_100_58);
+}
+
+.toneFinance {
+  background: var(--bg-pink-0_12);
+  color: var(--c-pink-255_122_133);
+}
+
+.toneProcesses {
+  background: var(--bg-blue-0_12);
+  color: var(--c-blue-59_174_255);
+}
+
+.toneRisk {
+  background: var(--bg-gold-0_16);
+  color: var(--c-gold-190_143_0);
+}
+
+.toneTechnology {
+  background: var(--bg-purple-0_12);
+  color: var(--c-purple-196_129_239);
+}
+
+.toneResources {
+  background: var(--bg-gray-64_64_64-0_12);
+  color: var(--c-text-34_34_34);
+}

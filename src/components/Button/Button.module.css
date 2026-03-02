@@ -1,0 +1,32 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--bg-success-soft-solid);
+  color: var(--c-text-10_10_10);
+  padding: var(--sp-12) var(--sp-24);
+  gap: var(--gap-10);
+  border-radius: var(--r-8);
+
+  composes: t-body from global;
+}
+
+.label {
+  text-align: center;
+  line-height: 25px;
+  font-weight: var(--fw-500);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:focus-visible {
+  outline: var(--sp-2) solid var(--c-primary-47_84_235);
+  outline-offset: var(--sp-2);
+}

@@ -1,0 +1,116 @@
+.section {
+  background: var(--bg-soft);
+  composes: section from global;
+  padding-left: var(--sp-0);
+  padding-right: var(--sp-0);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: var(--gap-40);
+  composes: padding-global-2 from global;
+}
+
+.headingGroup {
+  composes: title-subtitle-5 from global;
+}
+
+.title {
+  composes: h2 from global;
+  text-align: center;
+}
+
+.subtitle {
+  composes: t-16-24-400 text-muted from global;
+  text-align: center;
+  margin: var(--sp-0);
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-12);
+  justify-content: flex-start;
+}
+
+.controlButton {
+  width: var(--sp-48);
+  height: var(--sp-48);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  background: var(--bg-transparent);
+  color: var(--c-text-10_10_10);
+  cursor: pointer;
+}
+
+.controlIconLeft {
+  transform: rotate(180deg);
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, calc(var(--sp-210) + var(--sp-210)));
+  gap: var(--gap-24);
+  overflow-x: auto;
+  padding-bottom: var(--sp-12);
+}
+
+.card {
+  background: var(--bg-white);
+  border-radius: var(--r-24);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  padding: var(--sp-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-8);
+  color: var(--c-gold-190_143_0);
+}
+
+.star {
+  display: inline-flex;
+}
+
+.text {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+}
+
+.name {
+  composes: t-14 t-strong text-dark from global;
+}
+
+.role {
+  composes: t-14 text-muted from global;
+}
+
+@media (max-width: 1023px) {
+  .cards {
+    grid-auto-columns: minmax(0, calc(var(--sp-210) + var(--sp-80)));
+  }
+}
+
+@media (max-width: 767px) {
+  .cards {
+    grid-auto-columns: minmax(0, calc(var(--sp-210) + var(--sp-40)));
+  }
+}
