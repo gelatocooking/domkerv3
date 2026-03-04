@@ -18,11 +18,24 @@ const team = [
 
 const highlights = [
   {
-    title: "Najpierw biznes, potem technologia",
+    title: "Koordynator na miejscu i domknięcie etapu",
     text:
-      "Nie rzucamy się od razu na technologię. Nasz proces zawsze startuje od wnikliwej analizy Twoich potrzeb, celów i istniejących procesów, prowadzonej przez doświadczonych analityków biznesowych. Dopiero dogłębne zrozumienie Twojego świata pozwala nam zaprojektować rozwiązanie, które naprawdę zadziała i przyniesie niesamowite rezultaty.",
+      "Masz jedną osobę odpowiedzialną za realizację i jedną wersję ustaleń. Zbieramy wymagania do odbioru, dzielimy obiekt na strefy i pilnujemy kolejności prac, żeby nie wracał brud po innych ekipach. Na koniec dostajesz komplet: zakres, status, zdjęcia i protokół.",
     visual: "insights",
   },
+  {
+    title: "Dispatching zleceń i dowody wykonania",
+    text:
+      "Zamiast telefonów i zgadywania pracujemy na przydziałach i statusach. Każda ekipa ma obiekt, godzinę wejścia, zakres i checklistę, a po robocie zostawia raport i zdjęcia. Mniej pustych przebiegów, szybsze wychwytywanie jakości i łatwiejsze wdrażanie nowych osób.",
+    visual: "insights",
+  },
+  {
+    title: "Ochrona wykończeń i praca pod materiał",
+    text:
+      "Dobieramy chemię i technologię do powierzchni, żeby nie zrobić szkody na posadzkach, szkle i armaturze. Ustalamy strefy wrażliwe i sposób zabezpieczenia, a ryzyka dokumentujemy od razu protokołem, zanim przerodzą się w spór. Efekt ma być odbiorowy i bezpieczny.",
+    visual: "insights",
+  },
+
 ] as const;
 
 export default function HighlightsSection() {

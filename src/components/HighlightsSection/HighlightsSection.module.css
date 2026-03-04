@@ -59,7 +59,12 @@
 
 .card {
   width: 100%;
-  background: var(--bg-success-0_12);
+  background: linear-gradient(
+    180deg,
+    var(--bg-success-0_12) 0%,
+    var(--bg-success-0_12) 70%,
+    var(--bg-white) 100%
+  );
   border-radius: var(--r-24);
   padding: var(--sp-40);
   display: grid;
