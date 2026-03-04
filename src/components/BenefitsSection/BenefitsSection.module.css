@@ -1,0 +1,52 @@
+.section {
+  background: var(--bg-soft);
+  composes: section from global;
+  padding-left: var(--sp-0);
+  padding-right: var(--sp-0);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: var(--gap-40);
+  composes: padding-global-2 from global;
+}
+
+.headingGroup {
+  composes: title-subtitle-5 from global;
+}
+
+.title {
+  composes: h2 from global;
+  text-align: center;
+}
+
+.titleLine {
+  display: block;
+}
+
+.description {
+  composes: t-16-24-400 text-muted from global;
+  text-align: center;
+  margin: var(--sp-0);
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  gap: var(--gap-24);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1023px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

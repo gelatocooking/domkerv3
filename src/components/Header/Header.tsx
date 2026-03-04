@@ -1,4 +1,7 @@
-﻿import Image from "next/image";
+﻿"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import styles from "./Header.module.css";
@@ -38,6 +41,8 @@ const navItems = [
 ] as const;
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -54,7 +59,10 @@ export default function Header() {
             </span>
           </div>
         </div>
-        <div className={styles.navArea}>
+        <div
+          className={`${styles.navArea} ${menuOpen ? styles.navAreaOpen : ""}`}
+          id="mobile-nav"
+        >
           <nav className={styles.nav}>
             <ul className={styles.navList}>
               {navItems.map((item) => (
@@ -99,9 +107,15 @@ export default function Header() {
           </nav>
           <Button label="Bezpłatna konsultacja" iconName="arrowRight" />
         </div>
-        <span className={styles.menuIcon}>
+        <button
+          className={styles.menuIcon}
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
           <Icon name="menu" size="md" />
-        </span>
+        </button>
       </div>
     </header>
   );

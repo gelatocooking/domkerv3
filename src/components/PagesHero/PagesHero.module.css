@@ -1,0 +1,40 @@
+﻿.pagegrid {
+  grid-template-columns: 1fr !important;
+  justify-items: center;
+}
+
+.content {
+  align-items: center;
+  text-align: center;
+  max-width: 780px;
+  width: 100%;
+  margin: var(--sp-0) auto;
+}
+
+.badge {
+  align-self: center;
+}
+
+.heading {
+  text-align: center;
+}
+
+.headingRow {
+  justify-content: center;
+}
+
+.bodyText {
+  text-align: center;
+}
+
+.ctaRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 479px) {
+  .ctaRow {
+    width: 100%;
+  }
+}

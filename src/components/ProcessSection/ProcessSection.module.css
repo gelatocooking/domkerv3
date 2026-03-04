@@ -1,0 +1,101 @@
+.section {
+  composes: section from global;
+  padding-left: var(--sp-0);
+  padding-right: var(--sp-0);
+}
+
+.inner {
+  composes: padding-global-2 from global;
+}
+
+.card {
+  background: var(--bg-soft);
+  border-radius: var(--r-24);
+  padding: var(--sp-48);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-40);
+}
+
+.headingGroup {
+  composes: title-subtitle-5 from global;
+}
+
+.title {
+  composes: h2 from global;
+  text-align: center;
+}
+
+.titleLine {
+  display: block;
+}
+
+.description {
+  composes: t-16-24-400 text-muted from global;
+  text-align: center;
+  margin: var(--sp-0);
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+}
+
+.stepCard {
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  padding: var(--sp-24) var(--sp-32);
+  display: flex;
+  gap: var(--gap-16);
+  align-items: flex-start;
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+}
+
+.stepBadge {
+  width: var(--sp-50);
+  height: var(--sp-40);
+  border-radius: var(--r-100);
+  background: var(--bg-success);
+  color: var(--c-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  composes: t-16-24 t-strong from global;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+}
+
+.stepTitle {
+  composes: h3 text-dark from global;
+  margin: var(--sp-0);
+}
+
+.stepText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: var(--sp-32);
+  }
+
+  .stepCard {
+    padding: var(--sp-20) var(--sp-24);
+  }
+
+  .ctaRow {
+    width: 100%;
+  }
+}

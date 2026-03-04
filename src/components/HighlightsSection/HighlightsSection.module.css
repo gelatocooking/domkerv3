@@ -50,14 +50,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-0);
+  gap: var(--gap-32);
 }
 
 .cardWrap {
   position: relative;
-  min-height: calc(var(--sp-210) + var(--sp-210) + var(--sp-80));
-  padding-top: var(--sp-40);
-  padding-bottom: var(--sp-40);
 }
 
 .card {
@@ -70,8 +67,6 @@
   gap: var(--gap-32);
   align-items: center;
   overflow: hidden;
-  position: sticky;
-  top: var(--sp-72);
 }
 
 .visual {
@@ -236,12 +231,7 @@
 
 @media (max-width: 1023px) {
   .card {
-    position: static;
     grid-template-columns: 1fr;
-  }
-
-  .cardWrap {
-    min-height: auto;
   }
 }
 

@@ -156,7 +156,6 @@
 .formButton {
   width: 100%;
   justify-content: center;
-  background: var(--bg-success);
   color: var(--c-text-10_10_10);
 }
 

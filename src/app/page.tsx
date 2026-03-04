@@ -286,6 +286,7 @@ export default function Home() {
         <SolutionsSection content={solutionsContent} />
         <ShowcaseSection content={showcaseContent} />
         <CtaSection content={ctaContent} />
+        <HighlightsSection />
         {/* <HighlightsSection /> */}
         <KnowledgeSection content={knowledgeContent} />
         {/* <TestimonialsSection /> */}

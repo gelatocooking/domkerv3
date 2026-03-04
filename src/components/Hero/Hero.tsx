@@ -55,20 +55,6 @@ export default function Hero({ content }: HeroProps) {
             iconName="arrowRight"
           />
         </div>
-
-        <div className={styles.mediaCard}>
-          <div className={styles.mediaFrame}>
-            <Image
-              src={content.imageSrc}
-              alt={content.imageAlt}
-              fill
-              className={styles.mediaImage}
-              priority
-            />
-            <div className={styles.mediaOverlay} />
-            <div className={styles.mediaAccent} />
-          </div>
-        </div>
       </div>
     </section>
   );

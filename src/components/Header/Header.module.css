@@ -87,6 +87,12 @@
   align-items: center;
   justify-content: center;
   color: var(--c-dark-30_32_36);
+  width: var(--sp-40);
+  height: var(--sp-40);
+  border: var(--sp-0);
+  background: transparent;
+  padding: var(--sp-0);
+  cursor: pointer;
 }
 
 .navList {
@@ -111,8 +117,12 @@
   border-radius: var(--r-16);
   border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
   padding: var(--sp-12) var(--sp-16);
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(var(--sp-8));
+  pointer-events: none;
   z-index: 10;
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
 }
 
 .dropdownList {
@@ -137,7 +147,10 @@
 
 .navItem:hover .dropdown,
 .navItem:focus-within .dropdown {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(var(--sp-0));
+  pointer-events: auto;
 }
 
 .dropdownIconWrap {
@@ -202,10 +215,22 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--gap-16);
+    flex-wrap: wrap;
   }
 
   .navArea {
-    display: none;
+    width: 100%;
+    order: 3;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-16);
+    padding-top: var(--sp-16);
+    max-height: var(--sp-0);
+    opacity: 0;
+    transform: translateY(var(--sp-8));
+    pointer-events: none;
+    overflow: hidden;
+    transition: max-height 240ms ease, opacity 240ms ease, transform 240ms ease;
   }
 
   .nav {
@@ -215,6 +240,24 @@
 
   .menuIcon {
     display: inline-flex;
-    align-self: flex-end;
+    align-self: center;
+    order: 2;
+  }
+
+  .navAreaOpen {
+    max-height: calc(var(--sp-210) + var(--sp-210) + var(--sp-210));
+    opacity: 1;
+    transform: translateY(var(--sp-0));
+    pointer-events: auto;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-16);
+  }
+
+  .navLink {
+    padding: var(--sp-6) var(--sp-8);
   }
 }
