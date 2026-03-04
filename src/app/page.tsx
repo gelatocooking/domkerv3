@@ -108,16 +108,7 @@ const solutionsContent: SolutionsSectionContent = {
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/window.svg",
     },
-    {
-      iconName: "clipboardList",
-      label: "Dwie ścieżki współpracy",
-      title: "Dla kierownika budowy i dla koordynacji sieci",
-      description:
-        "W zależności od roli dostajesz inny tryb współpracy: szybkie wejścia i domknięcie odbioru na budowie albo SLA i logistyka dla wielu lokalizacji w całej Polsce.",
-      ctaLabel: "Wybierz swoją ścieżkę",
-      mediaAlt: "Ścieżki współpracy",
-      mediaSrc: "/window.svg",
-    },
+   
     {
       iconName: "sparkles",
       label: "Mycie witryn i okien",
@@ -130,7 +121,7 @@ const solutionsContent: SolutionsSectionContent = {
     },
     {
       iconName: "grid3x3",
-      label: "Czyszczenie posadzek (B2B)",
+      label: "Czyszczenie posadzek ",
       title: "Maszynowe doczyszczanie i specjalistyczne odplamianie",
       description:
         "Doczyszczamy posadzki w obiektach komercyjnych. Dobieramy technologię do typu nawierzchni i zabrudzeń, robimy ekspertyzę plam i domykamy efekt bez ryzyka uszkodzeń.",
@@ -140,7 +131,7 @@ const solutionsContent: SolutionsSectionContent = {
     },
     {
       iconName: "building2",
-      label: "Utrzymanie czystości (B2B)",
+      label: "Utrzymanie czystości ",
       title: "Stały standard, kontrola wykonania i zastępstwa",
       description:
         "Sprzątanie biur oraz lokali handlowo-usługowych, także w sieciach. Zapewniamy powtarzalny standard, kontrolę jakości, grafiki i zastępstwa — bez przestojów i nerwów.",

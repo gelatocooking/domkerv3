@@ -16,6 +16,8 @@ import ProcessSection, {
 } from "@/components/ProcessSection/ProcessSection";
 import FaqSection, { type FaqSectionContent } from "@/components/FaqSection/FaqSection";
 import CtaSection, { type CtaSectionContent } from "../../components/CtaSection/CtaSection";
+import SolutionsSection, { SolutionsSectionContent } from "@/components/SolutionsSection/SolutionsSection";
+import KnowledgeSection, { KnowledgeSectionContent } from "@/components/KnowledgeSection/KnowledgeSection";
 
 const defaultContent: HeroContent = {
   badge: "SPRZĄTANIE DLA FIRM I SIECI",
@@ -28,7 +30,73 @@ const defaultContent: HeroContent = {
   imageSrc: "/tlo.png",
   imageAlt: "Sprzątanie dla firm i sieci",
 };
-
+const solutionsContent: SolutionsSectionContent = {
+  kickerLabel: "WYBIERZ SCENARIUSZ",
+  titleLines: ["Wybierz scenariusz", "i przejdź od problemu do decyzji"],
+  description:
+    "To hub współpracy B2B. Wybierz sytuację — pokażemy, kiedy ma sens, jak dowozimy temat operacyjnie i gdzie przejść do właściwej usługi.",
+  items: [
+    {
+      iconName: "hardHat",
+      label: "Sprzątanie po budowie / przed otwarciem",
+      title: "Kiedy liczy się czas: odbiór, przekazanie, otwarcie",
+      description:
+        "Ustawiamy priorytety i okno wejścia, żeby zamknąć temat w terminie: kolejność prac, wejścia „między robotami”, odbiór wewnętrzny checklistą + zdjęcia.",
+      ctaLabel: "Zobacz usługę",
+      mediaAlt: "Sprzątanie po budowie",
+      mediaSrc: "/sprzatanie-po-budowie",},
+    {
+      iconName: "clipboardList",
+      label: "Sieci: wiele lokalizacji",
+      title: "Gdy problemem jest powtarzalność i losowość ekip",
+      description:
+        "Dowozimy standard w wielu miastach: koordynacja i jeden kontakt, checklisty i kontrola wykonania, backup ludzi i sprzętu dla ciągłości terminu.",
+      ctaLabel: "Zapytaj / wyślij minimum danych",
+      mediaAlt: "Obsługa sieci",
+      mediaSrc: "/kontakt#minimum-danych",
+    },
+    {
+      iconName: "building2",
+      label: "Stała obsługa: biura i lokale",
+      title: "Gdy chcesz stały standard bez przerw i zastępstwa",
+      description:
+        "Utrzymanie działa, gdy jest poukładane: harmonogram i zakres, kontrola jakości, szybkie korekty oraz ciągłość serwisu (zastępstwa ludzi i sprzętu).",
+      ctaLabel: "Zobacz usługę",
+      mediaAlt: "Utrzymanie czystości",
+      mediaSrc: "/utrzymanie-czystosci",
+    },
+    {
+      iconName: "sparkles",
+      label: "Witryny: abonament / ryczałt dla sieci",
+      title: "Gdy chcesz mieć temat „z głowy” i przewidywalne terminy",
+      description:
+        "Abonament i szybka wycena ze zdjęć. Dla sieci możliwy ryczałt: stałe okna realizacji, logistyka po naszej stronie i raport po wykonaniu.",
+      ctaLabel: "Zobacz usługę",
+      mediaAlt: "Mycie witryn i okien",
+      mediaSrc: "/mycie-okien-i-witryn",
+    },
+    {
+      iconName: "grid3x3",
+      label: "Posadzki: doczyszczanie (B2B)",
+      title: "Gdy zabrudzenia wymagają technologii i pewnego efektu",
+      description:
+        "Maszynowe czyszczenie dopasowane do typu posadzki i zabrudzeń: ekspertyza plam, bezpieczna chemia i odplamianie, efekt do odbioru bez ryzyka uszkodzeń.",
+      ctaLabel: "Zobacz usługę",
+      mediaAlt: "Maszynowe czyszczenie posadzek",
+      mediaSrc: "/maszynowe-czyszczenie-posadzek",
+    },
+    {
+      iconName: "mapPin",
+      label: "Zasięg i moce przerobowe",
+      title: "Cała Polska + tempo, gdy warunki wejścia są potwierdzone",
+      description:
+        "Dobieramy zespoły i sprzęt do terminu: do 5000 m² dziennie lub do 300 doczyszczonych okien dziennie* — zależnie od zakresu i okna realizacji na obiekcie.",
+      ctaLabel: "Sprawdź dostępność",
+      mediaAlt: "Zasięg realizacji",
+      mediaSrc: "/kontakt",
+    },
+  ],
+};
 const contactContent: ContactSectionContent = {
   kickerLabel: "SKONTAKTUJ SIĘ",
   title: "Porozmawiajmy, jak dowieźć odbiór i przekazanie obiektu",
@@ -215,29 +283,54 @@ const faqContent: FaqSectionContent = {
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
   items: [
     {
-      question: "Ile kosztuje stworzenie dedykowanego systemu?",
+      question: "Jakie usługi obejmuje „sprzątanie dla firm” w Domker?",
       answer:
-        "Koszt realizacji zależy od złożoności projektu — wielkości systemu, liczby funkcji i integracji. Stosunkowo proste aplikacje budujemy już od 30 000 złotych. Najczęściej koszty zamykają się w przedziale od 80 000 do 160 000 złotych, ale bardzo złożone systemy, obejmujące większość operacji, mogą kosztować więcej.\n\nW ramach bezpłatnej konsultacji otrzymasz widełki kosztów bazujące na Twoich potrzebach.",
+        "To hub usług B2B dla obiektów komercyjnych: sprzątanie po budowie i wykończeniówce, cykliczne utrzymanie czystości biur i lokali oraz mycie okien i witryn. Dokładny zakres zależy od scenariusza i jest opisany na podstronach usług.",
     },
     {
-      question: "Jak długo trwa zaprojektowanie i wdrożenie takiego rozwiązania?",
+      question: "Czy Domker realizuje sprzątanie dla firm w całej Polsce?",
       answer:
-        "Harmonogram zależy od zakresu, złożoności i dostępności zespołu. Najczęściej pierwszy etap zajmuje od kilku do kilkunastu tygodni.",
+        "Tak — działamy w całej Polsce. Obsługujemy zarówno pojedyncze zlecenia „pod odbiór”, jak i współpracę w wielu miastach dla sieci i firm z wieloma lokalizacjami.",
     },
     {
-      question: "Czym różni się wasz system od gotowego narzędzia SaaS?",
+      question: "Jak wygląda wycena sprzątania B2B i od czego zależy cena?",
       answer:
-        "Dedykowany system jest szyty pod Twoje procesy i daje pełną kontrolę nad rozwojem, integracjami oraz bezpieczeństwem danych.",
+        "Cena zależy głównie od skali (m² / liczby punktów), typu obiektu, poziomu zabrudzeń i terminu. Zbieramy minimum danych, wracamy z widełkami i proponujemy najprostszy wariant realizacji pod odbiór lub utrzymanie.",
     },
     {
-      question: "Czy system można rozwijać i modyfikować w przyszłości?",
+      question: "Jakie informacje są potrzebne do szybkiej wyceny?",
       answer:
-        "Tak. System projektujemy modułowo, dzięki czemu możesz go rozwijać wraz z potrzebami zespołu i biznesu.",
+        "Zwykle wystarczy: miasto, typ obiektu, skala (m² / liczba lokali / liczba witryn), preferowany termin i zdjęcia poglądowe. To pozwala przejść od zapytania do konkretów bez długiej wymiany wiadomości.",
     },
     {
-      question: "Czy wasze systemy są bezpieczne?",
+      question: "Czy mogę zlecić sprzątanie jednorazowe, czy tylko stałą obsługę?",
       answer:
-        "Stosujemy sprawdzone praktyki bezpieczeństwa, kontrole dostępu i szyfrowanie. Dodatkowo dopasowujemy polityki do wymogów klienta.",
+        "Możesz zlecić zarówno jednorazowe sprzątanie „pod odbiór” (po pracach / przed otwarciem), jak i stałe utrzymanie czystości w modelu cyklicznym. Dobór zależy od celu i rytmu obiektu.",
+    },
+    {
+      question: "Czy sprzątanie biur i lokali usługowych to osobne usługi?",
+      answer:
+        "Tak. Biura i lokale handlowo-usługowe to różne scenariusze: inna częstotliwość, organizacja i rozliczenia. Dlatego są rozpisane na osobnych podstronach w HUB-ie usług.",
+    },
+    {
+      question: "Czy można zacząć od pilotażu przed dłuższą współpracą?",
+      answer:
+        "Tak. Pilotaż pozwala szybko ustalić zakres, standard i sposób rozliczeń na jednej lokalizacji, a dopiero potem rozszerzyć współpracę na kolejne punkty lub miasta.",
+    },
+    {
+      question: "Jak rozliczane są usługi: jednorazowo, abonamentowo czy ryczałtem?",
+      answer:
+        "Zależnie od scenariusza: jednorazowo (zlecenie/etap), abonamentowo (cykliczne utrzymanie) lub ryczałtowo, jeśli zakres jest powtarzalny — szczególnie w sieciach.",
+    },
+    {
+      question: "Co jeśli mam kilka tematów naraz: sprzątanie + witryny + utrzymanie?",
+      answer:
+        "Możesz wysłać jedno zapytanie. Porządkujemy je na scenariusze i wracamy z propozycją podziału na etapy lub harmonogram — tak, żeby decyzja po Twojej stronie była prosta.",
+    },
+    {
+      question: "Czy odpowiecie, jeśli mam niepełne informacje?",
+      answer:
+        "Tak. Jeśli masz tylko podstawy (np. miasto i termin), wrócimy z krótką listą pytań, żeby domknąć minimum danych. Dopiero wtedy podamy sensowne widełki i kolejny krok.",
     },
   ],
 };
@@ -249,6 +342,38 @@ const ctaContent: CtaSectionContent = {
   buttonLabel: "Umów bezpłatną konsultację",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
+
+const knowledgeContent: KnowledgeSectionContent = {
+  kickerLabel: "REALIZACJE I REFERENCJE",
+  titleLines: ["Zobacz, jak pracujemy", "na obiektach w całej Polsce"],
+  description:
+    "Zdjęcia z realizacji, zakresy i efekty — plus opinie klientów. Sprawdź, jak dowozimy sprzątanie pod odbiory, przekazanie i otwarcia.",
+  cards: [
+    {
+      title: "Realizacje",
+      description:
+        "Przykładowe obiekty, zakres prac i efekt końcowy. Krótkie case’y ze zdjęciami — bez lania wody, same konkrety.",
+      buttonLabel: "Zobacz realizacje",
+    media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Referencje klientów",
+      },
+    },
+    {
+      title: "Referencje i opinie",
+      description:
+        "Opinie firm odpowiedzialnych za odbiory. Co doceniają najczęściej: termin, komunikację, protokoły i przewidywalną realizację.",
+      buttonLabel: "Zobacz referencje",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Referencje klientów",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -256,10 +381,14 @@ export default function Home() {
       <main className={styles.main}>
         <PagesHero content={defaultContent} />
         <ProblemsSection content={problemsContent} />
+                <SolutionsSection content={solutionsContent} />
+        
         <CtaSection content={ctaContent}/>
         <BenefitsSection content={benefitsContent} />
         <ProcessSection content={processContent} />        
         <ContactSection content={contactContent} />
+        <KnowledgeSection content={knowledgeContent} />
+        
         <FaqSection content={faqContent} />
       </main>
       <Footer />

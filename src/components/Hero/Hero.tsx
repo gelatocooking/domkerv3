@@ -55,6 +55,15 @@ export default function Hero({ content }: HeroProps) {
             iconName="arrowRight"
           />
         </div>
+        <div>
+          <Image
+            src={content.imageSrc}
+            alt={content.imageAlt}
+            width={600}
+            height={400}
+            className={styles.heroImage}
+          />
+        </div>
       </div>
     </section>
   );
