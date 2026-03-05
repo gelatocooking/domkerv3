@@ -1,4 +1,5 @@
-﻿import Header from "../components/Header/Header";
+﻿"use client"
+import Header from "../components/Header/Header";
 import Hero, { type HeroContent } from "../components/Hero/Hero";
 import SocialProof from "../components/SocialProof/SocialProof";
 import ProblemsSection, {
@@ -22,250 +23,250 @@ import ContactSection, {
 import Footer from "../components/Footer/Footer";
 import styles from "./page.module.css";
 
+// STRONA GŁÓWNA
+
 const defaultContent: HeroContent = {
   badge: "SPRZĄTANIE DLA FIRM I SIECI",
   titleLines: ["Sprzątanie pod odbiory", "i przekazanie obiektu"],
   emphasisText: "na czas",
   emphasisIconName: "lightbulb",
-  emphasisSuffix: "/",
+  emphasisSuffix: "",
   description:
-    "Domker realizuje sprzątanie po budowie i remontach oraz utrzymanie biur i lokali — dopasowujemy się do harmonogramu prac, chronimy nowe wykończenia i zostawiamy obiekt gotowy do odbioru; odpowiedź do 15 min, start nawet w 3 dni*.",
-  ctaLabel: "Umów bezpłatną konsultację",
+    "Domker wchodzi w tematy, które muszą zostać domknięte. Organizujemy realizację, pilnujemy standardu i zostawiamy obiekt gotowy do przekazania. Działamy w całej Polsce, reagujemy szybko i dopasowujemy się do okna prac na obiekcie.",
+  ctaLabel: "Sprawdź dostępność terminu",
   imageSrc: "/tlo.png",
-  imageAlt: "Sprzątanie pod odbiory",
+  imageAlt: "Sprzątanie dla firm",
 };
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE WYZWANIA?",
-  titleLines: ["Jeśli celem jest odbiór lub otwarcie,", "„czysto” to dopiero początek"],
+  titleLines: ["Gdy w grę wchodzi termin,", "problemem rzadko jest samo sprzątanie"],
   description:
-    "W sprzątaniu po budowie rzadko przegrywa jakość — częściej organizacja. Gdy liczy się termin i standard, największe ryzyko jest w chaosie: ekipy, etapy, powierzchnie i odpowiedzialność.",
+    "Najczęściej przegrywa logistyka. Kto wchodzi kiedy, co jest już gotowe, czego nie wolno ruszać i jak domknąć temat bez serii poprawek oraz sporów na końcu.",
   items: [
     {
       iconName: "calendarClock",
-      label: "TERMINY",
-      title: "Odbiór blisko, a smugi i pył wychodzą dopiero w świetle dziennym",
+      label: "TERMIN",
+      title: "Deadline jest stały, a zakres żyje własnym życiem",
       description:
-        "Wieczorem wygląda OK, rano widać smugi na szybach i pył na detalach. Poprawki w ostatniej chwili kosztują czas i nerwy.",
+        "Prace się przesuwają, ktoś dopina poprawki, a Ty musisz mieć pewność, że obiekt przejdzie weryfikację bez nerwowego dopinania nocy.",
       tone: "processes",
     },
     {
       iconName: "workflow",
-      label: "CHAOS",
-      title: "Sprzątanie „między robotami”, gdy ekipy wchodzą sobie w drogę",
+      label: "KOORDYNACJA",
+      title: "Za dużo wykonawców, za mało jednego planu",
       description:
-        "Prace się przesuwają, ktoś wchodzi z materiałem, ktoś wierci. Bez planu i koordynacji wraca brud, a zakres się rozmywa.",
+        "Gdy każdy działa osobno, brud wraca, a odpowiedzialność się rozmywa. Potrzebujesz kogoś, kto przejmie etap i dowiezie go do końca.",
       tone: "processes",
     },
     {
       iconName: "shieldAlert",
-      label: "RYZYKO",
-      title: "Świeże powierzchnie łatwo uszkodzić złą chemią lub technologią",
+      label: "WYKOŃCZENIA",
+      title: "Nowe powierzchnie nie wybaczają błędów",
       description:
-        "Nowe posadzki, szyby, armatura i okucia nie wybaczają błędów. Zła chemia lub sprzęt = rysy, zmatowienia i reklamacje.",
+        "Rysy, mat i uszkodzenia oznaczają reklamacje. Na tym etapie liczy się ostrożna praca i jasne zasady, co robimy, a czego nie ruszamy.",
       tone: "risk",
     },
     {
       iconName: "truck",
-      label: "DOSTĘPNOŚĆ",
-      title: "Podwykonawca nie odbiera, nie dojeżdża albo przesuwa termin",
+      label: "ZASOBY",
+      title: "Podwykonawcy znikają wtedy, gdy są najbardziej potrzebni",
       description:
-        "Telefon milczy, ekipa nie przyjeżdża, a termin odbioru się nie przesuwa. Odpowiedzialność i tak spada na Ciebie.",
+        "Brak ludzi lub sprzętu w kluczowym momencie potrafi wywrócić harmonogram. Tu potrzebujesz wykonawcy z rezerwą i pewnym wejściem.",
       tone: "resources",
     },
     {
       iconName: "clipboardCheck",
-      label: "ODBIÓR",
-      title: "Brak przewidywalności: nie wiadomo co jest „gotowe do odbioru”",
+      label: "JAKOŚĆ",
+      title: "Czystość bywa subiektywna, odbiór już nie",
       description:
-        "Bez jasnego zakresu i standardu każdy widzi „czysto” inaczej. Odbiór zamienia się w rundy uwag i dopisek do protokołu.",
+        "Bez ustalonego standardu każdy ma inne oczekiwania. Efekt to poprawki, rundy uwag i przeciąganie tematu w czasie.",
       tone: "data",
     },
     {
       iconName: "route",
-      label: "PROCES",
-      title: "Brak domknięcia etapu: zakres → termin → realizacja → odbiór",
+      label: "DOMKNIĘCIE",
+      title: "Brakuje jasnego końca etapu i potwierdzenia wykonania",
       description:
-        "Gdy nie ma procesu, wszystko dzieje się ad hoc. My porządkujemy etap i dowozimy go do końca: plan, wykonanie i odbiór.",
+        "Gdy nie ma dowodów i protokołu, temat wraca. Domykamy realizację tak, żeby dało się ją przekazać dalej i zamknąć w firmie.",
       tone: "technology",
     },
   ],
 };
 
 const solutionsContent: SolutionsSectionContent = {
-  kickerLabel: "NASZE USŁUGI",
-  titleLines: ["Wybierz usługę — i przejdź", "od problemu do decyzji"],
+  kickerLabel: "CO ROBIMY",
+  titleLines: ["Usługi dla firm,", "które mają być po prostu załatwione"],
   description:
-    "Realizujemy sprzątanie i czyszczenie w modelu przewidywalnym dla odbiorów: jasny zakres, dopasowane okno prac, koordynacja na miejscu oraz dokumentacja do przekazania dalej.",
+    "Obsługujemy obiekty komercyjne w modelu, który daje spokój operacyjny. Jasny zakres, ustalone okno wejścia, komunikacja po drodze i finalne potwierdzenie wykonania.",
   items: [
     {
       iconName: "hardHat",
-      label: "Sprzątanie pod odbiór / otwarcie",
-      title: "Po budowie, przed otwarciem i po reficie lokalu",
+      label: "Sprzątanie po budowie i remontach",
+      title: "Domknięcie etapu po pracach",
       description:
-        "Odbiory, przekazanie, presja terminów. Wchodzimy „między robotami” i po godzinach, chronimy świeże powierzchnie i dowozimy etap do odbioru z protokołami i zdjęciami.",
-      ctaLabel: "Dowiedz się więcej",
+        "Wchodzimy wtedy, gdy liczy się efekt końcowy. Porządkujemy realizację i dowozimy standard potrzebny do przekazania lub weryfikacji obiektu.",
+      ctaLabel: "Zobacz jak działamy",
       mediaAlt: "Sprzątanie po budowie",
-      mediaSrc: "/window.svg",
-    },
-   
-    {
-      iconName: "sparkles",
-      label: "Mycie witryn i okien",
-      title: "Witryny dla firm + okna dla klientów prywatnych",
-      description:
-        "B2B: mycie witryn z szybką wyceną ze zdjęć i logistyką po naszej stronie. Prywatnie: mycie okien w domach i mieszkaniach — sprawnie, bezpiecznie i bez smug.",
-      ctaLabel: "Zobacz usługę",
-      mediaAlt: "Mycie witryn i okien",
-      mediaSrc: "/window.svg",
-    },
-    {
-      iconName: "grid3x3",
-      label: "Czyszczenie posadzek ",
-      title: "Maszynowe doczyszczanie i specjalistyczne odplamianie",
-      description:
-        "Doczyszczamy posadzki w obiektach komercyjnych. Dobieramy technologię do typu nawierzchni i zabrudzeń, robimy ekspertyzę plam i domykamy efekt bez ryzyka uszkodzeń.",
-      ctaLabel: "Dowiedz się więcej",
-      mediaAlt: "Maszynowe czyszczenie posadzek",
       mediaSrc: "/window.svg",
     },
     {
       iconName: "building2",
-      label: "Utrzymanie czystości ",
-      title: "Stały standard, kontrola wykonania i zastępstwa",
+      label: "Utrzymanie czystości biur i lokali",
+      title: "Stały standard bez przerw",
       description:
-        "Sprzątanie biur oraz lokali handlowo-usługowych, także w sieciach. Zapewniamy powtarzalny standard, kontrolę jakości, grafiki i zastępstwa — bez przestojów i nerwów.",
-      ctaLabel: "Dowiedz się więcej",
-      mediaAlt: "Cykliczne utrzymanie czystości",
+        "Cykliczna obsługa biur i lokali handlowo usługowych. Harmonogram, kontrola jakości i szybkie korekty, żeby temat był stabilny miesiąc w miesiąc.",
+      ctaLabel: "Porozmawiaj o stałej obsłudze",
+      mediaAlt: "Utrzymanie czystości",
+      mediaSrc: "/window.svg",
+    },
+    {
+      iconName: "sparkles",
+      label: "Mycie okien i witryn",
+      title: "Szybka logistyka i czytelny efekt",
+      description:
+        "Dla firm mycie witryn w stałych oknach realizacji. Dla klientów prywatnych mycie okien w domach i mieszkaniach, sprawnie i bezpiecznie.",
+      ctaLabel: "Sprawdź usługę",
+      mediaAlt: "Mycie okien i witryn",
+      mediaSrc: "/window.svg",
+    },
+    {
+      iconName: "grid3x3",
+      label: "Czyszczenie posadzek",
+      title: "Doczyszczanie, które ma sens",
+      description:
+        "Maszynowe doczyszczanie i odplamianie w obiektach komercyjnych. Dobór metody do nawierzchni i zabrudzeń oraz kontrola efektu.",
+      ctaLabel: "Zobacz opcje",
+      mediaAlt: "Czyszczenie posadzek",
       mediaSrc: "/window.svg",
     },
     {
       iconName: "mapPin",
-      label: "Zasięg i moce przerobowe",
-      title: "Cała Polska + duże tempo, gdy warunki są potwierdzone",
+      label: "Zasięg i moce",
+      title: "Cała Polska i szybkie wejścia",
       description:
-        "Dobieramy zespoły i sprzęt do terminu: do 5000 m² dziennie lub do 300 doczyszczonych okien dziennie* — zależnie od zakresu, warunków wejścia i okna realizacji.",
+        "Działamy w wielu miastach. Dobieramy zespoły i sprzęt do terminu oraz warunków wejścia, żeby dowieźć temat bez przeciągania realizacji.",
       ctaLabel: "Sprawdź dostępność",
-      mediaAlt: "Zasięg i realizacja",
+      mediaAlt: "Zasięg realizacji",
       mediaSrc: "/window.svg",
     },
   ],
 };
 
 const showcaseContent: ShowcaseSectionContent = {
-  kickerLabel: "RYZYKA I JAK JE GASIMY",
-  title: "Ryzyka i jak je gasimy",
+  kickerLabel: "RYZYKA I JAK JE OGARNIAMY",
+  title: "Ryzyka, które najczęściej wywracają realizację",
   description:
-    "W sprzątaniu pod odbiór liczy się przewidywalność. Poniżej najczęstsze ryzyka na obiekcie i konkretne działania, które wdrażamy, żeby dowieźć termin i standard.",
+    "W sprzątaniu dla firm problemem rzadko jest wysiłek, częściej brak zasad. Poniżej najczęstsze blokady na obiekcie i konkretne działania, które wdrażamy przed i w trakcie realizacji.",
   items: [
     {
-      tag: "ORGANIZACJA",
-      title: "Przesunięcia ekip i chaos na obiekcie",
+      tag: "HARMONOGRAM",
+      title: "Zmiany na budowie i prace nachodzące na siebie",
       description:
-        "Ustalamy jedno okno realizacji, potwierdzamy ustalenia i koordynujemy prace na miejscu, żeby sprzątanie nie kolidowało z innymi ekipami i etapami.",
-      result: "Efekt? Mniej przestojów i mniej „gaszenia pożarów”.",
+        "Ustalamy okno wejścia i warunki pracy przed startem. Dzięki temu nie wchodzimy w ciemno i nie robimy realizacji, która wraca po godzinie.",
+      result: "Efekt: mniej przestojów i mniej poprawek na końcu.",
     },
     {
       tag: "DOSTĘP",
-      title: "Ograniczenia dostępu i formalności obiektu",
+      title: "Procedury obiektu i blokady na bramie",
       description:
-        "Przed startem wdrażamy NDA, rejestr wejść i wymagane procedury. Dzięki temu w dniu realizacji nie tracimy czasu na blokady i formalności na bramie.",
-      result: "Efekt? Szybsze wejście i płynny start prac.",
+        "Zbieramy wymagania wejścia i dopinamy formalności wcześniej. W dniu realizacji zespół nie traci czasu na uzgodnienia w ostatniej chwili.",
+      result: "Efekt: szybszy start i stabilniejszy przebieg prac.",
     },
     {
-      tag: "ODBIÓR",
-      title: "Poprawki na końcu i „niespodzianki” przy odbiorze",
+      tag: "STANDARD",
+      title: "Różne definicje czystości po stronach",
       description:
-        "Robimy odbiór wewnętrzny checklistą zanim zgłosimy gotowość. Dostarczamy protokoły odbioru i zdjęcia, aby ograniczyć rundy poprawek po stronie Zamawiającego.",
-      result: "Efekt? Krótszy odbiór i mniej poprawek.",
+        "Ustalamy zakres i standard do weryfikacji. Na koniec robimy kontrolę wewnętrzną przed zgłoszeniem gotowości.",
+      result: "Efekt: krótsza lista uwag i szybsze domknięcie tematu.",
     },
     {
-      tag: "USTERKI",
-      title: "Usterki odkryte w trakcie realizacji",
+      tag: "ODPOWIEDZIALNOŚĆ",
+      title: "Usterki i spory kto to zrobił",
       description:
-        "Jeśli coś wychodzi w trakcie — spisujemy protokół usterek i od razu informujemy Zleceniodawcę. Jest jasna decyzja co dalej i dokumentacja „na papierze”.",
-      result: "Efekt? Mniej sporów „kto to zrobił”.",
+        "Jeśli coś wychodzi w trakcie, od razu zgłaszamy i dokumentujemy. Jest jasna informacja, co jest zastane i co wymaga decyzji po Twojej stronie.",
+      result: "Efekt: mniej nieporozumień i mniej sporów po realizacji.",
     },
     {
       tag: "ZASOBY",
-      title: "Ryzyko braku ludzi lub sprzętu na termin",
+      title: "Brak ludzi lub sprzętu w kluczowym momencie",
       description:
-        "Planujemy backup ludzi i sprzętu do każdego zlecenia, aby dowieźć termin nawet przy nagłych zmianach logistyki lub skróceniu okna realizacji na obiekcie.",
-      result: "Efekt? Większa pewność terminu realizacji.",
+        "Planujemy realizację z rezerwą. Jeśli okno się skraca lub warunki się zmieniają, nie zostajesz bez wykonawcy w ostatniej chwili.",
+      result: "Efekt: większa pewność dowiezienia terminu.",
     },
   ],
 };
 
 const ctaContent: CtaSectionContent = {
-  eyebrowText: "JESTEŚMY, BY POMÓC CI DOMKNĄĆ ODBIÓR BEZ STRESU!",
-  title: "Porozmawiajmy, jak dowieźć odbiór i przekazanie obiektu na czas",
+  eyebrowText: "CHCESZ MIEĆ TEMAT Z GŁOWY?",
+  title: "Powiedz, co trzeba domknąć i na kiedy",
   description:
-    "Nie obiecujemy cudów. Dajemy konkrety. W krótkiej rozmowie ustalimy zakres, okno realizacji i standard odbioru, wskażemy ryzyka na obiekcie i przygotujemy ofertę gotową do wysłania dalej (PDF/HTML).",
-  buttonLabel: "Umów bezpłatną konsultację",
+    "W krótkiej rozmowie zbierzemy minimum danych, doprecyzujemy okno wejścia i standard oraz wskażemy ryzyka, które mogą wywrócić realizację. Jeśli temat jest pilny, od razu powiemy, czy mamy moce na termin.",
+  buttonLabel: "Sprawdź dostępność terminu",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "DOWODY Z REALIZACJI",
   titleLines: ["Zobacz, jak pracujemy", "na obiektach w całej Polsce"],
   description:
-    "Zdjęcia z realizacji, zakresy i efekty — plus opinie klientów. Sprawdź, jak dowozimy sprzątanie pod odbiory, przekazanie i otwarcia.",
+    "Zdjęcia z realizacji, zakresy i efekty. Zobacz, jak wygląda domknięcie tematu w praktyce, bez marketingu i bez ogólników.",
   cards: [
     {
       title: "Realizacje",
       description:
-        "Przykładowe obiekty, zakres prac i efekt końcowy. Krótkie case’y ze zdjęciami — bez lania wody, same konkrety.",
+        "Przykładowe obiekty, co było do zrobienia i co zostało dowiezione. Krótkie opisy, zdjęcia i konkretne zakresy.",
       buttonLabel: "Zobacz realizacje",
-    media: {
+      media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje klientów",
+        alt: "Realizacje Domker",
       },
     },
     {
       title: "Referencje i opinie",
       description:
-        "Opinie firm odpowiedzialnych za odbiory. Co doceniają najczęściej: termin, komunikację, protokoły i przewidywalną realizację.",
+        "Co klienci doceniają w współpracy. Termin, komunikacja, porządek w procesie i czytelne potwierdzenie wykonania.",
       buttonLabel: "Zobacz referencje",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje klientów",
+        alt: "Referencje Domker",
       },
     },
   ],
 };
 
 const contactContent: ContactSectionContent = {
-  kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Porozmawiajmy, jak dowieźć odbiór i przekazanie obiektu",
+  kickerLabel: "KONTAKT",
+  title: "Wyślij minimum danych, a my wrócimy z konkretem",
   description:
-    "Zostaw kontakt — wrócimy z krótką listą pytań o termin i zakres. Ustalimy okno prac, standard odbioru i przygotujemy ofertę gotową do wysłania dalej (PDF/HTML).",
+    "Napisz, jaki obiekt i jaki termin. Jeśli masz zdjęcia, dołącz je. Wrócimy z krótką listą pytań, potwierdzimy dostępność i przygotujemy ofertę gotową do przekazania w firmie.",
   chips: [
-    { label: "Odbiór na czas" },
-    { label: "Bez chaosu" },
-    { label: "Protokół + zdjęcia" },
-    { label: "Cała Polska" },
-    { label: "SLA dla sieci" },
-    { label: "Start w 3 dni*", accent: true },
+    { label: "Szybka odpowiedź" },
+    { label: "Jasny zakres" },
+    { label: "Kontrola jakości" },
+    { label: "Potwierdzenie wykonania" },
+    { label: "Obsługa w wielu miastach" },
+    { label: "Wejście nawet w 3 dni", accent: true },
   ],
   form: {
     emailLabel: "Adres e-mail",
     emailPlaceholder: "Twój adres e-mail",
     phoneLabel: "Numer telefonu",
     phonePlaceholder: "Twój numer telefonu",
-    topicLabel: "Temat rozmowy",
-    topicPlaceholder: "Jaki obiekt i na kiedy jest odbiór?",
+    topicLabel: "Temat",
+    topicPlaceholder: "Jaki obiekt i na kiedy jest termin",
     consentText:
       "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
-    submitLabel: "Odbierz ofertę (PDF/HTML)",
+    submitLabel: "Wyślij zapytanie",
   },
   meta: {
     avatars: ["A", "B", "C", "D", "E", "F"],
-    text: "Zespół operacyjny gotowy do wejścia na obiekt",
+    text: "Zespół operacyjny gotowy do wejścia",
   },
 };
-
 export default function Home() {
   return (
     <div className={styles.page}>

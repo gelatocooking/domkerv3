@@ -1,4 +1,6 @@
-import Image from "next/image";
+"use client";
+
+import type { CSSProperties } from "react";
 import Icon from "../Icon/Icon";
 import SectionKicker from "../SectionKicker/SectionKicker";
 import styles from "./HighlightsSection.module.css";
@@ -8,12 +10,6 @@ const bubbles = [
   { text: "Blokuje nas...", className: "bubbleTop" },
   { text: "Nie da się...", className: "bubbleRight" },
   { text: "Mamy dość...", className: "bubbleBottom" },
-] as const;
-
-const team = [
-  { name: "Daniel Angielczyk", role: "Automation Developer" },
-  { name: "Wiktoria Radniecka", role: "Project Manager" },
-  { name: "Damian Trzciński", role: "Business Automation Analyst" },
 ] as const;
 
 const highlights = [
@@ -35,12 +31,17 @@ const highlights = [
       "Dobieramy chemię i technologię do powierzchni, żeby nie zrobić szkody na posadzkach, szkle i armaturze. Ustalamy strefy wrażliwe i sposób zabezpieczenia, a ryzyka dokumentujemy od razu protokołem, zanim przerodzą się w spór. Efekt ma być odbiorowy i bezpieczny.",
     visual: "insights",
   },
-
 ] as const;
 
 export default function HighlightsSection() {
+  // Dopasuj do wysokości headera w Twoim layoucie
+  const headerOffset = "96px";
+
   return (
-    <section className={styles.section}>
+    <section
+      className={styles.section}
+      style={{ "--header-offset": headerOffset } as CSSProperties}
+    >
       <div className={styles.inner}>
         <div className={styles.headingGroup}>
           <SectionKicker label="NASZE WYRÓŻNIKI" />
@@ -57,71 +58,54 @@ export default function HighlightsSection() {
         </div>
 
         <div className={styles.cards}>
-          {highlights.map((item) => (
-            <div key={item.title} className={styles.cardWrap}>
-              <article className={styles.card}>
-                <div className={styles.textBlock}>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={styles.cardText}>{item.text}</p>
-                </div>
+          {highlights.map((item, i) => {
+            const isLast = i === highlights.length - 1;
 
-                {item.visual === "insights" ? (
-                  <div className={styles.visual}>
-                    <div className={styles.trendLine} aria-hidden="true" />
-                    <div className={styles.consultation}>
-                      <span className={styles.leafIcon}>
-                        <Icon name="chevronsRight" size="sm" />
-                      </span>
-                      <span className={styles.consultationText}>KONSULTACJA</span>
-                    </div>
-                    <div className={styles.callout}>
-                      Wiemy, jak działać i nie mamy blokad w rozwoju
-                    </div>
-                    {bubbles.map((bubble) => (
-                      <div
-                        key={bubble.text}
-                        className={`${styles.bubble} ${styles[bubble.className]}`}
-                      >
-                        {bubble.text}
-                      </div>
-                    ))}
+            return (
+              <div
+                key={item.title}
+                className={`${styles.cardWrap} ${isLast ? styles.cardWrapLast : ""}`}
+                style={
+                  {
+                    "--stack-z": `${100 + i}`,
+                  } as CSSProperties
+                }
+              >
+                <article className={styles.card}>
+                  <div className={styles.textBlock}>
+                    <h3 className={styles.cardTitle}>{item.title}</h3>
+                    <p className={styles.cardText}>{item.text}</p>
                   </div>
-                ) : null}
-{/* 
-                {item.visual === "team" ? (
-                  <div className={styles.visualTeam}>
-                    {team.map((member, index) => (
-                      <div
-                        key={member.name}
-                        className={`${styles.profileCard} ${styles[`profile${index + 1}`]}`}
-                      >
-                        <span className={styles.profileAvatar} aria-hidden="true">
-                          {member.name.charAt(0)}
+
+                  {item.visual === "insights" ? (
+                    <div className={styles.visual}>
+                      <div className={styles.trendLine} aria-hidden="true" />
+
+                      <div className={styles.consultation}>
+                        <span className={styles.leafIcon}>
+                          <Icon name="chevronsRight" size="sm" />
                         </span>
-                        <div className={styles.profileInfo}>
-                          <span className={styles.profileName}>{member.name}</span>
-                          <span className={styles.profileRole}>{member.role}</span>
-                        </div>
+                        <span className={styles.consultationText}>KONSULTACJA</span>
                       </div>
-                    ))}
-                  </div>
-                ) : null}
 
-                {item.visual === "dashboard" ? (
-                  <div className={styles.visualDashboard}>
-                    <div className={styles.dashboardFrame}>
-                      <Image
-                        src="/window.svg"
-                        alt="Podgląd systemu"
-                        fill
-                        className={styles.dashboardImage}
-                      />
+                      <div className={styles.callout}>
+                        Wiemy, jak działać i nie mamy blokad w rozwoju
+                      </div>
+
+                      {bubbles.map((bubble) => (
+                        <div
+                          key={bubble.text}
+                          className={`${styles.bubble} ${styles[bubble.className]}`}
+                        >
+                          {bubble.text}
+                        </div>
+                      ))}
                     </div>
-                  </div>
-                ) : null} */}
-              </article>
-            </div>
-          ))}
+                  ) : null}
+                </article>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

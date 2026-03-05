@@ -1,0 +1,33 @@
+.row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-success-0_12);
+  color: var(--c-green-deep-0_100_58);
+  border-radius: var(--r-100);
+  padding: var(--sp-16);
+}
+
+.typed {
+  display: inline-block;
+  font-style: italic;
+  overflow: visible;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: var(--sp-0) var(--sp-8) var(--sp-0) var(--sp-2);
+  min-height: 1.4em;
+  position: relative;
+  font-weight: var(--fw-500);
+}
+
+.slash {
+  composes: text-muted from global;
+  display: inline-flex;
+  align-items: center;
+}

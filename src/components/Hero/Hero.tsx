@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import Button from "../Button/Button";
-import Icon, { type IconName } from "../Icon/Icon";
+import { HeroHeadline } from "../HeroHeadline/HeroHeadline";
+import { type IconName } from "../Icon/Icon";
 import styles from "./Hero.module.css";
 
 export interface HeroContent {
@@ -35,15 +36,14 @@ export default function Hero({ content }: HeroProps) {
               </span>
             ))}
             {content.emphasisText ? (
-              <span className={styles.headingRow}>
-                <span className={styles.iconBadge}>
-                  <Icon name={content.emphasisIconName ?? "lightbulb"} size="md" />
-                </span>
-                <em className={styles.headingEm}>{content.emphasisText}</em>
-                {content.emphasisSuffix ? (
-                  <span className={styles.headingSlash}>{content.emphasisSuffix}</span>
-                ) : null}
-              </span>
+              <HeroHeadline
+                text={content.emphasisText}
+                suffix={content.emphasisSuffix}
+                charsPerSecond={18}
+                startDelayMs={250}
+                loop={false}
+                cursor={true}
+              />
             ) : null}
           </h1>
 

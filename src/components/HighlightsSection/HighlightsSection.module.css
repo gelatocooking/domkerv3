@@ -2,6 +2,7 @@
   composes: section from global;
   padding-left: var(--sp-0);
   padding-right: var(--sp-0);
+  --header-offset: 96px;
 }
 
 .inner {
@@ -46,33 +47,66 @@
   margin: var(--sp-0);
 }
 
+/* ==============================
+   STACK jak Let's Automate
+   ============================== */
+
 .cards {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-32);
+  gap: var(--gap-32); /* designowy odstęp */
 }
 
+/* sticky dla wszystkich POZA ostatnią */
 .cardWrap {
-  position: relative;
+  position: sticky;
+  top: calc(var(--header-offset) + 16px);
+  z-index: var(--stack-z, 1);
+
+  display: flex;
+  justify-content: center;
+  will-change: transform;
 }
+
+/* ✅ FIX: ostatnia karta NIE jest sticky -> nie “jedzie dalej” */
+.cardWrapLast {
+  position: relative;
+  top: auto;
+  z-index: var(--stack-z, 1);
+}
+
+/* ==============================
+   CARD
+   ============================== */
 
 .card {
-  width: 100%;
-  background: linear-gradient(
+  width: min(1120px, 100%);
+  margin: 0 auto;
+
+  background: var(--bg-white);
+  background-image: linear-gradient(
     180deg,
     var(--bg-success-0_12) 0%,
     var(--bg-success-0_12) 70%,
     var(--bg-white) 100%
   );
+
   border-radius: var(--r-24);
   padding: var(--sp-40);
+
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: var(--gap-32);
   align-items: center;
+
   overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
 }
+
+/* ==============================
+   VISUAL
+   ============================== */
 
 .visual {
   position: relative;
@@ -154,88 +188,23 @@
   bottom: 10%;
 }
 
-.visualTeam {
-  position: relative;
-  width: 100%;
-  min-height: calc(var(--sp-210) + var(--sp-60));
-}
-
-.profileCard {
-  position: absolute;
-  right: var(--sp-0);
-  display: flex;
-  align-items: center;
-  gap: var(--gap-12);
-  background: var(--bg-white);
-  border-radius: var(--r-16);
-  padding: var(--sp-12) var(--sp-16);
-  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
-}
-
-.profile1 {
-  top: var(--sp-0);
-}
-
-.profile2 {
-  top: var(--sp-60);
-}
-
-.profile3 {
-  top: calc(var(--sp-210) - var(--sp-24));
-}
-
-.profileAvatar {
-  width: var(--sp-40);
-  height: var(--sp-40);
-  border-radius: var(--r-100);
-  background: var(--bg-soft);
-  color: var(--c-text-64_64_64);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  composes: t-12 t-medium from global;
-}
-
-.profileInfo {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-4);
-}
-
-.profileName {
-  composes: t-14 t-medium text-dark from global;
-}
-
-.profileRole {
-  composes: t-12 t-medium text-green-deep from global;
-  background: var(--bg-success-0_12);
-  border-radius: var(--r-100);
-  padding: var(--sp-4) var(--sp-8);
-  width: fit-content;
-}
-
-.visualDashboard {
-  position: relative;
-  width: 100%;
-  min-height: calc(var(--sp-210) + var(--sp-60));
-}
-
-.dashboardFrame {
-  position: relative;
-  width: 100%;
-  height: calc(var(--sp-210) + var(--sp-60));
-  background: var(--bg-white);
-  border-radius: var(--r-16);
-  overflow: hidden;
-  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
-}
-
-.dashboardImage {
-  object-fit: cover;
-}
+/* ==============================
+   RESPONSIVE
+   ============================== */
 
 @media (max-width: 1023px) {
+  .cardWrap {
+    position: static;
+    top: auto;
+    z-index: auto;
+  }
+
+  .cardWrapLast {
+    position: static;
+  }
+
   .card {
+    width: 100%;
     grid-template-columns: 1fr;
   }
 }

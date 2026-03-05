@@ -19,48 +19,109 @@ import CtaSection, { type CtaSectionContent } from "../../components/CtaSection/
 import SolutionsSection, { SolutionsSectionContent } from "@/components/SolutionsSection/SolutionsSection";
 import KnowledgeSection, { KnowledgeSectionContent } from "@/components/KnowledgeSection/KnowledgeSection";
 
+// /sprzatanie-dla-firm
+
 const defaultContent: HeroContent = {
   badge: "SPRZĄTANIE DLA FIRM I SIECI",
   titleLines: ["Sprzątanie dla firm i sieci", "handlowych pod termin"],
   emphasisIconName: "lightbulb",
   emphasisSuffix: "/",
   description:
-    "To hub współpracy B2B: wybierasz scenariusz, widzisz jak prowadzimy temat operacyjnie i przechodzisz do właściwej usługi. „Zamknięcie tematu” = oferta do zatwierdzenia + protokoły odbioru + zdjęcia.",
-  ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+    "To strona wyboru scenariusza. Wybierasz sytuację, a my pokazujemy jak wygląda wejście, jak prowadzimy realizację i co dostajesz na końcu do rozliczenia i zamknięcia tematu w firmie.",
+  ctaLabel: "Wyślij minimum danych",
   imageSrc: "/tlo.png",
   imageAlt: "Sprzątanie dla firm i sieci",
 };
+
+const problemsContent: ProblemsSectionContent = {
+  kickerLabel: "ZNASZ TE WYZWANIA?",
+  titleLines: ["Co firmy realnie chcą mieć", "„załatwione”"],
+  description:
+    "W B2B najdroższe są niedopowiedzenia. Dlatego ten hub porządkuje temat: scenariusz, warunki wejścia, standard, komunikacja i potwierdzenie wykonania w formie, którą da się przekazać dalej.",
+  items: [
+    {
+      iconName: "calendarClock",
+      label: "OKNO",
+      title: "Wejście bez blokad",
+      description:
+        "Jeden termin wejścia, potwierdzone warunki i jasny plan dnia na obiekcie.",
+      tone: "processes",
+    },
+    {
+      iconName: "workflow",
+      label: "KOORDYNACJA",
+      title: "Jedna osoba po stronie wykonawcy",
+      description:
+        "Stały kontakt, krótkie ustalenia i szybkie decyzje bez ping-ponga między ekipami.",
+      tone: "processes",
+    },
+    {
+      iconName: "layoutGrid",
+      label: "WIELE PUNKTÓW",
+      title: "Powtarzalny standard w sieci",
+      description:
+        "Ten sam zakres, checklisty i kontrola jakości, niezależnie od miasta i lokalizacji.",
+      tone: "data",
+    },
+    {
+      iconName: "truck",
+      label: "CIĄGŁOŚĆ",
+      title: "Zastępstwa i rezerwa mocy",
+      description:
+        "Backup ludzi i sprzętu, żeby nie zatrzymać realizacji, gdy coś wypada w ostatniej chwili.",
+      tone: "resources",
+    },
+    {
+      iconName: "shieldAlert",
+      label: "RYZYKO",
+      title: "Bezpieczne wejście po pracach",
+      description:
+        "Zasady pracy na nowych powierzchniach i ograniczenie ryzyk uszkodzeń przez technologię.",
+      tone: "risk",
+    },
+    {
+      iconName: "fileText",
+      label: "ROZLICZENIE",
+      title: "Temat zamknięty w papierach",
+      description:
+        "Dokumenty i potwierdzenia w formie, którą łatwo rozliczyć i zamknąć po stronie firmy.",
+      tone: "technology",
+    },
+  ],
+};
+
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "WYBIERZ SCENARIUSZ",
   titleLines: ["Wybierz scenariusz", "i przejdź od problemu do decyzji"],
   description:
-    "To hub współpracy B2B. Wybierz sytuację — pokażemy, kiedy ma sens, jak dowozimy temat operacyjnie i gdzie przejść do właściwej usługi.",
+    "Każdy scenariusz ma inny tryb pracy i inne ryzyka. Wybierz sytuację, a przeprowadzimy Cię przez właściwą usługę i najkrótszą ścieżkę do domknięcia tematu.",
   items: [
     {
       iconName: "hardHat",
       label: "Sprzątanie po budowie / przed otwarciem",
-      title: "Kiedy liczy się czas: odbiór, przekazanie, otwarcie",
+      title: "Gdy liczysz dni, nie tygodnie",
       description:
-        "Ustawiamy priorytety i okno wejścia, żeby zamknąć temat w terminie: kolejność prac, wejścia „między robotami”, odbiór wewnętrzny checklistą + zdjęcia.",
+        "Ustalamy okno wejścia, priorytety i kontrolę wewnętrzną. Przechodzisz dalej do usługi i widzisz, jak domykamy etap pod termin.",
       ctaLabel: "Zobacz usługę",
       mediaAlt: "Sprzątanie po budowie",
-      mediaSrc: "/sprzatanie-po-budowie",},
+      mediaSrc: "/sprzatanie-po-budowie",
+    },
     {
       iconName: "clipboardList",
       label: "Sieci: wiele lokalizacji",
-      title: "Gdy problemem jest powtarzalność i losowość ekip",
+      title: "Gdy problemem jest rozproszenie",
       description:
-        "Dowozimy standard w wielu miastach: koordynacja i jeden kontakt, checklisty i kontrola wykonania, backup ludzi i sprzętu dla ciągłości terminu.",
-      ctaLabel: "Zapytaj / wyślij minimum danych",
+        "Koordynacja w wielu miastach, jeden kontakt i jeden standard. Układamy harmonogramy, kontrolę i raportowanie, żeby wynik był porównywalny.",
+      ctaLabel: "Wyślij minimum danych",
       mediaAlt: "Obsługa sieci",
       mediaSrc: "/kontakt#minimum-danych",
     },
     {
       iconName: "building2",
       label: "Stała obsługa: biura i lokale",
-      title: "Gdy chcesz stały standard bez przerw i zastępstwa",
+      title: "Gdy chcesz stabilnego standardu",
       description:
-        "Utrzymanie działa, gdy jest poukładane: harmonogram i zakres, kontrola jakości, szybkie korekty oraz ciągłość serwisu (zastępstwa ludzi i sprzętu).",
+        "Stały zakres, grafiki, kontrola jakości i szybkie korekty. Zamiast szukania wykonawcy co miesiąc masz serwis, który działa w tle.",
       ctaLabel: "Zobacz usługę",
       mediaAlt: "Utrzymanie czystości",
       mediaSrc: "/utrzymanie-czystosci",
@@ -68,9 +129,9 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "sparkles",
       label: "Witryny: abonament / ryczałt dla sieci",
-      title: "Gdy chcesz mieć temat „z głowy” i przewidywalne terminy",
+      title: "Gdy liczy się powtarzalność i raport",
       description:
-        "Abonament i szybka wycena ze zdjęć. Dla sieci możliwy ryczałt: stałe okna realizacji, logistyka po naszej stronie i raport po wykonaniu.",
+        "Stałe okna realizacji, logistyka po naszej stronie i potwierdzenie wykonania po każdej wizycie. Dobre rozwiązanie, gdy chcesz temat zautomatyzować.",
       ctaLabel: "Zobacz usługę",
       mediaAlt: "Mycie witryn i okien",
       mediaSrc: "/mycie-okien-i-witryn",
@@ -78,9 +139,9 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "grid3x3",
       label: "Posadzki: doczyszczanie (B2B)",
-      title: "Gdy zabrudzenia wymagają technologii i pewnego efektu",
+      title: "Gdy standard ma być widoczny",
       description:
-        "Maszynowe czyszczenie dopasowane do typu posadzki i zabrudzeń: ekspertyza plam, bezpieczna chemia i odplamianie, efekt do odbioru bez ryzyka uszkodzeń.",
+        "Doczyszczanie i odplamianie pod typ nawierzchni. Przechodzisz do usługi i widzisz, kiedy ma sens technologia zamiast doraźnych prób.",
       ctaLabel: "Zobacz usługę",
       mediaAlt: "Maszynowe czyszczenie posadzek",
       mediaSrc: "/maszynowe-czyszczenie-posadzek",
@@ -88,98 +149,12 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "mapPin",
       label: "Zasięg i moce przerobowe",
-      title: "Cała Polska + tempo, gdy warunki wejścia są potwierdzone",
+      title: "Gdy działasz w więcej niż jednym mieście",
       description:
-        "Dobieramy zespoły i sprzęt do terminu: do 5000 m² dziennie lub do 300 doczyszczonych okien dziennie* — zależnie od zakresu i okna realizacji na obiekcie.",
+        "Dobieramy zespoły do terminu i okna wejścia. Zasięg ogólnopolski pozwala prowadzić jedną współpracę zamiast wielu lokalnych ustaleń.",
       ctaLabel: "Sprawdź dostępność",
       mediaAlt: "Zasięg realizacji",
       mediaSrc: "/kontakt",
-    },
-  ],
-};
-const contactContent: ContactSectionContent = {
-  kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Porozmawiajmy, jak dowieźć odbiór i przekazanie obiektu",
-  description:
-    "Zostaw kontakt — wrócimy z krótką listą pytań o termin i zakres. Ustalimy okno prac, standard odbioru i przygotujemy ofertę gotową do wysłania dalej (PDF/HTML).",
-  chips: [
-    { label: "Odbiór na czas" },
-    { label: "Bez chaosu" },
-    { label: "Protokół + zdjęcia" },
-    { label: "Cała Polska" },
-    { label: "SLA dla sieci" },
-    { label: "Start w 3 dni*", accent: true },
-  ],
-  form: {
-    emailLabel: "Adres e-mail",
-    emailPlaceholder: "Twój adres e-mail",
-    phoneLabel: "Numer telefonu",
-    phonePlaceholder: "Twój numer telefonu",
-    topicLabel: "Temat rozmowy",
-    topicPlaceholder: "Jaki obiekt i na kiedy jest odbiór?",
-    consentText:
-      "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
-    submitLabel: "Odbierz ofertę (PDF/HTML)",
-  },
-  meta: {
-    avatars: ["A", "B", "C", "D", "E", "F"],
-    text: "Zespół operacyjny gotowy do wejścia na obiekt",
-  },
-};
-
-const problemsContent: ProblemsSectionContent = {
-  kickerLabel: "ZNASZ TE WYZWANIA?",
-  titleLines: ["Co firmy realnie chcą mieć", "„załatwione”"],
-  description:
-    "W B2B nie wygrywa najładniejszy opis. Wygrywa przewidywalność: wejście, bezpieczeństwo wykończeń, standard w wielu lokalizacjach i domknięcie tematu dokumentami.",
-  items: [
-    {
-      iconName: "calendarClock",
-      label: "OKNO",
-      title: "Wejście w oknie",
-      description:
-        "Także po godzinach i „między robotami” — dopasowane do harmonogramu na obiekcie.",
-      tone: "processes",
-    },
-    {
-      iconName: "sparkles",
-      label: "WYKOŃCZENIA",
-      title: "Bezpieczne dla wykończeń",
-      description:
-        "Podłogi, szkło i armatura — technologia dobrana tak, by nie zostawić rys i matu.",
-      tone: "risk",
-    },
-    {
-      iconName: "fileText",
-      label: "OFERTA",
-      title: "Oferta gotowa do przekazania",
-      description:
-        "PDF/HTML do zatwierdzenia — bez 5 rund doprecyzowań i dopytywania o podstawy.",
-      tone: "data",
-    },
-    {
-      iconName: "layoutGrid",
-      label: "SIEĆ",
-      title: "Powtarzalny standard w sieci",
-      description:
-        "Stały zakres, checklisty i kontrola jakości — ten sam efekt w wielu lokalizacjach.",
-      tone: "processes",
-    },
-    {
-      iconName: "truck",
-      label: "CIĄGŁOŚĆ",
-      title: "Ciągłość serwisu",
-      description:
-        "Zastępstwa ludzi i sprzętu — żeby dowieźć termin, nawet gdy coś „się wysypie”.",
-      tone: "resources",
-    },
-    {
-      iconName: "clipboardCheck",
-      label: "DOKUMENTY",
-      title: "Domknięcie tematu",
-      description:
-        "Protokoły odbioru + zdjęcia — gotowe do przekazania dalej i do zamknięcia etapu.",
-      tone: "technology",
     },
   ],
 };
@@ -188,54 +163,54 @@ const benefitsContent: BenefitsSectionContent = {
   kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
   titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
   description:
-    "To elementy, które Domker zapewnia i dokumentuje, żeby dało się wejść na obiekt i przejść odbiór zgodnie z procedurami — bez blokad, niedomówień i „braków w papierach”.",
+    "W firmach nie chodzi tylko o wykonanie. Chodzi o dopuszczenie do obiektu, zgodność z procedurami i jasną odpowiedzialność. To elementy, które porządkujemy już na starcie współpracy.",
   items: [
     {
       iconName: "users",
-      label: "KADRY",
-      title: "Legalne zatrudnienie i przeszkolone zespoły",
+      label: "ZESPOŁY",
+      title: "Stałe ekipy i jasne przypisanie",
       description:
-        "Pracownicy są legalnie zatrudnieni i przeszkoleni. Dzięki temu wchodzisz w realizację bez ryzyk kadrowych i przestojów.",
+        "Wiesz, kto wchodzi i kto odpowiada. To skraca ustalenia i przyspiesza realizację na kolejnych punktach.",
       tone: "resources",
     },
     {
       iconName: "shieldAlert",
       label: "BHP",
-      title: "Szkolenia BHP i analiza zagrożeń przed startem",
+      title: "Wejście zgodne z zasadami obiektu",
       description:
-        "Przygotowujemy wejście zgodnie z BHP i analizą ryzyk na obiekcie. To ogranicza incydenty i ułatwia dopuszczenie do prac.",
+        "Dopasowujemy się do wymagań i ograniczeń, żeby nie było zatrzymań prac w dniu realizacji.",
       tone: "risk",
     },
     {
-      iconName: "clipboardCheck",
-      label: "DOKUMENTY",
-      title: "Protokoły odbioru + zdjęcia (i protokół usterek, gdy dotyczy)",
+      iconName: "database",
+      label: "POUFNOŚĆ",
+      title: "Procedury i poufność, gdy są wymagane",
       description:
-        "Domykamy temat dokumentami: protokół odbioru i zdjęcia. Jeśli wyjdą usterki — dostajesz protokół do decyzji co dalej.",
+        "Jeśli obiekt tego wymaga, dopinamy formalności wcześniej, a nie w ostatniej chwili przy wejściu.",
+      tone: "processes",
+    },
+    {
+      iconName: "clipboardCheck",
+      label: "POTWIERDZENIA",
+      title: "Kontrola i potwierdzenie wykonania",
+      description:
+        "Na koniec dostajesz czytelne potwierdzenie, żeby dało się zamknąć temat wewnętrznie i rozliczyć usługę.",
       tone: "data",
     },
     {
       iconName: "clipboardCheck",
       label: "OC",
-      title: "Ubezpieczenie OC na jasno określonych poziomach",
+      title: "OC i odpowiedzialność po stronie wykonawcy",
       description:
-        "OC: do końca marca 2026 — 500 000 zł. Od kwietnia 2026 — 2 000 000 zł. Masz jasność odpowiedzialności po naszej stronie.",
+        "Masz jasność, jak wygląda odpowiedzialność i zabezpieczenie współpracy na obiektach komercyjnych.",
       tone: "finance",
     },
     {
-      iconName: "database",
-      label: "POUFNOŚĆ",
-      title: "Umowa o zachowaniu poufności i rejestr wejść, jeśli obiekt tego wymaga",
-      description:
-        "Wdrażamy formalności przed startem: NDA, rejestr wejść i procedury obiektu. Dzięki temu nie ma blokad w dniu realizacji.",
-      tone: "processes",
-    },
-    {
       iconName: "fileText",
-      label: "ROZLICZENIA",
-      title: "Umowa i faktura VAT — standard B2B",
+      label: "B2B",
+      title: "Umowa i faktura VAT jako standard",
       description:
-        "Pracujemy na umowie i wystawiamy fakturę VAT. Prosty, akceptowalny proces zakupowy i komplet dokumentów do przekazania dalej.",
+        "Prosty proces zakupowy, który przechodzi przez księgowość i działy operacyjne bez dodatkowych „dogrywek”.",
       tone: "technology",
     },
   ],
@@ -245,34 +220,104 @@ const processContent: ProcessSectionContent = {
   kickerLabel: "JAK DZIAŁAMY?",
   titleLines: ["Transparentna współpraca", "krok po kroku"],
   description:
-    "Skuteczne wdrożenie to efekt jasnego planu i bliskiej współpracy. Dlatego prowadzimy Cię sprawdzonym procesem, który daje przewidywalność i dopasowanie do realnych potrzeb Twojego biznesu.",
+    "Ten proces dotyczy współpracy B2B i sieci. Zamiast wymiany dziesiątek maili ustalamy minimum danych, scenariusz i standard, a potem dowozimy realizację w przewidywalny sposób.",
   steps: [
     {
       index: "01",
-      title: "Bezpłatne warsztaty i koncepcja",
+      title: "Minimum danych i szybka kwalifikacja",
       description:
-        "Zaczynamy od warsztatów, podczas których poznajemy Twoje potrzeby i wyzwania. Tworzymy wstępną koncepcję aplikacji, klikany prototyp i widełki cenowe — bez zobowiązań.",
+        "Zbieramy podstawy: typ obiektu, skala, miasto i termin. Jeśli temat jest pilny, od razu potwierdzamy dostępność i ryzyka wejścia.",
     },
     {
       index: "02",
-      title: "Plan działania i analiza biznesowa",
+      title: "Ustalenie scenariusza i standardu",
       description:
-        "Organizujemy warsztat zerowy, na którym precyzujemy zakres prac, doprecyzowujemy funkcjonalności i harmonogram. Równolegle nasi analitycy i projektanci mapują procesy i tworzą specyfikację oraz intuicyjny interfejs.",
+        "Doprecyzowujemy zakres i standard do weryfikacji. W sieciach ustalamy powtarzalność, okna realizacji i sposób kontroli.",
     },
     {
       index: "03",
-      title: "Development i testy",
+      title: "Realizacja i bieżąca komunikacja",
       description:
-        "Do pracy przystępują doświadczeni deweloperzy. System powstaje moduł po module. Testy odbywają się równolegle z developmentem — dzięki temu błędy są eliminowane na bieżąco.",
+        "Wchodzimy zgodnie z oknem, pracujemy według ustaleń i trzymamy komunikację po drodze, żeby decyzje nie czekały do końca dnia.",
     },
     {
       index: "04",
-      title: "Wdrożenie i płynny start",
+      title: "Potwierdzenie i domknięcie tematu",
       description:
-        "Dbamy, by uruchomienie systemu było bezproblemowe. Pomagamy w migracji danych, szkolimy zespół i zapewniamy wsparcie, by system działał od pierwszego dnia.",
+        "Dostarczamy potwierdzenie wykonania w formie gotowej do przekazania dalej. Temat jest zamknięty, a nie „do dopilnowania”.",
     },
   ],
-  ctaLabel: "Umów bezpłatne warsztaty",
+  ctaLabel: "Wyślij minimum danych",
+};
+
+const ctaContent: CtaSectionContent = {
+  eyebrowText: "DOBIERZMY SCENARIUSZ",
+  title: "Powiedz, co chcesz mieć załatwione i w jakim trybie",
+  description:
+    "Jeśli masz jedną lokalizację, wystarczy miasto, metraż i termin. Jeśli to sieć, podaj liczbę punktów i częstotliwość. Wrócimy z krótką listą pytań i najprostszą ścieżką realizacji.",
+  buttonLabel: "Wyślij minimum danych",
+  avatars: ["A", "B", "C", "D", "E", "F", "G"],
+};
+
+const knowledgeContent: KnowledgeSectionContent = {
+  kickerLabel: "REALIZACJE I REFERENCJE",
+  titleLines: ["Zobacz, jak pracujemy", "w różnych scenariuszach B2B"],
+  description:
+    "Przykładowe realizacje z różnych typów obiektów. Zobacz, jak wygląda współpraca w praktyce, od pierwszego kontaktu po domknięcie tematu.",
+  cards: [
+    {
+      title: "Realizacje",
+      description:
+        "Zakresy i efekty z obiektów komercyjnych. Krótkie case’y, które pokazują tryb pracy i rezultat.",
+      buttonLabel: "Zobacz realizacje",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Realizacje Domker",
+      },
+    },
+    {
+      title: "Referencje i opinie",
+      description:
+        "Co klienci B2B doceniają w współpracy. Najczęściej przewidywalność, komunikację i łatwe rozliczenie tematu.",
+      buttonLabel: "Zobacz referencje",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Referencje Domker",
+      },
+    },
+  ],
+};
+
+const contactContent: ContactSectionContent = {
+  kickerLabel: "SKONTAKTUJ SIĘ",
+  title: "Wyślij minimum danych, a my ułożymy resztę",
+  description:
+    "Opisz sytuację jednym zdaniem. Jeśli to sieć, dopisz liczbę lokalizacji i miasta. Jeśli to pojedynczy obiekt, wystarczy metraż i termin. Wrócimy z krótką listą pytań i konkretnym następnym krokiem.",
+  chips: [
+    { label: "Dobór scenariusza" },
+    { label: "Jeden kontakt" },
+    { label: "Standard w sieci" },
+    { label: "Kontrola jakości" },
+    { label: "Zasięg ogólnopolski" },
+    { label: "Szybka kwalifikacja", accent: true },
+  ],
+  form: {
+    emailLabel: "Adres e-mail",
+    emailPlaceholder: "Twój adres e-mail",
+    phoneLabel: "Numer telefonu",
+    phonePlaceholder: "Twój numer telefonu",
+    topicLabel: "Temat rozmowy",
+    topicPlaceholder: "Ile lokalizacji lub jaki obiekt i na kiedy",
+    consentText:
+      "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
+    submitLabel: "Wyślij minimum danych",
+  },
+  meta: {
+    avatars: ["A", "B", "C", "D", "E", "F"],
+    text: "Zespół operacyjny po stronie B2B",
+  },
 };
 
 const faqContent: FaqSectionContent = {
@@ -331,45 +376,6 @@ const faqContent: FaqSectionContent = {
       question: "Czy odpowiecie, jeśli mam niepełne informacje?",
       answer:
         "Tak. Jeśli masz tylko podstawy (np. miasto i termin), wrócimy z krótką listą pytań, żeby domknąć minimum danych. Dopiero wtedy podamy sensowne widełki i kolejny krok.",
-    },
-  ],
-};
-const ctaContent: CtaSectionContent = {
-  eyebrowText: "JESTEŚMY, BY POMÓC CI DOMKNĄĆ ODBIÓR BEZ STRESU!",
-  title: "Porozmawiajmy, jak dowieźć odbiór i przekazanie obiektu na czas",
-  description:
-    "Nie obiecujemy cudów. Dajemy konkrety. W krótkiej rozmowie ustalimy zakres, okno realizacji i standard odbioru, wskażemy ryzyka na obiekcie i przygotujemy ofertę gotową do wysłania dalej (PDF/HTML).",
-  buttonLabel: "Umów bezpłatną konsultację",
-  avatars: ["A", "B", "C", "D", "E", "F", "G"],
-};
-
-const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
-  titleLines: ["Zobacz, jak pracujemy", "na obiektach w całej Polsce"],
-  description:
-    "Zdjęcia z realizacji, zakresy i efekty — plus opinie klientów. Sprawdź, jak dowozimy sprzątanie pod odbiory, przekazanie i otwarcia.",
-  cards: [
-    {
-      title: "Realizacje",
-      description:
-        "Przykładowe obiekty, zakres prac i efekt końcowy. Krótkie case’y ze zdjęciami — bez lania wody, same konkrety.",
-      buttonLabel: "Zobacz realizacje",
-    media: {
-        type: "image",
-        src: "/tlo.png",
-        alt: "Referencje klientów",
-      },
-    },
-    {
-      title: "Referencje i opinie",
-      description:
-        "Opinie firm odpowiedzialnych za odbiory. Co doceniają najczęściej: termin, komunikację, protokoły i przewidywalną realizację.",
-      buttonLabel: "Zobacz referencje",
-      media: {
-        type: "image",
-        src: "/tlo.png",
-        alt: "Referencje klientów",
-      },
     },
   ],
 };
