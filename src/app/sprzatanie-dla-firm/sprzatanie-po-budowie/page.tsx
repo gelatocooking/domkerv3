@@ -116,8 +116,6 @@ const ctaContent: CtaSectionContent = {
 const defaultContent: PagesHeroContent = {
   badge: "SPRZĄTANIE PO BUDOWIE (B2B)",
   titleLines: ["Sprzątanie po budowie", "pod odbiory bez ryzyka"],
-  emphasisText: "dla wykończeń",
-  emphasisIconName: "shieldAlert",
   emphasisSuffix: "/",
   description:
     "Końcówka budowy to etap, w którym wychodzą detale: pył technologiczny, smugi pod światło, ślady po foliach i klejach, ranty przy listwach i profilach. Dlatego prowadzimy sprzątanie pod odbiór jak proces: standard → strefy → technologia → kontrola.",

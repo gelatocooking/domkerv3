@@ -36,13 +36,15 @@ export default function Header() {
         <div className={styles.logoBox}>
           <div className={styles.logo}>
             <span className={styles.logoMark}>
+              <a href="/">
               <Image
                 src="/domker-logo.png"
                 alt="Domker logo"
                 fill
                 className={styles.logoImage}
                 priority
-              />
+                />
+                </a>
             </span>
           </div>
         </div>
