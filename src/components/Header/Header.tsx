@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -13,8 +13,9 @@ const navItems = [
     dropdownItems: [
       {
         icon: "megaphone",
-        title: "Sprzatątanie po budowie",
-        description: "Sprzatanie po budowie i remoncie dla firm",
+        title: "Sprzątanie po budowie",
+        description: "Sprzątanie po budowie i remoncie dla firm",
+        href: "/sprzatanie-dla-firm/sprzatanie-po-budowie",
       },
     
     ],
@@ -66,7 +67,7 @@ export default function Header() {
                       <ul className={styles.dropdownList}>
                         {item.dropdownItems.map((entry) => (
                           <li key={entry.title}>
-                            <a href="#" className={styles.dropdownItem}>
+                            <a href={entry.href} className={styles.dropdownItem}>
                               <span className={styles.dropdownIconWrap}>
                                 <Icon name={entry.icon} size="md" />
                               </span>

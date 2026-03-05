@@ -294,7 +294,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "database",
       label: "Poufność",
-      title: "NDA i rejestr wejść, jeśli obiekt tego wymaga",
+      title: "Umowa o zachowaniu poufności i rejestr wejść, jeśli obiekt tego wymaga",
       description:
         "Procedury dopinamy przed wejściem. Dzięki temu w dniu realizacji nie ma blokad na bramie i nie tracimy okna prac.",
       tone: "processes",
