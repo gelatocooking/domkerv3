@@ -109,6 +109,15 @@
   position: relative;
 }
 
+.navItem::after {
+  content: "";
+  position: absolute;
+  left: var(--sp-0);
+  right: var(--sp-0);
+  top: 100%;
+  height: var(--sp-12);
+}
+
 .dropdown {
   position: absolute;
   top: 100%;
