@@ -7,6 +7,7 @@
   backdrop-filter: blur(var(--sp-60));
   -webkit-backdrop-filter: blur(var(--sp-s60));
   isolation: isolate;
+  z-index: 9999;
 }
 
 .header::before {
@@ -122,7 +123,10 @@
   transform: translateY(var(--sp-8));
   pointer-events: none;
   z-index: 10;
-  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms ease;
 }
 
 .dropdownList {
@@ -230,7 +234,10 @@
     transform: translateY(var(--sp-8));
     pointer-events: none;
     overflow: hidden;
-    transition: max-height 240ms ease, opacity 240ms ease, transform 240ms ease;
+    transition:
+      max-height 240ms ease,
+      opacity 240ms ease,
+      transform 240ms ease;
   }
 
   .nav {

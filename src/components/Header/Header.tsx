@@ -9,28 +9,14 @@ import styles from "./Header.module.css";
 const navItems = [
   {
     label: "Usługi dla firm",
-    href: "#",
+    href: "/sprzatanie-dla-firm",
     dropdownItems: [
       {
         icon: "megaphone",
-        title: "Automatyzacja w sprzedaży i marketingu",
-        description: "Zwiększenie efektywności działań",
+        title: "Sprzatątanie po budowie",
+        description: "Sprzatanie po budowie i remoncie dla firm",
       },
-      {
-        icon: "messageSquare",
-        title: "Automatyzacja w obsłudze klienta",
-        description: "Przyspieszanie obsługi i zwiększeniu satysfakcji klienta",
-      },
-      {
-        icon: "fileText",
-        title: "Automatyzacja w administracji",
-        description: "Lepsze zarządzanie firmowymi dokumentami i raportami",
-      },
-      {
-        icon: "users",
-        title: "Automatyzacja w rekrutacji i HR",
-        description: "Usprawnianie obiegu dokumentów i optymalizacja procesów",
-      },
+    
     ],
   },
   { label: "Referencje", href: "#", dropdownItems: [] },

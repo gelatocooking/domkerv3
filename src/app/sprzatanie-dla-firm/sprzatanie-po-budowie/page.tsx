@@ -25,7 +25,7 @@ import KnowledgeSection, {
 
 // /sprzatanie-po-budowie — unikalny content (SEO + konwersja, głębiej, bez kanibalizacji)
 const faqContent: FaqSectionContent = {
-  kickerLabel: "Najczęściej zadawane pytania",
+  kickerLabel: "NAJCZĘŚCIEJ ZADAWANE PYTANIA",
   title: "Masz pytania? Odpowiadamy!",
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
@@ -89,7 +89,7 @@ const faqContent: FaqSectionContent = {
     {
       question: "Czy potrzebujecie wizji lokalnej przed sprzątaniem po budowie?",
       answer:
-        "Nie zawsze. W wielu przypadkach wystarczą zdjęcia i komplet informacji. Wizja jest potrzebna głównie wtedy, gdy stan powierzchni i zabrudzeń wpływa na technologię, czas lub ryzyko (np. dużo klejów/folii, trudne posadzki, wymagający standard).",
+        "Nie zawsze. W wielu przypadkach wystarczają zdjęcia i komplet informacji. Wizja jest potrzebna głównie wtedy, gdy stan powierzchni i zabrudzeń wpływa na technologię, czas lub ryzyko (np. dużo klejów/folii, trudne posadzki, wymagający standard).",
     },
     {
       question: "Jak wygląda rozliczenie: stała cena czy „w zależności”?",
@@ -105,7 +105,7 @@ const faqContent: FaqSectionContent = {
 };
 
 const ctaContent: CtaSectionContent = {
-  eyebrowText: "Dobierzmy scenariusz",
+  eyebrowText: "DOBIERZMY SCENARIUSZ",
   title: "Powiedz, co chcesz mieć załatwione i w jakim trybie",
   description:
     "Jeśli masz jedną lokalizację, wystarczy miasto, metraż i termin. Jeśli to sieć, podaj liczbę punktów i częstotliwość. Wrócimy z krótką listą pytań i najprostszą ścieżką realizacji.",
@@ -114,18 +114,18 @@ const ctaContent: CtaSectionContent = {
 };
 
 const defaultContent: PagesHeroContent = {
-  badge: "Sprzątanie po budowie (B2B)",
+  badge: "SPRZĄTANIE PO BUDOWIE (B2B)",
   titleLines: ["Sprzątanie po budowie", "pod odbiory bez ryzyka"],
   emphasisText: "dla wykończeń",
   emphasisIconName: "shieldAlert",
   emphasisSuffix: "/",
   description:
-    "Końcówka budowy to etap, w którym wychodzą detale: pył technologiczny, smugi pod światło, ślady po foliach i klejach, ranty przy listwach i profilach. Dlatego prowadzimy sprzątanie pod odbiór jak proces: standard → strefy → technologia → kontrola. Działamy w całej Polsce.",
+    "Końcówka budowy to etap, w którym wychodzą detale: pył technologiczny, smugi pod światło, ślady po foliach i klejach, ranty przy listwach i profilach. Dlatego prowadzimy sprzątanie pod odbiór jak proces: standard → strefy → technologia → kontrola.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
 };
 
 const problemsContent: ProblemsSectionContent = {
-  kickerLabel: "Kiedy to jest potrzebne?",
+  kickerLabel: "KIEDY TO JEST POTRZEBNE?",
   titleLines: ["Odbiór przegrywa na detalach", "nie na „braku sprzątania”"],
   description:
     "Tu nie chodzi o „więcej ludzi”. Chodzi o to, żeby w warunkach budowy dowieźć standard odbiorowy: bez uszkodzeń, bez powrotów i bez rozmytej odpowiedzialności za strefy, które widać na końcu.",
@@ -182,7 +182,7 @@ const problemsContent: ProblemsSectionContent = {
 };
 
 const solutionsContent: SolutionsSectionContent = {
-  kickerLabel: "Rozwiązanie",
+  kickerLabel: "ROZWIĄZANIE",
   titleLines: [
     "Sprzątanie po budowie jako plan stref",
     "i kolejności — a nie „lista czynności”",
@@ -254,7 +254,7 @@ const solutionsContent: SolutionsSectionContent = {
 };
 
 const benefitsContent: BenefitsSectionContent = {
-  kickerLabel: "Formalności i odpowiedzialność",
+  kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
   titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
   description:
     "Na budowie liczy się dopuszczenie do prac i jasne zasady odpowiedzialności. Działamy tak, żeby wejście było płynne, a realizacja domknięta w procedurach — bez blokad w dniu odbioru.",
@@ -311,7 +311,7 @@ const benefitsContent: BenefitsSectionContent = {
 };
 
 const processContent: ProcessSectionContent = {
-  kickerLabel: "Jak działamy?",
+  kickerLabel: "JAK DZIAŁAMY?",
   titleLines: ["Transparentna współpraca", "krok po kroku"],
   description:
     "To proces „pod odbiór”. Zbieramy minimum danych, potwierdzamy warunki wejścia i kolejność prac, a potem dowozimy gotowość do zgłoszenia. Dzięki temu nie ma chaosu i nie ma powrotów po drodze.",
@@ -345,7 +345,7 @@ const processContent: ProcessSectionContent = {
 };
 
 const contactContent: ContactSectionContent = {
-  kickerLabel: "Skontaktuj się",
+  kickerLabel: "SKONTAKTUJ SIĘ",
   title: "Porozmawiajmy, jak dowieźć odbiór i przekazanie obiektu",
   description:
     "Zostaw kontakt i napisz, na kiedy jest odbiór. Wrócimy z krótką listą pytań o warunki wejścia i zakres, a potem przygotujemy ofertę do zatwierdzenia w firmie (PDF/HTML).",
@@ -375,7 +375,7 @@ const contactContent: ContactSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "Realizacje i referencje",
+  kickerLabel: "REALIZACJE I REFERENCJE",
   titleLines: ["Zobacz, jak pracujemy", "w różnych scenariuszach B2B"],
   description:
     "Przykładowe realizacje z różnych typów obiektów. Zobacz, jak wygląda współpraca w praktyce, od pierwszego kontaktu po domknięcie tematu.",
