@@ -22,6 +22,7 @@ import SolutionsSection, {
 import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
+import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
 
 // /sprzatanie-po-budowie — unikalny content (SEO + konwersja, głębiej, bez kanibalizacji)
 const faqContent: FaqSectionContent = {
@@ -251,62 +252,6 @@ const solutionsContent: SolutionsSectionContent = {
   ],
 };
 
-const benefitsContent: BenefitsSectionContent = {
-  kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
-  titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
-  description:
-    "Na budowie liczy się dopuszczenie do prac i jasne zasady odpowiedzialności. Działamy tak, żeby wejście było płynne, a realizacja domknięta w procedurach — bez blokad w dniu odbioru.",
-  items: [
-    {
-      iconName: "users",
-      label: "Kadry",
-      title: "Legalne zatrudnienie i zespoły przygotowane do pracy na budowie",
-      description:
-        "Pracujemy zespołowo i w sposób przewidywalny. To ogranicza przestoje i ułatwia logistykę na obiekcie.",
-      tone: "resources",
-    },
-    {
-      iconName: "shieldAlert",
-      label: "BHP",
-      title: "BHP i analiza zagrożeń przed startem prac",
-      description:
-        "Ustalamy zasady poruszania się po obiekcie, strefy wyłączone i ryzyka na finiszu — żeby nie zatrzymać realizacji w trakcie.",
-      tone: "risk",
-    },
-    {
-      iconName: "clipboardCheck",
-      label: "Dokumenty",
-      title: "Protokół odbioru i zdjęcia jako potwierdzenie standardu",
-      description:
-        "Dostarczamy materiał do rozliczenia i przekazania dalej. Jeśli wychodzą usterki zastane, dokumentujemy je w trakcie.",
-      tone: "data",
-    },
-    {
-      iconName: "badgeDollarSign",
-      label: "OC",
-      title: "OC i jasne ramy odpowiedzialności wykonawcy",
-      description:
-        "Końcówka budowy nie wybacza błędów. Dlatego pracujemy w oparciu o ustalenia i zabezpieczenia współpracy.",
-      tone: "finance",
-    },
-    {
-      iconName: "database",
-      label: "Poufność",
-      title: "Umowa o zachowaniu poufności i rejestr wejść, jeśli obiekt tego wymaga",
-      description:
-        "Procedury dopinamy przed wejściem. Dzięki temu w dniu realizacji nie ma blokad na bramie i nie tracimy okna prac.",
-      tone: "processes",
-    },
-    {
-      iconName: "fileText",
-      label: "Rozliczenia",
-      title: "Umowa i faktura VAT — gotowe do procesu zakupowego",
-      description:
-        "Minimalizujemy tarcie po stronie firmy: dokumenty, potwierdzenia i jasny zakres do akceptacji i rozliczenia.",
-      tone: "technology",
-    },
-  ],
-};
 
 const processContent: ProcessSectionContent = {
   kickerLabel: "JAK DZIAŁAMY?",
@@ -403,6 +348,57 @@ const knowledgeContent: KnowledgeSectionContent = {
   ],
 };
 
+const showcaseContent: ShowcaseSectionContent = {
+  kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
+  title: "Formalności i odpowiedzialność po naszej stronie",
+  description:
+    "Żeby wejść na obiekt i domknąć odbiór bez blokad, liczą się procedury i dokumenty. Poniżej rzeczy, które zapewniamy i dokumentujemy, żeby odpowiedzialność była jasna.",
+  items: [
+    {
+      tag: "KADRY",
+      title: "Legalne zatrudnienie i przeszkolone zespoły",
+      description:
+        "Pracownicy są legalnie zatrudnieni i przygotowani do pracy na obiekcie. To ogranicza ryzyka kadrowe i ułatwia logistykę realizacji.",
+      result: "Efekt: mniej przestojów i pewniejszy termin.",
+    },
+    {
+      tag: "BHP",
+      title: "Szkolenia BHP i analiza zagrożeń przed startem",
+      description:
+        "Dopinamy zasady pracy, strefy wyłączone i ryzyka na finiszu. Dzięki temu realizacja nie zatrzymuje się w trakcie przez procedury.",
+      result: "Efekt: płynne wejście i stabilny proces.",
+    },
+    {
+      tag: "DOKUMENTY",
+      title: "Protokoły odbioru + zdjęcia jako dokumentacja",
+      description:
+        "Domykamy etap dokumentami: protokół odbioru i zdjęcia. Jeśli wychodzą usterki zastane, zgłaszamy je od razu i opisujemy w protokole.",
+      result: "Efekt: szybszy odbiór i mniej sporów.",
+    },
+    {
+      tag: "OC",
+      title: "Ubezpieczenie OC i jasne ramy odpowiedzialności",
+      description:
+        "Końcówka budowy nie wybacza błędów. Dlatego realizację zabezpieczamy OC i pracujemy w oparciu o ustalenia oraz standard do weryfikacji.",
+      result: "Efekt: mniejsze ryzyko po Twojej stronie.",
+    },
+    {
+      tag: "POUFNOŚĆ / DOSTĘP",
+      title: "Umowa o zachowaniu poufności i rejestr wejść",
+      description:
+        "Procedury obiektu dopinamy przed startem. W dniu realizacji nie ma blokad na bramie i nie tracimy okna prac przez formalności.",
+      result: "Efekt: szybszy start i mniej problemów.",
+    },
+    {
+      tag: "ROZLICZENIA",
+      title: "Umowa i faktura VAT — gotowe do procesu zakupowego",
+      description:
+        "Dostarczamy jasny zakres do akceptacji oraz dokumenty do rozliczenia. Minimalizujemy „przepychanki” po stronie zakupów i administracji.",
+      result: "Efekt: szybsza decyzja i domknięcie tematu.",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -412,7 +408,8 @@ export default function Home() {
         <ProblemsSection content={problemsContent} />
         <SolutionsSection content={solutionsContent} />
         <CtaSection content={ctaContent} />
-        <BenefitsSection content={benefitsContent} />
+        <ShowcaseSection content={showcaseContent} />
+
         <ProcessSection content={processContent} />
         <ContactSection content={contactContent} />
         <KnowledgeSection content={knowledgeContent} />
