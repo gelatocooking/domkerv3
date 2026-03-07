@@ -23,158 +23,158 @@ import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
 import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
+// /sprzatanie-po-budowie — głębiej, stricte pod usługę, unikalnie względem home / hub / buyer persony
 
-// /sprzatanie-po-budowie — unikalny content (SEO + konwersja, głębiej, bez kanibalizacji)
 const faqContent: FaqSectionContent = {
   kickerLabel: "NAJCZĘŚCIEJ ZADAWANE PYTANIA",
-  title: "Masz pytania? Odpowiadamy!",
+  title: "Pytania przed zleceniem sprzątania po budowie",
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
   items: [
     {
-      question: "Czym różni się sprzątanie po budowie od zwykłego sprzątania?",
+      question: "Czym sprzątanie po budowie różni się od zwykłego sprzątania?",
       answer:
-        "Sprzątanie po budowie to usługa „techniczna”: usuwanie pyłu budowlanego, zabrudzeń po montażu oraz śladów po zabezpieczeniach i pracach wykończeniowych. Nie chodzi o „odświeżenie”, tylko o doprowadzenie obiektu do stanu gotowego do odbioru, przekazania lub użytkowania.",
+        "To usługa techniczna, a nie standardowe sprzątanie utrzymaniowe. Obejmuje usuwanie pyłu budowlanego, zabrudzeń po montażu, śladów po zabezpieczeniach oraz przygotowanie obiektu do odbioru, przekazania albo uruchomienia.",
     },
     {
-      question: "Kiedy najlepiej zamówić sprzątanie po budowie — na jakim etapie prac?",
+      question: "Kiedy najlepiej zlecić sprzątanie po budowie?",
       answer:
-        "Najlepiej wtedy, gdy zakończone są prace brudne i nie będzie już generowania dużej ilości pyłu (cięcie, szlifowanie, wiercenie na masową skalę). Jeśli prace nadal trwają, często ma sens podział na etapy (np. komunikacja + doczyszczenie końcowe).",
+        "Najlepiej wtedy, gdy zakończone są prace najbardziej pylące i można określić realne okno wejścia. Jeżeli obiekt nadal jest w ruchu, często sensowniejszy jest podział na etapy niż jedno wejście końcowe.",
     },
     {
-      question: "Jakie problemy po budowie najczęściej wpływają na czas i wycenę?",
+      question: "Co najczęściej wpływa na czas realizacji i wycenę?",
       answer:
-        "Najczęściej: pył „w powietrzu i na wszystkim”, ślady po foliach i taśmach, zabrudzenia po fugach/silikonie, zacieki i smugi na przeszkleniach, zabrudzenia na listwach, drzwiach i detalach oraz różnice w standardzie wykończenia między pomieszczeniami.",
+        "Największy wpływ mają: poziom zapylenia, ślady po foliach i klejach, stan przeszkleń, rodzaj posadzek, liczba stref krytycznych oraz to, czy na obiekcie nadal pracują inne ekipy.",
     },
     {
       question: "Czy usuwacie ślady po foliach, taśmach i klejach ochronnych?",
       answer:
-        "Tak — to jeden z typowych tematów po wykończeniach. Zakres zależy od materiału i czasu, przez jaki zabezpieczenia były na powierzchni. Zwykle prosimy o zdjęcia i informację, co było użyte (folia/taśma/klej), bo wpływa to na metodę i czas.",
+        "Tak, to jeden z częstszych elementów zakresu po wykończeniach. Metoda i czas zależą od materiału, rodzaju zabrudzenia i tego, jak długo zabezpieczenia pozostawały na powierzchni.",
     },
     {
       question: "Czy sprzątanie po budowie obejmuje mycie okien i przeszkleń?",
       answer:
-        "Zwykle tak, ale zakres dopasowujemy do stanu po pracach (zabrudzenia montażowe, pył, smugi). Jeśli na szybach są zabrudzenia trudne (np. po zaprawach/tynkach), kwalifikujemy to po zdjęciach lub na rozpoznaniu i dopiero wtedy ustalamy wariant.",
+        "Tak, jeśli wynika to z zakresu realizacji. Kwalifikujemy stan szyb, ram i zabrudzeń montażowych przed startem, ponieważ przeszklenia po budowie często wymagają osobnej decyzji technologicznej.",
     },
     {
-      question: "Czy w ramach sprzątania po budowie robicie doczyszczanie posadzek?",
+      question: "Czy w ramach usługi wykonujecie doczyszczanie posadzek?",
       answer:
-        "Tak — doczyszczanie posadzek po budowie często jest elementem końcówki. Kluczowe jest: jaki to typ posadzki i na jakim jest etapie (świeża/utwardzona/zabezpieczona). To doprecyzowujemy przed startem, bo wpływa na technologię i czas.",
+        "Tak, jeżeli rodzaj posadzki i etap jej przygotowania pozwalają na bezpieczną pracę. Przed startem doprecyzowujemy typ nawierzchni, charakter zabrudzeń i ograniczenia materiałowe.",
     },
     {
-      question: "Jak wygląda „standard odbiorowy” po sprzątaniu po budowie?",
+      question: "Co oznacza standard odbiorowy po sprzątaniu po budowie?",
       answer:
-        "To praktycznie: czysto pod światło na kluczowych powierzchniach, brak pyłu w newralgicznych miejscach, doprowadzenie sanitariatów/zapleczy do użytku, usunięcie śladów po pracach i zabezpieczeniach oraz przygotowanie obiektu do przekazania. Standard dopasowujemy do typu obiektu i odbioru.",
+        "To efekt, który można zweryfikować na odbiorze: ograniczenie pyłu w strefach krytycznych, czyste pod światło przeszklenia i detale, przygotowane sanitariaty i komunikacja oraz usunięcie typowych śladów po pracach i zabezpieczeniach.",
     },
     {
-      question: "Czy możecie wejść etapowo, gdy ekipy nadal pracują na obiekcie?",
+      question: "Czy możecie wejść etapowo, jeśli obiekt nie jest jeszcze całkowicie gotowy?",
       answer:
-        "Tak, ale wtedy ustalamy priorytety: co ma być domknięte teraz, a co zostaje na końcówkę. Sprzątanie końcowe ma sens dopiero, gdy obiekt przestaje „produkować” pył — inaczej efekt szybko się rozjeżdża.",
+        "Tak. W takich sytuacjach ustalamy priorytety: które strefy mają być przygotowane teraz, a które zostają na etap końcowy. To pozwala uniknąć sytuacji, w której efekt znika po kolejnych pracach.",
     },
     {
-      question: "Jakie informacje najszybciej przyspieszają wycenę i decyzję?",
+      question: "Jakie informacje najszybciej przyspieszają wycenę?",
       answer:
-        "Najbardziej pomagają: metraż/skala, typ obiektu, etap prac (co zakończone, co trwa), termin/okno wejścia oraz zdjęcia 5–15 ujęć (szkło, posadzki, newralgiczne zabrudzenia).",
+        "Najbardziej pomagają: lokalizacja, metraż albo skala obiektu, etap prac, termin, okno wejścia oraz zdjęcia pokazujące szkło, posadzki i główne zabrudzenia po budowie.",
     },
     {
-      question: "Czy sprzątanie robicie w jednym wejściu, czy w etapach?",
+      question: "Czy realizacja odbywa się w jednym wejściu czy w etapach?",
       answer:
-        "Oba warianty są możliwe. Jeśli obiekt jest gotowy do zamknięcia — robimy jedno wejście „final”. Jeśli prace są rozciągnięte w czasie — sensowniej jest etapować (np. przygotowanie części do odbioru, a potem doczyszczenie końcowe).",
+        "Oba warianty są możliwe. Jeżeli obiekt jest gotowy do finalizacji, najczęściej pracujemy w jednym wejściu. Jeżeli nadal trwają prace, bezpieczniej jest rozłożyć usługę na etapy.",
     },
     {
-      question: "Skąd biorą się poprawki po sprzątaniu i jak ich uniknąć?",
+      question: "Skąd biorą się poprawki po sprzątaniu po budowie?",
       answer:
-        "Najczęściej: po sprzątaniu wracają prace pylące albo wychodzą zabrudzenia ukryte wcześniej (np. po zdjęciu folii / po doszczelnianiu). Żeby tego uniknąć, ustalamy, czy to jest wejście „final”, czy etap oraz co po naszej realizacji jeszcze będzie robione na obiekcie.",
+        "Najczęściej z wtórnego pylenia po innych ekipach, zabrudzeń ujawniających się po zdjęciu folii, niepotwierdzonego standardu albo z wejścia w niewłaściwym momencie harmonogramu.",
     },
     {
-      question: "Czy potrzebujecie wizji lokalnej przed sprzątaniem po budowie?",
+      question: "Czy przed realizacją potrzebna jest wizja lokalna?",
       answer:
-        "Nie zawsze. W wielu przypadkach wystarczają zdjęcia i komplet informacji. Wizja jest potrzebna głównie wtedy, gdy stan powierzchni i zabrudzeń wpływa na technologię, czas lub ryzyko (np. dużo klejów/folii, trudne posadzki, wymagający standard).",
+        "Nie zawsze. W wielu przypadkach wystarczą zdjęcia i komplet informacji. Wizja ma największy sens wtedy, gdy stan materiałów, rodzaj zabrudzeń albo ryzyko technologiczne mogą istotnie zmienić zakres i czas prac.",
     },
     {
-      question: "Jak wygląda rozliczenie: stała cena czy „w zależności”?",
+      question: "Jak wygląda rozliczenie usługi?",
       answer:
-        "Najpierw podajemy widełki po minimum danych, a finalną cenę ustalamy po doprecyzowaniu stanu obiektu (zdjęcia/rozpoznanie) i zakresu „must have” do odbioru. To ogranicza „niespodzianki” na miejscu bez ustaleń.",
+        "Najpierw podajemy widełki po minimum danych. Finalne warunki ustalamy po doprecyzowaniu zakresu, stanu obiektu oraz tego, co musi zostać przygotowane do odbioru w pierwszej kolejności.",
     },
     {
       question: "Czy sprzątanie po budowie obejmuje wyniesienie odpadów pobudowlanych?",
       answer:
-        "To zależy od rodzaju odpadów i ustaleń na obiekcie. Jeśli odpady są przygotowane (worki, kartony, folie) i jest miejsce składowania/zasady wynoszenia — możemy to ująć w zakresie. Gruz i odpady wymagające kontenera traktujemy osobno (logistyka i procedury).",
+        "To zależy od rodzaju odpadów i ustaleń na obiekcie. Lekkie odpady przygotowane do wyniesienia możemy uwzględnić w zakresie, natomiast gruz i logistyka kontenerowa są traktowane osobno.",
     },
   ],
 };
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "MINIMUM DANYCH DO WYCENY",
-  title: "Podaj dane, które przyspieszą widełki i termin",
+  title: "Podaj dane, które przyspieszą widełki, termin i decyzję technologiczną",
   description:
-    "Podaj lokalizację, metraż albo liczbę lokali, cel realizacji, termin i okno wejścia. Jeśli masz zdjęcia oraz informację, które materiały są najbardziej wrażliwe, wycena i decyzja technologii pójdą szybciej.",
+    "Podaj lokalizację, metraż albo liczbę lokali, etap prac, termin i okno wejścia. Jeśli masz zdjęcia oraz informację o materiałach wrażliwych, szybciej określimy zakres i sposób prowadzenia realizacji.",
   buttonLabel: "Wyślij minimum danych",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
 const defaultContent: PagesHeroContent = {
   badge: "SPRZĄTANIE PO BUDOWIE (B2B)",
-  titleLines: ["Sprzątanie po budowie", "pod odbiory bez ryzyka"],
+  titleLines: ["Sprzątanie po budowie", "pod standard odbiorowy"],
   emphasisSuffix: "/",
   description:
-    "To etap, w którym widać wszystko: pył technologiczny, smugi na szybach albo oknach pod światło, ślady po foliach i klejach oraz niedoczyszczone detale przy listwach, progach i profilach. W Domker prowadzimy sprzątanie po budowie jak zadanie operacyjne: plan stref, kolejność prac dopasowana do obiektu, technologia dobrana do materiałów oraz kontrola wewnętrzna przed zgłoszeniem gotowości do odbioru. Działamy w całej Polsce.",
+    "To etap, w którym widać wszystko: pył technologiczny, smugi na szybach albo oknach pod światło, ślady po foliach i klejach oraz niedoczyszczone detale przy listwach, progach i profilach. W Domker prowadzimy sprzątanie po budowie jak zadanie operacyjne: plan stref, kolejność prac dopasowana do obiektu, technologia dobrana do materiałów oraz kontrola wewnętrzna przed zgłoszeniem gotowości do odbioru.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
 };
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "KIEDY TO JEST POTRZEBNE?",
-  titleLines: ["Odbiór przegrywa na detalach", "nie na „braku sprzątania”"],
+  titleLines: ["Sprzątanie po budowie ma sens wtedy,", "gdy liczy się wynik odbioru"],
   description:
-    "Tu nie chodzi o „więcej ludzi”. Chodzi o to, żeby w warunkach budowy dowieźć standard odbiorowy: bez uszkodzeń, bez powrotów i bez rozmytej odpowiedzialności za strefy, które widać na końcu.",
+    "To nie jest usługa od odświeżenia obiektu. To etap, który ma przygotować przestrzeń do odbioru, przekazania albo uruchomienia — w warunkach, gdzie błędy technologiczne i organizacyjne szybko wracają jako poprawki.",
   items: [
     {
       iconName: "sparkles",
-      label: "Pył",
-      title: "Pył po szlifach i cięciach wraca po każdej kolejnej robocie",
+      label: "PYŁ",
+      title: "Pył po pracach technicznych wraca do stref krytycznych",
       description:
-        "Kurz osiada na detalach, progach, profilach i w ciągach komunikacyjnych. Jeśli realizacja nie jest prowadzona strefami, efekt znika jeszcze w trakcie dnia.",
+        "Po szlifach, docinkach i wierceniach pył osiada na detalach, profilach, parapetach i ciągach komunikacyjnych. Bez pracy strefami efekt szybko się rozmywa.",
       tone: "processes",
     },
     {
       iconName: "clipboardList",
-      label: "Folie i kleje",
-      title: "Ślady po foliach, taśmach i klejach wychodzą dopiero na finiszu",
+      label: "FOLIE I KLEJE",
+      title: "Ślady po zabezpieczeniach ujawniają się dopiero na końcu",
       description:
-        "Folie, taśmy i kleje po montażu potrafią zostać w świetle dziennym. Na końcu nie ma czasu na eksperymenty i poprawki.",
+        "Folie, taśmy i kleje po montażu często pozostają niewidoczne do momentu, gdy obiekt zaczyna być oglądany pod światło i z bliska.",
       tone: "data",
     },
     {
       iconName: "shieldAlert",
-      label: "Materiały",
-      title: "Wykończenia łatwo uszkodzić złą chemią lub narzędziem",
+      label: "MATERIAŁY",
+      title: "Końcówka wykończeń nie toleruje przypadkowej technologii",
       description:
-        "Nowe posadzki, szkło, armatura, profile i fronty nie wybaczają błędów. Zła technologia oznacza ryzyko rys, zmatowień i reklamacji po odbiorze.",
+        "Świeże posadzki, szkło, armatura wymagają narzędzi oraz chemii dobranych do materiału, nie doraźnych prób na miejscu.",
       tone: "risk",
     },
     {
       iconName: "calendarClock",
-      label: "Wejście",
-      title: "Obiekt „żyje” i trzeba wejść w realnym oknie prac",
+      label: "WEJŚCIE",
+      title: "Obiekt nadal pracuje i nie zawsze jest gotowy na jedno wejście",
       description:
-        "Ekipy wchodzą i wychodzą, strefy bywają wyłączone. Bez potwierdzonych warunków wejścia realizacja potrafi zatrzymać się po pierwszej godzinie.",
+        "Równoległe ekipy, strefy wyłączone i zmienny harmonogram potrafią zatrzymać realizację, jeśli warunki wejścia nie zostały potwierdzone przed startem.",
       tone: "processes",
     },
     {
       iconName: "clipboardCheck",
-      label: "Kontrola",
-      title: "Brak kontroli wewnętrznej kończy się poprawkami na finiszu",
+      label: "KONTROLA",
+      title: "Brak wewnętrznej weryfikacji wydłuża odbiór",
       description:
-        "Jeśli nikt nie sprawdzi checklistą przed zgłoszeniem gotowości, uwagi wracają na końcu i odbiór się wydłuża.",
+        "Jeżeli efekt nie jest sprawdzony przed zgłoszeniem gotowości, uwagi wracają na końcu — zwykle wtedy, gdy czasu jest już najmniej.",
       tone: "technology",
     },
     {
       iconName: "fileText",
-      label: "Odpowiedzialność",
-      title: "Usterki szybko prowadzą do sporu o odpowiedzialność",
+      label: "ODPOWIEDZIALNOŚĆ",
+      title: "Brak dokumentacji utrudnia rozdzielenie stanu zastanego od zakresu",
       description:
-        "Na końcówce budowy łatwo o nieporozumienia. Bez dokumentacji w trakcie realizacji problem wraca po odbiorze jako spór i dodatkowy koszt.",
+        "Na finiszu łatwo o spory dotyczące uszkodzeń, zabrudzeń i usterek. Dokumentowanie sytuacji w trakcie prac porządkuje odpowiedzialność.",
       tone: "resources",
     },
   ],
@@ -183,18 +183,18 @@ const problemsContent: ProblemsSectionContent = {
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "ROZWIĄZANIE",
   titleLines: [
-    "Sprzątanie po budowie jako plan stref",
-    "i kolejności — a nie „lista czynności”",
+    "Sprzątanie po budowie jako proces",
+    "stref, kolejności i technologii",
   ],
   description:
-    "Najpierw ustawiamy cel i standard odbioru. Potem dzielimy obiekt na strefy, dobieramy technologię do materiałów i domykamy kontrolę, zanim zgłosimy gotowość. To skraca odbiór i ogranicza powroty na poprawki.",
+    "Najpierw ustalamy, do jakiego odbioru przygotowujemy obiekt. Potem porządkujemy strefy, dobieramy technologię do materiałów i prowadzimy kontrolę przed zgłoszeniem gotowości. Dzięki temu efekt jest weryfikowalny, a nie uznaniowy.",
   items: [
     {
       iconName: "clipboardCheck",
       label: "Standard odbioru",
-      title: "Ustalamy, pod jaki odbiór pracujemy i co jest „OK”",
+      title: "Określamy, jaki efekt ma zostać zweryfikowany na końcu",
       description:
-        "Inwestorski, urzędowy, przekazanie lub otwarcie. Standard ma być weryfikowalny, żeby zakres był policzalny, a efekt nie był „na oko”.",
+        "Inwestorski, urzędowy, przekazanie albo otwarcie. Standard końcowy musi być czytelny, żeby zakres i kolejność prac miały sens operacyjny.",
       ctaLabel: "Zobacz usługę",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/sprzatanie-po-budowie",
@@ -202,9 +202,9 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "layoutGrid",
       label: "Strefy odbiorowe",
-      title: "Mapujemy miejsca, które realnie są sprawdzane na odbiorze",
+      title: "Dzielimy obiekt na miejsca, które realnie będą oceniane",
       description:
-        "Wejścia, przeszklenia, komunikacja, sanitariaty, zaplecza i progi. Dzięki temu strefy krytyczne nie zostają na ostatnie godziny.",
+        "Wejścia, komunikacja, przeszklenia, sanitariaty, zaplecza i detale wykończeniowe traktujemy jako strefy wymagające osobnego prowadzenia.",
       ctaLabel: "Wyślij minimum danych",
       mediaAlt: "Minimum danych do wyceny",
       mediaSrc: "/kontakt#minimum-danych",
@@ -212,19 +212,19 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "shieldAlert",
       label: "Technologia pod materiał",
-      title: "Dobieramy chemię i sprzęt do ryzyk końcówki wykończeń",
+      title: "Dobór metod wynika z powierzchni i ryzyk, nie z przyzwyczajeń",
       description:
-        "Pracujemy tak, żeby nie zrobić szkody na finiszu: posadzki, szkło/okna, armatura, profile i fronty mają różne wymagania technologiczne.",
+        "Posadzki, szkło, armatura, profile i fronty mają różne ograniczenia. Dlatego decyzja technologiczna zapada przed wejściem, nie w trakcie realizacji.",
       ctaLabel: "Standard i bezpieczeństwo",
       mediaAlt: "Technologia i bezpieczeństwo",
       mediaSrc: "/sprzatanie-po-budowie#standard",
     },
     {
       iconName: "users",
-      label: "Operacyjne dowiezienie",
-      title: "Koordynacja na obiekcie i kontrola przed zgłoszeniem gotowości",
+      label: "Kontrola wykonania",
+      title: "Zgłoszenie gotowości następuje dopiero po weryfikacji wewnętrznej",
       description:
-        "Trzymamy przebieg prac i robimy odbiór wewnętrzny checklistą. Na koniec domykamy temat dokumentami: protokół odbioru i zdjęcia.",
+        "Realizacja jest sprawdzana checklistą przed przekazaniem. Na koniec przekazujemy protokół odbioru i zdjęcia jako materiał do dalszej procedury.",
       ctaLabel: "Zapytaj (PDF/HTML)",
       mediaAlt: "Kontakt i oferta",
       mediaSrc: "/kontakt",
@@ -232,9 +232,9 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "calendarClock",
       label: "Okno wejścia",
-      title: "Wchodzimy po godzinach i „między robotami”, gdy trzeba",
+      title: "Dopasowujemy realizację do realnego rytmu obiektu",
       description:
-        "Dopasowujemy realizację do harmonogramu budowy, żeby nie blokować ekip i nie zbierać wtórnego brudu po kolejnych pracach.",
+        "Jeżeli sytuacja tego wymaga, pracujemy po godzinach albo między innymi robotami, tak aby ograniczyć wtórne zabrudzenia i kolizje z harmonogramem.",
       ctaLabel: "Ustal okno wejścia",
       mediaAlt: "Kontakt telefoniczny",
       mediaSrc: "tel:+48502992002",
@@ -242,9 +242,9 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "truck",
       label: "Skala i moce",
-      title: "Dobieramy zespoły do terminu i potwierdzonych warunków wejścia",
+      title: "Zespoły dobieramy do terminu, stanu obiektu i zakresu",
       description:
-        "Od lokali po większe obiekty. Organizacyjne maksima zależą od okna i stanu obiektu: do 5000 m² dziennie lub do 300 doczyszczonych okien dziennie*.",
+        "Od pojedynczych lokali po większe obiekty. Organizacyjne maksima zależą od warunków wejścia: do 5000 m² dziennie lub do 300 doczyszczonych okien dziennie.",
       ctaLabel: "Sprawdź dostępność",
       mediaAlt: "Dostępność i termin",
       mediaSrc: "/kontakt",
@@ -252,36 +252,35 @@ const solutionsContent: SolutionsSectionContent = {
   ],
 };
 
-
 const processContent: ProcessSectionContent = {
   kickerLabel: "JAK DZIAŁAMY?",
-  titleLines: ["Etap po etapie: od kwalifikacji ", "do zgłoszenia gotowości"],
+  titleLines: ["Etap po etapie: od kwalifikacji", "do zgłoszenia gotowości"],
   description:
-    "To proces „pod odbiór”. Zbieramy minimum danych, potwierdzamy warunki wejścia i kolejność prac, a potem dowozimy gotowość do zgłoszenia. Dzięki temu nie ma chaosu i nie ma powrotów po drodze.",
+    "Ta usługa ma prowadzić do odbioru, a nie tylko do wykonania prac. Dlatego najpierw zbieramy minimum danych, potem potwierdzamy warunki wejścia i kolejność, a gotowość zgłaszamy dopiero po kontroli wewnętrznej.",
   steps: [
     {
       index: "01",
       title: "Minimum danych i szybka kwalifikacja",
       description:
-        "Ustalamy: typ obiektu, metraż, termin, etap prac oraz kluczowe strefy odbiorowe. Jeśli masz zdjęcia, przyspieszają wycenę i decyzję.",
+        "Ustalamy typ obiektu, metraż, etap prac, termin, okno wejścia i strefy, które mają największe znaczenie odbiorowe.",
     },
     {
       index: "02",
       title: "Widełki i oferta do zatwierdzenia (PDF/HTML)",
       description:
-        "Dajemy widełki i najprostszy wariant realizacji. Dostajesz ofertę gotową do wysłania do przełożonego, zarządu lub zakupów.",
+        "Przygotowujemy najprostszy wariant realizacji i przekazujemy ofertę, którą można dalej wysłać do przełożonego, zarządu albo działu zakupów.",
     },
     {
       index: "03",
       title: "Potwierdzenie warunków wejścia i plan stref",
       description:
-        "Kto wpuszcza, godziny, BHP, dostęp do wody i prądu, strefy wyłączone, równoległe ekipy oraz ograniczenia narzędzi i chemii.",
+        "Doprecyzowujemy godziny, dostęp, BHP, strefy wyłączone, równoległe ekipy, ograniczenia materiałowe i kolejność prac.",
     },
     {
       index: "04",
       title: "Realizacja, kontrola i zgłoszenie gotowości",
       description:
-        "Pracujemy zgodnie z planem stref i kolejnością. Robimy kontrolę wewnętrzną checklistą, a na koniec przekazujemy protokół i zdjęcia.",
+        "Pracujemy według planu stref i wybranej technologii. Po kontroli wewnętrznej przekazujemy protokół oraz zdjęcia i dopiero wtedy zgłaszamy gotowość.",
     },
   ],
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
@@ -289,11 +288,11 @@ const processContent: ProcessSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Wybierz najkrótszą ścieżkę do odbioru i przekazania obiektu",
+  title: "Wybierz najkrótszą ścieżkę do przygotowania obiektu pod odbiór",
   description:
-    "Zostaw kontakt i napisz, na kiedy jest odbiór. Wrócimy z krótką listą pytań o warunki wejścia i zakres, a potem przygotujemy ofertę do zatwierdzenia w firmie (PDF/HTML).",
+    "Zostaw kontakt i napisz, na kiedy potrzebujesz realizacji. Wrócimy z krótką listą pytań o warunki wejścia, zakres i strefy krytyczne, a następnie przygotujemy ofertę do zatwierdzenia w firmie.",
   chips: [
-    { label: "Standard do odbioru" },
+    { label: "Standard odbiorowy" },
     { label: "Strefy krytyczne" },
     { label: "Technologia pod materiał" },
     { label: "Kontrola checklistą" },
@@ -319,14 +318,14 @@ const contactContent: ContactSectionContent = {
 
 const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "REALIZACJE I REFERENCJE",
-  titleLines: ["Zobacz, jak pracujemy", "w różnych scenariuszach B2B"],
+  titleLines: ["Zobacz, jak pracujemy", "przy realizacjach po budowie"],
   description:
-    "Przykładowe realizacje z różnych typów obiektów. Zobacz, jak wygląda współpraca w praktyce, od pierwszego kontaktu po domknięcie tematu.",
+    "Przykładowe realizacje z obiektów komercyjnych. Zobacz, jak wygląda usługa w praktyce: od kwalifikacji zakresu po finalizację etapu i przekazanie dokumentacji.",
   cards: [
     {
       title: "Realizacje",
       description:
-        "Zakresy i efekty z obiektów komercyjnych. Krótkie case’y, które pokazują tryb pracy i rezultat.",
+        "Zakresy, strefy i efekty na obiektach po budowie i wykończeniu. Krótkie case’y pokazujące sposób prowadzenia prac.",
       buttonLabel: "Zobacz realizacje",
       media: {
         type: "image",
@@ -337,7 +336,7 @@ const knowledgeContent: KnowledgeSectionContent = {
     {
       title: "Referencje i opinie",
       description:
-        "Co klienci B2B doceniają w współpracy. Najczęściej przewidywalność, komunikację i łatwe rozliczenie tematu.",
+        "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność realizacji, bezpieczeństwo materiałowe i czytelne potwierdzenie wykonania.",
       buttonLabel: "Zobacz referencje",
       media: {
         type: "image",
@@ -352,53 +351,52 @@ const showcaseContent: ShowcaseSectionContent = {
   kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
   titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
   description:
-    "Żeby wejść na obiekt i domknąć odbiór bez blokad, liczą się procedury i dokumenty. Poniżej rzeczy, które zapewniamy i dokumentujemy, żeby odpowiedzialność była jasna.",
+    "Żeby wejść na obiekt i przeprowadzić realizację bez blokad, liczą się nie tylko ludzie i sprzęt, ale też procedury, dokumenty i jasne rozdzielenie odpowiedzialności.",
   items: [
     {
       tag: "KADRY",
-      title: "Legalne zatrudnienie i przeszkolone zespoły",
+      title: "Legalne zatrudnienie i przygotowane zespoły",
       description:
-        "Pracownicy są legalnie zatrudnieni i przygotowani do pracy na obiekcie. To ogranicza ryzyka kadrowe i ułatwia logistykę realizacji.",
-      result: "Efekt: mniej przestojów i pewniejszy termin.",
+        "Pracownicy są legalnie zatrudnieni i przygotowani do pracy na obiekcie, co porządkuje logistykę i ogranicza ryzyka organizacyjne.",
+      result: "Efekt: większa przewidywalność wejścia i przebiegu realizacji.",
     },
     {
       tag: "BHP",
       title: "Szkolenia BHP i analiza zagrożeń przed startem",
       description:
-        "Dopinamy zasady pracy, strefy wyłączone i ryzyka na finiszu. Dzięki temu realizacja nie zatrzymuje się w trakcie przez procedury.",
-      result: "Efekt: płynne wejście i stabilny proces.",
+        "Przed wejściem ustalamy strefy wyłączone, zasady pracy i ryzyka, żeby realizacja nie zatrzymała się przez procedury w trakcie.",
+      result: "Efekt: płynniejsze wejście i stabilniejsza organizacja prac.",
     },
     {
       tag: "DOKUMENTY",
-      title: "Protokoły odbioru + zdjęcia jako dokumentacja",
+      title: "Protokoły odbioru i zdjęcia jako materiał do dalszego procedowania",
       description:
-        "Domykamy etap dokumentami: protokół odbioru i zdjęcia. Jeśli wychodzą usterki zastane, zgłaszamy je od razu i opisujemy w protokole.",
-      result: "Efekt: szybszy odbiór i mniej sporów.",
+        "Po zakończeniu przekazujemy dokumentację wykonania. Jeżeli w trakcie ujawniają się usterki zastane, od razu je opisujemy i zgłaszamy.",
+      result: "Efekt: krótsza ścieżka odbioru i mniej sporów po realizacji.",
     },
     {
       tag: "OC",
       title: "Ubezpieczenie OC i jasne ramy odpowiedzialności",
       description:
-        "Końcówka budowy nie wybacza błędów. Dlatego realizację zabezpieczamy OC i pracujemy w oparciu o ustalenia oraz standard do weryfikacji.",
-      result: "Efekt: mniejsze ryzyko po Twojej stronie.",
+        "Przy końcówce budowy liczy się nie tylko efekt, ale też zabezpieczenie współpracy i czytelne ustalenia dotyczące odpowiedzialności.",
+      result: "Efekt: mniejsze ryzyko organizacyjne po stronie zamawiającego.",
     },
     {
       tag: "POUFNOŚĆ / DOSTĘP",
       title: "Umowa o zachowaniu poufności i rejestr wejść",
       description:
-        "Procedury obiektu dopinamy przed startem. W dniu realizacji nie ma blokad na bramie i nie tracimy okna prac przez formalności.",
-      result: "Efekt: szybszy start i mniej problemów.",
+        "Jeśli obiekt wymaga dodatkowych formalności, wdrażamy je przed startem, aby nie tracić okna realizacji przez blokady administracyjne.",
+      result: "Efekt: szybszy start i mniej problemów przy wejściu.",
     },
     {
       tag: "ROZLICZENIA",
-      title: "Umowa i faktura VAT — gotowe do procesu zakupowego",
+      title: "Umowa i faktura VAT gotowe do procesu zakupowego",
       description:
-        "Dostarczamy jasny zakres do akceptacji oraz dokumenty do rozliczenia. Minimalizujemy dodatkowe doprecyzowania po stronie zakupów i administracji.",
-      result: "Efekt: szybsza decyzja i domknięcie tematu.",
+        "Przekazujemy czytelny zakres i dokumenty do akceptacji oraz rozliczenia, tak aby procedowanie po stronie firmy było prostsze.",
+      result: "Efekt: sprawniejsza decyzja i łatwiejsza finalizacja etapu.",
     },
   ],
 };
-
 export default function Home() {
   return (
     <div className={styles.page}>

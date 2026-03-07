@@ -34,6 +34,7 @@ const navItems = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
     <header className={styles.header}>
@@ -59,58 +60,85 @@ export default function Header() {
         >
           <nav className={styles.nav}>
             <ul className={styles.navList}>
-              {navItems.map((item) => (
-                <li key={item.label} className={styles.navItem}>
-                  <a className={styles.navLink} href={item.href}>
-                    <span className={styles.navText}>{item.label}</span>
+              {navItems.map((item) => {
+                const isOpen = openDropdown === item.label;
+
+                return (
+                  <li
+                    key={item.label}
+                    className={`${styles.navItem} ${isOpen ? styles.navItemOpen : ""}`}
+                  >
                     {item.dropdownItems.length ? (
-                      <span className={styles.navIcon}>
-                        <Icon name="chevronDown" size="sm" />
-                      </span>
-                    ) : null}
-                  </a>
-                  {item.dropdownItems.length ? (
-                    <div className={styles.dropdown}>
-                      <ul className={styles.dropdownList}>
-                        {item.dropdownItems.map((entry) => (
-                          <li key={entry.title}>
-                            <a href={entry.href} className={styles.dropdownItem}>
-                              <span className={styles.dropdownIconWrap}>
-                                <Icon name={entry.icon} size="md" />
-                              </span>
-                              <span className={styles.dropdownContent}>
-                                <span className={styles.dropdownTitle}>
-                                  {entry.title}
+                      <button
+                        type="button"
+                        className={styles.navToggleRow}
+                        aria-expanded={isOpen}
+                        onClick={() =>
+                          setOpenDropdown((current) =>
+                            current === item.label ? null : item.label
+                          )
+                        }
+                      >
+                        <span className={styles.navText}>{item.label}</span>
+                        <span className={styles.navIcon}>
+                          <Icon name="chevronDown" size="sm" />
+                        </span>
+                      </button>
+                    ) : (
+                      <a className={styles.navLink} href={item.href}>
+                        <span className={styles.navText}>{item.label}</span>
+                      </a>
+                    )}
+                    {item.dropdownItems.length ? (
+                      <div className={styles.dropdown}>
+                        <ul className={styles.dropdownList}>
+                          {item.dropdownItems.map((entry) => (
+                            <li key={entry.title}>
+                              <div className={styles.dropdownItem}>
+                                <span className={styles.dropdownIconWrap}>
+                                  <Icon name={entry.icon} size="md" />
                                 </span>
-                                <span className={styles.dropdownDesc}>
-                                  {entry.description}
-                                </span>
-                                {entry.children?.length ? (
-                                  <span className={styles.dropdownChildren}>
-                                    {entry.children.map((child) => (
-                                      <span key={child.href} className={styles.dropdownChildRow}>
-                                        <a
-                                          href={child.href}
-                                          className={styles.dropdownChildLink}
+                                <span className={styles.dropdownContent}>
+                                  <a href={entry.href} className={styles.dropdownMainLink}>
+                                    <span className={styles.dropdownTitle}>
+                                      {entry.title}
+                                    </span>
+                                    <span className={styles.dropdownDesc}>
+                                      {entry.description}
+                                    </span>
+                                  </a>
+                                  {entry.children?.length ? (
+                                    <span className={styles.dropdownChildren}>
+                                      {entry.children.map((child) => (
+                                        <span
+                                          key={child.href}
+                                          className={styles.dropdownChildRow}
                                         >
-                                          {child.label}
-                                        </a>
-                                      </span>
-                                    ))}
-                                  </span>
-                                ) : null}
-                              </span>
-                              <span className={styles.dropdownArrow}>
-                                <Icon name="arrowRight" size="md" />
-                              </span>
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : null}
-                </li>
-              ))}
+                                          <a
+                                            href={child.href}
+                                            className={styles.dropdownChildLink}
+                                          >
+                                            {child.label}
+                                          </a>
+                                        </span>
+                                      ))}
+                                    </span>
+                                  ) : null}
+                                </span>
+                                <span className={styles.dropdownArrow}>
+                                  <a href={entry.href} className={styles.dropdownArrowLink}>
+                                    <Icon name="arrowRight" size="md" />
+                                  </a>
+                                </span>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
+                  </li>
+                );
+              })}
             </ul>
           </nav>
           <Button label="Bezpłatna konsultacja" iconName="arrowRight" />
