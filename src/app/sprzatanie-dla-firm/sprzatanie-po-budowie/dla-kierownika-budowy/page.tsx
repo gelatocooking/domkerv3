@@ -34,65 +34,65 @@ const defaultContent: PagesHeroContent = {
   emphasisIconName: "hardHat",
   emphasisSuffix: "/",
   description:
-    "Na końcówce nie potrzebujesz sprzątania „ogólnie”. Potrzebujesz obiektu, który przejdzie odbiór w zaplanowanym oknie: bez powrotów, bez ryzyka dla wykończeń i bez rozjazdu harmonogramu.",
+    "Na końcówce nie potrzebujesz kolejnej ekipy „od sprzątania”. Potrzebujesz obiektu gotowego do odbioru w zaplanowanym oknie: bez chaosu między brygadami, bez ryzyka dla wykończeń i bez kolejnej rundy poprawek.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
 };
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE WYZWANIA?",
   titleLines: [
-    "Co kierownik budowy realnie",
-    "musi dowieźć na końcówce?",
+    "Co kierownika budowy realnie",
+    "blokuje przed odbiorem?",
   ],
   description:
-    "Na odbiorze przegrywa nie brak ludzi, tylko brak przewidywalności. Liczą się strefy, kolejność prac, bezpieczna technologia i gotowość potwierdzona dopiero po kontroli.",
+    "Na końcówce przegrywa nie brak ludzi, tylko brak przewidywalności. Wracający pył, poprawki po innych ekipach, brak jednego odpowiedzialnego i uwagi na odbiorze zabierają czas, którego już nie ma.",
   items: [
     {
       iconName: "calendarClock",
       label: "OKNO",
-      title: "Realne wejście między robotami",
+      title: "Roboty się przeciągają, a termin odbioru stoi",
       description:
-        "Obiekt dalej żyje, więc trzeba wejść w potwierdzonym oknie i bez cofania prac po godzinie.",
+        "Na sprzątanie zostaje mało czasu, więc wejście musi być realne, potwierdzone i skoordynowane z tym, co jeszcze dzieje się na obiekcie.",
       tone: "processes",
     },
     {
       iconName: "workflow",
-      label: "KOLEJNOŚĆ",
-      title: "Brak chaosu między strefami",
+      label: "KOORDYNACJA",
+      title: "Brak jednego odpowiedzialnego za czystość",
       description:
-        "Najpierw strefy krytyczne, potem reszta. Dzięki temu pył i poprawki nie wracają na koniec.",
+        "Kierownik nie powinien gasić pożarów między ekipami. Potrzebny jest jeden kontakt, który przejmie temat i dowiezie go do końca.",
       tone: "processes",
     },
     {
       iconName: "layoutGrid",
       label: "DETALE",
-      title: "To, co wychodzi dopiero przy odbiorze",
+      title: "Uwagi wracają na końcu, nie w trakcie",
       description:
-        "Smugi pod światło, kurz na profilach, ślady po foliach i klejach — właśnie to wraca w uwagach.",
+        "Smugi na szybach, pył na parapetach, klej na profilach i brud w strefach odbiorowych wychodzą dopiero przy finalnej kontroli.",
       tone: "data",
     },
     {
       iconName: "truck",
       label: "ZASOBY",
-      title: "Backup ludzi i sprzętu",
+      title: "Brak sprzętu i ludzi pod szybkie wejście",
       description:
-        "Gdy okno się skraca albo warunki się zmieniają, realizacja nie może stanąć przez braki operacyjne.",
+        "Chłopaki z miotłami nie dowiozą odbioru. Tu potrzebna jest ekipa ze sprzętem i rezerwą mocy, gotowa wejść w krótkim czasie.",
       tone: "resources",
     },
     {
       iconName: "shieldAlert",
       label: "RYZYKO",
-      title: "Bezpiecznie dla nowych wykończeń",
+      title: "Nowe wykończenia łatwo uszkodzić",
       description:
-        "Posadzki, szyby, armatura i fronty wymagają technologii dobranej do materiału, nie doraźnych prób.",
+        "Posadzki, szyby, armatura i fronty wymagają technologii dobranej do materiału, bo szkoda na finiszu kosztuje więcej niż samo sprzątanie.",
       tone: "risk",
     },
     {
       iconName: "fileText",
       label: "ODBIÓR",
-      title: "Protokół i zdjęcia po kontroli",
+      title: "Brak dokumentów i kontroli jakości",
       description:
-        "Dostajesz materiał do zgłoszenia gotowości i rozliczenia etapu bez dalszego dopilnowywania po Twojej stronie.",
+        "Bez checklisty, zdjęć i protokołu kierownik wraca do tych samych tematów przy odbiorze, reklamacjach i rozliczeniu etapu.",
       tone: "technology",
     },
   ],
@@ -105,14 +105,14 @@ const solutionsContent: SolutionsSectionContent = {
     "w logice kierownika",
   ],
   description:
-    "Prowadzimy ten etap jak zadanie z harmonogramu: cel odbioru, strefy krytyczne, kolejność prac, technologia pod materiał i zgłoszenie gotowości dopiero po kontroli.",
+    "Prowadzimy ten etap jak zadanie z harmonogramu: ustalamy cel odbioru, strefy krytyczne, kolejność prac, technologię pod materiał i zgłaszamy gotowość dopiero po kontroli wewnętrznej.",
   items: [
     {
       iconName: "hardHat",
       label: "Standard odbiorowy",
-      title: "Najpierw ustalamy, co ma przejść",
+      title: "Wiemy, czego szuka odbiór",
       description:
-        "Inwestorski, urzędowy, przekazanie albo otwarcie. Zakres ma być policzalny, a efekt weryfikowalny.",
+        "Ustalamy standard pod odbiór inwestorski, urzędowy, przekazanie albo odbiory mieszkań, żeby zakres był policzalny i sprawdzalny.",
       ctaLabel: "Wyślij minimum danych",
       mediaAlt: "Standard odbiorowy po budowie",
       mediaSrc: "/kontakt",
@@ -120,9 +120,9 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "clipboardList",
       label: "Strefy krytyczne",
-      title: "Pracujemy tam, gdzie odbiór patrzy najpierw",
+      title: "Najpierw to, co oceniają jako pierwsze",
       description:
-        "Wejścia, komunikacja, przeszklenia, sanitariaty, detale przy listwach i profilach — to tam najczęściej wracają uwagi.",
+        "Klatki, garaże, komunikacja, przeszklenia, sanitariaty, wejścia i detale przy listwach czy profilach traktujemy jako priorytet odbiorowy.",
       ctaLabel: "Wyślij minimum danych",
       mediaAlt: "Strefy krytyczne na budowie",
       mediaSrc: "/kontakt",
@@ -130,27 +130,27 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "building2",
       label: "Technologia pod materiał",
-      title: "Bez szkód na finiszu",
+      title: "Bez reklamacji od szkód i smug",
       description:
-        "Dobieramy chemię i narzędzia do posadzek, szyb albo okien, armatury i frontów, żeby nie tworzyć reklamacji.",
+        "Dobieramy chemię i narzędzia do posadzek, szyb albo okien, armatury i frontów, żeby nie zostawiać rys, zmatowień ani zacieków.",
       ctaLabel: "Wyślij minimum danych",
       mediaAlt: "Bezpieczna technologia sprzątania po budowie",
       mediaSrc: "/kontakt",
     },
     {
       iconName: "sparkles",
-      label: "Okno wejścia i koordynacja",
-      title: "Gdy obiekt nadal jest w ruchu",
+      label: "Kontrola wewnętrzna",
+      title: "Najpierw poprawki wewnętrzne, potem odbiór",
       description:
-        "Potwierdzamy warunki wejścia, strefy wyłączone i kolejność, żeby nie wracać do tych samych miejsc po innych ekipach.",
+        "Zanim zgłosimy gotowość, robimy wewnętrzny odbiór checklistą. To ogranicza wytykanie poprawek przez kierownika do minimum.",
       ctaLabel: "Wyślij minimum danych",
-      mediaAlt: "Koordynacja wejścia na obiekt",
+      mediaAlt: "Kontrola wewnętrzna przed odbiorem",
       mediaSrc: "/kontakt",
     },
     {
       iconName: "grid3x3",
       label: "Moce przerobowe",
-      title: "Zasoby dobierane pod termin",
+      title: "Skala dopasowana do etapu i terminu",
       description:
         "Od pojedynczych lokali po większe obiekty. Maksymalnie do 5000 m² dziennie lub do 300 okien dziennie zależnie od warunków.",
       ctaLabel: "Sprawdź dostępność",
@@ -160,9 +160,9 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "mapPin",
       label: "Cała Polska",
-      title: "Jedna współpraca, nie kilka ekip",
+      title: "Jedna współpraca zamiast szukania ekipy na już",
       description:
-        "Działamy ogólnopolsko i układamy realizację pod termin, dostęp oraz ograniczenia obiektu.",
+        "Działamy ogólnopolsko i układamy wejście pod termin, dostęp, procedury i ograniczenia obiektu.",
       ctaLabel: "Sprawdź dostępność",
       mediaAlt: "Sprzątanie po budowie w całej Polsce",
       mediaSrc: "/kontakt",
@@ -174,14 +174,14 @@ const benefitsContent: BenefitsSectionContent = {
   kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
   titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
   description:
-    "Na końcówce liczy się nie tylko efekt, ale też wejście na obiekt, zgodność z procedurami i jasna odpowiedzialność. To porządkujemy przed startem realizacji.",
+    "Na końcówce liczy się nie tylko efekt. Liczy się też wejście na obiekt, zgodność z BHP, jasna odpowiedzialność i dokumenty, które przechodzą przez inwestora, zakupy i rozliczenie.",
   items: [
     {
       iconName: "users",
       label: "KADRY",
       title: "Legalne zatrudnienie i przeszkolone zespoły",
       description:
-        "Wiesz, kto wchodzi na obiekt i kto odpowiada za realizację. To ogranicza ryzyka kadrowe i skraca ustalenia.",
+        "Wiesz, kto wchodzi na obiekt i kto odpowiada za realizację. To ogranicza ryzyka kadrowe i przyspiesza współpracę na budowie.",
       tone: "resources",
     },
     {
@@ -189,7 +189,7 @@ const benefitsContent: BenefitsSectionContent = {
       label: "BHP",
       title: "Szkolenia i analiza zagrożeń przed startem",
       description:
-        "Ustalamy zasady pracy, strefy wyłączone i ryzyka, żeby realizacja nie zatrzymała się przez procedury.",
+        "Ustalamy strefy wyłączone, zasady pracy i ciągi komunikacyjne, żeby realizacja nie zatrzymała się przez procedury albo ryzyka na obiekcie.",
       tone: "risk",
     },
     {
@@ -197,15 +197,15 @@ const benefitsContent: BenefitsSectionContent = {
       label: "DOSTĘP",
       title: "Umowa o zachowaniu poufności i rejestr wejść",
       description:
-        "Jeśli obiekt tego wymaga, dopinamy formalności wcześniej, a nie przy bramie w dniu realizacji.",
+        "Jeśli obiekt tego wymaga, dopinamy formalności wcześniej, a nie w dniu realizacji przy bramie lub ochronie.",
       tone: "processes",
     },
     {
       iconName: "clipboardCheck",
       label: "DOKUMENTY",
-      title: "Protokół i zdjęcia po zakończeniu",
+      title: "Checklista, protokół i zdjęcia po zakończeniu",
       description:
-        "Po kontroli przekazujemy dokumenty, które pomagają zgłosić gotowość, rozliczyć etap i sfinalizować go po Twojej stronie.",
+        "Po kontroli przekazujemy dokumenty, które pomagają zgłosić gotowość, rozliczyć etap i ograniczyć wracanie do tych samych uwag.",
       tone: "data",
     },
     {
@@ -213,7 +213,7 @@ const benefitsContent: BenefitsSectionContent = {
       label: "OC",
       title: "OC i jasne ramy odpowiedzialności",
       description:
-        "Masz jasność, jak wygląda zabezpieczenie współpracy przy realizacjach na obiektach komercyjnych.",
+        "Masz jasność, jak wygląda zabezpieczenie współpracy przy realizacjach na obiektach komercyjnych i kto odpowiada za ewentualne szkody.",
       tone: "finance",
     },
     {
@@ -237,25 +237,25 @@ const processContent: ProcessSectionContent = {
       index: "01",
       title: "Minimum danych i szybka kwalifikacja",
       description:
-        "Ustalamy typ obiektu, metraż, termin odbioru, etap prac i strefy krytyczne. Jeśli temat jest pilny, od razu oceniamy dostępność.",
+        "Ustalamy typ obiektu, metraż, termin odbioru, etap prac, strefy krytyczne i to, co najbardziej boli na końcówce.",
     },
     {
       index: "02",
       title: "Widełki, termin i oferta do zatwierdzenia",
       description:
-        "Wracamy tego samego dnia po skompletowaniu informacji. Dostajesz zakres, wyłączenia i warunki wejścia w formie gotowej do przekazania dalej.",
+        "Wracamy tego samego dnia po skompletowaniu informacji. Dostajesz zakres, wyłączenia, warunki wejścia i wariant realizacji do przekazania dalej.",
     },
     {
       index: "03",
       title: "Wejście na obiekt i plan stref",
       description:
-        "Potwierdzamy okno wejścia, kolejność prac, ograniczenia technologiczne i zasady poruszania się po obiekcie.",
+        "Potwierdzamy okno wejścia, kolejność prac, ograniczenia technologiczne, równoległe ekipy i zasady poruszania się po budowie.",
     },
     {
       index: "04",
       title: "Realizacja, kontrola i protokół",
       description:
-        "Pracujemy w ustalonym oknie, robimy kontrolę checklistą i dopiero wtedy przekazujemy protokół oraz zdjęcia do zgłoszenia gotowości.",
+        "Pracujemy w ustalonym oknie, robimy odbiór wewnętrzny checklistą i dopiero wtedy przekazujemy protokół oraz zdjęcia do zgłoszenia gotowości.",
     },
   ],
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
@@ -263,7 +263,7 @@ const processContent: ProcessSectionContent = {
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "DOBIERZMY ZAKRES",
-  title: "Powiedz, jaki obiekt trzeba sfinalizować i na kiedy",
+  title: "Powiedz, jaki obiekt trzeba przygotować do odbioru",
   description:
     "Wystarczy miasto lub adres inwestycji, metraż, termin odbioru i numer kontaktowy. Resztę doprecyzujemy po zgłoszeniu krótką listą pytań.",
   buttonLabel: "Wyślij minimum danych",
@@ -279,7 +279,7 @@ const knowledgeContent: KnowledgeSectionContent = {
     {
       title: "Realizacje",
       description:
-        "Zakresy i efekty z obiektów pod odbiór. Krótkie case’y pokazujące tryb pracy, strefy krytyczne i rezultat.",
+        "Zakresy i efekty z obiektów pod odbiór. Krótkie case’y pokazujące strefy krytyczne, tryb pracy i rezultat.",
       buttonLabel: "Zobacz realizacje",
       media: {
         type: "image",
@@ -308,7 +308,7 @@ const contactContent: ContactSectionContent = {
     "Podaj nazwę firmy lub inwestycji, adres obiektu, e-mail firmowy i numer telefonu. W odpowiedzi wyślemy krótką listę informacji potrzebnych do widełek i terminu.",
   chips: [
     { label: "Odbiór pod termin" },
-    { label: "Jedna osoba kontaktowa" },
+    { label: "Jeden kontakt" },
     { label: "Strefy krytyczne" },
     { label: "Kontrola checklistą" },
     { label: "Zasięg ogólnopolski" },
@@ -349,9 +349,9 @@ const faqContent: FaqSectionContent = {
         "Tak. Okno realizacji dopasowujemy do harmonogramu na obiekcie, zależnie od dostępu, równoległych ekip i zasad obowiązujących na budowie.",
     },
     {
-      question: "Jak wygląda zgłoszenie gotowości po Waszej stronie?",
+      question: "Jak ograniczacie poprawki przy końcowym odbiorze?",
       answer:
-        "Najpierw robimy kontrolę wewnętrzną checklistą. Dopiero po jej przejściu przekazujemy protokół i zdjęcia oraz zgłaszamy gotowość do odbioru.",
+        "Robimy odbiór wewnętrzny checklistą przed zgłoszeniem gotowości. Najpierw poprawki realizujemy po swojej stronie, a dopiero potem przekazujemy obiekt do dalszej weryfikacji.",
     },
     {
       question: "Jakie informacje są potrzebne do szybkiej wyceny?",
@@ -364,9 +364,9 @@ const faqContent: FaqSectionContent = {
         "Tak. Dobieramy technologię do materiału i etapu wykończenia, szczególnie przy posadzkach, szybach albo oknach, armaturze i frontach.",
     },
     {
-      question: "Czy wystawiacie fakturę VAT?",
+      question: "Czy macie własny sprzęt do sprzątania po budowie?",
       answer:
-        "Tak, jesteśmy czynnymi płatnikami VAT. Standardowo działamy w modelu B2B z umową i dokumentami do procesu zakupowego.",
+        "Tak. Pracujemy na własnym wyposażeniu, dobieranym do zakresu i typu zabrudzeń, dzięki czemu nie trzeba organizować sprzętu po stronie budowy.",
     },
     {
       question: "Jak wygląda ubezpieczenie odpowiedzialności?",
@@ -389,8 +389,7 @@ const faqContent: FaqSectionContent = {
         "Najczęściej są to smugi widoczne dopiero pod światło, wtórne pylenie po innych ekipach, brak kontroli wewnętrznej i niepotwierdzone warunki wejścia.",
     },
   ],
-};
-export default function Home() {
+};export default function Home() {
   return (
     <div className={styles.page}>
       <Header />
