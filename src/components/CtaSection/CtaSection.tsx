@@ -20,13 +20,7 @@ export default function CtaSection({ content }: CtaSectionProps) {
         <div className={styles.card}>
           <div className={styles.content}>
             <div className={styles.eyebrow}>
-              <div className={styles.avatars}>
-                {content.avatars.map((avatar) => (
-                  <span key={avatar} className={styles.avatar} aria-hidden="true">
-                    {avatar}
-                  </span>
-                ))}
-              </div>
+              
               <span className={styles.eyebrowText}>{content.eyebrowText}</span>
             </div>
 

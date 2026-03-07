@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useCallback, useRef } from "react";
 import SectionKicker from "../SectionKicker/SectionKicker";
@@ -14,7 +14,7 @@ export interface ShowcaseItem {
 
 export interface ShowcaseSectionContent {
   kickerLabel: string;
-  title: string;
+  titleLines: string[];
   description: string;
   items: ShowcaseItem[];
 }
@@ -50,7 +50,13 @@ export default function ShowcaseSection({ content }: ShowcaseSectionProps) {
       <div className={styles.inner}>
         <div className={styles.headingGroup}>
           <SectionKicker label={content.kickerLabel} tone="light" />
-          <h2 className={styles.title}>{content.title}</h2>
+          <h2 className={styles.title}>
+            {content.titleLines.map((line) => (
+              <span key={line} className={styles.titleLine}>
+                {line}
+              </span>
+            ))}
+          </h2>
           <p className={styles.subtitle}>{content.description}</p>
         </div>
 
@@ -73,20 +79,22 @@ export default function ShowcaseSection({ content }: ShowcaseSectionProps) {
           </button>
         </div>
 
-        <div className={styles.cards} ref={cardsRef}>
-          {content.items.map((item) => (
-            <article key={item.title} className={styles.card}>
-              <span className={styles.cardTag}>{item.tag}</span>
-              <h3 className={styles.cardTitle}>{item.title}</h3>
-              <p className={styles.cardText}>{item.description}</p>
-              <div className={styles.cardResult}>
-                <span className={styles.cardResultIcon}>
-                  <Icon name="trophy" size="sm" />
-                </span>
-                <span className={styles.cardResultText}>{item.result}</span>
-              </div>
-            </article>
-          ))}
+        <div className={styles.viewport}>
+          <div className={styles.cards} ref={cardsRef}>
+            {content.items.map((item) => (
+              <article key={item.title} className={styles.card}>
+                <span className={styles.cardTag}>{item.tag}</span>
+                <h3 className={styles.cardTitle}>{item.title}</h3>
+                <p className={styles.cardText}>{item.description}</p>
+                <div className={styles.cardResult}>
+                  <span className={styles.cardResultIcon}>
+                    <Icon name="trophy" size="sm" />
+                  </span>
+                  <span className={styles.cardResultText}>{item.result}</span>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

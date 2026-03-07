@@ -23,6 +23,10 @@
   color: var(--c-white);
 }
 
+.titleLine {
+  display: block;
+}
+
 .subtitle {
   composes: t-16-24-400 from global;
   text-align: center;
@@ -56,17 +60,20 @@
   transform: rotate(180deg);
 }
 
+.viewport {
+  width: 100%;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
 .cards {
   width: 100%;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(
-    (100% - var(--gap-24) - var(--gap-24)) / 3
-  );
+  display: flex;
   gap: var(--gap-24);
   overflow-x: auto;
   padding-bottom: var(--sp-12);
-  scroll-snap-type: x mandatory;
+  padding-right: calc(var(--sp-210) - var(--sp-40));
+  scroll-snap-type: x proximity;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
@@ -83,6 +90,7 @@
   flex-direction: column;
   gap: var(--gap-16);
   min-height: calc(var(--sp-210) + var(--sp-88));
+  flex: 0 0 calc((100% - (var(--gap-24) * 2) - var(--sp-80)) / 2);
   scroll-snap-align: start;
 }
 
@@ -125,13 +133,32 @@
 }
 
 @media (max-width: 1023px) {
+  .viewport {
+    width: 100%;
+  }
+
   .cards {
-    grid-auto-columns: calc((100% - var(--gap-24)) / 2);
+    padding-right: calc(var(--sp-80) + var(--sp-40));
+  }
+
+  .card {
+    flex-basis: calc((100% - var(--gap-24) - var(--sp-40)) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .viewport {
+    width: calc(100% + ((100vw - 100%) / 2));
   }
 }
 
 @media (max-width: 767px) {
   .cards {
-    grid-auto-columns: 100%;
+    padding-right: var(--sp-0);
+    scroll-snap-type: x mandatory;
+  }
+
+  .card {
+    flex-basis: 100%;
   }
 }

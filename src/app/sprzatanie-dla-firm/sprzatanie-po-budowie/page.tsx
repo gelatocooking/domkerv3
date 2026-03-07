@@ -106,10 +106,10 @@ const faqContent: FaqSectionContent = {
 };
 
 const ctaContent: CtaSectionContent = {
-  eyebrowText: "DOBIERZMY SCENARIUSZ",
-  title: "Powiedz, co chcesz mieć załatwione i w jakim trybie",
+  eyebrowText: "MINIMUM DANYCH DO WYCENY",
+  title: "Podaj dane, które przyspieszą widełki i termin",
   description:
-    "Jeśli masz jedną lokalizację, wystarczy miasto, metraż i termin. Jeśli to sieć, podaj liczbę punktów i częstotliwość. Wrócimy z krótką listą pytań i najprostszą ścieżką realizacji.",
+    "Podaj lokalizację, metraż albo liczbę lokali, cel realizacji, termin i okno wejścia. Jeśli masz zdjęcia oraz informację, które materiały są najbardziej wrażliwe, wycena i decyzja technologii pójdą szybciej.",
   buttonLabel: "Wyślij minimum danych",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
@@ -119,7 +119,7 @@ const defaultContent: PagesHeroContent = {
   titleLines: ["Sprzątanie po budowie", "pod odbiory bez ryzyka"],
   emphasisSuffix: "/",
   description:
-    "Końcówka budowy to etap, w którym wychodzą detale: pył technologiczny, smugi pod światło, ślady po foliach i klejach, ranty przy listwach i profilach. Dlatego prowadzimy sprzątanie pod odbiór jak proces: standard → strefy → technologia → kontrola.",
+    "To etap, w którym widać wszystko: pył technologiczny, smugi na szybach albo oknach pod światło, ślady po foliach i klejach oraz niedoczyszczone detale przy listwach, progach i profilach. W Domker prowadzimy sprzątanie po budowie jak zadanie operacyjne: plan stref, kolejność prac dopasowana do obiektu, technologia dobrana do materiałów oraz kontrola wewnętrzna przed zgłoszeniem gotowości do odbioru. Działamy w całej Polsce.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
 };
 
@@ -132,15 +132,15 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "sparkles",
       label: "Pył",
-      title: "Pył technologiczny wraca po każdej kolejnej robocie",
+      title: "Pył po szlifach i cięciach wraca po każdej kolejnej robocie",
       description:
-        "Po szlifach i docinkach kurz osiada na detalach i w komunikacji. Jeśli nie pracujesz strefami, efekt ucieka jeszcze w trakcie dnia.",
+        "Kurz osiada na detalach, progach, profilach i w ciągach komunikacyjnych. Jeśli realizacja nie jest prowadzona strefami, efekt znika jeszcze w trakcie dnia.",
       tone: "processes",
     },
     {
       iconName: "clipboardList",
       label: "Folie i kleje",
-      title: "Ślady po zabezpieczeniach wychodzą dopiero na finiszu",
+      title: "Ślady po foliach, taśmach i klejach wychodzą dopiero na finiszu",
       description:
         "Folie, taśmy i kleje po montażu potrafią zostać w świetle dziennym. Na końcu nie ma czasu na eksperymenty i poprawki.",
       tone: "data",
@@ -150,7 +150,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "Materiały",
       title: "Wykończenia łatwo uszkodzić złą chemią lub narzędziem",
       description:
-        "Nowe posadzki, szkło, armatura, profile i fronty nie wybaczają błędów. Zła technologia = rysy, mat i reklamacje po odbiorze.",
+        "Nowe posadzki, szkło, armatura, profile i fronty nie wybaczają błędów. Zła technologia oznacza ryzyko rys, zmatowień i reklamacji po odbiorze.",
       tone: "risk",
     },
     {
@@ -158,7 +158,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "Wejście",
       title: "Obiekt „żyje” i trzeba wejść w realnym oknie prac",
       description:
-        "Ekipy wchodzą i wychodzą, strefy bywają wyłączone. Bez potwierdzonych warunków wejścia sprzątanie wraca po godzinie pracy.",
+        "Ekipy wchodzą i wychodzą, strefy bywają wyłączone. Bez potwierdzonych warunków wejścia realizacja potrafi zatrzymać się po pierwszej godzinie.",
       tone: "processes",
     },
     {
@@ -172,9 +172,9 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "fileText",
       label: "Odpowiedzialność",
-      title: "Usterki zastane robią spór „kto to zrobił”",
+      title: "Usterki szybko prowadzą do sporu o odpowiedzialność",
       description:
-        "Na końcówce budowy łatwo o nieporozumienia. Bez dokumentacji w trakcie temat wraca po odbiorze jako konflikt i koszt.",
+        "Na końcówce budowy łatwo o nieporozumienia. Bez dokumentacji w trakcie realizacji problem wraca po odbiorze jako spór i dodatkowy koszt.",
       tone: "resources",
     },
   ],
@@ -255,7 +255,7 @@ const solutionsContent: SolutionsSectionContent = {
 
 const processContent: ProcessSectionContent = {
   kickerLabel: "JAK DZIAŁAMY?",
-  titleLines: ["Transparentna współpraca", "krok po kroku"],
+  titleLines: ["Etap po etapie: od kwalifikacji ", "do zgłoszenia gotowości"],
   description:
     "To proces „pod odbiór”. Zbieramy minimum danych, potwierdzamy warunki wejścia i kolejność prac, a potem dowozimy gotowość do zgłoszenia. Dzięki temu nie ma chaosu i nie ma powrotów po drodze.",
   steps: [
@@ -289,7 +289,7 @@ const processContent: ProcessSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Porozmawiajmy, jak dowieźć odbiór i przekazanie obiektu",
+  title: "Wybierz najkrótszą ścieżkę do odbioru i przekazania obiektu",
   description:
     "Zostaw kontakt i napisz, na kiedy jest odbiór. Wrócimy z krótką listą pytań o warunki wejścia i zakres, a potem przygotujemy ofertę do zatwierdzenia w firmie (PDF/HTML).",
   chips: [
@@ -350,7 +350,7 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const showcaseContent: ShowcaseSectionContent = {
   kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
-  title: "Formalności i odpowiedzialność po naszej stronie",
+  titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
   description:
     "Żeby wejść na obiekt i domknąć odbiór bez blokad, liczą się procedury i dokumenty. Poniżej rzeczy, które zapewniamy i dokumentujemy, żeby odpowiedzialność była jasna.",
   items: [
@@ -393,7 +393,7 @@ const showcaseContent: ShowcaseSectionContent = {
       tag: "ROZLICZENIA",
       title: "Umowa i faktura VAT — gotowe do procesu zakupowego",
       description:
-        "Dostarczamy jasny zakres do akceptacji oraz dokumenty do rozliczenia. Minimalizujemy „przepychanki” po stronie zakupów i administracji.",
+        "Dostarczamy jasny zakres do akceptacji oraz dokumenty do rozliczenia. Minimalizujemy dodatkowe doprecyzowania po stronie zakupów i administracji.",
       result: "Efekt: szybsza decyzja i domknięcie tematu.",
     },
   ],

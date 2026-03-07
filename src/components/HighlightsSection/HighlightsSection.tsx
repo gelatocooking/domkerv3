@@ -47,13 +47,12 @@ export default function HighlightsSection() {
           <SectionKicker label="NASZE WYRÓŻNIKI" />
           <h2 className={styles.title}>
             <span className={styles.titleLine}>
-              Co stoi za skutecznymi wdrożeniami
+              Co realnie stoi za przewidywalną  
             </span>
-            <span className={styles.titleLine}>Let's Automate?</span>
+            <span className={styles.titleLine}>realizacją, standardem i terminem</span>
           </h2>
           <p className={styles.subtitle}>
-            Rezultaty, które dowozimy, to efekt połączenia zrozumienia Twojego
-            biznesu, kompetencji zespołu i celowego użycia technologii.
+            Skuteczne wdrożenie w sprzątaniu B2B nie opiera się na deklaracjach, tylko na sposobie prowadzenia realizacji. W Domker łączymy koordynację na obiekcie, kontrolę wykonania, sprawny dispatching zleceń i technologię dobraną do materiałów, żeby finalizować etapy bez zbędnych powrotów, bez chaosu organizacyjnego i bez ryzyka dla nowych wykończeń.
           </p>
         </div>
 

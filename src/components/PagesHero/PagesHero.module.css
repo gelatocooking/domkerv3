@@ -27,14 +27,5 @@
   text-align: center;
 }
 
-.ctaRow {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 @media (max-width: 479px) {
-  .ctaRow {
-    width: 100%;
-  }
 }

@@ -35,9 +35,9 @@ const defaultContent: HeroContent = {
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE WYZWANIA?",
-  titleLines: ["Co firmy realnie chcą mieć", "„załatwione”"],
+  titleLines: ["Co firmy realnie chcą ", "mieć poukładane operacyjnie?"],
   description:
-    "W B2B najdroższe są niedopowiedzenia. Dlatego ten hub porządkuje temat: scenariusz, warunki wejścia, standard, komunikacja i potwierdzenie wykonania w formie, którą da się przekazać dalej.",
+    "W B2B najdroższe są niedopowiedzenia. Dlatego ten hub porządkuje scenariusz, warunki wejścia, standard, komunikację i potwierdzenie wykonania w formie, którą da się przekazać dalej w organizacji.",
   items: [
     {
       iconName: "calendarClock",
@@ -82,9 +82,9 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "fileText",
       label: "ROZLICZENIE",
-      title: "Temat zamknięty w papierach",
+      title: "Potwierdzenie wykonania gotowe do rozliczenia",
       description:
-        "Dokumenty i potwierdzenia w formie, którą łatwo rozliczyć i zamknąć po stronie firmy.",
+        "Dokumenty i potwierdzenia w formie, którą łatwo rozliczyć i przekazać dalej po stronie firmy.",
       tone: "technology",
     },
   ],
@@ -92,9 +92,9 @@ const problemsContent: ProblemsSectionContent = {
 
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "WYBIERZ SCENARIUSZ",
-  titleLines: ["Wybierz scenariusz", "i przejdź od problemu do decyzji"],
+  titleLines: ["Wybierz scenariusz", "i przejdź do właściwej usługi"],
   description:
-    "Każdy scenariusz ma inny tryb pracy i inne ryzyka. Wybierz sytuację, a przeprowadzimy Cię przez właściwą usługę i najkrótszą ścieżkę do domknięcia tematu.",
+    "Każdy scenariusz ma inny tryb pracy i inne ryzyka. Wybierz sytuację, a pokażemy Ci właściwą usługę i sposób prowadzenia realizacji.",
   items: [
     {
       iconName: "hardHat",
@@ -102,7 +102,7 @@ const solutionsContent: SolutionsSectionContent = {
       title: "Gdy liczysz dni, nie tygodnie",
       description:
         "Ustalamy okno wejścia, priorytety i kontrolę wewnętrzną. Przechodzisz dalej do usługi i widzisz, jak domykamy etap pod termin.",
-      ctaLabel: "Zobacz usługę",
+      ctaLabel: "Przejdź do usługi",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/sprzatanie-po-budowie",
     },
@@ -112,7 +112,7 @@ const solutionsContent: SolutionsSectionContent = {
       title: "Gdy problemem jest rozproszenie",
       description:
         "Koordynacja w wielu miastach, jeden kontakt i jeden standard. Układamy harmonogramy, kontrolę i raportowanie, żeby wynik był porównywalny.",
-      ctaLabel: "Wyślij minimum danych",
+      ctaLabel: "Przejdź do usługi",
       mediaAlt: "Obsługa sieci",
       mediaSrc: "/kontakt#minimum-danych",
     },
@@ -122,8 +122,9 @@ const solutionsContent: SolutionsSectionContent = {
       title: "Gdy chcesz stabilnego standardu",
       description:
         "Stały zakres, grafiki, kontrola jakości i szybkie korekty. Zamiast szukania wykonawcy co miesiąc masz serwis, który działa w tle.",
-      ctaLabel: "Zobacz usługę",
-      mediaAlt: "Utrzymanie czystości",
+              ctaLabel: "Przejdź do usługi",
+
+        mediaAlt: "Utrzymanie czystości",
       mediaSrc: "/utrzymanie-czystosci",
     },
     {
@@ -132,7 +133,7 @@ const solutionsContent: SolutionsSectionContent = {
       title: "Gdy liczy się powtarzalność i raport",
       description:
         "Stałe okna realizacji, logistyka po naszej stronie i potwierdzenie wykonania po każdej wizycie. Dobre rozwiązanie, gdy chcesz temat zautomatyzować.",
-      ctaLabel: "Zobacz usługę",
+      ctaLabel: "Przejdź do usługi",
       mediaAlt: "Mycie witryn i okien",
       mediaSrc: "/mycie-okien-i-witryn",
     },
@@ -142,7 +143,7 @@ const solutionsContent: SolutionsSectionContent = {
       title: "Gdy standard ma być widoczny",
       description:
         "Doczyszczanie i odplamianie pod typ nawierzchni. Przechodzisz do usługi i widzisz, kiedy ma sens technologia zamiast doraźnych prób.",
-      ctaLabel: "Zobacz usługę",
+      ctaLabel: "Przejdź do usługi",
       mediaAlt: "Maszynowe czyszczenie posadzek",
       mediaSrc: "/maszynowe-czyszczenie-posadzek",
     },
@@ -194,7 +195,7 @@ const benefitsContent: BenefitsSectionContent = {
       label: "POTWIERDZENIA",
       title: "Kontrola i potwierdzenie wykonania",
       description:
-        "Na koniec dostajesz czytelne potwierdzenie, żeby dało się zamknąć temat wewnętrznie i rozliczyć usługę.",
+        "Na koniec dostajesz czytelne potwierdzenie, żeby dało się rozliczyć usługę i przekazać ją dalej wewnętrznie.",
       tone: "data",
     },
     {
@@ -208,10 +209,10 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "fileText",
       label: "B2B",
-      title: "Umowa i faktura VAT jako standard",
+      title: "Umowa i faktura VAT jako standard współpracy",
       description:
-        "Prosty proces zakupowy, który przechodzi przez księgowość i działy operacyjne bez dodatkowych „dogrywek”.",
-      tone: "technology",
+      "Prosty proces zakupowy, który przechodzi przez księgowość i działy operacyjne bez dodatkowych doprecyzowań.",
+        tone: "technology",
     },
   ],
 };
@@ -220,7 +221,7 @@ const processContent: ProcessSectionContent = {
   kickerLabel: "JAK DZIAŁAMY?",
   titleLines: ["Transparentna współpraca", "krok po kroku"],
   description:
-    "Ten proces dotyczy współpracy B2B i sieci. Zamiast wymiany dziesiątek maili ustalamy minimum danych, scenariusz i standard, a potem dowozimy realizację w przewidywalny sposób.",
+"Ten proces dotyczy współpracy B2B i sieci. Ustalamy minimum danych, scenariusz i standard, a potem prowadzimy realizację w przewidywalny sposób.",
   steps: [
     {
       index: "01",
@@ -242,9 +243,9 @@ const processContent: ProcessSectionContent = {
     },
     {
       index: "04",
-      title: "Potwierdzenie i domknięcie tematu",
+      title: "Potwierdzenie wykonania i finalizacja",
       description:
-        "Dostarczamy potwierdzenie wykonania w formie gotowej do przekazania dalej. Temat jest zamknięty, a nie „do dopilnowania”.",
+        "Dostarczamy potwierdzenie wykonania w formie gotowej do przekazania dalej. Etap jest sfinalizowany, a nie pozostawiony do dalszego dopilnowania po Twojej stronie."
     },
   ],
   ctaLabel: "Wyślij minimum danych",
@@ -252,7 +253,7 @@ const processContent: ProcessSectionContent = {
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "DOBIERZMY SCENARIUSZ",
-  title: "Powiedz, co chcesz mieć załatwione i w jakim trybie",
+  title: "Powiedz, jaki scenariusz chcesz uruchomić i w jakim trybie",
   description:
     "Jeśli masz jedną lokalizację, wystarczy miasto, metraż i termin. Jeśli to sieć, podaj liczbę punktów i częstotliwość. Wrócimy z krótką listą pytań i najprostszą ścieżką realizacji.",
   buttonLabel: "Wyślij minimum danych",
@@ -279,7 +280,7 @@ const knowledgeContent: KnowledgeSectionContent = {
     {
       title: "Referencje i opinie",
       description:
-        "Co klienci B2B doceniają w współpracy. Najczęściej przewidywalność, komunikację i łatwe rozliczenie tematu.",
+        "Co klienci B2B doceniają w współpracy. Najczęściej przewidywalność, komunikację i łatwe rozliczenie realizacji.",
       buttonLabel: "Zobacz referencje",
       media: {
         type: "image",
@@ -292,7 +293,7 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Wyślij minimum danych, a my ułożymy resztę",
+  title: "Wyślij minimum danych, a my wskażemy kolejny krok",
   description:
     "Opisz sytuację jednym zdaniem. Jeśli to sieć, dopisz liczbę lokalizacji i miasta. Jeśli to pojedynczy obiekt, wystarczy metraż i termin. Wrócimy z krótką listą pytań i konkretnym następnym krokiem.",
   chips: [

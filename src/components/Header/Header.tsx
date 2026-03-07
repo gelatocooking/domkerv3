@@ -17,7 +17,6 @@ const navItems = [
         description: "Sprzątanie po budowie i remoncie dla firm",
         href: "/sprzatanie-dla-firm/sprzatanie-po-budowie",
       },
-    
     ],
   },
   { label: "Referencje", href: "#", dropdownItems: [] },
@@ -37,14 +36,14 @@ export default function Header() {
           <div className={styles.logo}>
             <span className={styles.logoMark}>
               <a href="/">
-              <Image
-                src="/domker-logo.png"
-                alt="Domker logo"
-                fill
-                className={styles.logoImage}
-                priority
+                <Image
+                  src="/domker-logo.png"
+                  alt="Domker logo"
+                  fill
+                  className={styles.logoImage}
+                  priority
                 />
-                </a>
+              </a>
             </span>
           </div>
         </div>
@@ -82,7 +81,7 @@ export default function Header() {
                                 </span>
                               </span>
                               <span className={styles.dropdownArrow}>
-                                <Icon name="arrowRight" size="sm" />
+                                <Icon name="arrowRight" size="md" />
                               </span>
                             </a>
                           </li>

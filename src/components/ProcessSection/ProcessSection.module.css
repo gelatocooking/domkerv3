@@ -5,10 +5,10 @@
 }
 
 .inner {
-  composes: padding-global-2 from global;
 }
 
 .card {
+  composes: padding-global-2 from global;
   background: var(--bg-soft);
   border-radius: var(--r-24);
   padding: var(--sp-48);
@@ -87,6 +87,10 @@
 }
 
 @media (max-width: 767px) {
+  .stepBadge {
+    width: var(--sp-80);
+    height: var(--sp-40);
+  }
   .card {
     padding: var(--sp-32);
   }

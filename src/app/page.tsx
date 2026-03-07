@@ -32,7 +32,7 @@ const defaultContent: HeroContent = {
   emphasisIconName: "lightbulb",
   emphasisSuffix: "",
   description:
-    "Domker wchodzi w tematy, które muszą zostać domknięte. Organizujemy realizację, pilnujemy standardu i zostawiamy obiekt gotowy do przekazania. Działamy w całej Polsce, reagujemy szybko i dopasowujemy się do okna prac na obiekcie.",
+    "Domker to firma sprzątająca, która myśli jak wykonawca — szczególnie tam, gdzie liczą się odbiory, terminy i standard. Organizujemy realizację, pilnujemy jakości wykonania i zostawiamy obiekt gotowy do przekazania. Działamy w całej Polsce, reagujemy szybko i dopasowujemy się do okna prac na obiekcie.",
   ctaLabel: "Sprawdź dostępność terminu",
   imageSrc: "/tlo.png",
   imageAlt: "Sprzątanie dla firm",
@@ -40,7 +40,7 @@ const defaultContent: HeroContent = {
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE WYZWANIA?",
-  titleLines: ["Gdy w grę wchodzi termin,", "problemem rzadko jest samo sprzątanie"],
+  titleLines: ["Jeśli celem jest odbiór, przekazanie", "problemem rzadko jest samo sprzątanie"],
   description:
     "Najczęściej przegrywa logistyka. Kto wchodzi kiedy, co jest już gotowe, czego nie wolno ruszać i jak domknąć temat bez serii poprawek oraz sporów na końcu.",
   items: [
@@ -87,9 +87,9 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "route",
       label: "DOMKNIĘCIE",
-      title: "Brakuje jasnego końca etapu i potwierdzenia wykonania",
+      title: "Brakuje jasnego zamknięcia etapu i potwierdzenia wykonania",
       description:
-        "Gdy nie ma dowodów i protokołu, temat wraca. Domykamy realizację tak, żeby dało się ją przekazać dalej i zamknąć w firmie.",
+        "Gdy nie ma dowodów i protokołu, realizacja wraca do wyjaśnienia. Finalizujemy etap tak, żeby dało się go przekazać dalej i zamknąć po stronie firmy.",
       tone: "technology",
     },
   ],
@@ -97,7 +97,7 @@ const problemsContent: ProblemsSectionContent = {
 
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "CO ROBIMY",
-  titleLines: ["Usługi dla firm,", "które mają być po prostu załatwione"],
+  titleLines: ["Usługi dla firm, które", "mają być sprawnie zorganizowane"],
   description:
     "Obsługujemy obiekty komercyjne w modelu, który daje spokój operacyjny. Jasny zakres, ustalone okno wejścia, komunikacja po drodze i finalne potwierdzenie wykonania.",
   items: [
@@ -156,7 +156,7 @@ const solutionsContent: SolutionsSectionContent = {
 
 const showcaseContent: ShowcaseSectionContent = {
   kickerLabel: "RYZYKA I JAK JE OGARNIAMY",
-  title: "Ryzyka, które najczęściej wywracają realizację",
+  titleLines: ["Ryzyka, które najczęściej opóźniają ", "odbiór i komplikują realizację"],
   description:
     "W sprzątaniu dla firm problemem rzadko jest wysiłek, częściej brak zasad. Poniżej najczęstsze blokady na obiekcie i konkretne działania, które wdrażamy przed i w trakcie realizacji.",
   items: [
@@ -199,8 +199,8 @@ const showcaseContent: ShowcaseSectionContent = {
 };
 
 const ctaContent: CtaSectionContent = {
-  eyebrowText: "CHCESZ MIEĆ TEMAT Z GŁOWY?",
-  title: "Powiedz, co trzeba domknąć i na kiedy",
+  eyebrowText: "CHCESZ SZYBKO ZAMKNĄĆ TEN ETAP?",
+  title: "Powiedz, jaki etap trzeba zrealizować i na kiedy",
   description:
     "W krótkiej rozmowie zbierzemy minimum danych, doprecyzujemy okno wejścia i standard oraz wskażemy ryzyka, które mogą wywrócić realizację. Jeśli temat jest pilny, od razu powiemy, czy mamy moce na termin.",
   buttonLabel: "Sprawdź dostępność terminu",
@@ -209,9 +209,8 @@ const ctaContent: CtaSectionContent = {
 
 const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "DOWODY Z REALIZACJI",
-  titleLines: ["Zobacz, jak pracujemy", "na obiektach w całej Polsce"],
-  description:
-    "Zdjęcia z realizacji, zakresy i efekty. Zobacz, jak wygląda domknięcie tematu w praktyce, bez marketingu i bez ogólników.",
+  titleLines: ["Zobacz, jak wyglądają nasze realizacje", "na obiektach w całej Polsce"],
+  description: "Zdjęcia z realizacji, zakresy i efekty. Zobacz, jak wygląda finalizacja etapu w praktyce — bez ogólników i bez deklaracji bez pokrycia.",
   cards: [
     {
       title: "Realizacje",
@@ -240,7 +239,7 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "KONTAKT",
-  title: "Wyślij minimum danych, a my wrócimy z konkretem",
+  title: `Wyślij minimum danych, a my wrócimy z jasnym kolejnym krokiem`,
   description:
     "Napisz, jaki obiekt i jaki termin. Jeśli masz zdjęcia, dołącz je. Wrócimy z krótką listą pytań, potwierdzimy dostępność i przygotujemy ofertę gotową do przekazania w firmie.",
   chips: [

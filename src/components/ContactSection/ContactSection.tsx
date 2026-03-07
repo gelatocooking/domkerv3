@@ -110,16 +110,7 @@ export default function ContactSection({ content }: ContactSectionProps) {
           </form>
         </div>
 
-        <div className={styles.metaRow}>
-          <div className={styles.avatars}>
-            {content.meta.avatars.map((avatar) => (
-              <span key={avatar} className={styles.avatar} aria-hidden="true">
-                {avatar}
-              </span>
-            ))}
-          </div>
-          <span className={styles.metaText}>{content.meta.text}</span>
-        </div>
+    
       </div>
     </section>
   );

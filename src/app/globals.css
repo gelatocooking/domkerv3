@@ -960,8 +960,8 @@ h2 {
   }
   h2,
   .h2 {
-    font-size: var(--fs-22);
-    line-height: var(--lh-22_5);
+    font-size: var(--fs-40);
+    line-height: var(--lh-52);
     font-weight: var(--fw-700);
   }
   h3,
@@ -993,7 +993,7 @@ h2 {
   h2,
   .h2 {
     font-size: var(--fs-28);
-    line-height: var(--lh-33_6);
+    line-height: var(--lh-36_4);
   }
 }
 
