@@ -16,6 +16,12 @@ const navItems = [
         title: "Sprzątanie po budowie",
         description: "Sprzątanie po budowie i remoncie dla firm",
         href: "/sprzatanie-dla-firm/sprzatanie-po-budowie",
+        children: [
+          {
+            label: "Dla kierownika budowy",
+            href: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-kierownika-budowy",
+          },
+        ],
       },
     ],
   },
@@ -79,6 +85,20 @@ export default function Header() {
                                 <span className={styles.dropdownDesc}>
                                   {entry.description}
                                 </span>
+                                {entry.children?.length ? (
+                                  <span className={styles.dropdownChildren}>
+                                    {entry.children.map((child) => (
+                                      <span key={child.href} className={styles.dropdownChildRow}>
+                                        <a
+                                          href={child.href}
+                                          className={styles.dropdownChildLink}
+                                        >
+                                          {child.label}
+                                        </a>
+                                      </span>
+                                    ))}
+                                  </span>
+                                ) : null}
                               </span>
                               <span className={styles.dropdownArrow}>
                                 <Icon name="arrowRight" size="md" />

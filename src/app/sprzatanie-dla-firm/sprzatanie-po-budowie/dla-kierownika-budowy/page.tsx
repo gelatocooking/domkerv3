@@ -36,8 +36,6 @@ const defaultContent: PagesHeroContent = {
   description:
     "Na końcówce nie potrzebujesz sprzątania „ogólnie”. Potrzebujesz obiektu, który przejdzie odbiór w zaplanowanym oknie: bez powrotów, bez ryzyka dla wykończeń i bez rozjazdu harmonogramu.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
-  imageSrc: "/tlo.png",
-  imageAlt: "Sprzątanie po budowie dla kierownika budowy",
 };
 
 const problemsContent: ProblemsSectionContent = {
@@ -207,7 +205,7 @@ const benefitsContent: BenefitsSectionContent = {
       label: "DOKUMENTY",
       title: "Protokół i zdjęcia po zakończeniu",
       description:
-        "Po kontroli przekazujemy dokumenty, które pomagają zgłosić gotowość, rozliczyć etap i zamknąć go po Twojej stronie.",
+        "Po kontroli przekazujemy dokumenty, które pomagają zgłosić gotowość, rozliczyć etap i sfinalizować go po Twojej stronie.",
       tone: "data",
     },
     {
@@ -265,7 +263,7 @@ const processContent: ProcessSectionContent = {
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "DOBIERZMY ZAKRES",
-  title: "Powiedz, jaki obiekt trzeba domknąć i na kiedy",
+  title: "Powiedz, jaki obiekt trzeba sfinalizować i na kiedy",
   description:
     "Wystarczy miasto lub adres inwestycji, metraż, termin odbioru i numer kontaktowy. Resztę doprecyzujemy po zgłoszeniu krótką listą pytań.",
   buttonLabel: "Wyślij minimum danych",
@@ -276,7 +274,7 @@ const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "REALIZACJE I REFERENCJE",
   titleLines: ["Zobacz, jak pracujemy", "na końcówkach budów"],
   description:
-    "Przykładowe realizacje z obiektów komercyjnych. Zobacz, jak wygląda współpraca od pierwszego kontaktu po finalizację etapu pod odbiór.",
+    "Przykładowe realizacje z obiektów komercyjnych. Zobacz, jak wygląda współpraca od pierwszego kontaktu po finalizację realizacji pod odbiór.",
   cards: [
     {
       title: "Realizacje",

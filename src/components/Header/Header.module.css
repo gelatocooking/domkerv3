@@ -127,7 +127,6 @@
   border-radius: var(--r-16);
   border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
   padding: var(--sp-12) var(--sp-16);
-  display: none;
   visibility: hidden;
   transform: translateY(var(--sp-8));
   pointer-events: none;
@@ -183,6 +182,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-4);
+  min-width: 0;
 }
 
 .dropdownTitle {
@@ -198,6 +198,28 @@
   margin: var(--sp-0);
   composes: t-14-lh-20 text-muted from global;
   text-decoration: none;
+}
+
+.dropdownChildren {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+  padding-top: var(--sp-8);
+}
+
+.dropdownChildRow {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdownChildLink {
+  composes: t-14-lh-20 text-green-deep from global;
+  text-decoration: none;
+}
+
+.dropdownChildLink:hover,
+.dropdownChildLink:focus-visible {
+  text-decoration: underline;
 }
 
 .dropdownArrow {
