@@ -47,7 +47,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "calendarClock",
       label: "TERMIN",
-      title: "Data odbioru jest stała, a warunki na obiekcie zmieniają się do końca",
+      title: "Data odbioru jest stała, a warunki\nna obiekcie zmieniają się do końca",
       description:
         "Prace się przesuwają, strefy bywają wyłączone, a okno realizacji się skraca. Potrzebujesz wykonawcy, który potrafi działać w realnych warunkach obiektu.",
       tone: "processes",
@@ -71,7 +71,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "truck",
       label: "ZASOBY",
-      title: "Brak ludzi albo sprzętu zwykle pojawia się w najgorszym momencie",
+      title: "Brak ludzi albo sprzętu pojawia się w najgorszym momencie",
       description:
         "Kiedy termin jest blisko, nie ma miejsca na szukanie nowej ekipy. Potrzebna jest organizacja, która ma zasoby i potrafi szybko wejść do pracy.",
       tone: "resources",
@@ -87,7 +87,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "route",
       label: "PROCEDOWANIE",
-      title: "Po wykonaniu prac temat musi dać się sprawnie zamknąć po stronie firmy",
+      title: "Po wykonaniu prac inwestycja musi być sprawnie sfinalizowana",
       description:
         "Zakres, status realizacji i dokumenty końcowe powinny ułatwiać rozliczenie usługi, odbiór oraz przekazanie sprawy dalej do przełożonego lub zakupów.",
       tone: "technology",
@@ -104,7 +104,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "hardHat",
       label: "Sprzątanie po budowie i po pracach wykończeniowych",
-      title: "Przygotowanie obiektu pod odbiór, przekazanie albo otwarcie",
+      title: "Przygotowanie obiektu pod odbiór, przekazanie i otwarcie",
       description:
         "Sprzątanie po budowie, remoncie i reficie prowadzone według stref, kolejności prac oraz technologii dobranej do materiałów i warunków na obiekcie.",
       ctaLabel: "Zobacz jak działamy",
@@ -114,7 +114,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "building2",
       label: "Utrzymanie czystości biur i lokali",
-      title: "Stały standard w codziennym działaniu obiektu",
+      title: "Stały standard w codziennym działaniu obiektu\n",
       description:
         "Cykliczna obsługa biur, lokali handlowych i usługowych. Harmonogram, kontrola jakości i ciągłość serwisu, które ograniczają potrzebę ciągłego pilnowania wykonawcy.",
       ctaLabel: "Porozmawiaj o stałej obsłudze",
@@ -134,7 +134,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "grid3x3",
       label: "Maszynowe czyszczenie posadzek",
-      title: "Technologia dobrana do nawierzchni i rodzaju zabrudzeń",
+      title: "Technologia dobrana do nawierzchni i fzabrudzeń",
       description:
         "Doczyszczanie posadzek w obiektach komercyjnych z doborem metody do typu nawierzchni, skali zabrudzeń i oczekiwanego efektu końcowego.",
       ctaLabel: "Zobacz opcje",
@@ -156,13 +156,13 @@ const solutionsContent: SolutionsSectionContent = {
 
 const showcaseContent: ShowcaseSectionContent = {
   kickerLabel: "JAK OGRANICZAMY RYZYKA",
-  titleLines: ["Co najczęściej wpływa na termin", "i wynik realizacji w B2B"],
+  titleLines: ["Co najczęściej wpływa na termin", "i wynik realizacji inwestycji"],
   description:
     "W usługach dla firm kluczowy jest nie tylko zakres prac, ale sposób prowadzenia całego etapu. Dlatego porządkujemy warunki wejścia, standard i odpowiedzialność jeszcze przed startem.",
   items: [
     {
       tag: "HARMONOGRAM",
-      title: "Zmiany na obiekcie i prace nachodzące na siebie",
+      title: "Ciągłe zmiany na obiekcie i prace nachodzące na siebie",
       description:
         "Potwierdzamy okno wejścia i realne warunki pracy przed realizacją. Dzięki temu zespół nie startuje w ciemno i nie traci czasu na improwizację na miejscu.",
       result: "Efekt: mniej przestojów i większa przewidywalność przebiegu prac.",
@@ -176,7 +176,7 @@ const showcaseContent: ShowcaseSectionContent = {
     },
     {
       tag: "STANDARD",
-      title: "Różne oczekiwania wobec efektu końcowego",
+      title: "Różne oczekiwania stron wobec efektu końcowego",
       description:
         "Ustalamy, co dokładnie ma zostać przygotowane do odbioru, przekazania albo otwarcia. Dopiero na tej podstawie planujemy zakres i kolejność prac.",
       result: "Efekt: krótsza lista uwag i sprawniejsza finalizacja etapu.",

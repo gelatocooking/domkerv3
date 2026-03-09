@@ -17,6 +17,7 @@
 }
 
 .title {
+  white-space: pre-line !important;
   composes: h2 from global;
   text-align: center;
 }

@@ -29,7 +29,7 @@ import styles from "./page.module.css";
 
 const defaultContent: PagesHeroContent = {
   badge: "SPRZĄTANIE PO BUDOWIE DLA KIEROWNIKA BUDOWY",
-  titleLines: ["Sprzątanie po budowie", "pod odbiór bez dokładania chaosu"],
+  titleLines: ["Sprzątanie po budowie", "pod odbiór bez chaosu"],
   emphasisIconName: "hardHat",
   emphasisSuffix: "/",
   description:
@@ -181,7 +181,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "users",
       label: "KADRY",
-      title: "Legalne zatrudnienie i przygotowane zespoły",
+      title: "Legalne zatrudnienie\ni przygotowane zespoły",
       description:
         "Wiesz, kto wchodzi na obiekt i kto odpowiada za realizację. To ogranicza ryzyka kadrowe i skraca czas wdrażania ekipy na miejscu.",
       tone: "resources",

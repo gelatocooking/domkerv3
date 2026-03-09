@@ -11,6 +11,7 @@
   align-items: center;
   grid-row-gap: var(--gap-40);
   composes: padding-global-2 from global;
+  white-space: pre-line !important;
 }
 
 .headingGroup {

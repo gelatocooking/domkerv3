@@ -452,6 +452,7 @@ h2 {
   letter-spacing: var(--ls--0_176px);
   color: var(--color-heading-dark);
   margin: 0;
+  white-space: pre-line;
 }
 .h3-smaller {
   font-size: var(--fs-24);
