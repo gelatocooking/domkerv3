@@ -4,9 +4,29 @@ import { useState } from "react";
 import Image from "next/image";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
+import type { IconName } from "../Icon/Icon";
 import styles from "./Header.module.css";
 
-const navItems = [
+type HeaderDropdownChild = {
+  label: string;
+  href: string;
+};
+
+type HeaderDropdownItem = {
+  icon: IconName;
+  title: string;
+  description: string;
+  href: string;
+  children?: HeaderDropdownChild[];
+};
+
+type HeaderNavItem = {
+  label: string;
+  href: string;
+  dropdownItems: HeaderDropdownItem[];
+};
+
+const navItems: HeaderNavItem[] = [
   {
     label: "Usługi dla firm",
     href: "/sprzatanie-dla-firm",
@@ -21,7 +41,17 @@ const navItems = [
             label: "Dla kierownika budowy",
             href: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-kierownika-budowy",
           },
+          {
+            label: "Dla zarządcy obiektu",
+            href: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-zarzadcy-obiektu",
+          },
         ],
+      },
+      {
+        icon: "circle",
+        title: "Maszynowe czyszczenie posadzek",
+        description: "Profesjonalne czyszczenie posadzek dla firm",
+        href: "/sprzatanie-dla-firm/maszynowe-czyszczenie-posadzek",
       },
     ],
   },
@@ -100,9 +130,7 @@ export default function Header() {
                                 </span>
                                 <span className={styles.dropdownContent}>
                                   <a href={entry.href} className={styles.dropdownMainLink}>
-                                    <span className={styles.dropdownTitle}>
-                                      {entry.title}
-                                    </span>
+                                    <span className={styles.dropdownTitle}>{entry.title}</span>
                                     <span className={styles.dropdownDesc}>
                                       {entry.description}
                                     </span>

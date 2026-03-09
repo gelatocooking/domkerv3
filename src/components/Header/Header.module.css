@@ -138,7 +138,7 @@
   background: var(--bg-white);
   border-radius: var(--r-16);
   border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
-  padding: var(--sp-12) var(--sp-16);
+  padding: var(--sp-110) var(--sp-14);
   visibility: hidden;
   transform: translateY(var(--sp-8));
   pointer-events: none;
@@ -208,7 +208,7 @@
 .dropdownTitle {
   margin: var(--sp-0);
   display: inline-block;
-  padding: var(--sp-4) var(--sp-8);
+  /* padding: var(--sp-4) var(--sp-8); */
   border-radius: var(--r-8);
   composes: t-16-24-600 t-strong text-dark from global;
   text-decoration: none;
@@ -313,12 +313,13 @@
   }
 
   .navAreaOpen {
-    max-height: calc(var(--sp-210) + var(--sp-210) + var(--sp-210) + var(--sp-210) + var(--sp-210));
+    max-height: 100svh;
     opacity: 1;
     transform: translateY(var(--sp-0));
     pointer-events: auto;
     padding-bottom: var(--sp-32);
-    overflow: visible;
+    overflow-y: auto;
+    overflow-x: visible;
   }
 
   .navList {
@@ -352,34 +353,25 @@
     margin-top: var(--sp-8);
     width: 100%;
     max-width: calc(var(--sp-210) + var(--sp-210) + var(--sp-80));
-    opacity: 0;
-    max-height: var(--sp-0);
-    padding-top: var(--sp-0);
-    padding-bottom: var(--sp-0);
-    overflow: hidden;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    max-height: none;
+    padding: var(--sp-12);
+    overflow: visible;
     border-radius: var(--r-16);
     transform: translateY(var(--sp-0));
-    transition:
-      opacity 200ms ease,
-      max-height 240ms ease,
-      padding 240ms ease,
-      visibility 200ms ease;
+    pointer-events: auto;
   }
-
   .navItem:hover .dropdown,
   .navItem:focus-within .dropdown {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .navItemOpen .dropdown {
-    opacity: 1;
-    visibility: visible;
-    max-height: calc(var(--sp-210) + var(--sp-210));
-    padding-top: var(--sp-12);
-    padding-bottom: var(--sp-12);
-    pointer-events: auto;
+    display: block;
   }
 
   .dropdownItem {

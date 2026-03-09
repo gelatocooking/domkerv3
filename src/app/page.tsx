@@ -27,12 +27,12 @@ import styles from "./page.module.css";
 
 const defaultContent: HeroContent = {
   badge: "SPRZĄTANIE DLA FIRM I SIECI",
-  titleLines: ["Sprzątanie pod odbiory", "i przekazanie obiektu"],
+  titleLines: ["Sprzątanie dla firm", "pod odbiory", "i przekazanie obiektu"],
   emphasisText: "na czas",
   emphasisIconName: "lightbulb",
   emphasisSuffix: "",
   description:
-    "Domker wspiera firmy wszędzie tam, gdzie liczy się termin, standard i sprawna finalizacja etapu. Organizujemy realizację, dopasowujemy wejście do warunków na obiekcie i zostawiamy przestrzeń gotową do odbioru, otwarcia albo przekazania dalej. Działamy w całej Polsce.",
+    "Domker to firma sprzątająca dla firm, która myśli procesowo — szczególnie tam, gdzie liczy się termin, standard i sprawna finalizacja etapu. Realizujemy sprzątanie po budowie, utrzymanie czystości biur i lokali, mycie witryn oraz czyszczenie posadzek. Organizujemy wejście, dopasowujemy prace do warunków na obiekcie i zostawiamy przestrzeń gotową do odbioru, otwarcia albo przekazania dalej. Cała Polska.",
   ctaLabel: "Sprawdź dostępność terminu",
   imageSrc: "/tlo.png",
   imageAlt: "Sprzątanie dla firm",
@@ -40,56 +40,56 @@ const defaultContent: HeroContent = {
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE WYZWANIA?",
-  titleLines: ["Jeśli celem jest odbiór, przekazanie", "problemem rzadko jest samo sprzątanie"],
+  titleLines: ["Jeśli celem jest odbiór, przekazanie", "albo otwarcie, „czysto” to dopiero początek"],
   description:
-    "Najczęściej decyduje organizacja etapu: właściwe okno wejścia, jasny standard, bezpieczna praca na nowych powierzchniach i potwierdzenie wykonania, które da się przekazać dalej po stronie firmy.",
+    "W realizacjach B2B problemem rzadko jest samo wykonanie prac. Najczęściej o wyniku decydują warunki wejścia, koordynacja między ekipami, bezpieczeństwo wykończeń i standard, który da się zweryfikować po stronie firmy.",
   items: [
     {
       iconName: "calendarClock",
       label: "TERMIN",
-      title: "Odbiór ma stałą datę, a warunki na obiekcie zmieniają się do końca",
+      title: "Data odbioru jest stała, a warunki na obiekcie zmieniają się do końca",
       description:
-        "Prace się przesuwają, strefy bywają wyłączone, a okno realizacji się skraca. Potrzebujesz wykonawcy, który potrafi pracować w realnych warunkach obiektu.",
+        "Prace się przesuwają, strefy bywają wyłączone, a okno realizacji się skraca. Potrzebujesz wykonawcy, który potrafi działać w realnych warunkach obiektu.",
       tone: "processes",
     },
     {
       iconName: "workflow",
       label: "KOORDYNACJA",
-      title: "Wiele ekip oznacza większe ryzyko chaosu i powrotów",
+      title: "Wiele ekip i wiele decyzji zwiększa ryzyko chaosu na finiszu",
       description:
-        "Gdy każdy odpowiada tylko za swój fragment, łatwo o brud wracający po innych pracach i rozmycie odpowiedzialności za efekt końcowy.",
+        "Gdy każdy odpowiada tylko za swój fragment, łatwo o wtórne zabrudzenia, brak kolejności prac i rozmycie odpowiedzialności za efekt końcowy.",
       tone: "processes",
     },
     {
       iconName: "shieldAlert",
       label: "WYKOŃCZENIA",
-      title: "Nowe powierzchnie wymagają ostrożnej technologii",
+      title: "Nowe powierzchnie wymagają technologii dobranej do materiału",
       description:
-        "Posadzki, szyby, armatura i fronty nie wybaczają przypadkowych narzędzi ani źle dobranej chemii. Na finiszu liczy się bezpieczeństwo materiałowe.",
+        "Posadzki, szyby albo okna, armatura i fronty nie wybaczają przypadkowych narzędzi ani rozwiązań doraźnych. Na końcu liczy się bezpieczeństwo materiałowe.",
       tone: "risk",
     },
     {
       iconName: "truck",
       label: "ZASOBY",
-      title: "Brak ludzi lub sprzętu pojawia się zwykle w najgorszym momencie",
+      title: "Brak ludzi albo sprzętu zwykle pojawia się w najgorszym momencie",
       description:
-        "Kiedy termin jest blisko, nie ma miejsca na szukanie ekipy od nowa. Potrzebna jest organizacja, która ma rezerwę i potrafi szybko wejść do pracy.",
+        "Kiedy termin jest blisko, nie ma miejsca na szukanie nowej ekipy. Potrzebna jest organizacja, która ma zasoby i potrafi szybko wejść do pracy.",
       tone: "resources",
     },
     {
       iconName: "clipboardCheck",
-      label: "JAKOŚĆ",
-      title: "Efekt końcowy musi być weryfikowalny, nie uznaniowy",
+      label: "STANDARD",
+      title: "Efekt końcowy musi być czytelny dla odbioru, a nie uznaniowy",
       description:
-        "Bez ustalonego standardu jedna strona widzi gotowość, a druga listę uwag. To wydłuża odbiór i niepotrzebnie komplikuje finalizację etapu.",
+        "Bez ustalonego standardu jedna strona widzi gotowość, a druga listę uwag. To wydłuża finalizację i komplikuje przekazanie obiektu dalej.",
       tone: "data",
     },
     {
       iconName: "route",
-      label: "FINALIZACJA",
-      title: "Na końcu potrzebne są nie tylko prace, ale też potwierdzenie wykonania",
+      label: "PROCEDOWANIE",
+      title: "Po wykonaniu prac temat musi dać się sprawnie zamknąć po stronie firmy",
       description:
-        "Zdjęcia, protokół i czytelny status realizacji ułatwiają rozliczenie usługi, przekazanie obiektu i zamknięcie sprawy po stronie firmy.",
+        "Zakres, status realizacji i dokumenty końcowe powinny ułatwiać rozliczenie usługi, odbiór oraz przekazanie sprawy dalej do przełożonego lub zakupów.",
       tone: "technology",
     },
   ],
@@ -97,16 +97,16 @@ const problemsContent: ProblemsSectionContent = {
 
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "CO ROBIMY",
-  titleLines: ["Usługi dla firm, które", "mają być sprawnie zorganizowane"],
+  titleLines: ["Usługi dla firm i sieci,", "które trzeba zorganizować przewidywalnie"],
   description:
-    "Obsługujemy obiekty komercyjne w modelu, który upraszcza decyzję i porządkuje realizację. Wybierasz usługę, a my przejmujemy organizację wejścia, standard i potwierdzenie wykonania.",
+    "Obsługujemy obiekty komercyjne w modelu, który upraszcza decyzję i porządkuje realizację. Wybierasz właściwą usługę, a my prowadzimy wejście, zakres, standard i finalizację etapu.",
   items: [
     {
       iconName: "hardHat",
-      label: "Sprzątanie po budowie i remontach",
-      title: "Finalizacja etapu po pracach",
+      label: "Sprzątanie po budowie i po pracach wykończeniowych",
+      title: "Przygotowanie obiektu pod odbiór, przekazanie albo otwarcie",
       description:
-        "Sprzątanie po budowie i wykończeniach pod odbiór, przekazanie albo otwarcie. Pracujemy według stref, kolejności i technologii dobranej do materiałów.",
+        "Sprzątanie po budowie, remoncie i reficie prowadzone według stref, kolejności prac oraz technologii dobranej do materiałów i warunków na obiekcie.",
       ctaLabel: "Zobacz jak działamy",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/window.svg",
@@ -114,9 +114,9 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "building2",
       label: "Utrzymanie czystości biur i lokali",
-      title: "Stały standard w codziennej pracy obiektu",
+      title: "Stały standard w codziennym działaniu obiektu",
       description:
-        "Cykliczna obsługa biur i lokali handlowo-usługowych. Harmonogram, kontrola jakości i szybkie reakcje, które utrzymują przewidywalny poziom serwisu.",
+        "Cykliczna obsługa biur, lokali handlowych i usługowych. Harmonogram, kontrola jakości i ciągłość serwisu, które ograniczają potrzebę ciągłego pilnowania wykonawcy.",
       ctaLabel: "Porozmawiaj o stałej obsłudze",
       mediaAlt: "Utrzymanie czystości",
       mediaSrc: "/window.svg",
@@ -124,29 +124,29 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "sparkles",
       label: "Mycie okien i witryn",
-      title: "Regularny efekt i sprawna logistyka",
+      title: "Regularny efekt i logistyka dopasowana do obiektu",
       description:
-        "Mycie witryn dla firm w ustalonych oknach realizacji oraz mycie okien dla klientów prywatnych. Usługa uporządkowana, bezpieczna i łatwa do zaplanowania.",
+        "Mycie witryn dla firm i sieci oraz mycie okien w domach i mieszkaniach. Jedna usługa, prosta organizacja, czytelne zasady i szybka wycena ze zdjęć.",
       ctaLabel: "Sprawdź usługę",
       mediaAlt: "Mycie okien i witryn",
       mediaSrc: "/window.svg",
     },
     {
       iconName: "grid3x3",
-      label: "Czyszczenie posadzek",
-      title: "Technologia dobrana do nawierzchni",
+      label: "Maszynowe czyszczenie posadzek",
+      title: "Technologia dobrana do nawierzchni i rodzaju zabrudzeń",
       description:
-        "Maszynowe doczyszczanie i odplamianie posadzek w obiektach komercyjnych. Dobieramy metodę do rodzaju zabrudzeń i oczekiwanego efektu końcowego.",
+        "Doczyszczanie posadzek w obiektach komercyjnych z doborem metody do typu nawierzchni, skali zabrudzeń i oczekiwanego efektu końcowego.",
       ctaLabel: "Zobacz opcje",
       mediaAlt: "Czyszczenie posadzek",
       mediaSrc: "/window.svg",
     },
     {
       iconName: "mapPin",
-      label: "Zasięg i moce",
-      title: "Cała Polska i organizacja pod termin",
+      label: "Cała Polska i jedna koordynacja",
+      title: "Jedna współpraca zamiast wielu lokalnych ustaleń",
       description:
-        "Działamy w wielu miastach i dobieramy zespoły do skali, okna wejścia oraz warunków realizacji. To jedna współpraca zamiast wielu lokalnych ustaleń.",
+        "Działamy w wielu miastach i dobieramy zespoły do skali, terminu oraz warunków realizacji. To model dla firm, które chcą prowadzić temat spójnie.",
       ctaLabel: "Sprawdź dostępność",
       mediaAlt: "Zasięg realizacji",
       mediaSrc: "/window.svg",
@@ -155,68 +155,68 @@ const solutionsContent: SolutionsSectionContent = {
 };
 
 const showcaseContent: ShowcaseSectionContent = {
-  kickerLabel: "RYZYKA I JAK JE OGRANICZAMY",
-  titleLines: ["Ryzyka, które najczęściej opóźniają", "odbiór i komplikują realizację"],
+  kickerLabel: "JAK OGRANICZAMY RYZYKA",
+  titleLines: ["Co najczęściej wpływa na termin", "i wynik realizacji w B2B"],
   description:
-    "W sprzątaniu dla firm problemem zwykle nie jest sam zakres prac, ale brak zasad prowadzenia etapu. Dlatego przed startem porządkujemy warunki wejścia, standard i sposób potwierdzenia efektu.",
+    "W usługach dla firm kluczowy jest nie tylko zakres prac, ale sposób prowadzenia całego etapu. Dlatego porządkujemy warunki wejścia, standard i odpowiedzialność jeszcze przed startem.",
   items: [
     {
       tag: "HARMONOGRAM",
-      title: "Zmiany na budowie i prace nachodzące na siebie",
+      title: "Zmiany na obiekcie i prace nachodzące na siebie",
       description:
-        "Potwierdzamy okno wejścia i realne warunki pracy przed startem. Dzięki temu realizacja nie zaczyna się w ciemno i nie wraca po pierwszej godzinie.",
+        "Potwierdzamy okno wejścia i realne warunki pracy przed realizacją. Dzięki temu zespół nie startuje w ciemno i nie traci czasu na improwizację na miejscu.",
       result: "Efekt: mniej przestojów i większa przewidywalność przebiegu prac.",
     },
     {
       tag: "DOSTĘP",
-      title: "Procedury obiektu i blokady organizacyjne",
+      title: "Procedury obiektu, formalności i ograniczenia wejścia",
       description:
-        "Zbieramy wymagania wejścia, zasady dostępu i formalności wcześniej, żeby zespół nie tracił czasu na uzgodnienia w dniu realizacji.",
+        "Zbieramy zasady dostępu, wymagania obiektu i ograniczenia organizacyjne wcześniej, żeby nie blokować realizacji w dniu wejścia.",
       result: "Efekt: szybszy start i stabilniejsza organizacja pracy.",
     },
     {
       tag: "STANDARD",
-      title: "Różne oczekiwania co do efektu końcowego",
+      title: "Różne oczekiwania wobec efektu końcowego",
       description:
-        "Ustalamy zakres i standard do weryfikacji, a przed zgłoszeniem gotowości prowadzimy kontrolę wewnętrzną według checklisty.",
-      result: "Efekt: krótsza lista uwag i sprawniejsza finalizacja realizacji.",
+        "Ustalamy, co dokładnie ma zostać przygotowane do odbioru, przekazania albo otwarcia. Dopiero na tej podstawie planujemy zakres i kolejność prac.",
+      result: "Efekt: krótsza lista uwag i sprawniejsza finalizacja etapu.",
     },
     {
       tag: "ODPOWIEDZIALNOŚĆ",
-      title: "Usterki i wątpliwości, po czyjej stronie jest problem",
+      title: "Wątpliwości, co należy do zakresu, a co jest stanem zastanym",
       description:
-        "Jeśli coś ujawnia się w trakcie, od razu to zgłaszamy i dokumentujemy. Jasno rozdzielamy stan zastany od zakresu realizacji.",
-      result: "Efekt: mniej nieporozumień i mniej sporów po wykonaniu prac.",
+        "Jeżeli w trakcie ujawniają się usterki albo ograniczenia, od razu je komunikujemy i porządkujemy informacyjnie po stronie Zleceniodawcy.",
+      result: "Efekt: mniej nieporozumień i łatwiejsze dalsze procedowanie.",
     },
     {
       tag: "ZASOBY",
-      title: "Brak ludzi lub sprzętu w kluczowym momencie",
+      title: "Ryzyko braku ludzi lub sprzętu w kluczowym momencie",
       description:
-        "Planujemy realizację z rezerwą. Gdy warunki się zmieniają albo okno się skraca, nie zostajesz bez wykonawcy na ostatniej prostej.",
-      result: "Efekt: większa pewność dowiezienia terminu.",
+        "Planujemy realizację z zapleczem organizacyjnym. Gdy warunki się zmieniają albo okno się skraca, zwiększa to szansę dowiezienia terminu.",
+      result: "Efekt: większa pewność realizacji w wymagającym harmonogramie.",
     },
   ],
 };
 
 const ctaContent: CtaSectionContent = {
-  eyebrowText: "POTRZEBUJESZ SZYBKO SFINALIZOWAĆ TEN ETAP?",
-  title: "Powiedz, jaki obiekt trzeba przygotować i na kiedy",
+  eyebrowText: "POTRZEBUJESZ SPRAWNIE ZORGANIZOWAĆ TEN ETAP?",
+  title: "Powiedz, jaki obiekt trzeba przygotować i jaki jest cel realizacji",
   description:
-    "W krótkiej rozmowie zbierzemy minimum danych, potwierdzimy okno wejścia i wskażemy najważniejsze ryzyka organizacyjne. Jeśli sprawa jest pilna, od razu powiemy, czy mamy moce na termin.",
+    "W krótkiej rozmowie zbierzemy minimum danych, potwierdzimy dostępność i wskażemy właściwą ścieżkę: przed odbiorem inwestorskim, przed otwarciem, przed przekazaniem albo do stałej obsługi.",
   buttonLabel: "Sprawdź dostępność terminu",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "DOWODY Z REALIZACJI",
-  titleLines: ["Zobacz, jak wyglądają nasze realizacje", "na obiektach w całej Polsce"],
+  titleLines: ["Zobacz, jak pracujemy", "na obiektach w całej Polsce"],
   description:
-    "Zdjęcia z realizacji, zakresy i efekty. Zobacz, jak wygląda finalizacja etapu w praktyce — bez ogólników i bez deklaracji bez pokrycia.",
+    "Realizacje, zakresy i efekty z różnych scenariuszy B2B. Zobacz, jak wygląda współpraca w praktyce — od pierwszych ustaleń po finalizację etapu.",
   cards: [
     {
       title: "Realizacje",
       description:
-        "Przykładowe obiekty, zakresy prac i konkretne efekty. Krótkie opisy pokazujące, co było do wykonania i jaki rezultat został dowieziony.",
+        "Przykładowe obiekty, zakresy prac i rezultaty. Krótkie opisy pokazujące warunki realizacji, typ obiektu i to, co było kluczowe dla efektu końcowego.",
       buttonLabel: "Zobacz realizacje",
       media: {
         type: "image",
@@ -227,7 +227,7 @@ const knowledgeContent: KnowledgeSectionContent = {
     {
       title: "Referencje i opinie",
       description:
-        "Co klienci doceniają we współpracy. Najczęściej terminowość, komunikację, porządek organizacyjny i czytelne potwierdzenie wykonania.",
+        "Co klienci B2B doceniają we współpracy. Najczęściej przewidywalność, komunikację, porządek organizacyjny i sposób prowadzenia realizacji.",
       buttonLabel: "Zobacz referencje",
       media: {
         type: "image",
@@ -240,16 +240,16 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "KONTAKT",
-  title: `Wyślij minimum danych, a my wrócimy z jasnym kolejnym krokiem`,
+  title: `Wyślij minimum danych, a wrócimy z jasnym kolejnym krokiem`,
   description:
-    "Napisz, jaki to obiekt i na kiedy potrzebujesz realizacji. Jeśli masz zdjęcia, dołącz je. Wrócimy z krótką listą pytań, potwierdzimy dostępność i przygotujemy ofertę gotową do przekazania w firmie.",
+    "Napisz, jaki to obiekt, jaki jest cel realizacji i na kiedy potrzebujesz wejścia. Jeśli masz zdjęcia, dołącz je. W odpowiedzi potwierdzimy dostępność, doprecyzujemy zakres i przygotujemy ofertę gotową do przekazania w firmie.",
   chips: [
-    { label: "Szybka odpowiedź" },
+    { label: "Szybka kwalifikacja" },
     { label: "Jasny zakres" },
     { label: "Kontrola jakości" },
-    { label: "Potwierdzenie wykonania" },
+    { label: "Czytelna finalizacja" },
     { label: "Obsługa w wielu miastach" },
-    { label: "Wejście nawet w 3 dni", accent: true },
+    { label: "Start nawet w 3 dni*", accent: true },
   ],
   form: {
     emailLabel: "Adres e-mail",
@@ -257,7 +257,7 @@ const contactContent: ContactSectionContent = {
     phoneLabel: "Numer telefonu",
     phonePlaceholder: "Twój numer telefonu",
     topicLabel: "Temat",
-    topicPlaceholder: "Jaki obiekt i na kiedy jest termin",
+    topicPlaceholder: "Jaki obiekt, jaki cel i na kiedy",
     consentText:
       "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
     submitLabel: "Wyślij zapytanie",
@@ -267,6 +267,7 @@ const contactContent: ContactSectionContent = {
     text: "Zespół operacyjny gotowy do wejścia",
   },
 };
+
 export default function Home() {
   return (
     <div className={styles.page}>
