@@ -53,6 +53,18 @@ const navItems: HeaderNavItem[] = [
         description: "Profesjonalne czyszczenie posadzek dla firm",
         href: "/sprzatanie-dla-firm/maszynowe-czyszczenie-posadzek",
       },
+       {
+        icon: "circle",
+        title: "Mycie okien i witryn",
+        description: "Mycie okien i witryn dla firm oraz klientów indywidualnych",
+        href: "/sprzatanie-dla-firm/mycie-okien-i-witryn",
+      },
+      {
+        icon: "circle",
+        title: "Sprzątanie cykliczne",
+        description: "Stała obsługa sprzątania dla firm",
+        href: "/sprzatanie-dla-firm/sprzatanie-cykliczne",
+      },
     ],
   },
   { label: "Referencje", href: "#", dropdownItems: [] },

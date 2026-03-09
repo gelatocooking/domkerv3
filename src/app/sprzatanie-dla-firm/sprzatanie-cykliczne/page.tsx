@@ -1,4 +1,4 @@
-import Header from "../../../components/Header/Header";
+﻿import Header from "../../../components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "../../../components/PagesHero/PagesHero";
 import ContactSection, {
   type ContactSectionContent,
@@ -25,7 +25,7 @@ import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSe
 
 const defaultContent: PagesHeroContent = {
   badge: "SPRZĄTANIE CYKLICZNE (B2B)",
-  titleLines: ["Sprzątanie cykliczne", "bez ciągłego pilnowania serwisu"],
+  titleLines: ["Sprzątanie cykliczne", "bez ciągłego pilnowania"],
   emphasisSuffix: "/",
   description:
     "To usługa dla biur, lokali i obiektów komercyjnych, w których liczy się stały standard, przewidywalny harmonogram i współpraca, do której nie trzeba wracać co tydzień od zera. W Domker ustawiamy regularny serwis tak, żeby działał w tle i nie angażował Cię bardziej, niż trzeba.",
