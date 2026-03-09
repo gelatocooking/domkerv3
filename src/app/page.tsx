@@ -65,7 +65,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "WYKOŃCZENIA",
       title: "Nowe powierzchnie wymagają technologii dobranej do materiału",
       description:
-        "Posadzki, szyby albo okna, armatura i fronty nie wybaczają przypadkowych narzędzi ani rozwiązań doraźnych. Na końcu liczy się bezpieczeństwo materiałowe.",
+        "Posadzki, szyby albo okna i armatura nie wybaczają przypadkowych narzędzi ani rozwiązań doraźnych. Na końcu liczy się bezpieczeństwo materiałowe.",
       tone: "risk",
     },
     {

@@ -8,9 +8,6 @@ import styles from "./page.module.css";
 import ProblemsSection, {
   type ProblemsSectionContent,
 } from "@/components/ProblemsSection/ProblemsSection";
-import BenefitsSection, {
-  type BenefitsSectionContent,
-} from "@/components/BenefitsSection/BenefitsSection";
 import ProcessSection, {
   type ProcessSectionContent,
 } from "@/components/ProcessSection/ProcessSection";
@@ -23,7 +20,327 @@ import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
 import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
-// /sprzatanie-po-budowie — głębiej, stricte pod usługę, unikalnie względem home / hub / buyer persony
+
+// /sprzatanie-po-budowie
+
+const defaultContent: PagesHeroContent = {
+  badge: "SPRZĄTANIE PO BUDOWIE (B2B)",
+  titleLines: ["Sprzątanie po budowie", "pod odbiór bez domyślania się efektu"],
+  emphasisSuffix: "/",
+  description:
+    "To etap, na którym widać wszystko: pył technologiczny, ślady po foliach i klejach, smugi pod światło i niedoczyszczone detale przy listwach, progach i profilach. W Domker prowadzimy sprzątanie po budowie jak zadanie odbiorowe: plan stref, kolejność prac, technologia pod materiał i kontrola przed zgłoszeniem gotowości.",
+  ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+};
+const knowledgeContent2: KnowledgeSectionContent = {
+  kickerLabel: "WYBIERZ ŚCIEŻKĘ PO ROLI",
+  titleLines: ["Domker dopasowuje sposób działania", "do Twojej roli po stronie obiektu"],
+  description:
+    "Jeśli odpowiadasz za odbiór, harmonogram i końcówkę budowy, będziesz patrzeć na ten etap inaczej niż osoba odpowiadająca za przekazanie obiektu, procedury i komunikację po stronie firmy. Dlatego rozdzielamy dalszą ścieżkę według roli.",
+  cards: [
+    {
+      title: "Kierownik budowy / wykonawca",
+      description:
+        "Dla osób, które chcą domknąć etap pod odbiór bez dodatkowych wejść, powrotów i rozjechania harmonogramu. Tu liczą się strefy odbiorowe, kolejność prac, kontrola checklistą i gotowość do zgłoszenia.",
+      buttonLabel: "Jestem kierownikiem budowy",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Ścieżka dla kierownika budowy",
+      },
+    },
+    {
+      title: "Zarządca obiektu / office / koordynacja",
+      description:
+        "Dla osób, które odpowiadają za procedury, przekazanie, kontakt między stronami i dopięcie tematu organizacyjnie. Tu liczą się formalności, jeden punkt kontaktu, dokumentacja i usługa gotowa do procedowania dalej.",
+      buttonLabel: "Odpowiadam za koordynację",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Ścieżka dla zarządcy obiektu",
+      },
+    },
+  ],
+};
+const problemsContent: ProblemsSectionContent = {
+  kickerLabel: "KIEDY TO JEST POTRZEBNE?",
+  titleLines: ["Sprzątanie po budowie ma sens wtedy,", "gdy liczy się wynik odbioru"],
+  description:
+    "To nie jest usługa od odświeżenia obiektu. To etap, który ma przygotować przestrzeń do odbioru, przekazania albo otwarcia — w warunkach, gdzie zła kolejność prac, pył i błędy technologiczne wracają jako poprawki.",
+  items: [
+    {
+      iconName: "sparkles",
+      label: "PYŁ",
+      title: "Pył po pracach technicznych wraca tam, gdzie będzie oceniany obiekt",
+      description:
+        "Po szlifach, docinkach i wierceniach osiada na detalach, profilach, parapetach i ciągach komunikacyjnych. Bez pracy strefami efekt szybko znika.",
+      tone: "processes",
+    },
+    {
+      iconName: "clipboardList",
+      label: "FOLIE I KLEJE",
+      title: "Ślady po zabezpieczeniach wychodzą przy końcowym oglądzie",
+      description:
+        "Folie, taśmy i kleje po montażu często stają się widoczne dopiero pod światło, z bliska albo po zdjęciu ostatnich zabezpieczeń.",
+      tone: "data",
+    },
+    {
+      iconName: "shieldAlert",
+      label: "MATERIAŁY",
+      title: "Nowe wykończenia nie wybaczają przypadkowej technologii",
+      description:
+        "Świeże posadzki, szkło, armatura, profile i fronty wymagają narzędzi oraz chemii dobranych do materiału, nie improwizacji na miejscu.",
+      tone: "risk",
+    },
+    {
+      iconName: "calendarClock",
+      label: "WEJŚCIE",
+      title: "Obiekt nadal żyje i nie zawsze jest gotowy na jedno końcowe wejście",
+      description:
+        "Równoległe ekipy, strefy wyłączone i przesuwający się harmonogram potrafią zatrzymać realizację, jeśli warunki wejścia nie są potwierdzone wcześniej.",
+      tone: "processes",
+    },
+    {
+      iconName: "clipboardCheck",
+      label: "KONTROLA",
+      title: "Brak wewnętrznej weryfikacji wraca jako lista uwag na finiszu",
+      description:
+        "Jeżeli efekt nie jest sprawdzony przed zgłoszeniem gotowości, poprawki wracają dokładnie wtedy, gdy czasu na nie jest najmniej.",
+      tone: "technology",
+    },
+    {
+      iconName: "fileText",
+      label: "ODPOWIEDZIALNOŚĆ",
+      title: "Bez dokumentacji trudno oddzielić stan zastany od zakresu prac",
+      description:
+        "Na końcówce łatwo o spór, co było zabrudzeniem, co usterką, a co efektem innych ekip. Dokumentowanie sytuacji porządkuje temat.",
+      tone: "resources",
+    },
+  ],
+};
+
+const solutionsContent: SolutionsSectionContent = {
+  kickerLabel: "JAK TO PROWADZIMY",
+  titleLines: ["Sprzątanie po budowie jako proces", "stref, kolejności i decyzji technologicznych"],
+  description:
+    "Najpierw ustalamy, do jakiego odbioru przygotowujemy obiekt. Potem porządkujemy strefy, dobieramy technologię do materiałów i zgłaszamy gotowość dopiero po kontroli wewnętrznej. Dzięki temu efekt jest sprawdzalny, a nie uznaniowy.",
+  items: [
+    {
+      iconName: "clipboardCheck",
+      label: "Standard odbiorowy",
+      title: "Najpierw ustalamy, jaki efekt ma przejść na końcu",
+      description:
+        "Inwestorski, urzędowy, przekazanie albo otwarcie. Standard końcowy musi być czytelny, żeby zakres i kolejność prac miały sens.",
+      ctaLabel: "Zobacz usługę",
+      mediaAlt: "Sprzątanie po budowie",
+      mediaSrc: "/sprzatanie-po-budowie",
+    },
+    {
+      iconName: "layoutGrid",
+      label: "Strefy krytyczne",
+      title: "Dzielimy obiekt na miejsca, które realnie będą oceniane",
+      description:
+        "Wejścia, komunikacja, przeszklenia, sanitariaty, zaplecza i detale wykończeniowe prowadzimy jako strefy wymagające osobnego podejścia.",
+      ctaLabel: "Wyślij minimum danych",
+      mediaAlt: "Minimum danych do wyceny",
+      mediaSrc: "/kontakt#minimum-danych",
+    },
+    {
+      iconName: "shieldAlert",
+      label: "Technologia pod materiał",
+      title: "Dobór metod wynika z powierzchni i ryzyka, nie z przyzwyczajeń",
+      description:
+        "Posadzki, szkło, armatura, profile i fronty mają różne ograniczenia. Dlatego decyzja technologiczna zapada przed wejściem.",
+      ctaLabel: "Standard i bezpieczeństwo",
+      mediaAlt: "Technologia i bezpieczeństwo",
+      mediaSrc: "/sprzatanie-po-budowie#standard",
+    },
+    {
+      iconName: "users",
+      label: "Kontrola wykonania",
+      title: "Gotowość zgłaszamy dopiero po własnej weryfikacji",
+      description:
+        "Realizacja jest sprawdzana checklistą przed przekazaniem. Na końcu przekazujemy protokół i zdjęcia jako materiał do dalszej procedury.",
+      ctaLabel: "Zapytaj (PDF/HTML)",
+      mediaAlt: "Kontakt i oferta",
+      mediaSrc: "/kontakt",
+    },
+    {
+      iconName: "calendarClock",
+      label: "Okno wejścia",
+      title: "Dopasowujemy realizację do realnego rytmu obiektu",
+      description:
+        "Jeśli sytuacja tego wymaga, pracujemy po godzinach albo między innymi robotami, żeby ograniczyć wtórne zabrudzenia i kolizje.",
+      ctaLabel: "Ustal okno wejścia",
+      mediaAlt: "Kontakt telefoniczny",
+      mediaSrc: "tel:+48502992002",
+    },
+    {
+      iconName: "truck",
+      label: "Skala i moce",
+      title: "Zespoły dobieramy do terminu, stanu obiektu i zakresu",
+      description:
+        "Od pojedynczych lokali po większe obiekty. Maksima organizacyjne zależą od warunków wejścia: do 5000 m² dziennie lub do 300 okien dziennie.",
+      ctaLabel: "Sprawdź dostępność",
+      mediaAlt: "Dostępność i termin",
+      mediaSrc: "/kontakt",
+    },
+  ],
+};
+
+const ctaContent: CtaSectionContent = {
+  eyebrowText: "MINIMUM DANYCH DO WIDEŁEK I TERMINU",
+  title: "Podaj dane, które przyspieszą wycenę i decyzję o wejściu",
+  description:
+    "Podaj lokalizację, metraż albo skalę obiektu, etap prac, termin i okno wejścia. Jeśli masz zdjęcia oraz informacje o materiałach wrażliwych, szybciej określimy zakres i sposób prowadzenia realizacji.",
+  buttonLabel: "Wyślij minimum danych",
+  avatars: ["A", "B", "C", "D", "E", "F", "G"],
+};
+
+const showcaseContent: ShowcaseSectionContent = {
+  kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
+  titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
+  description:
+    "Żeby wejść na obiekt i przeprowadzić realizację bez blokad, liczą się nie tylko ludzie i sprzęt, ale też procedury, dokumenty i jasne rozdzielenie odpowiedzialności.",
+  items: [
+    {
+      tag: "KADRY",
+      title: "Legalne zatrudnienie i przygotowane zespoły",
+      description:
+        "Pracownicy są legalnie zatrudnieni i przygotowani do pracy na obiekcie, co porządkuje logistykę i ogranicza ryzyka organizacyjne.",
+      result: "Efekt: większa przewidywalność wejścia i przebiegu realizacji.",
+    },
+    {
+      tag: "BHP",
+      title: "Szkolenia BHP i analiza zagrożeń przed startem",
+      description:
+        "Przed wejściem ustalamy strefy wyłączone, zasady pracy i ryzyka, żeby realizacja nie zatrzymała się przez procedury w trakcie.",
+      result: "Efekt: płynniejsze wejście i stabilniejsza organizacja prac.",
+    },
+    {
+      tag: "DOKUMENTY",
+      title: "Protokół i zdjęcia jako materiał do dalszego procedowania",
+      description:
+        "Po zakończeniu przekazujemy dokumentację wykonania. Jeżeli w trakcie ujawniają się usterki zastane, od razu je opisujemy i zgłaszamy.",
+      result: "Efekt: krótsza ścieżka odbioru i mniej sporów po realizacji.",
+    },
+    {
+      tag: "OC",
+      title: "Ubezpieczenie OC i jasne ramy odpowiedzialności",
+      description:
+        "Przy końcówce budowy liczy się nie tylko efekt, ale też zabezpieczenie współpracy i czytelne ustalenia dotyczące odpowiedzialności.",
+      result: "Efekt: mniejsze ryzyko organizacyjne po stronie zamawiającego.",
+    },
+    {
+      tag: "POUFNOŚĆ / DOSTĘP",
+      title: "Umowa o zachowaniu poufności i rejestr wejść, jeśli obiekt tego wymaga",
+      description:
+        "Jeśli obiekt ma dodatkowe formalności, wdrażamy je przed startem, żeby nie tracić okna realizacji przez blokady administracyjne.",
+      result: "Efekt: szybszy start i mniej problemów przy wejściu.",
+    },
+    {
+      tag: "ROZLICZENIA",
+      title: "Umowa i faktura VAT gotowe do akceptacji w firmie",
+      description:
+        "Przekazujemy czytelny zakres i dokumenty do zatwierdzenia oraz rozliczenia, tak aby procedowanie po stronie firmy było prostsze.",
+      result: "Efekt: sprawniejsza decyzja i łatwiejsza finalizacja etapu.",
+    },
+  ],
+};
+
+const processContent: ProcessSectionContent = {
+  kickerLabel: "JAK DZIAŁAMY?",
+  titleLines: ["Etap po etapie: od kwalifikacji", "do zgłoszenia gotowości"],
+  description:
+    "Ta usługa ma prowadzić do odbioru, a nie tylko do wykonania prac. Dlatego najpierw zbieramy minimum danych, potem potwierdzamy warunki wejścia i kolejność, a gotowość zgłaszamy dopiero po kontroli wewnętrznej.",
+  steps: [
+    {
+      index: "01",
+      title: "Minimum danych i szybka kwalifikacja",
+      description:
+        "Ustalamy typ obiektu, metraż, etap prac, termin, okno wejścia i strefy, które mają największe znaczenie odbiorowe.",
+    },
+    {
+      index: "02",
+      title: "Widełki i oferta do zatwierdzenia (PDF/HTML)",
+      description:
+        "Przygotowujemy najprostszy wariant realizacji i przekazujemy ofertę, którą można dalej wysłać do przełożonego, zarządu albo zakupów.",
+    },
+    {
+      index: "03",
+      title: "Potwierdzenie warunków wejścia i plan stref",
+      description:
+        "Doprecyzowujemy godziny, dostęp, BHP, strefy wyłączone, równoległe ekipy, ograniczenia materiałowe i kolejność prac.",
+    },
+    {
+      index: "04",
+      title: "Realizacja, kontrola i zgłoszenie gotowości",
+      description:
+        "Pracujemy według planu stref i wybranej technologii. Po kontroli wewnętrznej przekazujemy protokół oraz zdjęcia i dopiero wtedy zgłaszamy gotowość.",
+    },
+  ],
+  ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+};
+
+const contactContent: ContactSectionContent = {
+  kickerLabel: "SKONTAKTUJ SIĘ",
+  title: "Wybierz najkrótszą ścieżkę do przygotowania obiektu pod odbiór",
+  description:
+    "Zostaw kontakt i napisz, na kiedy potrzebujesz realizacji. Wrócimy z krótką listą pytań o warunki wejścia, zakres i strefy krytyczne, a następnie przygotujemy ofertę do zatwierdzenia w firmie.",
+  chips: [
+    { label: "Standard odbiorowy" },
+    { label: "Strefy krytyczne" },
+    { label: "Technologia pod materiał" },
+    { label: "Kontrola checklistą" },
+    { label: "Protokół + zdjęcia" },
+    { label: "Start w 3 dni*", accent: true },
+  ],
+  form: {
+    emailLabel: "Adres e-mail",
+    emailPlaceholder: "Twój adres e-mail",
+    phoneLabel: "Numer telefonu",
+    phonePlaceholder: "Twój numer telefonu",
+    topicLabel: "Temat rozmowy",
+    topicPlaceholder: "Jaki obiekt i na kiedy jest odbiór?",
+    consentText:
+      "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
+    submitLabel: "Odbierz ofertę (PDF/HTML)",
+  },
+  meta: {
+    avatars: ["A", "B", "C", "D", "E", "F"],
+    text: "Zespół operacyjny gotowy do wejścia na obiekt",
+  },
+};
+
+const knowledgeContent: KnowledgeSectionContent = {
+  kickerLabel: "REALIZACJE I REFERENCJE",
+  titleLines: ["Zobacz, jak pracujemy", "przy realizacjach po budowie"],
+  description:
+    "Przykładowe realizacje z obiektów komercyjnych. Zobacz, jak wygląda usługa w praktyce: od kwalifikacji zakresu po finalizację etapu i przekazanie dokumentacji.",
+  cards: [
+    {
+      title: "Realizacje",
+      description:
+        "Zakresy, strefy i efekty na obiektach po budowie i wykończeniu. Krótkie case’y pokazujące sposób prowadzenia prac.",
+      buttonLabel: "Zobacz realizacje",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Realizacje Domker",
+      },
+    },
+    {
+      title: "Referencje i opinie",
+      description:
+        "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność realizacji, bezpieczeństwo materiałowe i czytelne potwierdzenie wykonania.",
+      buttonLabel: "Zobacz referencje",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Referencje Domker",
+      },
+    },
+  ],
+};
 
 const faqContent: FaqSectionContent = {
   kickerLabel: "NAJCZĘŚCIEJ ZADAWANE PYTANIA",
@@ -105,298 +422,6 @@ const faqContent: FaqSectionContent = {
   ],
 };
 
-const ctaContent: CtaSectionContent = {
-  eyebrowText: "MINIMUM DANYCH DO WYCENY",
-  title: "Podaj dane, które przyspieszą widełki, termin i decyzję technologiczną",
-  description:
-    "Podaj lokalizację, metraż albo liczbę lokali, etap prac, termin i okno wejścia. Jeśli masz zdjęcia oraz informację o materiałach wrażliwych, szybciej określimy zakres i sposób prowadzenia realizacji.",
-  buttonLabel: "Wyślij minimum danych",
-  avatars: ["A", "B", "C", "D", "E", "F", "G"],
-};
-
-const defaultContent: PagesHeroContent = {
-  badge: "SPRZĄTANIE PO BUDOWIE (B2B)",
-  titleLines: ["Sprzątanie po budowie", "pod standard odbiorowy"],
-  emphasisSuffix: "/",
-  description:
-    "To etap, w którym widać wszystko: pył technologiczny, smugi na szybach albo oknach pod światło, ślady po foliach i klejach oraz niedoczyszczone detale przy listwach, progach i profilach. W Domker prowadzimy sprzątanie po budowie jak zadanie operacyjne: plan stref, kolejność prac dopasowana do obiektu, technologia dobrana do materiałów oraz kontrola wewnętrzna przed zgłoszeniem gotowości do odbioru.",
-  ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
-};
-
-const problemsContent: ProblemsSectionContent = {
-  kickerLabel: "KIEDY TO JEST POTRZEBNE?",
-  titleLines: ["Sprzątanie po budowie ma sens wtedy,", "gdy liczy się wynik odbioru"],
-  description:
-    "To nie jest usługa od odświeżenia obiektu. To etap, który ma przygotować przestrzeń do odbioru, przekazania albo uruchomienia — w warunkach, gdzie błędy technologiczne i organizacyjne szybko wracają jako poprawki.",
-  items: [
-    {
-      iconName: "sparkles",
-      label: "PYŁ",
-      title: "Pył po pracach technicznych wraca do stref krytycznych",
-      description:
-        "Po szlifach, docinkach i wierceniach pył osiada na detalach, profilach, parapetach i ciągach komunikacyjnych. Bez pracy strefami efekt szybko się rozmywa.",
-      tone: "processes",
-    },
-    {
-      iconName: "clipboardList",
-      label: "FOLIE I KLEJE",
-      title: "Ślady po zabezpieczeniach ujawniają się dopiero na końcu",
-      description:
-        "Folie, taśmy i kleje po montażu często pozostają niewidoczne do momentu, gdy obiekt zaczyna być oglądany pod światło i z bliska.",
-      tone: "data",
-    },
-    {
-      iconName: "shieldAlert",
-      label: "MATERIAŁY",
-      title: "Końcówka wykończeń nie toleruje przypadkowej technologii",
-      description:
-        "Świeże posadzki, szkło, armatura wymagają narzędzi oraz chemii dobranych do materiału, nie doraźnych prób na miejscu.",
-      tone: "risk",
-    },
-    {
-      iconName: "calendarClock",
-      label: "WEJŚCIE",
-      title: "Obiekt nadal pracuje i nie zawsze jest gotowy na jedno wejście",
-      description:
-        "Równoległe ekipy, strefy wyłączone i zmienny harmonogram potrafią zatrzymać realizację, jeśli warunki wejścia nie zostały potwierdzone przed startem.",
-      tone: "processes",
-    },
-    {
-      iconName: "clipboardCheck",
-      label: "KONTROLA",
-      title: "Brak wewnętrznej weryfikacji wydłuża odbiór",
-      description:
-        "Jeżeli efekt nie jest sprawdzony przed zgłoszeniem gotowości, uwagi wracają na końcu — zwykle wtedy, gdy czasu jest już najmniej.",
-      tone: "technology",
-    },
-    {
-      iconName: "fileText",
-      label: "ODPOWIEDZIALNOŚĆ",
-      title: "Brak dokumentacji utrudnia rozdzielenie stanu zastanego od zakresu",
-      description:
-        "Na finiszu łatwo o spory dotyczące uszkodzeń, zabrudzeń i usterek. Dokumentowanie sytuacji w trakcie prac porządkuje odpowiedzialność.",
-      tone: "resources",
-    },
-  ],
-};
-
-const solutionsContent: SolutionsSectionContent = {
-  kickerLabel: "ROZWIĄZANIE",
-  titleLines: [
-    "Sprzątanie po budowie jako proces",
-    "stref, kolejności i technologii",
-  ],
-  description:
-    "Najpierw ustalamy, do jakiego odbioru przygotowujemy obiekt. Potem porządkujemy strefy, dobieramy technologię do materiałów i prowadzimy kontrolę przed zgłoszeniem gotowości. Dzięki temu efekt jest weryfikowalny, a nie uznaniowy.",
-  items: [
-    {
-      iconName: "clipboardCheck",
-      label: "Standard odbioru",
-      title: "Określamy, jaki efekt ma zostać zweryfikowany na końcu",
-      description:
-        "Inwestorski, urzędowy, przekazanie albo otwarcie. Standard końcowy musi być czytelny, żeby zakres i kolejność prac miały sens operacyjny.",
-      ctaLabel: "Zobacz usługę",
-      mediaAlt: "Sprzątanie po budowie",
-      mediaSrc: "/sprzatanie-po-budowie",
-    },
-    {
-      iconName: "layoutGrid",
-      label: "Strefy odbiorowe",
-      title: "Dzielimy obiekt na miejsca, które realnie będą oceniane",
-      description:
-        "Wejścia, komunikacja, przeszklenia, sanitariaty, zaplecza i detale wykończeniowe traktujemy jako strefy wymagające osobnego prowadzenia.",
-      ctaLabel: "Wyślij minimum danych",
-      mediaAlt: "Minimum danych do wyceny",
-      mediaSrc: "/kontakt#minimum-danych",
-    },
-    {
-      iconName: "shieldAlert",
-      label: "Technologia pod materiał",
-      title: "Dobór metod wynika z powierzchni i ryzyk, nie z przyzwyczajeń",
-      description:
-        "Posadzki, szkło, armatura, profile i fronty mają różne ograniczenia. Dlatego decyzja technologiczna zapada przed wejściem, nie w trakcie realizacji.",
-      ctaLabel: "Standard i bezpieczeństwo",
-      mediaAlt: "Technologia i bezpieczeństwo",
-      mediaSrc: "/sprzatanie-po-budowie#standard",
-    },
-    {
-      iconName: "users",
-      label: "Kontrola wykonania",
-      title: "Zgłoszenie gotowości następuje dopiero po weryfikacji wewnętrznej",
-      description:
-        "Realizacja jest sprawdzana checklistą przed przekazaniem. Na koniec przekazujemy protokół odbioru i zdjęcia jako materiał do dalszej procedury.",
-      ctaLabel: "Zapytaj (PDF/HTML)",
-      mediaAlt: "Kontakt i oferta",
-      mediaSrc: "/kontakt",
-    },
-    {
-      iconName: "calendarClock",
-      label: "Okno wejścia",
-      title: "Dopasowujemy realizację do realnego rytmu obiektu",
-      description:
-        "Jeżeli sytuacja tego wymaga, pracujemy po godzinach albo między innymi robotami, tak aby ograniczyć wtórne zabrudzenia i kolizje z harmonogramem.",
-      ctaLabel: "Ustal okno wejścia",
-      mediaAlt: "Kontakt telefoniczny",
-      mediaSrc: "tel:+48502992002",
-    },
-    {
-      iconName: "truck",
-      label: "Skala i moce",
-      title: "Zespoły dobieramy do terminu, stanu obiektu i zakresu",
-      description:
-        "Od pojedynczych lokali po większe obiekty. Organizacyjne maksima zależą od warunków wejścia: do 5000 m² dziennie lub do 300 doczyszczonych okien dziennie.",
-      ctaLabel: "Sprawdź dostępność",
-      mediaAlt: "Dostępność i termin",
-      mediaSrc: "/kontakt",
-    },
-  ],
-};
-
-const processContent: ProcessSectionContent = {
-  kickerLabel: "JAK DZIAŁAMY?",
-  titleLines: ["Etap po etapie: od kwalifikacji", "do zgłoszenia gotowości"],
-  description:
-    "Ta usługa ma prowadzić do odbioru, a nie tylko do wykonania prac. Dlatego najpierw zbieramy minimum danych, potem potwierdzamy warunki wejścia i kolejność, a gotowość zgłaszamy dopiero po kontroli wewnętrznej.",
-  steps: [
-    {
-      index: "01",
-      title: "Minimum danych i szybka kwalifikacja",
-      description:
-        "Ustalamy typ obiektu, metraż, etap prac, termin, okno wejścia i strefy, które mają największe znaczenie odbiorowe.",
-    },
-    {
-      index: "02",
-      title: "Widełki i oferta do zatwierdzenia (PDF/HTML)",
-      description:
-        "Przygotowujemy najprostszy wariant realizacji i przekazujemy ofertę, którą można dalej wysłać do przełożonego, zarządu albo działu zakupów.",
-    },
-    {
-      index: "03",
-      title: "Potwierdzenie warunków wejścia i plan stref",
-      description:
-        "Doprecyzowujemy godziny, dostęp, BHP, strefy wyłączone, równoległe ekipy, ograniczenia materiałowe i kolejność prac.",
-    },
-    {
-      index: "04",
-      title: "Realizacja, kontrola i zgłoszenie gotowości",
-      description:
-        "Pracujemy według planu stref i wybranej technologii. Po kontroli wewnętrznej przekazujemy protokół oraz zdjęcia i dopiero wtedy zgłaszamy gotowość.",
-    },
-  ],
-  ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
-};
-
-const contactContent: ContactSectionContent = {
-  kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Wybierz najkrótszą ścieżkę do przygotowania obiektu pod odbiór",
-  description:
-    "Zostaw kontakt i napisz, na kiedy potrzebujesz realizacji. Wrócimy z krótką listą pytań o warunki wejścia, zakres i strefy krytyczne, a następnie przygotujemy ofertę do zatwierdzenia w firmie.",
-  chips: [
-    { label: "Standard odbiorowy" },
-    { label: "Strefy krytyczne" },
-    { label: "Technologia pod materiał" },
-    { label: "Kontrola checklistą" },
-    { label: "Protokół + zdjęcia" },
-    { label: "Start w 3 dni*", accent: true },
-  ],
-  form: {
-    emailLabel: "Adres e-mail",
-    emailPlaceholder: "Twój adres e-mail",
-    phoneLabel: "Numer telefonu",
-    phonePlaceholder: "Twój numer telefonu",
-    topicLabel: "Temat rozmowy",
-    topicPlaceholder: "Jaki obiekt i na kiedy jest odbiór?",
-    consentText:
-      "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
-    submitLabel: "Odbierz ofertę (PDF/HTML)",
-  },
-  meta: {
-    avatars: ["A", "B", "C", "D", "E", "F"],
-    text: "Zespół operacyjny gotowy do wejścia na obiekt",
-  },
-};
-
-const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
-  titleLines: ["Zobacz, jak pracujemy", "przy realizacjach po budowie"],
-  description:
-    "Przykładowe realizacje z obiektów komercyjnych. Zobacz, jak wygląda usługa w praktyce: od kwalifikacji zakresu po finalizację etapu i przekazanie dokumentacji.",
-  cards: [
-    {
-      title: "Realizacje",
-      description:
-        "Zakresy, strefy i efekty na obiektach po budowie i wykończeniu. Krótkie case’y pokazujące sposób prowadzenia prac.",
-      buttonLabel: "Zobacz realizacje",
-      media: {
-        type: "image",
-        src: "/tlo.png",
-        alt: "Realizacje Domker",
-      },
-    },
-    {
-      title: "Referencje i opinie",
-      description:
-        "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność realizacji, bezpieczeństwo materiałowe i czytelne potwierdzenie wykonania.",
-      buttonLabel: "Zobacz referencje",
-      media: {
-        type: "image",
-        src: "/tlo.png",
-        alt: "Referencje Domker",
-      },
-    },
-  ],
-};
-
-const showcaseContent: ShowcaseSectionContent = {
-  kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
-  titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
-  description:
-    "Żeby wejść na obiekt i przeprowadzić realizację bez blokad, liczą się nie tylko ludzie i sprzęt, ale też procedury, dokumenty i jasne rozdzielenie odpowiedzialności.",
-  items: [
-    {
-      tag: "KADRY",
-      title: "Legalne zatrudnienie i przygotowane zespoły",
-      description:
-        "Pracownicy są legalnie zatrudnieni i przygotowani do pracy na obiekcie, co porządkuje logistykę i ogranicza ryzyka organizacyjne.",
-      result: "Efekt: większa przewidywalność wejścia i przebiegu realizacji.",
-    },
-    {
-      tag: "BHP",
-      title: "Szkolenia BHP i analiza zagrożeń przed startem",
-      description:
-        "Przed wejściem ustalamy strefy wyłączone, zasady pracy i ryzyka, żeby realizacja nie zatrzymała się przez procedury w trakcie.",
-      result: "Efekt: płynniejsze wejście i stabilniejsza organizacja prac.",
-    },
-    {
-      tag: "DOKUMENTY",
-      title: "Protokoły odbioru i zdjęcia jako materiał do dalszego procedowania",
-      description:
-        "Po zakończeniu przekazujemy dokumentację wykonania. Jeżeli w trakcie ujawniają się usterki zastane, od razu je opisujemy i zgłaszamy.",
-      result: "Efekt: krótsza ścieżka odbioru i mniej sporów po realizacji.",
-    },
-    {
-      tag: "OC",
-      title: "Ubezpieczenie OC i jasne ramy odpowiedzialności",
-      description:
-        "Przy końcówce budowy liczy się nie tylko efekt, ale też zabezpieczenie współpracy i czytelne ustalenia dotyczące odpowiedzialności.",
-      result: "Efekt: mniejsze ryzyko organizacyjne po stronie zamawiającego.",
-    },
-    {
-      tag: "POUFNOŚĆ / DOSTĘP",
-      title: "Umowa o zachowaniu poufności i rejestr wejść",
-      description:
-        "Jeśli obiekt wymaga dodatkowych formalności, wdrażamy je przed startem, aby nie tracić okna realizacji przez blokady administracyjne.",
-      result: "Efekt: szybszy start i mniej problemów przy wejściu.",
-    },
-    {
-      tag: "ROZLICZENIA",
-      title: "Umowa i faktura VAT gotowe do procesu zakupowego",
-      description:
-        "Przekazujemy czytelny zakres i dokumenty do akceptacji oraz rozliczenia, tak aby procedowanie po stronie firmy było prostsze.",
-      result: "Efekt: sprawniejsza decyzja i łatwiejsza finalizacja etapu.",
-    },
-  ],
-};
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -405,9 +430,9 @@ export default function Home() {
         <PagesHero content={defaultContent} />
         <ProblemsSection content={problemsContent} />
         <SolutionsSection content={solutionsContent} />
+        <KnowledgeSection content={knowledgeContent2} />
         <CtaSection content={ctaContent} />
         <ShowcaseSection content={showcaseContent} />
-
         <ProcessSection content={processContent} />
         <ContactSection content={contactContent} />
         <KnowledgeSection content={knowledgeContent} />

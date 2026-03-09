@@ -1,90 +1,98 @@
 ﻿import Header from "../../components/Header/Header";
-import Hero, { type HeroContent } from "../../components/Hero/Hero";
-
 import ContactSection, {
   type ContactSectionContent,
 } from "../../components/ContactSection/ContactSection";
 import Footer from "../../components/Footer/Footer";
 import styles from "./page.module.css";
-import PagesHero from "@/components/PagesHero/PagesHero";
-import ProblemsSection, { ProblemsSectionContent } from "@/components/ProblemsSection/ProblemsSection";
+import PagesHero, {
+  type PagesHeroContent,
+} from "@/components/PagesHero/PagesHero";
+import ProblemsSection, {
+  type ProblemsSectionContent,
+} from "@/components/ProblemsSection/ProblemsSection";
 import BenefitsSection, {
   type BenefitsSectionContent,
 } from "@/components/BenefitsSection/BenefitsSection";
 import ProcessSection, {
   type ProcessSectionContent,
 } from "@/components/ProcessSection/ProcessSection";
-import FaqSection, { type FaqSectionContent } from "@/components/FaqSection/FaqSection";
-import CtaSection, { type CtaSectionContent } from "../../components/CtaSection/CtaSection";
-import SolutionsSection, { SolutionsSectionContent } from "@/components/SolutionsSection/SolutionsSection";
-import KnowledgeSection, { KnowledgeSectionContent } from "@/components/KnowledgeSection/KnowledgeSection";
+import FaqSection, {
+  type FaqSectionContent,
+} from "@/components/FaqSection/FaqSection";
+import CtaSection, {
+  type CtaSectionContent,
+} from "../../components/CtaSection/CtaSection";
+import SolutionsSection, {
+  type SolutionsSectionContent,
+} from "@/components/SolutionsSection/SolutionsSection";
+import KnowledgeSection, {
+  type KnowledgeSectionContent,
+} from "@/components/KnowledgeSection/KnowledgeSection";
 
 // /sprzatanie-dla-firm
 
-const defaultContent: HeroContent = {
+const defaultContent: PagesHeroContent = {
   badge: "SPRZĄTANIE DLA FIRM I SIECI",
-  titleLines: ["Sprzątanie dla firm i sieci", "handlowych pod termin"],
+  titleLines: ["Sprzątanie dla firm", "od właściwego scenariusza"],
   emphasisIconName: "lightbulb",
   emphasisSuffix: "/",
   description:
-    "To hub współpracy B2B. Wybierasz scenariusz, a my pokazujemy, jak wygląda wejście, sposób prowadzenia realizacji i która usługa będzie właściwa dla Twojej sytuacji.",
+    "To hub współpracy B2B. Jeśli temat dotyczy budowy, stałej obsługi, witryn, posadzek albo wielu lokalizacji, tutaj najłatwiej ustalisz, od czego zacząć. Najpierw porządkujemy sytuację, a dopiero potem przechodzimy do właściwej usługi.",
   ctaLabel: "Wyślij minimum danych",
-  imageSrc: "/tlo.png",
-  imageAlt: "Sprzątanie dla firm i sieci",
 };
 
 const problemsContent: ProblemsSectionContent = {
-  kickerLabel: "ZNASZ TE WYZWANIA?",
-  titleLines: ["Co firmy realnie", "chcą mieć poukładane operacyjnie?"],
+  kickerLabel: "ZNASZ TE SYTUACJE?",
+  titleLines: ["Najwięcej czasu nie znika", "na realizacji, tylko na złym starcie"],
   description:
-    "W B2B najwięcej czasu tracą niedoprecyzowane założenia. Dlatego ten hub porządkuje tryb współpracy, warunki wejścia, standard i sposób rozliczenia przed wyborem właściwej usługi.",
+    "W firmach problem często nie polega na braku wykonawcy, tylko na tym, że temat jest źle nazwany na początku. Jedno zapytanie miesza kilka potrzeb, a później rośnie liczba pytań, korekt i niepotrzebnych ustaleń.",
   items: [
     {
       iconName: "calendarClock",
-      label: "OKNO",
-      title: "Wejście ma być możliwe w realnym terminie",
+      label: "NIE TEN TRYB",
+      title: "Nie każda potrzeba wymaga tego samego sposobu działania",
       description:
-        "Niezależnie od scenariusza liczy się potwierdzone okno realizacji i jasne warunki pracy na obiekcie.",
+        "Końcówka budowy, wiele lokalizacji, stała obsługa albo witryny działają w innej logice. Jeśli źle dobierzesz start, później rośnie liczba korekt.",
       tone: "processes",
     },
     {
       iconName: "workflow",
-      label: "KOORDYNACJA",
-      title: "Po stronie wykonawcy ma być jeden czytelny kontakt",
+      label: "ZA DUŻO WĄTKÓW",
+      title: "Jedno zapytanie często miesza kilka różnych tematów",
       description:
-        "Krótka ścieżka ustaleń, szybkie decyzje i brak rozproszenia odpowiedzialności między wieloma osobami.",
+        "Na przykład odbiór po remoncie, późniejsze utrzymanie lokalu i witryny w abonamencie. To trzeba rozdzielić, żeby rozmowa była konkretna.",
       tone: "processes",
     },
     {
       iconName: "layoutGrid",
-      label: "WIELE PUNKTÓW",
-      title: "Przy sieciach potrzebny jest ten sam standard",
+      label: "SKALA",
+      title: "Jeden obiekt i sieć punktów nie powinny być prowadzone tak samo",
       description:
-        "Powtarzalny zakres, checklisty i kontrola wykonania niezależnie od miasta, punktu czy częstotliwości prac.",
+        "Przy kilku miastach albo wielu lokalizacjach potrzebna jest inna organizacja, inne pytania wejściowe i inny sposób koordynacji.",
       tone: "data",
     },
     {
       iconName: "truck",
-      label: "CIĄGŁOŚĆ",
-      title: "Realizacja nie może zależeć od jednej ekipy",
+      label: "ZASOBY",
+      title: "Sam termin nie wystarczy, żeby dobrze ustalić zakres",
       description:
-        "Rezerwa ludzi i sprzętu zwiększa stabilność współpracy, gdy warunki się zmieniają albo harmonogram się skraca.",
+        "Przy jednym obiekcie pytania będą inne niż przy sieci lokali albo stałej obsłudze. Najpierw trzeba wiedzieć, czego dokładnie dotyczy temat.",
       tone: "resources",
     },
     {
       iconName: "shieldAlert",
-      label: "RYZYKO",
-      title: "Każdy scenariusz wymaga innego sposobu prowadzenia prac",
+      label: "RÓŻNE RYZYKA",
+      title: "Nie każdy temat prowadzi się w ten sam sposób",
       description:
-        "Inaczej prowadzi się końcówkę budowy, inaczej sieć lokali, a inaczej stałe utrzymanie. Dlatego najpierw trzeba dobrać właściwą ścieżkę.",
+        "Inaczej pracuje się przy odbiorze po budowie, inaczej przy stałej obsłudze biura, a inaczej przy posadzkach albo witrynach.",
       tone: "risk",
     },
     {
       iconName: "fileText",
-      label: "ROZLICZENIE",
-      title: "Potwierdzenie wykonania ma pasować do procesu po stronie firmy",
+      label: "DECYZJA",
+      title: "Łatwiej ruszyć, gdy od początku wiadomo, od czego zacząć",
       description:
-        "Dokumenty, status realizacji i forma rozliczenia powinny być dopasowane do tego, jak dana organizacja pracuje operacyjnie.",
+        "Zamiast zaczynać od złej usługi albo zbyt ogólnego zapytania, lepiej od razu ustalić właściwy scenariusz i kolejny krok.",
       tone: "technology",
     },
   ],
@@ -92,183 +100,183 @@ const problemsContent: ProblemsSectionContent = {
 
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "WYBIERZ SCENARIUSZ",
-  titleLines: ["Wybierz scenariusz", "i przejdź do właściwej usługi"],
+  titleLines: ["Wybierz sytuację, która", "najbardziej przypomina Twój temat"],
   description:
-    "To najważniejsza część tej strony. Każdy scenariusz ma inny cel, inną organizację i inne ryzyka. Wybierz właściwą ścieżkę i przejdź dalej do szczegółów.",
+    "Nie zaczynaj od zgadywania nazwy usługi. Zacznij od scenariusza. Dzięki temu szybciej przejdziemy do właściwego zakresu, właściwych pytań i właściwego modelu współpracy.",
   items: [
     {
       iconName: "hardHat",
-      label: "Sprzątanie po budowie / przed otwarciem",
-      title: "Gdy liczy się odbiór, przekazanie albo start punktu",
+      label: "Po budowie / po remoncie / przed otwarciem",
+      title: "Gdy obiekt trzeba przygotować do odbioru albo startu",
       description:
-        "Scenariusz dla prac po budowie, remoncie i wykończeniu. Liczy się standard odbiorowy, kolejność prac, bezpieczeństwo materiałów i termin wejścia.",
+        "To ścieżka dla tematów końcowych: po budowie, po wykończeniach, przed otwarciem punktu albo przed przekazaniem gotowego obiektu dalej.",
       ctaLabel: "Przejdź do usługi",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/sprzatanie-po-budowie",
     },
     {
-      iconName: "clipboardList",
-      label: "Sieci: wiele lokalizacji",
-      title: "Gdy najważniejsza jest powtarzalność między punktami",
-      description:
-        "Scenariusz dla firm rozwijających sieć lub zarządzających wieloma lokalizacjami. Jeden standard, jedna koordynacja i jedno podejście do realizacji.",
-      ctaLabel: "Przejdź do usługi",
-      mediaAlt: "Obsługa sieci",
-      mediaSrc: "/kontakt#minimum-danych",
-    },
-    {
       iconName: "building2",
-      label: "Stała obsługa: biura i lokale",
-      title: "Gdy potrzebujesz stabilnego serwisu w tle",
+      label: "Stała obsługa biura lub lokalu",
+      title: "Gdy nie chodzi o jeden etap, tylko o stały standard",
       description:
-        "Scenariusz dla obiektów, które wymagają cyklicznej obsługi. Najważniejsze są harmonogram, ciągłość, kontrola jakości i przewidywalny standard.",
+        "To ścieżka dla firm, które potrzebują regularnego serwisu, przewidywalnego harmonogramu i wykonawcy, którego nie trzeba stale pilnować.",
       ctaLabel: "Przejdź do usługi",
-      mediaAlt: "Utrzymanie czystości",
+      mediaAlt: "Stała obsługa biur i lokali",
       mediaSrc: "/utrzymanie-czystosci",
     },
     {
       iconName: "sparkles",
-      label: "Witryny: abonament / ryczałt dla sieci",
-      title: "Gdy liczy się stały efekt i prosta logistyka",
+      label: "Witryny / okna / abonament",
+      title: "Gdy liczy się regularny efekt i prosta logistyka",
       description:
-        "Scenariusz dla lokali i sieci, które potrzebują regularnego mycia witryn w ustalonych oknach realizacji i z czytelnym potwierdzeniem wykonania.",
+        "To ścieżka dla lokali, sieci i klientów, którzy chcą mycia witryn albo okien w modelu jednorazowym, cyklicznym albo ryczałtowym.",
       ctaLabel: "Przejdź do usługi",
       mediaAlt: "Mycie witryn i okien",
       mediaSrc: "/mycie-okien-i-witryn",
     },
     {
       iconName: "grid3x3",
-      label: "Posadzki: doczyszczanie (B2B)",
-      title: "Gdy problem dotyczy konkretnej nawierzchni i zabrudzeń",
+      label: "Posadzki / doczyszczanie / usługa specjalistyczna",
+      title: "Gdy zwykłe sprzątanie nie rozwiązuje problemu nawierzchni",
       description:
-        "Scenariusz dla obiektów, w których potrzebna jest technologia dobrana do typu posadzki, stopnia zabrudzenia i oczekiwanego efektu.",
+        "To ścieżka dla obiektów, w których trzeba dobrać technologię do typu posadzki, zabrudzeń i efektu, a nie tylko wykonać standardowe prace.",
       ctaLabel: "Przejdź do usługi",
       mediaAlt: "Maszynowe czyszczenie posadzek",
       mediaSrc: "/maszynowe-czyszczenie-posadzek",
     },
     {
-      iconName: "mapPin",
-      label: "Zasięg i moce przerobowe",
-      title: "Gdy działasz w więcej niż jednym mieście",
+      iconName: "clipboardList",
+      label: "Wiele punktów / kilka miast / jedna koordynacja",
+      title: "Gdy temat dotyczy sieci albo współpracy w skali",
       description:
-        "Scenariusz dla firm, które chcą prowadzić jedną współpracę w skali ogólnopolskiej zamiast układać osobne ustalenia lokalnie.",
+        "To ścieżka dla firm, które chcą zachować jeden standard, jedną komunikację i prostsze zarządzanie realizacją między lokalizacjami.",
+      ctaLabel: "Wyślij minimum danych",
+      mediaAlt: "Obsługa wielu lokalizacji",
+      mediaSrc: "/kontakt#minimum-danych",
+    },
+    {
+      iconName: "mapPin",
+      label: "Temat mieszany / kilka potrzeb naraz",
+      title: "Gdy nie wiesz jeszcze, od czego najlepiej zacząć",
+      description:
+        "Jeśli sytuacja łączy kilka usług albo kilka typów obiektów, zaczynamy od uporządkowania tematu i dopiero potem przechodzimy dalej.",
       ctaLabel: "Sprawdź dostępność",
-      mediaAlt: "Zasięg realizacji",
+      mediaAlt: "Dobór scenariusza",
       mediaSrc: "/kontakt",
     },
   ],
 };
 
 const benefitsContent: BenefitsSectionContent = {
-  kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
-  titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
+  kickerLabel: "CO PORZĄDKUJESZ NA TEJ STRONIE",
+  titleLines: ["Zanim przejdziesz do usługi,", "ustalasz właściwy punkt startu"],
   description:
-    "Niezależnie od wybranego scenariusza porządkujemy podstawy współpracy już na starcie. Dzięki temu wejście na obiekt, przebieg realizacji i rozliczenie nie wymagają dodatkowego doprecyzowywania w trakcie.",
+    "Hub B2B ma skrócić drogę do dobrej decyzji. Zamiast czytać kilka stron i zgadywać, od czego zacząć, szybciej porządkujesz temat i przechodzisz do właściwej ścieżki.",
   items: [
     {
       iconName: "users",
-      label: "ZESPOŁY",
-      title: "Jasne przypisanie ludzi do realizacji",
+      label: "TYP POTRZEBY",
+      title: "Ustalasz, czy temat jest jednorazowy, cykliczny czy mieszany",
       description:
-        "Wiesz, kto odpowiada za prowadzenie prac i kto jest punktem kontaktu po stronie wykonawcy.",
+        "To podstawowa różnica, która wpływa na dalszy sposób rozmowy, wyceny i prowadzenia współpracy.",
       tone: "resources",
     },
     {
       iconName: "shieldAlert",
-      label: "BHP",
-      title: "Wejście zgodne z zasadami obiektu",
+      label: "SKALA",
+      title: "Rozdzielasz jeden obiekt od sieci albo kilku lokalizacji",
       description:
-        "Dopasowujemy organizację realizacji do wymagań obiektu, żeby uniknąć zatrzymań i nieporozumień w dniu wejścia.",
+        "Dzięki temu od początku wiadomo, czy mówimy o lokalnym zakresie, czy o współpracy wymagającej innej koordynacji.",
       tone: "risk",
     },
     {
       iconName: "database",
-      label: "POUFNOŚĆ",
-      title: "Procedury i umowa o zachowaniu poufności, gdy są wymagane",
+      label: "ZAKRES",
+      title: "Od razu wiesz, czy chodzi o stałą obsługę, jednorazowe wejście czy usługę specjalistyczną",
       description:
-        "Jeśli obiekt wymaga dodatkowych formalności, wdrażamy je przed startem, a nie w ostatniej chwili.",
+        "To pozwala szybciej przejść do właściwych pytań, zamiast mieszać kilka różnych tematów w jednym zapytaniu.",
       tone: "processes",
     },
     {
       iconName: "clipboardCheck",
-      label: "POTWIERDZENIA",
-      title: "Kontrola i potwierdzenie wykonania",
+      label: "KOLEJNY KROK",
+      title: "Wiesz, jakie minimum danych ma sens dla tej konkretnej sytuacji",
       description:
-        "Na końcu dostajesz czytelny status realizacji i dokumenty, które można dalej przekazać po stronie firmy.",
+        "Nie potrzebujesz od razu pełnego briefu. Wystarczy właściwy punkt startu i krótki opis tego, czego temat realnie dotyczy.",
       tone: "data",
     },
     {
       iconName: "clipboardCheck",
-      label: "OC",
-      title: "OC i odpowiedzialność po stronie wykonawcy",
+      label: "PROCEDOWANIE",
+      title: "Łatwiej przekazujesz temat dalej po stronie firmy",
       description:
-        "Masz jasność, jak wygląda zabezpieczenie współpracy i odpowiedzialność przy realizacjach na obiektach komercyjnych.",
+        "Gdy scenariusz jest dobrze nazwany, łatwiej uzgodnić kolejny krok z przełożonym, operacjami, zakupami albo administracją.",
       tone: "finance",
     },
     {
       iconName: "fileText",
-      label: "B2B",
-      title: "Umowa i faktura VAT jako standard współpracy",
+      label: "OSZCZĘDNOŚĆ CZASU",
+      title: "Nie zaczynasz rozmowy od niewłaściwej usługi",
       description:
-        "Proces zakupowy pozostaje prosty i czytelny dla księgowości, operacji oraz osób zatwierdzających usługę.",
+        "To ogranicza liczbę niepotrzebnych pytań, skraca drogę do decyzji i porządkuje współpracę już od pierwszego kontaktu.",
       tone: "technology",
     },
   ],
 };
 
 const processContent: ProcessSectionContent = {
-  kickerLabel: "JAK DZIAŁAMY?",
-  titleLines: ["Jak wybierasz właściwą", "ścieżkę współpracy"],
+  kickerLabel: "JAK TO DZIAŁA?",
+  titleLines: ["Od ogólnego tematu", "do właściwej ścieżki współpracy"],
   description:
-    "Ta strona nie opisuje jednej usługi, tylko pomaga przejść do właściwego scenariusza. Najpierw porządkujemy podstawy, potem wskazujemy odpowiednią ścieżkę i dopiero dalej przechodzimy do szczegółów realizacji.",
+    "Ta strona nie ma opisywać jednej usługi dla wszystkich. Ma pomóc szybko ustalić, od czego zacząć. Dlatego najpierw kwalifikujemy sytuację, a dopiero później przechodzimy do szczegółów.",
   steps: [
     {
       index: "01",
-      title: "Minimum danych i szybka kwalifikacja",
+      title: "Opisujesz sytuację w najprostszy możliwy sposób",
       description:
-        "Zbieramy podstawy: typ obiektu, skala, miasto, termin i ogólny cel realizacji.",
+        "Wystarczy typ obiektu, miasto, termin i krótka informacja, czego temat dotyczy albo co ma zostać uporządkowane.",
     },
     {
       index: "02",
-      title: "Dobór scenariusza",
+      title: "Rozdzielamy, jaki to typ potrzeby",
       description:
-        "Określamy, czy chodzi o końcówkę budowy, sieć lokalizacji, stałą obsługę, witryny czy posadzki.",
+        "Ustalamy, czy chodzi o końcówkę budowy, stałą obsługę, witryny, posadzki, wiele lokalizacji albo temat łączący kilka scenariuszy.",
     },
     {
       index: "03",
-      title: "Przekierowanie do właściwej usługi",
+      title: "Wskazujemy właściwą usługę albo model działania",
       description:
-        "Pokazujemy Ci właściwą ścieżkę i sposób prowadzenia realizacji dopasowany do tej konkretnej sytuacji.",
+        "Pokazujemy najkrótszą ścieżkę i kierujemy Cię do strony, która odpowiada tej konkretnej sytuacji operacyjnej.",
     },
     {
       index: "04",
-      title: "Dalsze ustalenia i finalizacja",
+      title: "Dalej przechodzimy już do właściwych ustaleń",
       description:
-        "Po wyborze scenariusza doprecyzowujemy zakres, standard, warunki wejścia i sposób potwierdzenia wykonania.",
+        "Dopiero na tym etapie doprecyzowujemy zakres, wycenę, warunki wejścia, model współpracy i kolejny krok po stronie firmy.",
     },
   ],
   ctaLabel: "Wyślij minimum danych",
 };
 
 const ctaContent: CtaSectionContent = {
-  eyebrowText: "DOBIERZMY SCENARIUSZ",
-  title: "Powiedz, jakiego typu realizacji dotyczy temat",
+  eyebrowText: "NIE MUSISZ ZACZYNAĆ OD NAZWY USŁUGI",
+  title: "Opisz sytuację, a pomożemy ustalić właściwy punkt startu",
   description:
-    "Jeśli to jedna lokalizacja, wystarczy miasto, typ obiektu i termin. Jeśli chodzi o sieć, podaj liczbę punktów i model współpracy. Wrócimy z krótką listą pytań i wskażemy właściwą ścieżkę.",
+    "Jeśli to jeden obiekt, napisz, czego dotyczy temat i na kiedy jest potrzebny. Jeśli chodzi o kilka lokalizacji albo kilka potrzeb naraz, też to uporządkujemy.",
   buttonLabel: "Wyślij minimum danych",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "REALIZACJE I REFERENCJE",
-  titleLines: ["Zobacz, jak pracujemy", "w różnych scenariuszach B2B"],
+  titleLines: ["Zobacz, jak różnią się", "scenariusze współpracy w praktyce"],
   description:
-    "Przykładowe realizacje z różnych typów obiektów. Zobacz, jak wygląda współpraca w praktyce po wyborze właściwej ścieżki i jak finalizujemy etapy w różnych modelach.",
+    "Przykłady z różnych typów obiektów i modeli działania. Dzięki temu łatwiej zobaczyć, czym różni się końcówka budowy od stałej obsługi, witryn, posadzek albo współpracy sieciowej.",
   cards: [
     {
       title: "Realizacje",
       description:
-        "Zakresy i efekty z obiektów komercyjnych. Krótkie case’y pokazujące różne scenariusze współpracy i ich rezultat.",
+        "Zakresy, warunki i efekty z obiektów komercyjnych. Krótkie case’y pokazujące, jak wyglądały różne scenariusze i co było najważniejsze operacyjnie.",
       buttonLabel: "Zobacz realizacje",
       media: {
         type: "image",
@@ -279,7 +287,7 @@ const knowledgeContent: KnowledgeSectionContent = {
     {
       title: "Referencje i opinie",
       description:
-        "Co klienci B2B doceniają we współpracy. Najczęściej przewidywalność, komunikację i czytelne prowadzenie realizacji.",
+        "Co klienci doceniają w różnych modelach współpracy. Najczęściej jasność ustaleń, przewidywalność i prostsze przejście od zapytania do działania.",
       buttonLabel: "Zobacz referencje",
       media: {
         type: "image",
@@ -292,14 +300,14 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Wyślij minimum danych, a my wskażemy właściwy scenariusz",
+  title: "Wyślij minimum danych, a wskażemy najlepszą ścieżkę",
   description:
-    "Opisz sytuację jednym zdaniem. Jeśli chodzi o sieć, dopisz liczbę lokalizacji i miasta. Jeśli to pojedynczy obiekt, wystarczy typ obiektu i termin. Wrócimy z krótką listą pytań i właściwym kolejnym krokiem.",
+    "Nie musisz od razu wiedzieć, jakiej usługi potrzebujesz. Opisz sytuację jednym zdaniem. Jeśli chodzi o sieć, dopisz liczbę lokalizacji i miasta. Jeśli to pojedynczy obiekt, wystarczy typ obiektu, temat i termin.",
   chips: [
     { label: "Dobór scenariusza" },
     { label: "Jeden kontakt" },
-    { label: "Jasna ścieżka" },
-    { label: "Kontrola jakości" },
+    { label: "Jasny punkt startu" },
+    { label: "Wsparcie operacyjne" },
     { label: "Zasięg ogólnopolski" },
     { label: "Szybka kwalifikacja", accent: true },
   ],
@@ -309,7 +317,7 @@ const contactContent: ContactSectionContent = {
     phoneLabel: "Numer telefonu",
     phonePlaceholder: "Twój numer telefonu",
     topicLabel: "Temat rozmowy",
-    topicPlaceholder: "Jaki obiekt lub ile lokalizacji i na kiedy",
+    topicPlaceholder: "Jaki obiekt, czego dotyczy temat i na kiedy",
     consentText:
       "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
     submitLabel: "Wyślij minimum danych",
@@ -330,52 +338,52 @@ const faqContent: FaqSectionContent = {
     {
       question: "Czym ta strona różni się od stron poszczególnych usług?",
       answer:
-        "To hub współpracy B2B. Pomaga wybrać właściwy scenariusz i przejść do usługi, która najlepiej odpowiada Twojej sytuacji operacyjnej.",
+        "To hub współpracy B2B. Nie opisuje jednej usługi, tylko pomaga ustalić, od jakiej ścieżki zacząć i która usługa najlepiej pasuje do Twojej sytuacji.",
     },
     {
-      question: "Jakie scenariusze współpracy obejmuje Domker?",
+      question: "Kiedy warto zacząć właśnie od tej strony?",
       answer:
-        "Najczęściej są to: sprzątanie po budowie i przed otwarciem, obsługa sieci w wielu lokalizacjach, stałe utrzymanie czystości, mycie witryn oraz doczyszczanie posadzek.",
+        "Wtedy, gdy wiesz, że temat dotyczy sprzątania dla firmy, ale nie masz jeszcze pewności, czy chodzi o końcówkę budowy, stałą obsługę, witryny, posadzki, kilka lokalizacji albo kilka potrzeb naraz.",
     },
     {
-      question: "Czy działacie w całej Polsce?",
+      question: "Czy muszę znać dokładną nazwę usługi, żeby napisać pierwszą wiadomość?",
       answer:
-        "Tak — prowadzimy realizacje na terenie całej Polski, zarówno dla pojedynczych obiektów, jak i dla firm działających w wielu miastach.",
+        "Nie. Wystarczy krótki opis sytuacji. Po jego przeczytaniu wskażemy, jaki scenariusz będzie najbardziej logicznym punktem startu.",
     },
     {
-      question: "Jak ustalić, która usługa będzie właściwa?",
+      question: "Czy mogę zgłosić temat, który łączy kilka usług?",
       answer:
-        "Wystarczy opisać sytuację: typ obiektu, skalę i termin. Na tej podstawie wskażemy właściwy scenariusz i kolejną ścieżkę rozmowy.",
-    },
-    {
-      question: "Czy mogę zgłosić kilka potrzeb w jednym zapytaniu?",
-      answer:
-        "Tak. Jeśli temat obejmuje kilka usług, porządkujemy go na scenariusze i proponujemy sposób prowadzenia realizacji w odpowiedniej kolejności.",
+        "Tak. Jeśli sytuacja obejmuje na przykład odbiór po remoncie, późniejsze utrzymanie lokalu i witryny w abonamencie, rozdzielimy to na właściwe ścieżki.",
     },
     {
       question: "Czy ta strona jest dla pojedynczego obiektu czy dla sieci?",
       answer:
-        "Dla obu modeli. To właśnie tutaj rozdzielamy, czy temat dotyczy jednej lokalizacji, wielu punktów, stałej obsługi czy konkretnej usługi specjalistycznej.",
+        "Dla obu modeli. To właśnie tutaj ustalamy, czy temat dotyczy jednej lokalizacji, wielu punktów, współpracy stałej albo usługi specjalistycznej.",
+    },
+    {
+      question: "Jak ustalacie, która usługa będzie właściwa?",
+      answer:
+        "Na podstawie kilku podstawowych informacji: typu obiektu, skali, miasta, terminu i celu realizacji. To wystarcza, żeby wskazać najkrótszą ścieżkę rozmowy.",
+    },
+    {
+      question: "Czy potrzebuję pełnych danych, żeby zacząć?",
+      answer:
+        "Nie. Na tym etapie wystarczy minimum informacji. Jeśli czegoś będzie brakowało, wrócimy z krótką listą pytań dopasowaną do właściwego scenariusza.",
     },
     {
       question: "Jak wygląda wycena na tym etapie?",
       answer:
-        "Na tym poziomie najpierw kwalifikujemy scenariusz. Po jego wyborze wracamy z właściwym zakresem pytań, widełkami i dalszym sposobem procedowania.",
+        "Na poziomie hubu najpierw kwalifikujemy sytuację. Po wyborze właściwej ścieżki wracamy z odpowiednim zakresem pytań, widełkami albo dalszym sposobem procedowania.",
     },
     {
-      question: "Czy potrzebuję pełnych danych, żeby napisać pierwszą wiadomość?",
+      question: "Czy działacie w całej Polsce?",
       answer:
-        "Nie. Wystarczy podstawowy opis sytuacji. Jeśli informacji jest za mało, wrócimy z krótką listą pytań, która pomoże przejść dalej bez zbędnej wymiany wiadomości.",
-    },
-    {
-      question: "Czy mogę zacząć od jednego punktu albo pilotażu?",
-      answer:
-        "Tak. W wielu przypadkach to dobry sposób na sprawdzenie standardu, sposobu komunikacji i organizacji realizacji przed szerszą współpracą.",
+        "Tak. Prowadzimy realizacje na terenie całej Polski — zarówno dla pojedynczych obiektów, jak i dla firm działających w wielu miastach.",
     },
     {
       question: "Co dostaję po wyborze właściwej ścieżki?",
       answer:
-        "Doprecyzowany scenariusz, jasny kolejny krok i przejście do usługi, która odpowiada Twojej sytuacji operacyjnej oraz celowi realizacji.",
+        "Jasny kolejny krok, właściwą usługę albo model współpracy i przejście do dalszych ustaleń, które mają już sens dla tej konkretnej sytuacji.",
     },
   ],
 };
@@ -387,14 +395,12 @@ export default function Home() {
       <main className={styles.main}>
         <PagesHero content={defaultContent} />
         <ProblemsSection content={problemsContent} />
-                <SolutionsSection content={solutionsContent} />
-        
-        <CtaSection content={ctaContent}/>
-        <BenefitsSection content={benefitsContent} />
-        <ProcessSection content={processContent} />        
+        <SolutionsSection content={solutionsContent} />
+        <CtaSection content={ctaContent} />
+        {/* <BenefitsSection content={benefitsContent} /> */}
+        <ProcessSection content={processContent} />
         <ContactSection content={contactContent} />
         <KnowledgeSection content={knowledgeContent} />
-        
         <FaqSection content={faqContent} />
       </main>
       <Footer />

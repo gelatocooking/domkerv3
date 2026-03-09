@@ -25,36 +25,28 @@ import FaqSection, { type FaqSectionContent } from "@/components/FaqSection/FaqS
 import Footer from "@/components/Footer/Footer";
 import styles from "./page.module.css";
 
-// /sprzatanie-po-budowie/kierownik-budowy — landing stricte pod kierownika budowy
-
-// /sprzatanie-po-budowie/kierownik-budowy — landing stricte pod kierownika budowy
+// /sprzatanie-po-budowie/kierownik-budowy
 
 const defaultContent: PagesHeroContent = {
   badge: "SPRZĄTANIE PO BUDOWIE DLA KIEROWNIKA BUDOWY",
-  titleLines: [
-    "Sprzątanie po budowie",
-    "pod odbiór bez poprawek",
-  ],
+  titleLines: ["Sprzątanie po budowie", "pod odbiór bez dokładania chaosu"],
   emphasisIconName: "hardHat",
   emphasisSuffix: "/",
   description:
-    "Na końcówce budowy nie potrzebujesz kolejnej ekipy wykonującej zakres. Potrzebujesz partnera, który przejmie finalizację czystości pod odbiór: w realnym oknie wejścia, bez szkód na wykończeniach, bez chaosu między brygadami i bez wracania do tych samych uwag.",
+    "Na końcówce budowy nie potrzebujesz kolejnej ekipy do pilnowania. Potrzebujesz partnera, który przejmie finalizację czystości pod odbiór: w realnym oknie wejścia, bez szkód na wykończeniach, bez rozjechania harmonogramu i bez wracania do tych samych uwag.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
 };
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE WYZWANIA?",
-  titleLines: [
-    "Co kierownika budowy realnie",
-    "blokuje przed odbiorem?",
-  ],
+  titleLines: ["Co kierownika budowy realnie", "blokuje przed odbiorem?"],
   description:
-    "Na końcówce przegrywa zwykle nie zakres prac, tylko brak przewidywalności. Odbiór ma termin, a obiekt nadal żyje: ekipy wracają, pył wraca, uwagi pojawiają się na końcu, a czasu na kolejne wejście już nie ma.",
+    "Na końcówce przegrywa zwykle nie sam zakres, tylko brak przewidywalności. Odbiór ma termin, budowa nadal żyje, ekipy wracają, pył wraca, a lista uwag pojawia się wtedy, gdy czasu na kolejne wejście już prawie nie ma.",
   items: [
     {
       iconName: "calendarClock",
       label: "OKNO",
-      title: "Termin odbioru jest stały, a budowa nadal pracuje",
+      title: "Termin odbioru jest stały, a warunki na budowie zmieniają się do końca",
       description:
         "Na sprzątanie zostaje krótki przedział, który trzeba zsynchronizować z poprawkami, dostępem do stref i ruchem innych ekip.",
       tone: "processes",
@@ -62,33 +54,33 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "workflow",
       label: "KOORDYNACJA",
-      title: "Za dużo osób dotyka tematu, nikt nie prowadzi całości",
+      title: "Za dużo osób, a za mało czasu na kontrolę ich pracy",
       description:
-        "Kierownik nie powinien pilnować jednocześnie brygad, odbioru i czystości. Potrzebny jest jeden odpowiedzialny po stronie wykonawcy.",
+        "Kierownik nie powinien jednocześnie pilnować brygad, odbioru i czystości. Potrzebny jest jeden odpowiedzialny po stronie wykonawcy.",
       tone: "processes",
     },
     {
       iconName: "layoutGrid",
       label: "DETALE",
-      title: "Uwagi pojawiają się dopiero przy finalnym obchodzie",
+      title: "Uwagi wychodzą dopiero przy końcowym obchodzie",
       description:
-        "Smugi na szybach, pył na parapetach, zabrudzenia przy listwach, progach i armaturze wychodzą zwykle wtedy, gdy odbiór jest już bardzo blisko.",
+        "Smugi na szybach, pył na parapetach, zabrudzenia przy listwach, progach i armaturze ujawniają się zwykle wtedy, gdy odbiór jest już bardzo blisko.",
       tone: "data",
     },
     {
       iconName: "truck",
       label: "ZASOBY",
-      title: "Szybkie wejście wymaga ludzi, sprzętu i rezerwy",
+      title: "Szybkie wejście wymaga ludzi, sprzętu i gotowości organizacyjnej",
       description:
-        "Na końcówce nie ma miejsca na organizowanie odkurzaczy, maszyn i ekipy z kilku źródeł. To musi być gotowe od razu po potwierdzeniu terminu.",
+        "Na końcówce nie ma miejsca na szukanie odkurzaczy, maszyn i ekipy z kilku źródeł. To musi być gotowe po potwierdzeniu terminu.",
       tone: "resources",
     },
     {
       iconName: "shieldAlert",
       label: "RYZYKO",
-      title: "Szkoda na wykończeniu potrafi zjeść zysk z terminu",
+      title: "Szkoda na wykończeniu potrafi obniżyć zyski i wydłużyć odbiór",
       description:
-        "Posadzki, przeszklenia, fronty i armatura wymagają pracy pod materiał. Błąd technologiczny wraca jako reklamacja, koszt i opóźnienie.",
+        "Posadzki, przeszklenia, profile, fronty i armatura wymagają pracy pod materiał. Błąd technologiczny wraca jako koszt, reklamacja i opóźnienie.",
       tone: "risk",
     },
     {
@@ -96,7 +88,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "ODBIÓR",
       title: "Bez dokumentów i kontroli temat wraca po raz kolejny",
       description:
-        "Checklisty, zdjęcia i protokół porządkują odbiór, rozliczenie oraz odpowiedzialność. Bez nich kierownik wraca do tych samych wyjaśnień po realizacji.",
+        "Checklista, zdjęcia i protokół porządkują odbiór, rozliczenie oraz odpowiedzialność. Bez nich kierownik wraca do tych samych wyjaśnień po realizacji.",
       tone: "technology",
     },
   ],
@@ -104,17 +96,14 @@ const problemsContent: ProblemsSectionContent = {
 
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "JAK TO PROWADZIMY",
-  titleLines: [
-    "Sprzątanie końcówki budowy",
-    "w logice kierownika",
-  ],
+  titleLines: ["Sprzątanie końcówki budowy", "w logice kierownika"],
   description:
-    "Prowadzimy ten etap jak zadanie z harmonogramu: ustalamy cel odbioru, priorytety stref, kolejność prac, technologię pod materiał i zgłaszamy gotowość dopiero po własnej kontroli. Dzięki temu kierownik dostaje efekt do dalszego procedowania, a nie kolejną listę rzeczy do dopilnowania.",
+    "Prowadzimy ten etap jak zadanie z harmonogramu: ustalamy cel odbioru, priorytety stref, kolejność prac, technologię pod materiał i zgłaszamy gotowość dopiero po własnej kontroli. Dzięki temu kierownik dostaje etap gotowy do dalszego procedowania, a nie kolejną listę rzeczy do dopilnowania.",
   items: [
     {
       iconName: "hardHat",
       label: "Standard odbiorowy",
-      title: "Najpierw ustalamy, co ma przejść na odbiorze",
+      title: "Najpierw ustalamy, co dokładnie ma przejść na odbiorze",
       description:
         "Inwestorski, urzędowy, przekazanie, odbiory mieszkań albo części wspólnych. Standard musi być konkretny, żeby zakres był policzalny i sprawdzalny.",
       ctaLabel: "Wyślij minimum danych",
@@ -126,7 +115,7 @@ const solutionsContent: SolutionsSectionContent = {
       label: "Strefy krytyczne",
       title: "Zaczynamy od miejsc, które będą oceniane jako pierwsze",
       description:
-        "Klatki schodowe, garaże, komunikacja, wejścia, przeszklenia, sanitariaty, części wspólne i detale wykończeniowe traktujemy jako priorytet odbiorowy.",
+        "Klatki schodowe, garaże, wejścia, komunikacja, przeszklenia, sanitariaty, części wspólne i detale wykończeniowe traktujemy jako priorytet odbiorowy.",
       ctaLabel: "Wyślij minimum danych",
       mediaAlt: "Strefy krytyczne na budowie",
       mediaSrc: "/kontakt",
@@ -146,7 +135,7 @@ const solutionsContent: SolutionsSectionContent = {
       label: "Odbiór wewnętrzny",
       title: "Najpierw weryfikacja po naszej stronie, potem zgłoszenie gotowości",
       description:
-        "Zanim powiemy, że etap jest gotowy, robimy kontrolę checklistą i usuwamy własne uwagi wewnętrznie. To ogranicza liczbę poprawek zgłaszanych przez kierownika.",
+        "Zanim powiemy, że etap jest gotowy, robimy kontrolę checklistą i usuwamy własne uwagi wewnętrznie. To ogranicza liczbę powrotów po odbiorze.",
       ctaLabel: "Wyślij minimum danych",
       mediaAlt: "Kontrola wewnętrzna przed odbiorem",
       mediaSrc: "/kontakt",
@@ -164,7 +153,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "mapPin",
       label: "Cała Polska",
-      title: "Jedna współpraca zamiast szukania ekipy na końcówce",
+      title: "Jedna współpraca zamiast szukania ekipy na ostatniej prostej",
       description:
         "Działamy ogólnopolsko i układamy wejście pod termin odbioru, dostęp do obiektu, procedury oraz ograniczenia technologiczne.",
       ctaLabel: "Sprawdź dostępność",
@@ -174,11 +163,20 @@ const solutionsContent: SolutionsSectionContent = {
   ],
 };
 
+const ctaContent: CtaSectionContent = {
+  eyebrowText: "DOBIERZMY ZAKRES POD ODBIÓR",
+  title: "Powiedz, jaki obiekt trzeba przygotować i na kiedy jest odbiór",
+  description:
+    "Wystarczy miasto lub adres inwestycji, metraż, termin odbioru i numer kontaktowy. Jeśli wiesz, które strefy są krytyczne albo gdzie najczęściej wracają uwagi, dopisz to w wiadomości.",
+  buttonLabel: "Wyślij minimum danych",
+  avatars: ["A", "B", "C", "D", "E", "F", "G"],
+};
+
 const benefitsContent: BenefitsSectionContent = {
   kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
   titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
   description:
-    "Na końcówce liczy się nie tylko rezultat wizualny. Liczy się też wejście na obiekt, zgodność z BHP, dokumentacja na potrzeby odbioru i jasna odpowiedzialność, jeśli w trakcie ujawnią się szkody albo usterki zastane.",
+    "Na końcówce liczy się nie tylko efekt wizualny. Liczy się też wejście na obiekt, zgodność z BHP, dokumentacja do odbioru i jasna odpowiedzialność, jeśli w trakcie ujawnią się szkody albo usterki zastane.",
   items: [
     {
       iconName: "users",
@@ -201,7 +199,7 @@ const benefitsContent: BenefitsSectionContent = {
       label: "DOSTĘP",
       title: "Umowa o zachowaniu poufności i rejestr wejść, jeśli są wymagane",
       description:
-        "Jeżeli obiekt ma własne procedury wejścia, dopinamy je wcześniej, a nie w dniu realizacji przy ochronie lub na bramie.",
+        "Jeżeli inwestycja ma własne procedury wejścia, dopinamy je wcześniej, a nie w dniu realizacji przy ochronie albo na bramie.",
       tone: "processes",
     },
     {
@@ -215,9 +213,9 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "clipboardCheck",
       label: "OC",
-      title: "OC i jasne ramy odpowiedzialności",
+      title: "Ubezpieczenie OC i jasne ramy odpowiedzialności",
       description:
-        "Masz jasność, jak wygląda zabezpieczenie współpracy przy realizacjach na obiektach komercyjnych i w jaki sposób rozdzielamy odpowiedzialność za szkody.",
+        "Masz jasność, jak wygląda zabezpieczenie współpracy przy realizacjach na obiektach komercyjnych i jak rozdzielamy odpowiedzialność za szkody.",
       tone: "finance",
     },
     {
@@ -225,7 +223,7 @@ const benefitsContent: BenefitsSectionContent = {
       label: "B2B",
       title: "Umowa i faktura VAT jako standard współpracy",
       description:
-        "Proces zakupowy pozostaje czytelny dla inwestora, księgowości, administracji i osób zatwierdzających usługę po stronie generalnego wykonawcy.",
+        "Proces zakupowy pozostaje czytelny dla inwestora, księgowości, administracji i osób zatwierdzających usługę po stronie wykonawcy.",
       tone: "technology",
     },
   ],
@@ -247,7 +245,7 @@ const processContent: ProcessSectionContent = {
       index: "02",
       title: "Widełki, termin i oferta do zatwierdzenia",
       description:
-        "Wracamy tego samego dnia po skompletowaniu informacji. Dostajesz zakres, wyłączenia, warunki wejścia i wariant realizacji do przekazania dalej.",
+        "Wracamy po skompletowaniu informacji. Dostajesz zakres, wyłączenia, warunki wejścia i wariant realizacji do przekazania dalej.",
     },
     {
       index: "03",
@@ -263,15 +261,6 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
-};
-
-const ctaContent: CtaSectionContent = {
-  eyebrowText: "DOBIERZMY ZAKRES",
-  title: "Powiedz, jaki obiekt trzeba przygotować do odbioru",
-  description:
-    "Wystarczy miasto lub adres inwestycji, metraż, termin odbioru i numer kontaktowy. Jeśli wiesz, które strefy są krytyczne albo gdzie wracają poprawki, dopisz to w wiadomości.",
-  buttonLabel: "Wyślij minimum danych",
-  avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
@@ -307,9 +296,9 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Wyślij minimum danych, a my wskażemy kolejny krok",
+  title: "Wyślij minimum danych, a wskażemy kolejny krok",
   description:
-    "Podaj nazwę inwestycji lub firmy, adres obiektu, e-mail firmowy i numer telefonu. W odpowiedzi wyślemy krótką listę informacji potrzebnych do widełek, terminu i decyzji o wejściu.",
+    "Podaj nazwę inwestycji albo firmy, adres obiektu, e-mail firmowy i numer telefonu. W odpowiedzi wyślemy krótką listę informacji potrzebnych do widełek, terminu i decyzji o wejściu.",
   chips: [
     { label: "Odbiór pod termin" },
     { label: "Jeden odpowiedzialny" },
@@ -404,6 +393,7 @@ const faqContent: FaqSectionContent = {
     },
   ],
 };
+
 export default function Home() {
   return (
     <div className={styles.page}>
