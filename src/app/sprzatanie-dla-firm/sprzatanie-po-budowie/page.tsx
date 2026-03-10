@@ -21,280 +21,280 @@ import KnowledgeSection, {
 } from "@/components/KnowledgeSection/KnowledgeSection";
 import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
 
-// /sprzatanie-cykliczne
+// /sprzatanie-po-budowie
 
 const defaultContent: PagesHeroContent = {
-  badge: "SPRZĄTANIE CYKLICZNE (B2B)",
-  titleLines: ["Sprzątanie cykliczne", "bez ciągłego pilnowania serwisu"],
+  badge: "SPRZĄTANIE PO BUDOWIE (B2B)",
+  titleLines: ["Sprzątanie po budowie", "pod odbiór bez domyślania się efektu"],
   emphasisSuffix: "/",
   description:
-    "To usługa dla biur, lokali i obiektów komercyjnych, w których liczy się stały standard, przewidywalny harmonogram i współpraca, do której nie trzeba wracać co tydzień od zera. W Domker ustawiamy regularny serwis tak, żeby działał w tle i nie angażował Cię bardziej, niż trzeba.",
-  ctaLabel: "Ustal stałą obsługę",
+    "To etap, na którym widać wszystko: pył technologiczny, ślady po foliach i klejach, smugi pod światło i niedoczyszczone detale przy listwach, progach i profilach. W Domker prowadzimy sprzątanie po budowie jak zadanie odbiorowe: plan stref, kolejność prac, technologia pod materiał i kontrola przed zgłoszeniem gotowości.",
+  ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
 };
 
 const knowledgeContent2: KnowledgeSectionContent = {
-  kickerLabel: "GDZIE TO MA SENS?",
-  titleLines: ["Stała obsługa działa najlepiej tam,", "gdzie liczy się przewidywalny standard"],
+  kickerLabel: "WYBIERZ ŚCIEŻKĘ PO ROLI",
+  titleLines: ["Domker dopasowuje sposób działania", "do Twojej roli po stronie obiektu"],
   description:
-    "Sprzątanie cykliczne nie jest usługą od gaszenia pojedynczego problemu. To model dla obiektów, które mają działać na co dzień bez ciągłego przypominania o podstawach, bez wracania do tych samych ustaleń i bez każdorazowego układania tematu od nowa.",
+    "Jeśli odpowiadasz za odbiór, harmonogram i końcówkę budowy, będziesz patrzeć na ten etap inaczej niż osoba odpowiadająca za przekazanie obiektu, procedury i komunikację po stronie firmy. Dlatego rozdzielamy dalszą ścieżkę według roli.",
   cards: [
     {
-      title: "Biura i zaplecza firm",
+      title: "Kierownik budowy / wykonawca",
       description:
-        "Dla miejsc, w których ważny jest regularny porządek, przewidywalny harmonogram i serwis, który nie wymaga stałej kontroli po stronie firmy.",
-      buttonLabel: "Chcę omówić biuro",
+        "Dla osób, które chcą domknąć etap pod odbiór bez dodatkowych wejść, powrotów i rozjechania harmonogramu. Tu liczą się strefy odbiorowe, kolejność prac, kontrola checklistą i gotowość do zgłoszenia.",
+      buttonLabel: "Jestem kierownikiem budowy",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Sprzątanie cykliczne biur",
+        alt: "Ścieżka dla kierownika budowy",
       },
     },
     {
-      title: "Lokale i obiekty komercyjne",
+      title: "Zarządca obiektu / office / koordynacja",
       description:
-        "Dla lokali usługowych, gabinetów i miejsc, które muszą wyglądać dobrze codziennie, a nie tylko po jednorazowym wejściu ekipy.",
-      buttonLabel: "Chcę omówić lokal",
+        "Dla osób, które odpowiadają za procedury, przekazanie, kontakt między stronami i dopięcie tematu organizacyjnie. Tu liczą się formalności, jeden punkt kontaktu, dokumentacja i usługa gotowa do procedowania dalej.",
+      buttonLabel: "Odpowiadam za koordynację",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Sprzątanie cykliczne lokali",
+        alt: "Ścieżka dla zarządcy obiektu",
       },
     },
   ],
 };
 
 const problemsContent: ProblemsSectionContent = {
-  kickerLabel: "ZNASZ TE SYTUACJE?",
-  titleLines: ["Przy stałej obsłudze problemem", "rzadko jest sam zakres sprzątania"],
+  kickerLabel: "KIEDY TO JEST POTRZEBNE?",
+  titleLines: ["Sprzątanie po budowie ma sens wtedy,", "gdy liczy się wynik odbioru"],
   description:
-    "Najczęściej psuje się nie sam serwis, tylko jego przewidywalność. Raz jest dobrze, raz słabiej, trzeba przypominać o podstawach, harmonogram się rozjeżdża, a po stronie klienta wracają te same pytania i te same drobne problemy operacyjne.",
+    "To nie jest usługa od odświeżenia obiektu. To etap, który ma przygotować przestrzeń do odbioru, przekazania albo otwarcia — w warunkach, gdzie zła kolejność prac, pył i błędy technologiczne wracają jako poprawki.",
   items: [
     {
-      iconName: "calendarClock",
-      label: "HARMONOGRAM",
-      title: "Brakuje stałego rytmu i jasnych okien realizacji",
+      iconName: "sparkles",
+      label: "PYŁ",
+      title: "Pył po pracach technicznych wraca tam, gdzie będzie oceniany obiekt",
       description:
-        "Jeśli serwis nie działa według przewidywalnego planu, szybko zaczyna wchodzić w kolizję z rytmem pracy biura albo lokalu.",
+        "Po szlifach, docinkach i wierceniach osiada na detalach, profilach, parapetach i ciągach komunikacyjnych. Bez pracy strefami efekt szybko znika.",
       tone: "processes",
     },
     {
-      iconName: "workflow",
-      label: "POWTARZANIE",
-      title: "Do tych samych ustaleń trzeba wracać częściej, niż powinno",
+      iconName: "clipboardList",
+      label: "FOLIE I KLEJE",
+      title: "Ślady po zabezpieczeniach wychodzą przy końcowym oglądzie",
       description:
-        "Gdy zakres i standard nie są dobrze ustawione, klient zamiast mieć usługę w tle, wraca do tych samych tematów tydzień po tygodniu.",
-      tone: "processes",
-    },
-    {
-      iconName: "layoutGrid",
-      label: "STANDARD",
-      title: "Poziom wykonania jest nierówny i zależy od dnia albo osoby",
-      description:
-        "Przy stałej obsłudze liczy się powtarzalność. Problem pojawia się wtedy, gdy serwis raz wygląda dobrze, a raz tylko poprawnie.",
+        "Folie, taśmy i kleje po montażu często stają się widoczne dopiero pod światło, z bliska albo po zdjęciu ostatnich zabezpieczeń.",
       tone: "data",
     },
     {
-      iconName: "truck",
-      label: "CIĄGŁOŚĆ",
-      title: "Przy zmianach albo nieobecnościach serwis nie może się rozsypać",
-      description:
-        "Stała obsługa ma być odporna na drobne zmiany organizacyjne. Klient nie powinien odczuwać każdej zmiany po stronie wykonawcy.",
-      tone: "resources",
-    },
-    {
       iconName: "shieldAlert",
-      label: "REAKCJA",
-      title: "Bieżące potrzeby wymagają kontaktu, a nie przeciągania prostych spraw",
+      label: "MATERIAŁY",
+      title: "Nowe wykończenia nie wybaczają przypadkowej technologii",
       description:
-        "Przy długiej współpracy liczy się też to, jak szybko wykonawca reaguje na korekty, dodatkowe potrzeby i zmiany po stronie obiektu.",
+        "Świeże posadzki, szkło, armatura, profile i fronty wymagają narzędzi oraz chemii dobranych do materiału, nie improwizacji na miejscu.",
       tone: "risk",
     },
     {
-      iconName: "fileText",
-      label: "WSPÓŁPRACA",
-      title: "Serwis ma działać stabilnie, a nie angażować klienta w codzienne pilnowanie",
+      iconName: "calendarClock",
+      label: "WEJŚCIE",
+      title: "Obiekt nadal żyje i nie zawsze jest gotowy na jedno końcowe wejście",
       description:
-        "Dobra współpraca cykliczna powinna odciążać, a nie tworzyć kolejne mikro-zadania po stronie biura, managera albo właściciela.",
+        "Równoległe ekipy, strefy wyłączone i przesuwający się harmonogram potrafią zatrzymać realizację, jeśli warunki wejścia nie są potwierdzone wcześniej.",
+      tone: "processes",
+    },
+    {
+      iconName: "clipboardCheck",
+      label: "KONTROLA",
+      title: "Brak wewnętrznej weryfikacji wraca jako lista uwag na finiszu",
+      description:
+        "Jeżeli efekt nie jest sprawdzony przed zgłoszeniem gotowości, poprawki wracają dokładnie wtedy, gdy czasu na nie jest najmniej.",
       tone: "technology",
+    },
+    {
+      iconName: "fileText",
+      label: "ODPOWIEDZIALNOŚĆ",
+      title: "Bez dokumentacji trudno oddzielić stan zastany od zakresu prac",
+      description:
+        "Na końcówce łatwo o spór, co było zabrudzeniem, co usterką, a co efektem innych ekip. Dokumentowanie sytuacji porządkuje temat.",
+      tone: "resources",
     },
   ],
 };
 
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "JAK TO PROWADZIMY",
-  titleLines: ["Sprzątanie cykliczne jako", "stały serwis z jasnym rytmem pracy"],
+  titleLines: ["Sprzątanie po budowie jako proces", "stref, kolejności i decyzji technologicznych"],
   description:
-    "Nie ustawiamy tej usługi jako przypadkowych wejść, tylko jako przewidywalny model współpracy. Najpierw doprecyzowujemy zakres, częstotliwość i rytm obiektu, a potem pilnujemy, żeby standard był utrzymywany bez ciągłego wracania do podstaw.",
+    "Najpierw ustalamy, do jakiego odbioru przygotowujemy obiekt. Potem porządkujemy strefy, dobieramy technologię do materiałów i zgłaszamy gotowość dopiero po kontroli wewnętrznej. Dzięki temu efekt jest sprawdzalny, a nie uznaniowy.",
   items: [
     {
       iconName: "clipboardCheck",
-      label: "Zakres i częstotliwość",
-      title: "Na początku ustalamy, co ma być robione i jak często",
+      label: "Standard odbiorowy",
+      title: "Najpierw ustalamy, jaki efekt ma przejść na końcu",
       description:
-        "Codziennie, kilka razy w tygodniu albo według konkretnego rytmu obiektu. Stała obsługa działa dobrze tylko wtedy, gdy harmonogram ma sens operacyjny.",
-      ctaLabel: "Ustal zakres",
-      mediaAlt: "Zakres i częstotliwość sprzątania cyklicznego",
-      mediaSrc: "/kontakt",
+        "Inwestorski, urzędowy, przekazanie albo otwarcie. Standard końcowy musi być czytelny, żeby zakres i kolejność prac miały sens.",
+      ctaLabel: "Zobacz usługę",
+      mediaAlt: "Sprzątanie po budowie",
+      mediaSrc: "/sprzatanie-po-budowie",
     },
     {
       iconName: "layoutGrid",
-      label: "Standard serwisu",
-      title: "Ustawiamy poziom wykonania, który ma być utrzymywany regularnie",
+      label: "Strefy krytyczne",
+      title: "Dzielimy obiekt na miejsca, które realnie będą oceniane",
       description:
-        "Przy tej usłudze nie chodzi o jednorazowy efekt, tylko o powtarzalny poziom czystości, który da się utrzymać tydzień po tygodniu.",
+        "Wejścia, komunikacja, przeszklenia, sanitariaty, zaplecza i detale wykończeniowe prowadzimy jako strefy wymagające osobnego podejścia.",
       ctaLabel: "Wyślij minimum danych",
-      mediaAlt: "Standard w sprzątaniu cyklicznym",
+      mediaAlt: "Minimum danych do wyceny",
       mediaSrc: "/kontakt#minimum-danych",
     },
     {
       iconName: "shieldAlert",
-      label: "Rytm obiektu",
-      title: "Dopasowujemy serwis do godzin i sposobu działania miejsca",
+      label: "Technologia pod materiał",
+      title: "Dobór metod wynika z powierzchni i ryzyka, nie z przyzwyczajeń",
       description:
-        "Biuro, lokal, gabinet czy obiekt komercyjny mają własny rytm. Harmonogram musi wspierać pracę obiektu, a nie ją utrudniać.",
-      ctaLabel: "Ustal harmonogram",
-      mediaAlt: "Harmonogram sprzątania cyklicznego",
-      mediaSrc: "/kontakt",
+        "Posadzki, szkło, armatura, profile i fronty mają różne ograniczenia. Dlatego decyzja technologiczna zapada przed wejściem.",
+      ctaLabel: "Standard i bezpieczeństwo",
+      mediaAlt: "Technologia i bezpieczeństwo",
+      mediaSrc: "/sprzatanie-po-budowie#standard",
     },
     {
       iconName: "users",
-      label: "Jeden kontakt",
-      title: "Po stronie klienta współpraca ma być prosta i czytelna",
+      label: "Kontrola wykonania",
+      title: "Gotowość zgłaszamy dopiero po własnej weryfikacji",
       description:
-        "Nie trzeba każdej sprawy ustalać od nowa z inną osobą. Stały kontakt porządkuje komunikację i skraca drogę do szybkich decyzji.",
-      ctaLabel: "Zapytaj o współpracę",
-      mediaAlt: "Jeden kontakt po stronie Domker",
+        "Realizacja jest sprawdzana checklistą przed przekazaniem. Na końcu przekazujemy protokół i zdjęcia jako materiał do dalszej procedury.",
+      ctaLabel: "Zapytaj (PDF/HTML)",
+      mediaAlt: "Kontakt i oferta",
       mediaSrc: "/kontakt",
     },
     {
       iconName: "calendarClock",
-      label: "Ciągłość serwisu",
-      title: "Stała obsługa ma działać przewidywalnie również przy zmianach",
+      label: "Okno wejścia",
+      title: "Dopasowujemy realizację do realnego rytmu obiektu",
       description:
-        "Klient nie powinien odczuwać każdej nieobecności czy każdej zmiany organizacyjnej po stronie wykonawcy. Liczy się stabilność współpracy.",
-      ctaLabel: "Sprawdź dostępność",
-      mediaAlt: "Ciągłość sprzątania cyklicznego",
-      mediaSrc: "/kontakt",
+        "Jeśli sytuacja tego wymaga, pracujemy po godzinach albo między innymi robotami, żeby ograniczyć wtórne zabrudzenia i kolizje.",
+      ctaLabel: "Ustal okno wejścia",
+      mediaAlt: "Kontakt telefoniczny",
+      mediaSrc: "tel:+48502992002",
     },
     {
       iconName: "truck",
-      label: "Rozszerzenia zakresu",
-      title: "Jeśli potrzeby się zmieniają, współpraca powinna dać się łatwo dopasować",
+      label: "Skala i moce",
+      title: "Zespoły dobieramy do terminu, stanu obiektu i zakresu",
       description:
-        "Stała obsługa nie może być sztywna. Zakres, częstotliwość albo dodatkowe prace da się korygować wraz ze zmianami po stronie obiektu.",
-      ctaLabel: "Omów potrzeby",
-      mediaAlt: "Rozszerzenie zakresu stałej obsługi",
+        "Od pojedynczych lokali po większe obiekty. Maksima organizacyjne zależą od warunków wejścia: do 5000 m² dziennie lub do 300 okien dziennie.",
+      ctaLabel: "Sprawdź dostępność",
+      mediaAlt: "Dostępność i termin",
       mediaSrc: "/kontakt",
     },
   ],
 };
 
 const ctaContent: CtaSectionContent = {
-  eyebrowText: "USTAWMY SERWIS, KTÓRY DZIAŁA W TLE",
-  title: "Powiedz, jaki obiekt chcesz objąć stałą obsługą",
+  eyebrowText: "MINIMUM DANYCH DO WIDEŁEK I TERMINU",
+  title: "Podaj dane, które przyspieszą wycenę i decyzję o wejściu",
   description:
-    "Podaj lokalizację, typ obiektu, orientacyjny metraż i częstotliwość. Jeśli obiekt działa w konkretnych godzinach albo ma własne ograniczenia organizacyjne, dopisz to od razu.",
+    "Podaj lokalizację, metraż albo skalę obiektu, etap prac, termin i okno wejścia. Jeśli masz zdjęcia oraz informacje o materiałach wrażliwych, szybciej określimy zakres i sposób prowadzenia realizacji.",
   buttonLabel: "Wyślij minimum danych",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
 const showcaseContent: ShowcaseSectionContent = {
-  kickerLabel: "CO UTRZYMUJE WSPÓŁPRACĘ W RYTMIE",
-  titleLines: ["Przy stałej obsłudze liczy się", "nie tylko zakres, ale też sposób współpracy"],
+  kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
+  titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
   description:
-    "Sprzątanie cykliczne działa dobrze wtedy, gdy jest przewidywalne i nie wymaga ciągłego pilnowania. Dlatego porządkujemy nie tylko sam zakres, ale też to, co wpływa na stabilność serwisu w dłuższym czasie.",
+    "Żeby wejść na obiekt i przeprowadzić realizację bez blokad, liczą się nie tylko ludzie i sprzęt, ale też procedury, dokumenty i jasne rozdzielenie odpowiedzialności.",
   items: [
     {
-      tag: "HARMONOGRAM",
-      title: "Stałe okna realizacji porządkują rytm współpracy",
+      tag: "KADRY",
+      title: "Legalne zatrudnienie i przygotowane zespoły",
       description:
-        "Jeśli serwis ma działać regularnie, godziny i częstotliwość muszą być dopasowane do obiektu oraz realnie utrzymywane w czasie.",
-      result: "To daje przewidywalność po stronie klienta i mniej zmian na ostatnią chwilę.",
+        "Pracownicy są legalnie zatrudnieni i przygotowani do pracy na obiekcie, co porządkuje logistykę i ogranicza ryzyka organizacyjne.",
+      result: "Efekt: większa przewidywalność wejścia i przebiegu realizacji.",
     },
     {
-      tag: "ZAKRES",
-      title: "Czytelny zakres ogranicza wracanie do tych samych ustaleń",
+      tag: "BHP",
+      title: "Szkolenia BHP i analiza zagrożeń przed startem",
       description:
-        "Im lepiej na starcie ustawiony jest model współpracy, tym mniej sytuacji, w których trzeba ponownie tłumaczyć podstawy serwisu.",
-      result: "Dzięki temu obsługa jest spokojniejsza i mniej angażuje klienta operacyjnie.",
+        "Przed wejściem ustalamy strefy wyłączone, zasady pracy i ryzyka, żeby realizacja nie zatrzymała się przez procedury w trakcie.",
+      result: "Efekt: płynniejsze wejście i stabilniejsza organizacja prac.",
     },
     {
-      tag: "STANDARD",
-      title: "Powtarzalna jakość jest ważniejsza niż pojedynczy dobry dzień",
+      tag: "DOKUMENTY",
+      title: "Protokół i zdjęcia jako materiał do dalszego procedowania",
       description:
-        "Przy stałej obsłudze nie liczy się jednorazowe wejście, tylko to, czy poziom wykonania utrzymuje się regularnie.",
-      result: "To wpływa na zaufanie do serwisu i poczucie, że temat jest naprawdę ustawiony.",
+        "Po zakończeniu przekazujemy dokumentację wykonania. Jeżeli w trakcie ujawniają się usterki zastane, od razu je opisujemy i zgłaszamy.",
+      result: "Efekt: krótsza ścieżka odbioru i mniej sporów po realizacji.",
     },
     {
-      tag: "REAKCJA",
-      title: "Zmiany i bieżące potrzeby nie powinny dezorganizować współpracy",
+      tag: "OC",
+      title: "Ubezpieczenie OC i jasne ramy odpowiedzialności",
       description:
-        "Przy obiektach komercyjnych potrzeby czasem się zmieniają, dlatego ważna jest szybka i prosta ścieżka reagowania po stronie wykonawcy.",
-      result: "To pozwala korygować usługę bez rozbijania całego modelu współpracy.",
+        "Przy końcówce budowy liczy się nie tylko efekt, ale też zabezpieczenie współpracy i czytelne ustalenia dotyczące odpowiedzialności.",
+      result: "Efekt: mniejsze ryzyko organizacyjne po stronie zamawiającego.",
     },
     {
-      tag: "CIĄGŁOŚĆ",
-      title: "Stała obsługa musi działać stabilnie, także przy zmianach organizacyjnych",
+      tag: "POUFNOŚĆ / DOSTĘP",
+      title: "NDA i rejestr wejść, jeśli obiekt tego wymaga",
       description:
-        "Klient nie powinien odczuwać każdej zmiany po stronie serwisu. Liczy się ciągłość, a nie uzależnienie jakości od jednej osoby.",
-      result: "Dzięki temu współpraca pozostaje przewidywalna i mniej ryzykowna operacyjnie.",
+        "Jeśli obiekt ma dodatkowe formalności, wdrażamy je przed startem, żeby nie tracić okna realizacji przez blokady administracyjne.",
+      result: "Efekt: szybszy start i mniej problemów przy wejściu.",
     },
     {
       tag: "ROZLICZENIA",
-      title: "Model współpracy powinien być prosty także po stronie formalnej",
+      title: "Umowa i faktura VAT gotowe do akceptacji w firmie",
       description:
-        "Przy usłudze cyklicznej liczy się też to, żeby zakres, kontakt i rozliczenie były czytelne i nie generowały zbędnych niejasności.",
-      result: "To skraca ścieżkę decyzji i ułatwia długofalowe utrzymanie współpracy.",
+        "Przekazujemy czytelny zakres i dokumenty do zatwierdzenia oraz rozliczenia, tak aby procedowanie po stronie firmy było prostsze.",
+      result: "Efekt: sprawniejsza decyzja i łatwiejsza finalizacja etapu.",
     },
   ],
 };
 
 const processContent: ProcessSectionContent = {
   kickerLabel: "JAK DZIAŁAMY?",
-  titleLines: ["Od pierwszej rozmowy", "do regularnego serwisu"],
+  titleLines: ["Etap po etapie: od kwalifikacji", "do zgłoszenia gotowości"],
   description:
-    "Ta usługa nie ma działać jednorazowo, tylko w dłuższym rytmie. Dlatego najpierw zbieramy minimum danych, potem doprecyzowujemy zakres i częstotliwość, a następnie ustawiamy serwis tak, żeby działał przewidywalnie.",
+    "Ta usługa ma prowadzić do odbioru, a nie tylko do wykonania prac. Dlatego najpierw zbieramy minimum danych, potem potwierdzamy warunki wejścia i kolejność, a gotowość zgłaszamy dopiero po kontroli wewnętrznej.",
   steps: [
     {
       index: "01",
       title: "Minimum danych i szybka kwalifikacja",
       description:
-        "Ustalamy typ obiektu, metraż, lokalizację, oczekiwaną częstotliwość i godziny, w których serwis ma być prowadzony.",
+        "Ustalamy typ obiektu, metraż, etap prac, termin, okno wejścia i strefy, które mają największe znaczenie odbiorowe.",
     },
     {
       index: "02",
-      title: "Zakres, częstotliwość i model współpracy",
+      title: "Widełki i oferta do zatwierdzenia (PDF/HTML)",
       description:
-        "Doprecyzowujemy, co ma być objęte serwisem, jak często i w jakim rytmie usługa ma działać w praktyce.",
+        "Przygotowujemy najprostszy wariant realizacji i przekazujemy ofertę, którą można dalej wysłać do przełożonego, zarządu albo zakupów.",
     },
     {
       index: "03",
-      title: "Potwierdzenie harmonogramu i organizacji",
+      title: "Potwierdzenie warunków wejścia i plan stref",
       description:
-        "Ustalamy okna realizacji, sposób kontaktu i wszystkie elementy potrzebne do spokojnego startu stałej obsługi.",
+        "Doprecyzowujemy godziny, dostęp, BHP, strefy wyłączone, równoległe ekipy, ograniczenia materiałowe i kolejność prac.",
     },
     {
       index: "04",
-      title: "Start serwisu i utrzymanie standardu",
+      title: "Realizacja, kontrola i zgłoszenie gotowości",
       description:
-        "Uruchamiamy współpracę i prowadzimy usługę tak, żeby poziom wykonania był stabilny, a klient nie musiał wracać do podstawowych ustaleń.",
+        "Pracujemy według planu stref i wybranej technologii. Po kontroli wewnętrznej przekazujemy protokół oraz zdjęcia i dopiero wtedy zgłaszamy gotowość.",
     },
   ],
-  ctaLabel: "Ustal stałą obsługę",
+  ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
 };
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Powiedz, jaki obiekt chcesz objąć regularnym serwisem",
+  title: "Wybierz najkrótszą ścieżkę do przygotowania obiektu pod odbiór",
   description:
-    "Zostaw kontakt i opisz obiekt jednym zdaniem. Napisz, czy chodzi o biuro, lokal, gabinet albo inny obiekt komercyjny, jaki jest orientacyjny metraż i jak często usługa ma się odbywać.",
+    "Zostaw kontakt i napisz, na kiedy potrzebujesz realizacji. Wrócimy z krótką listą pytań o warunki wejścia, zakres i strefy krytyczne, a następnie przygotujemy ofertę do zatwierdzenia w firmie.",
   chips: [
-    { label: "Stały standard" },
-    { label: "Jeden kontakt" },
-    { label: "Kontrola jakości" },
-    { label: "Harmonogram" },
-    { label: "Ciągłość serwisu" },
-    { label: "Szybka kwalifikacja", accent: true },
+    { label: "Standard odbiorowy" },
+    { label: "Strefy krytyczne" },
+    { label: "Technologia pod materiał" },
+    { label: "Kontrola checklistą" },
+    { label: "Protokół + zdjęcia" },
+    { label: "Start w 3 dni*", accent: true },
   ],
   form: {
     emailLabel: "Adres e-mail",
@@ -302,43 +302,43 @@ const contactContent: ContactSectionContent = {
     phoneLabel: "Numer telefonu",
     phonePlaceholder: "Twój numer telefonu",
     topicLabel: "Temat rozmowy",
-    topicPlaceholder: "Jaki obiekt, jaki metraż i jak często",
+    topicPlaceholder: "Jaki obiekt i na kiedy jest odbiór?",
     consentText:
       "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
-    submitLabel: "Wyślij minimum danych",
+    submitLabel: "Odbierz ofertę (PDF/HTML)",
   },
   meta: {
     avatars: ["A", "B", "C", "D", "E", "F"],
-    text: "Zespół operacyjny po stronie B2B",
+    text: "Zespół operacyjny gotowy do wejścia na obiekt",
   },
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "REALIZACJE I REFERENCJE",
-  titleLines: ["Zobacz, jak wygląda", "stała obsługa w praktyce"],
+  titleLines: ["Zobacz, jak pracujemy", "przy realizacjach po budowie"],
   description:
-    "Przykładowe realizacje dla biur, lokali i obiektów komercyjnych. Zobacz, jak prowadzimy stały serwis i co klienci doceniają przy współpracy długofalowej.",
+    "Przykładowe realizacje z obiektów komercyjnych. Zobacz, jak wygląda usługa w praktyce: od kwalifikacji zakresu po finalizację etapu i przekazanie dokumentacji.",
   cards: [
     {
       title: "Realizacje",
       description:
-        "Przykłady obiektów objętych stałą obsługą. Krótkie case’y pokazujące zakres, częstotliwość i sposób prowadzenia serwisu.",
+        "Zakresy, strefy i efekty na obiektach po budowie i wykończeniu. Krótkie case’y pokazujące sposób prowadzenia prac.",
       buttonLabel: "Zobacz realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Realizacje Domker przy sprzątaniu cyklicznym",
+        alt: "Realizacje Domker",
       },
     },
     {
       title: "Referencje i opinie",
       description:
-        "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność, prostą komunikację i serwis, który nie wymaga ciągłego pilnowania.",
+        "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność realizacji, bezpieczeństwo materiałowe i czytelne potwierdzenie wykonania.",
       buttonLabel: "Zobacz referencje",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker przy sprzątaniu cyklicznym",
+        alt: "Referencje Domker",
       },
     },
   ],
@@ -346,60 +346,80 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const faqContent: FaqSectionContent = {
   kickerLabel: "NAJCZĘŚCIEJ ZADAWANE PYTANIA",
-  title: "Pytania przed ustawieniem stałej obsługi",
+  title: "Pytania przed zleceniem sprzątania po budowie",
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
   items: [
     {
-      question: "Jakie obiekty obsługujecie cyklicznie?",
+      question: "Czym sprzątanie po budowie różni się od zwykłego sprzątania?",
       answer:
-        "Najczęściej są to biura, lokale usługowe, gabinety i inne obiekty komercyjne, w których potrzebny jest regularny serwis utrzymujący stały poziom czystości.",
+        "To usługa techniczna, a nie standardowe sprzątanie utrzymaniowe. Obejmuje usuwanie pyłu budowlanego, zabrudzeń po montażu, śladów po zabezpieczeniach oraz przygotowanie obiektu do odbioru, przekazania albo uruchomienia.",
     },
     {
-      question: "Czy można ustalić indywidualny harmonogram?",
+      question: "Kiedy najlepiej zlecić sprzątanie po budowie?",
       answer:
-        "Tak. Częstotliwość i godziny realizacji dopasowujemy do rytmu obiektu, tak żeby serwis wspierał jego działanie, a nie wchodził z nim w kolizję.",
+        "Najlepiej wtedy, gdy zakończone są prace najbardziej pylące i można określić realne okno wejścia. Jeżeli obiekt nadal jest w ruchu, często sensowniejszy jest podział na etapy niż jedno wejście końcowe.",
     },
     {
-      question: "Czy możecie pracować rano, wieczorem albo poza godzinami pracy obiektu?",
+      question: "Co najczęściej wpływa na czas realizacji i wycenę?",
       answer:
-        "Tak, jeśli taki model najlepiej pasuje do miejsca. Na etapie ustaleń doprecyzowujemy, kiedy serwis będzie najmniej uciążliwy dla obiektu.",
+        "Największy wpływ mają: poziom zapylenia, ślady po foliach i klejach, stan przeszkleń, rodzaj posadzek, liczba stref krytycznych oraz to, czy na obiekcie nadal pracują inne ekipy.",
     },
     {
-      question: "Co wchodzi w zakres stałej obsługi?",
+      question: "Czy usuwacie ślady po foliach, taśmach i klejach ochronnych?",
       answer:
-        "To zależy od obiektu i częstotliwości. Zakres ustalamy na początku współpracy tak, żeby był czytelny, realny do utrzymania i dopasowany do potrzeb miejsca.",
+        "Tak, to jeden z częstszych elementów zakresu po wykończeniach. Metoda i czas zależą od materiału, rodzaju zabrudzenia i tego, jak długo zabezpieczenia pozostawały na powierzchni.",
     },
     {
-      question: "Czy można zmieniać częstotliwość w trakcie współpracy?",
+      question: "Czy sprzątanie po budowie obejmuje mycie okien i przeszkleń?",
       answer:
-        "Tak. Jeśli potrzeby obiektu się zmieniają, można skorygować częstotliwość, rytm realizacji albo dodatkowe elementy zakresu.",
+        "Tak, jeśli wynika to z zakresu realizacji. Kwalifikujemy stan szyb, ram i zabrudzeń montażowych przed startem, ponieważ przeszklenia po budowie często wymagają osobnej decyzji technologicznej.",
     },
     {
-      question: "Jak wygląda ciągłość serwisu przy zmianach albo nieobecnościach?",
+      question: "Czy w ramach usługi wykonujecie doczyszczanie posadzek?",
       answer:
-        "Stała obsługa ma działać przewidywalnie również wtedy, gdy po stronie wykonawcy pojawiają się zmiany organizacyjne. Klient nie powinien odczuwać każdej zmiany personalnej.",
+        "Tak, jeżeli rodzaj posadzki i etap jej przygotowania pozwalają na bezpieczną pracę. Przed startem doprecyzowujemy typ nawierzchni, charakter zabrudzeń i ograniczenia materiałowe.",
     },
     {
-      question: "Jak wygląda kontrola jakości przy stałej współpracy?",
+      question: "Co oznacza standard odbiorowy po sprzątaniu po budowie?",
       answer:
-        "Przy usłudze cyklicznej ważna jest powtarzalność. Dlatego prowadzimy serwis tak, żeby poziom wykonania był stabilny, a nie zależny od pojedynczego wejścia.",
+        "To efekt, który można zweryfikować na odbiorze: ograniczenie pyłu w strefach krytycznych, czyste pod światło przeszklenia i detale, przygotowane sanitariaty i komunikacja oraz usunięcie typowych śladów po pracach i zabezpieczeniach.",
     },
     {
-      question: "Czy można połączyć stałą obsługę z innymi usługami?",
+      question: "Czy możecie wejść etapowo, jeśli obiekt nie jest jeszcze całkowicie gotowy?",
       answer:
-        "Tak. Jeśli obiekt tego potrzebuje, można połączyć sprzątanie cykliczne z dodatkowymi pracami, ale podstawą pozostaje dobrze ustawiony regularny serwis.",
+        "Tak. W takich sytuacjach ustalamy priorytety: które strefy mają być przygotowane teraz, a które zostają na etap końcowy. To pozwala uniknąć sytuacji, w której efekt znika po kolejnych pracach.",
     },
     {
-      question: "Jak wygląda rozliczenie przy takiej współpracy?",
+      question: "Jakie informacje najszybciej przyspieszają wycenę?",
       answer:
-        "Warunki rozliczenia ustalamy po określeniu zakresu, częstotliwości i modelu współpracy. Dzięki temu od początku wiadomo, jak usługa będzie prowadzona i rozliczana.",
+        "Najbardziej pomagają: lokalizacja, metraż albo skala obiektu, etap prac, termin, okno wejścia oraz zdjęcia pokazujące szkło, posadzki i główne zabrudzenia po budowie.",
     },
     {
-      question: "Jak szybko można zacząć?",
+      question: "Czy realizacja odbywa się w jednym wejściu czy w etapach?",
       answer:
-        "To zależy od lokalizacji, zakresu i oczekiwanej częstotliwości. Po otrzymaniu minimum danych szybko ocenimy możliwy termin startu.",
+        "Oba warianty są możliwe. Jeżeli obiekt jest gotowy do finalizacji, najczęściej pracujemy w jednym wejściu. Jeżeli nadal trwają prace, bezpieczniej jest rozłożyć usługę na etapy.",
+    },
+    {
+      question: "Skąd biorą się poprawki po sprzątaniu po budowie?",
+      answer:
+        "Najczęściej z wtórnego pylenia po innych ekipach, zabrudzeń ujawniających się po zdjęciu folii, niepotwierdzonego standardu albo z wejścia w niewłaściwym momencie harmonogramu.",
+    },
+    {
+      question: "Czy przed realizacją potrzebna jest wizja lokalna?",
+      answer:
+        "Nie zawsze. W wielu przypadkach wystarczą zdjęcia i komplet informacji. Wizja ma największy sens wtedy, gdy stan materiałów, rodzaj zabrudzeń albo ryzyko technologiczne mogą istotnie zmienić zakres i czas prac.",
+    },
+    {
+      question: "Jak wygląda rozliczenie usługi?",
+      answer:
+        "Najpierw podajemy widełki po minimum danych. Finalne warunki ustalamy po doprecyzowaniu zakresu, stanu obiektu oraz tego, co musi zostać przygotowane do odbioru w pierwszej kolejności.",
+    },
+    {
+      question: "Czy sprzątanie po budowie obejmuje wyniesienie odpadów pobudowlanych?",
+      answer:
+        "To zależy od rodzaju odpadów i ustaleń na obiekcie. Lekkie odpady przygotowane do wyniesienia możemy uwzględnić w zakresie, natomiast gruz i logistyka kontenerowa są traktowane osobno.",
     },
   ],
 };
@@ -412,9 +432,8 @@ export default function Home() {
         <PagesHero content={defaultContent} />
         <ProblemsSection content={problemsContent} />
         <SolutionsSection content={solutionsContent} />
-        <KnowledgeSection content={knowledgeContent2} />
         <CtaSection content={ctaContent} />
-        <ShowcaseSection content={showcaseContent} />
+        <BenefitsSection content={benefitsContent} />
         <ProcessSection content={processContent} />
         <ContactSection content={contactContent} />
         <KnowledgeSection content={knowledgeContent} />

@@ -27,7 +27,7 @@ import styles from "./page.module.css";
 
 const defaultContent: HeroContent = {
   badge: "SPRZĄTANIE DLA FIRM I SIECI",
-  titleLines: ["Sprzątanie dla firm", "pod odbiory", "i przekazanie obiektu"],
+  titleLines: ["Sprzątanie dla firm", "pod odbiory, otwarcia", "i przekazanie obiektu"],
   emphasisText: "na czas",
   emphasisIconName: "lightbulb",
   emphasisSuffix: "",

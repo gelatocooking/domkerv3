@@ -83,6 +83,11 @@
   justify-content: center;
 }
 
+.navTrigger {
+  display: inline-flex;
+  align-items: center;
+}
+
 .navToggleRow {
   display: inline-flex;
   align-items: center;
@@ -91,6 +96,17 @@
   border: var(--sp-0);
   background: transparent;
   padding: var(--sp-8) var(--sp-12);
+  color: var(--c-text-10_10_10);
+  cursor: pointer;
+}
+
+.navToggleButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--sp-0);
+  background: transparent;
+  padding: var(--sp-8) var(--sp-8) var(--sp-8) var(--sp-0);
   color: var(--c-text-10_10_10);
   cursor: pointer;
 }
@@ -340,11 +356,16 @@
     align-items: center;
   }
 
+  .navTrigger {
+    justify-content: center;
+  }
+
   .navLink {
     padding: var(--sp-6) var(--sp-8);
   }
 
-  .navToggleRow {
+  .navToggleRow,
+  .navToggleButton {
     padding: var(--sp-6) var(--sp-8);
   }
 

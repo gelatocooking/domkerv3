@@ -96,7 +96,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "truck",
       label: "CIĄGŁOŚĆ",
-      title: "Przy zmianach albo nieobecnościach serwis nie może się rozsypać",
+      title: "Przy zmianach lub nieobecnościach serwis nie może się rozsypać",
       description:
         "Stała obsługa ma być odporna na drobne zmiany organizacyjne. Klient nie powinien odczuwać każdej zmiany po stronie wykonawcy.",
       tone: "resources",
@@ -104,7 +104,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "shieldAlert",
       label: "REAKCJA",
-      title: "Bieżące potrzeby wymagają kontaktu, a nie przeciągania prostych spraw",
+      title: "Bieżące potrzeby wymagają kontaktu, bez przeciągania",
       description:
         "Przy długiej współpracy liczy się też to, jak szybko wykonawca reaguje na korekty, dodatkowe potrzeby i zmiany po stronie obiektu.",
       tone: "risk",
@@ -112,7 +112,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "fileText",
       label: "WSPÓŁPRACA",
-      title: "Serwis ma działać stabilnie, a nie angażować klienta w codzienne pilnowanie",
+      title: "Serwis ma działać stabilnie, a nie angażować klienta w pilnowanie",
       description:
         "Dobra współpraca cykliczna powinna odciążać, a nie tworzyć kolejne mikro-zadania po stronie biura, managera albo właściciela.",
       tone: "technology",
@@ -347,6 +347,7 @@ const knowledgeContent: KnowledgeSectionContent = {
 const faqContent: FaqSectionContent = {
   kickerLabel: "NAJCZĘŚCIEJ ZADAWANE PYTANIA",
   title: "Pytania przed ustawieniem stałej obsługi",
+  titleLines: ["Pytania przed ustawieniem", "stałej obsługi"],
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],

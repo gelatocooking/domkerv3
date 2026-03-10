@@ -25,7 +25,7 @@ import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSe
 
 const defaultContent: PagesHeroContent = {
   badge: "MASZYNOWE CZYSZCZENIE POSADZEK (B2B)",
-  titleLines: ["Maszynowe czyszczenie posadzek", "pod typ nawierzchni i zabrudzeń"],
+  titleLines: ["Maszynowe czyszczenie", "posadzek"],
   emphasisSuffix: "/",
   description:
     "To nie jest zwykłe mycie podłogi. To usługa technologiczna dla obiektów komercyjnych, w których efekt zależy od rodzaju posadzki, stopnia zabrudzeń i bezpiecznego doboru metody. W Domker kwalifikujemy nawierzchnię, oceniamy ryzyko i dobieramy proces tak, żeby poprawić stan posadzki bez pogarszania jej wykończenia.",
@@ -41,7 +41,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "grid3x3",
       label: "NAWIERZCHNIA",
-      title: "Nie każda posadzka toleruje ten sam proces czyszczenia",
+      title: "Nie każda posadzka toleruje ten sam proces czyszczenia i tę samą chemię",
       description:
         "Inaczej pracuje się na gresie, inaczej na PCV, a inaczej na powierzchniach zabezpieczonych lub wrażliwych. Dobór metody zaczyna się od rozpoznania materiału.",
       tone: "risk",
@@ -55,6 +55,14 @@ const problemsContent: ProblemsSectionContent = {
       tone: "processes",
     },
     {
+      iconName: "calendarClock",
+      label: "WARUNKI",
+      title: "Na czynnych obiektach liczy się nie tylko efekt, ale też sposób prowadzenia prac",
+      description:
+        "Godziny pracy, ruch ludzi i dostępność stref wpływają na to, jak bezpiecznie i skutecznie przeprowadzić czyszczenie.",
+      tone: "processes",
+    },
+    {
       iconName: "shieldAlert",
       label: "RYZYKO",
       title: "Zbyt agresywna metoda potrafi pogorszyć stan posadzki",
@@ -65,18 +73,10 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "clipboardList",
       label: "EFEKT",
-      title: "Bez kwalifikacji trudno uczciwie ocenić, jaki rezultat jest realny",
+      title: "Bez kwalifikacji trudno uczciwie ocenić, jaki rezultat prac jest realny",
       description:
         "Nie każda plama schodzi tak samo i nie każda posadzka pozwala na ten sam poziom ingerencji. Dlatego najpierw trzeba ocenić stan powierzchni.",
       tone: "data",
-    },
-    {
-      iconName: "calendarClock",
-      label: "WARUNKI",
-      title: "Na czynnych obiektach liczy się nie tylko efekt, ale też sposób prowadzenia prac",
-      description:
-        "Godziny pracy, ruch ludzi i dostępność stref wpływają na to, jak bezpiecznie i skutecznie przeprowadzić czyszczenie.",
-      tone: "processes",
     },
     {
       iconName: "fileText",

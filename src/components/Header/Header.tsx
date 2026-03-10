@@ -53,7 +53,7 @@ const navItems: HeaderNavItem[] = [
         description: "Profesjonalne czyszczenie posadzek dla firm",
         href: "/sprzatanie-dla-firm/maszynowe-czyszczenie-posadzek",
       },
-       {
+      {
         icon: "circle",
         title: "Mycie okien i witryn",
         description: "Mycie okien i witryn dla firm oraz klientów indywidualnych",
@@ -71,7 +71,7 @@ const navItems: HeaderNavItem[] = [
   { label: "Realizacje", href: "#", dropdownItems: [] },
   { label: "Cennik", href: "#", dropdownItems: [] },
   { label: "Kontakt", href: "#", dropdownItems: [] },
-] as const;
+];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -110,21 +110,26 @@ export default function Header() {
                     className={`${styles.navItem} ${isOpen ? styles.navItemOpen : ""}`}
                   >
                     {item.dropdownItems.length ? (
-                      <button
-                        type="button"
-                        className={styles.navToggleRow}
-                        aria-expanded={isOpen}
-                        onClick={() =>
-                          setOpenDropdown((current) =>
-                            current === item.label ? null : item.label
-                          )
-                        }
-                      >
-                        <span className={styles.navText}>{item.label}</span>
-                        <span className={styles.navIcon}>
-                          <Icon name="chevronDown" size="sm" />
-                        </span>
-                      </button>
+                      <div className={styles.navTrigger}>
+                        <a className={styles.navLink} href={item.href}>
+                          <span className={styles.navText}>{item.label}</span>
+                        </a>
+                        <button
+                          type="button"
+                          className={styles.navToggleButton}
+                          aria-expanded={isOpen}
+                          aria-label={`Rozwiń ${item.label}`}
+                          onClick={() =>
+                            setOpenDropdown((current) =>
+                              current === item.label ? null : item.label
+                            )
+                          }
+                        >
+                          <span className={styles.navIcon}>
+                            <Icon name="chevronDown" size="sm" />
+                          </span>
+                        </button>
+                      </div>
                     ) : (
                       <a className={styles.navLink} href={item.href}>
                         <span className={styles.navText}>{item.label}</span>

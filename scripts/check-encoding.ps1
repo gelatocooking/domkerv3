@@ -3,7 +3,8 @@ param(
 )
 
 $extensions = @('*.ts','*.tsx','*.js','*.jsx','*.css','*.md','*.json','*.svg','*.html')
-$badPatterns = @('?','?','?','?','??','???','???')
+$utf8NoBom = [System.Text.UTF8Encoding]::new($false)
+$mojibakePatterns = @('?','?','?','?','??','???','???')
 $errors = @()
 
 $files = Get-ChildItem -Path $Root -Recurse -File -Include $extensions |
@@ -19,8 +20,13 @@ foreach ($f in $files) {
     $errors += "BOM: $($f.FullName)"
   }
 
-  $content = [System.IO.File]::ReadAllText($f.FullName, [System.Text.UTF8Encoding]::new($false, $false))
-  foreach ($pattern in $badPatterns) {
+  $content = [System.IO.File]::ReadAllText($f.FullName, $utf8NoBom)
+
+  if ($content -match '[A-Za-z??????????????????0-9]\?[A-Za-z??????????????????0-9]') {
+    $errors += "Question-mark replacement: $($f.FullName)"
+  }
+
+  foreach ($pattern in $mojibakePatterns) {
     if ($content.Contains($pattern)) {
       $errors += "Mojibake '$pattern': $($f.FullName)"
       break

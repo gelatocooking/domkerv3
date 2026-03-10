@@ -1,4 +1,3 @@
-﻿import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import SectionKicker from "../SectionKicker/SectionKicker";
 import styles from "./FaqSection.module.css";
@@ -11,6 +10,7 @@ export interface FaqItem {
 export interface FaqSectionContent {
   kickerLabel: string;
   title: string;
+  titleLines?: string[];
   description: string;
   highlightText: string;
   avatars: string[];
@@ -27,7 +27,13 @@ export default function FaqSection({ content }: FaqSectionProps) {
       <div className={styles.inner}>
         <div className={styles.headingGroup}>
           <SectionKicker label={content.kickerLabel} />
-          <h2 className={styles.title}>{content.title}</h2>
+          <h2 className={styles.title}>
+            {(content.titleLines?.length ? content.titleLines : [content.title]).map((line) => (
+              <span key={line} className={styles.titleLine}>
+                {line}
+              </span>
+            ))}
+          </h2>
           <div className={styles.metaRow}>
             <div className={styles.avatars}>
               {content.avatars.map((avatar) => (

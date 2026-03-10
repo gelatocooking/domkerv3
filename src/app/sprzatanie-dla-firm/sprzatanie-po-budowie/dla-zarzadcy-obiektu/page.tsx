@@ -60,9 +60,17 @@ const problemsContent: ProblemsSectionContent = {
       tone: "technology",
     },
     {
+      iconName: "database",
+      label: "KOMUNIKACJA",
+      title: "Bez jednego punktu kontaktu temat zaczyna wracać w kilku miejscach naraz",
+      description:
+        "Zamiast zbierać informacje z różnych stron, lepiej mieć jedną osobę, która prowadzi realizację i zamyka temat od początku do końca.",
+      tone: "resources",
+    },
+    {
       iconName: "shieldAlert",
       label: "FORMALNOŚCI",
-      title: "Dostępy, procedury i wymagania obiektu potrafią zatrzymać wejście",
+      title: "Dostępy, procedury i wymagania obiektu potrafią zatrzymać start prac",
       description:
         "Jeśli formalności nie są dopięte wcześniej, realizacja potrafi stanąć jeszcze przed rozpoczęciem prac albo generować niepotrzebne opóźnienia.",
       tone: "risk",
@@ -70,7 +78,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "calendarClock",
       label: "TERMIN",
-      title: "Obiekt ma zostać przekazany albo uruchomiony w konkretnym oknie",
+      title: "Obiekt ma zostać przekazany albo uruchomiony w konkretnym oknie czasowym",
       description:
         "Przy końcówce liczy się nie tylko sam termin, ale też to, czy temat został przygotowany organizacyjnie i czy da się go sprawnie przeprowadzić.",
       tone: "processes",
@@ -78,18 +86,10 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "clipboardCheck",
       label: "POTWIERDZENIE",
-      title: "Po wykonaniu prac potrzebne są dokumenty, nie tylko informacja, że już jest zrobione",
+      title: "Po wykonaniu prac potrzebne są dokumenty, nie tylko informacja o zakończeniu",
       description:
         "Jeśli temat ma przejść dalej w firmie, potrzebne są zdjęcia, status wykonania i czytelne domknięcie etapu po stronie wykonawcy.",
       tone: "data",
-    },
-    {
-      iconName: "database",
-      label: "KOMUNIKACJA",
-      title: "Bez jednego punktu kontaktu temat zaczyna wracać w kilku miejscach naraz",
-      description:
-        "Zamiast zbierać informacje z różnych stron, lepiej mieć jedną osobę, która prowadzi realizację i zamyka temat od początku do końca.",
-      tone: "resources",
     },
   ],
 };
@@ -176,15 +176,47 @@ const benefitsContent: BenefitsSectionContent = {
   kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
   titleLines: ["To, co zwykle spowalnia temat,", "porządkujemy po swojej stronie"],
   description:
-    "Przy tej usłudze liczy się nie tylko rezultat na obiekcie, ale też to, czy temat da się sprawnie uruchomić, przekazać dalej i zamknąć bez dodatkowego zbierania informacji z kilku miejsc.",
+  "Przy tej usłudze liczy się nie tylko rezultat na obiekcie, ale też to, czy temat da się sprawnie uruchomić, przekazać dalej i zamknąć bez dodatkowego zbierania informacji z kilku miejsc.",
   items: [
     {
       iconName: "users",
       label: "JEDEN KONTAKT",
       title: "Wiesz, kto prowadzi temat i do kogo wrócić po decyzję albo status",
       description:
-        "To skraca ścieżkę ustaleń i ogranicza sytuacje, w których jedna sprawa wraca równolegle przez kilka osób.",
+      "To skraca ścieżkę ustaleń i ogranicza sytuacje, w których jedna sprawa wraca równolegle przez kilka osób.",
       tone: "resources",
+    },
+    {
+      iconName: "clipboardCheck",
+      label: "ODPOWIEDZIALNOŚĆ",
+      title: "Zakres i odpowiedzialność są czytelne jeszcze przed realizacją",
+      description:
+      "To ogranicza późniejsze nieporozumienia i pozwala sprawniej uzgodnić, co było zakresem, a co stanem zastanym.",
+      tone: "finance",
+    },
+    {
+      iconName: "fileText",
+      label: "B2B",
+      title: "Umowa i faktura VAT wpisują się w standardowy proces firmowy",
+      description:
+      "Dokumenty są przygotowane tak, żeby łatwo przejść przez akceptację, księgowość i dalsze procedowanie po stronie firmy.",
+      tone: "technology",
+    },
+    {
+      iconName: "database",
+      label: "POUFNOŚĆ",
+      title: "Umowe o zachowaniu poufności\n i rejestry wejść dopinamy z wyprzedzeniem",
+      description:
+      "Jeżeli obiekt albo firma mają własne procedury, wdrażamy je wcześniej, żeby nie blokować realizacji na starcie.",
+      tone: "processes",
+    },
+    {
+      iconName: "clipboardCheck",
+      label: "POTWIERDZENIE",
+      title: "Po zakończeniu dostajesz dokumenty gotowe do dalszego przekazania",
+      description:
+      "Zdjęcia, protokół i końcowy status porządkują temat po stronie firmy i ułatwiają jego zamknięcie albo rozliczenie.",
+      tone: "data",
     },
     {
       iconName: "shieldAlert",
@@ -194,38 +226,6 @@ const benefitsContent: BenefitsSectionContent = {
         "Dostępy, strefy, zasady bezpieczeństwa i dodatkowe formalności powinny być ustalone wcześniej, a nie w dniu realizacji.",
       tone: "risk",
     },
-    {
-      iconName: "database",
-      label: "POUFNOŚĆ",
-      title: "NDA, rejestry wejść i dodatkowe wymagania dopinamy z wyprzedzeniem",
-      description:
-        "Jeżeli obiekt albo firma mają własne procedury, wdrażamy je wcześniej, żeby nie blokować realizacji na starcie.",
-      tone: "processes",
-    },
-    {
-      iconName: "clipboardCheck",
-      label: "POTWIERDZENIE",
-      title: "Po zakończeniu dostajesz dokumenty gotowe do dalszego przekazania",
-      description:
-        "Zdjęcia, protokół i końcowy status porządkują temat po stronie firmy i ułatwiają jego zamknięcie albo rozliczenie.",
-      tone: "data",
-    },
-    {
-      iconName: "clipboardCheck",
-      label: "ODPOWIEDZIALNOŚĆ",
-      title: "Zakres i odpowiedzialność są czytelne jeszcze przed realizacją",
-      description:
-        "To ogranicza późniejsze nieporozumienia i pozwala sprawniej uzgodnić, co było zakresem, a co stanem zastanym.",
-      tone: "finance",
-    },
-    {
-      iconName: "fileText",
-      label: "B2B",
-      title: "Umowa i faktura VAT wpisują się w standardowy proces firmowy",
-      description:
-        "Dokumenty są przygotowane tak, żeby łatwo przejść przez akceptację, księgowość i dalsze procedowanie po stronie firmy.",
-      tone: "technology",
-    },
   ],
 };
 
@@ -233,7 +233,7 @@ const processContent: ProcessSectionContent = {
   kickerLabel: "JAK DZIAŁAMY?",
   titleLines: ["Proces od zgłoszenia", "do zamknięcia tematu"],
   description:
-    "Zbieramy minimum danych, doprecyzowujemy wymagania obiektu i przygotowujemy usługę tak, żeby można ją było sprawnie zatwierdzić, uruchomić i rozliczyć. Po Twojej stronie ma zostać jak najmniej ręcznego spinania całości.",
+  "Zbieramy minimum danych, doprecyzowujemy wymagania obiektu i przygotowujemy usługę tak, żeby można ją było sprawnie zatwierdzić, uruchomić i rozliczyć. Po Twojej stronie ma zostać jak najmniej ręcznego spinania całości.",
   steps: [
     {
       index: "01",

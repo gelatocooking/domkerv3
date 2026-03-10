@@ -3,14 +3,18 @@ param(
 )
 
 $extensions = @('*.ts','*.tsx','*.js','*.jsx','*.css','*.md','*.json','*.svg','*.html')
-$excludePattern = '\\node_modules\\|\\.next\\|\\.git\\'
+$utf8NoBom = [System.Text.UTF8Encoding]::new($false)
 
 $files = Get-ChildItem -Path $Root -Recurse -File -Include $extensions |
-  Where-Object { $_.FullName -notmatch $excludePattern }
+  Where-Object {
+    $_.FullName -notlike '*\node_modules\*' -and
+    $_.FullName -notlike '*\.next\*' -and
+    $_.FullName -notlike '*\.git\*'
+  }
 
 foreach ($f in $files) {
-  $content = Get-Content $f.FullName -Raw
-  [System.IO.File]::WriteAllText($f.FullName, $content, [System.Text.UTF8Encoding]::new($false))
+  $content = [System.IO.File]::ReadAllText($f.FullName, $utf8NoBom)
+  [System.IO.File]::WriteAllText($f.FullName, $content, $utf8NoBom)
 }
 
 Write-Host ("Re-encoded {0} files to UTF-8 (no BOM)." -f $files.Count)
