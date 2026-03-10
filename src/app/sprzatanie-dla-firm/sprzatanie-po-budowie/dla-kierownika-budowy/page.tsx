@@ -327,6 +327,7 @@ const contactContent: ContactSectionContent = {
 const faqContent: FaqSectionContent = {
   kickerLabel: "NAJCZĘŚCIEJ ZADAWANE PYTANIA",
   title: "Pytania, które padają u kierowników budów",
+  titleLines: ["Pytania, które padają", "u kierowników budów"],
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],

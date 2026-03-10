@@ -70,7 +70,7 @@ const navItems: HeaderNavItem[] = [
   { label: "Referencje", href: "#", dropdownItems: [] },
   { label: "Realizacje", href: "#", dropdownItems: [] },
   { label: "Cennik", href: "#", dropdownItems: [] },
-  { label: "Kontakt", href: "#", dropdownItems: [] },
+  { label: "Kontakt", href: "/kontakt", dropdownItems: [] },
 ];
 
 export default function Header() {
