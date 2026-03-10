@@ -20,6 +20,7 @@ import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
 import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
+import BenefitsSection from "@/components/BenefitsSection/BenefitsSection";
 
 // /sprzatanie-po-budowie
 
@@ -433,7 +434,7 @@ export default function Home() {
         <ProblemsSection content={problemsContent} />
         <SolutionsSection content={solutionsContent} />
         <CtaSection content={ctaContent} />
-        <BenefitsSection content={benefitsContent} />
+        {/* <BenefitsSection content={benefitsContent} /> */}
         <ProcessSection content={processContent} />
         <ContactSection content={contactContent} />
         <KnowledgeSection content={knowledgeContent} />
