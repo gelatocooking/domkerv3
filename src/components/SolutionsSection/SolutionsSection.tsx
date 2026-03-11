@@ -5,6 +5,9 @@ import Image from "next/image";
 import Button from "../Button/Button";
 import Icon, { type IconName } from "../Icon/Icon";
 import SectionKicker from "../SectionKicker/SectionKicker";
+import SolutionsIllustration, {
+  type SolutionsIllustrationVariant,
+} from "../SolutionsIllustration/SolutionsIllustration";
 import styles from "./SolutionsSection.module.css";
 
 export interface SolutionItem {
@@ -15,6 +18,7 @@ export interface SolutionItem {
   ctaLabel: string;
   mediaAlt: string;
   mediaSrc: string;
+  illustrationVariant?: SolutionsIllustrationVariant;
 }
 
 export interface SolutionsSectionContent {
@@ -80,12 +84,16 @@ export default function SolutionsSection({ content }: SolutionsSectionProps) {
             </div>
             <div className={styles.cardMedia}>
               <div className={styles.mediaFrame}>
-                <Image
-                  src={activeItem.mediaSrc}
-                  alt={activeItem.mediaAlt}
-                  fill
-                  className={styles.mediaImage}
-                />
+                {activeItem.illustrationVariant ? (
+                  <SolutionsIllustration variant={activeItem.illustrationVariant} />
+                ) : (
+                  <Image
+                    src={activeItem.mediaSrc}
+                    alt={activeItem.mediaAlt}
+                    fill
+                    className={styles.mediaImage}
+                  />
+                )}
               </div>
             </div>
           </div>

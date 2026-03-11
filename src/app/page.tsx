@@ -29,6 +29,8 @@ const defaultContent: HeroContent = {
   badge: "SPRZĄTANIE DLA FIRM I SIECI",
   titleLines: ["Sprzątanie dla firm", "pod odbiory, otwarcia", "i przekazanie obiektu"],
   emphasisText: "na czas",
+  emphasisTexts: ["na czas", "bez chaosu", "formalnie"],
+  emphasisIconNames: ["calendarClock", "workflow", "clipboardCheck"],
   emphasisIconName: "lightbulb",
   emphasisSuffix: "",
   description:
@@ -110,6 +112,7 @@ const solutionsContent: SolutionsSectionContent = {
       ctaLabel: "Zobacz jak działamy",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/window.svg",
+      illustrationVariant: "zonedCleaningPlan",
     },
     {
       iconName: "building2",
@@ -120,6 +123,7 @@ const solutionsContent: SolutionsSectionContent = {
       ctaLabel: "Porozmawiaj o stałej obsłudze",
       mediaAlt: "Utrzymanie czystości",
       mediaSrc: "/window.svg",
+      illustrationVariant: "operationalServiceBoard",
     },
     {
       iconName: "sparkles",
@@ -130,16 +134,18 @@ const solutionsContent: SolutionsSectionContent = {
       ctaLabel: "Sprawdź usługę",
       mediaAlt: "Mycie okien i witryn",
       mediaSrc: "/window.svg",
+      illustrationVariant: "logisticsServiceBoard",
     },
     {
       iconName: "grid3x3",
       label: "Maszynowe czyszczenie posadzek",
-      title: "Technologia dobrana do nawierzchni i fzabrudzeń",
+      title: "Technologia dobrana do nawierzchni i zabrudzeń",
       description:
         "Doczyszczanie posadzek w obiektach komercyjnych z doborem metody do typu nawierzchni, skali zabrudzeń i oczekiwanego efektu końcowego.",
       ctaLabel: "Zobacz opcje",
       mediaAlt: "Czyszczenie posadzek",
       mediaSrc: "/window.svg",
+      illustrationVariant: "surfaceSelectionBoard",
     },
     {
       iconName: "mapPin",
@@ -150,6 +156,7 @@ const solutionsContent: SolutionsSectionContent = {
       ctaLabel: "Sprawdź dostępność",
       mediaAlt: "Zasięg realizacji",
       mediaSrc: "/window.svg",
+      illustrationVariant: "polandNetworkBoard",
     },
   ],
 };

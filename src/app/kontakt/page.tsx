@@ -25,57 +25,57 @@ import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSe
 
 const defaultContent: PagesHeroContent = {
   badge: "KONTAKT I SZYBKA KWALIFIKACJA",
-  titleLines: ["Wyślij minimum danych", "a wskażemy właściwy kolejny krok"],
+  titleLines: ["Opisz krótko sytuację,", "a wskażemy właściwą ścieżkę"],
   emphasisSuffix: "/",
   description:
-    "Nie musisz mieć pełnego briefu, żeby zacząć rozmowę. Wystarczy krótki opis sytuacji, typ obiektu, termin i lokalizacja. Jeśli temat dotyczy kilku usług albo wielu punktów, też to uporządkujemy. Wracamy z właściwą ścieżką, krótką listą pytań albo ofertą do zatwierdzenia.",
-  ctaLabel: "Wyślij minimum danych",
+    "Nie musisz mieć pełnego briefu, żeby zacząć rozmowę. Wystarczy typ obiektu, lokalizacja i termin. Jeśli sprawa dotyczy kilku usług albo wielu punktów, uporządkujemy to i wrócimy z konkretną odpowiedzią.",
+  ctaLabel: "Napisz do nas",
 };
 
 const problemsContent: ProblemsSectionContent = {
-  kickerLabel: "ZNASZ TO?",
-  titleLines: ["Najczęściej problemem nie jest", "brak potrzeby, tylko punkt startu"],
+  kickerLabel: "TO NAJCZĘSTSZY PUNKT BLOKADY",
+  titleLines: ["Wiele zgłoszeń nie rusza dalej,", "bo nie wiadomo, od czego zacząć"],
   description:
-    "Wiele firm i osób odkłada pierwszy kontakt, bo nie wiedzą, od czego zacząć, jaka usługa będzie właściwa albo jakie dane są potrzebne do wyceny. Ta strona ma to uprościć.",
+    "Czasem nie jest jasne, jaka usługa będzie właściwa. Innym razem brakuje części informacji, sprawa dotyczy kilku lokalizacji albo kilku potrzeb naraz. Ta strona ma uprościć pierwszy krok.",
   items: [
     {
       iconName: "workflow",
       label: "START",
-      title: "Nie wiadomo, od której usługi albo scenariusza zacząć",
+      title: "Nie zawsze wiadomo, od jakiej usługi albo scenariusza zacząć",
       description:
-        "Czasem temat dotyczy jednej usługi, a czasem kilku rzeczy naraz. Najpierw trzeba go dobrze zakwalifikować.",
+        "Jedna sytuacja może dotyczyć sprzątania po budowie, stałej obsługi, witryn albo kilku rzeczy jednocześnie.",
       tone: "processes",
     },
     {
       iconName: "fileText",
-      label: "DANE",
-      title: "Nie zawsze masz komplet informacji już przy pierwszej wiadomości",
+      label: "INFORMACJE",
+      title: "Na początku rzadko masz pełen komplet danych",
       description:
-        "To normalne. Na start wystarczą podstawy, a brakujące elementy doprecyzujemy krótką listą pytań.",
+        "To normalne. Na start wystarczą podstawy, a brakujące informacje doprecyzujemy dopiero wtedy, gdy będą naprawdę potrzebne.",
       tone: "technology",
     },
     {
       iconName: "layoutGrid",
       label: "SKALA",
-      title: "Temat może dotyczyć jednego obiektu albo wielu lokalizacji",
+      title: "Jedna lokalizacja i sieć punktów wymagają innej ścieżki rozmowy",
       description:
-        "Jedna lokalizacja i sieć punktów wymagają innego sposobu kwalifikacji, ale oba warianty możemy szybko uporządkować.",
+        "Już na początku warto rozdzielić, czy chodzi o pojedynczy obiekt, kilka miast czy model współpracy w większej skali.",
       tone: "data",
     },
     {
       iconName: "calendarClock",
       label: "TERMIN",
-      title: "Trudno ocenić możliwości, jeśli nie wiadomo, na kiedy temat jest potrzebny",
+      title: "Pilność sprawy zmienia sposób, w jaki trzeba ją poprowadzić",
       description:
-        "Termin, okno wejścia i pilność sprawy często decydują o tym, jaką ścieżkę rozmowy trzeba przyjąć od początku.",
+        "Jeśli liczy się szybkie wejście albo krótki termin, od początku trzeba przyjąć inną logikę działania niż przy spokojniejszym wdrożeniu.",
       tone: "processes",
     },
     {
       iconName: "shieldAlert",
       label: "ZAKRES",
-      title: "Bez kilku podstawowych danych nie da się uczciwie mówić o widełkach",
+      title: "Bez kilku podstawowych danych trudno uczciwie mówić o widełkach",
       description:
-        "Typ obiektu, lokalizacja, skala i zdjęcia często bardziej przyspieszają rozmowę niż długi opis bez konkretów.",
+        "Typ obiektu, lokalizacja, skala i zdjęcia często dają więcej niż długi opis bez konkretów.",
       tone: "risk",
     },
     {
@@ -83,7 +83,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "KOMUNIKACJA",
       title: "Nikt nie chce tracić czasu na długą wymianę wiadomości bez postępu",
       description:
-        "Dlatego po pierwszym kontakcie porządkujemy temat tak, żeby szybko przejść do właściwego kolejnego kroku.",
+        "Dlatego po pierwszym kontakcie porządkujemy zgłoszenie tak, żeby szybko przejść do sensownej decyzji.",
       tone: "resources",
     },
   ],
@@ -91,66 +91,66 @@ const problemsContent: ProblemsSectionContent = {
 
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "Z CZYM MOŻESZ NAPISAĆ?",
-  titleLines: ["Kwalifikujemy tematy", "z różnych scenariuszy współpracy"],
+  titleLines: ["Obsługujemy różne sytuacje,", "ale prowadzimy je jedną logiczną ścieżką"],
   description:
-    "Nie musisz idealnie nazywać usługi ani wiedzieć, jak dokładnie powinien wyglądać zakres. Wystarczy opisać sytuację. My dopasujemy właściwy scenariusz i dalszą ścieżkę rozmowy.",
+    "Nie musisz idealnie nazywać usługi ani wiedzieć, jak dokładnie powinien wyglądać zakres. Wystarczy opisać sytuację. Po naszej stronie jest dopasowanie właściwego scenariusza i dalszej rozmowy.",
   items: [
     {
       iconName: "hardHat",
       label: "Po budowie / przed odbiorem",
-      title: "Gdy temat dotyczy końcówki prac, przekazania albo otwarcia",
+      title: "Gdy liczy się odbiór, przekazanie albo otwarcie obiektu",
       description:
-        "To ścieżka dla tematów, w których liczy się odbiór, standard końcowy, strefy krytyczne i termin wejścia.",
-      ctaLabel: "Wyślij minimum danych",
+        "To ścieżka dla spraw, gdzie znaczenie mają standard końcowy, strefy krytyczne, termin wejścia i sposób prowadzenia realizacji.",
+      ctaLabel: "Opisz sytuację",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/kontakt",
     },
     {
       iconName: "building2",
-      label: "Stała obsługa obiektu",
-      title: "Gdy potrzebujesz regularnego serwisu w biurze albo lokalu",
+      label: "Stała obsługa",
+      title: "Gdy potrzebujesz regularnego serwisu w biurze, lokalu albo obiekcie",
       description:
-        "To ścieżka dla współpracy cyklicznej, gdzie najważniejsze są harmonogram, powtarzalny standard i ciągłość serwisu.",
-      ctaLabel: "Wyślij minimum danych",
+        "To ścieżka dla współpracy cyklicznej, gdzie ważne są harmonogram, przewidywalny standard i ciągłość obsługi.",
+      ctaLabel: "Opisz obiekt",
       mediaAlt: "Sprzątanie cykliczne",
       mediaSrc: "/kontakt",
     },
     {
       iconName: "sparkles",
       label: "Witryny i okna",
-      title: "Gdy chodzi o mycie okien albo witryn jednorazowo lub cyklicznie",
+      title: "Gdy chodzi o mycie witryn albo okien jednorazowo lub regularnie",
       description:
-        "To ścieżka dla lokali, sieci, domów i mieszkań, gdzie liczy się prosty model usługi i szybka wycena.",
+        "To ścieżka dla firm i klientów prywatnych, którzy chcą szybko ustalić zakres, model usługi i orientacyjną wycenę.",
       ctaLabel: "Wyślij zdjęcia",
       mediaAlt: "Mycie okien i witryn",
       mediaSrc: "/kontakt",
     },
     {
       iconName: "grid3x3",
-      label: "Posadzki i trudne zabrudzenia",
-      title: "Gdy potrzebna jest usługa specjalistyczna, a nie zwykłe sprzątanie",
+      label: "Posadzki i zabrudzenia specjalistyczne",
+      title: "Gdy potrzebna jest usługa wymagająca doboru technologii",
       description:
-        "To ścieżka dla tematów, gdzie znaczenie ma typ nawierzchni, rodzaj zabrudzeń i dobór właściwej technologii.",
-      ctaLabel: "Opisz temat",
+        "To ścieżka dla spraw, w których liczy się rodzaj nawierzchni, typ zabrudzeń i właściwa metoda działania.",
+      ctaLabel: "Opisz powierzchnię",
       mediaAlt: "Maszynowe czyszczenie posadzek",
       mediaSrc: "/kontakt",
     },
     {
       iconName: "clipboardList",
-      label: "Temat mieszany",
-      title: "Gdy jedna wiadomość dotyczy kilku potrzeb albo kilku etapów",
+      label: "Kilka potrzeb naraz",
+      title: "Gdy jedno zgłoszenie obejmuje więcej niż jedną usługę albo etap",
       description:
-        "Jeśli temat obejmuje więcej niż jedną usługę, najpierw go porządkujemy i dopiero potem układamy właściwą kolejność działań.",
-      ctaLabel: "Opisz sytuację",
-      mediaAlt: "Temat mieszany",
+        "Jeśli sprawa dotyczy kilku rzeczy jednocześnie, najpierw układamy kolejność działań i dopiero potem przechodzimy do szczegółów.",
+      ctaLabel: "Opisz całość",
+      mediaAlt: "Kilka usług w jednym zgłoszeniu",
       mediaSrc: "/kontakt",
     },
     {
       iconName: "mapPin",
       label: "Jedna lokalizacja albo wiele punktów",
-      title: "Gdy trzeba sprawnie ocenić skalę i model współpracy",
+      title: "Gdy trzeba szybko ocenić skalę i model współpracy",
       description:
-        "Jedno miejsce i sieć lokalizacji wymagają innego podejścia, ale obie ścieżki możemy szybko zakwalifikować już po minimum danych.",
+        "Pojedynczy obiekt i kilka lokalizacji wymagają innej logiki rozmowy, ale oba scenariusze da się sprawnie uporządkować.",
       ctaLabel: "Podaj skalę",
       mediaAlt: "Jedna lokalizacja lub wiele punktów",
       mediaSrc: "/kontakt",
@@ -159,60 +159,60 @@ const solutionsContent: SolutionsSectionContent = {
 };
 
 const ctaContent: CtaSectionContent = {
-  eyebrowText: "NIE MUSISZ MIEĆ PEŁNEGO BRIEFU",
-  title: "Wystarczy krótki opis sytuacji i kilka podstawowych danych",
+  eyebrowText: "ZACZNIJMY OD KRÓTKIEGO OPISU",
+  title: "Wystarczy kilka informacji, żeby ruszyć dalej",
   description:
-    "Napisz, czego dotyczy temat, jaki to obiekt, w jakiej lokalizacji i na kiedy potrzebujesz działania. Jeśli chodzi o sieć, dopisz liczbę punktów. Jeśli masz zdjęcia, dołącz je od razu.",
-  buttonLabel: "Wyślij minimum danych",
+    "Napisz, czego dotyczy zgłoszenie, jaki to obiekt, w jakiej lokalizacji i na kiedy potrzebujesz działania. Jeśli chodzi o kilka punktów, dopisz miasta i liczbę lokalizacji. Zdjęcia bardzo pomagają.",
+  buttonLabel: "Napisz do nas",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
 const showcaseContent: ShowcaseSectionContent = {
-  kickerLabel: "CO DOSTAJESZ PO PIERWSZYM KONTAKCIE?",
-  titleLines: ["Pierwsza wiadomość ma prowadzić", "do właściwego kolejnego kroku"],
+  kickerLabel: "CO DOSTAJESZ PO PIERWSZEJ WIADOMOŚCI?",
+  titleLines: ["Pierwszy kontakt ma prowadzić", "do konkretu, a nie do ogólników"],
   description:
-    "Kontakt z Domker nie kończy się na „dziękujemy za wiadomość”. Po otrzymaniu minimum danych porządkujemy temat tak, żeby szybko przejść do realnej decyzji, a nie krążyć wokół ogólników.",
+    "Nie kończymy rozmowy na potwierdzeniu odbioru wiadomości. Po otrzymaniu podstawowych informacji porządkujemy sprawę tak, żeby dało się szybko przejść do realnej decyzji i właściwego dalszego działania.",
   items: [
     {
       tag: "KWALIFIKACJA",
       title: "Najpierw określamy, jaki scenariusz naprawdę pasuje do sytuacji",
       description:
-        "Nie każda sprawa wymaga tej samej ścieżki. Czasem chodzi o odbiór, czasem o stałą obsługę, a czasem o usługę specjalistyczną.",
+        "Nie każda sprawa wymaga tej samej ścieżki. Czasem chodzi o odbiór, czasem o serwis stały, a czasem o usługę specjalistyczną.",
       result: "To skraca drogę do właściwej rozmowy i ogranicza zbędne doprecyzowania.",
     },
     {
       tag: "PYTANIA",
-      title: "Jeśli danych jest za mało, wracamy z krótką listą pytań",
+      title: "Jeśli brakuje informacji, wracamy tylko z tym, co naprawdę potrzebne",
       description:
-        "Nie oczekujemy pełnego briefu na starcie. Doprecyzowujemy tylko to, co rzeczywiście wpływa na zakres, termin albo widełki.",
-      result: "Dzięki temu temat rusza szybko, bez długiej i chaotycznej wymiany wiadomości.",
+        "Nie oczekujemy pełnego briefu od razu. Dopytujemy wyłącznie o dane, które wpływają na zakres, termin albo wycenę.",
+      result: "Dzięki temu rozmowa jest krótsza, spokojniejsza i bardziej konkretna.",
     },
     {
       tag: "ŚCIEŻKA",
-      title: "Pokazujemy, jaki kolejny krok ma sens przy tej konkretnej sprawie",
+      title: "Pokazujemy, jaki dalszy krok ma sens przy tej konkretnej sprawie",
       description:
-        "Może to być wycena, sprawdzenie terminu, oferta do zatwierdzenia albo przekierowanie do właściwej usługi.",
-      result: "Klient od początku wie, co dzieje się dalej i czego może się spodziewać.",
+        "Może to być sprawdzenie terminu, orientacyjne widełki, oferta do zatwierdzenia albo przejście do właściwej usługi.",
+      result: "Od początku wiadomo, co dzieje się dalej i czego można się spodziewać.",
     },
     {
       tag: "WIDEŁKI",
-      title: "Jeśli temat jest dobrze opisany, szybciej wracamy z orientacyjną wyceną",
+      title: "Przy dobrze opisanej sytuacji szybciej wracamy z konkretem",
       description:
-        "Lokalizacja, typ obiektu, skala i zdjęcia zwykle pozwalają przejść do bardziej konkretnej rozmowy już na początku.",
-      result: "To ułatwia podjęcie decyzji i przekazanie tematu dalej w firmie.",
+        "Typ obiektu, skala, lokalizacja i zdjęcia często pozwalają przejść do bardziej praktycznej rozmowy już na początku.",
+      result: "To ułatwia podjęcie decyzji i przekazanie sprawy dalej w firmie.",
     },
     {
       tag: "OFERTA",
-      title: "Gdy temat jest gotowy, przygotowujemy materiał do zatwierdzenia",
+      title: "Gdy zgłoszenie jest gotowe, przygotowujemy materiał do akceptacji",
       description:
-        "W zależności od scenariusza może to być oferta do przełożonego, zakupów, zarządu albo osoby decyzyjnej po stronie klienta.",
-      result: "Dzięki temu pierwsza rozmowa szybciej przechodzi w realne procedowanie tematu.",
+        "W zależności od sytuacji może to być oferta do przełożonego, zakupów, zarządu albo osoby decyzyjnej po stronie klienta.",
+      result: "Pierwsza rozmowa szybciej przechodzi w realne procedowanie współpracy.",
     },
     {
-      tag: "KONTAKT",
-      title: "Po naszej stronie dostajesz czytelny kolejny krok, nie ogólną odpowiedź",
+      tag: "KOMUNIKACJA",
+      title: "Po naszej stronie dostajesz jasny kierunek, nie ogólną odpowiedź",
       description:
-        "Naszym celem nie jest tylko odpowiedzieć, ale uporządkować sprawę tak, żeby dało się ją sensownie poprowadzić dalej.",
+        "Naszym celem nie jest tylko odpisać, ale uporządkować sprawę tak, żeby można ją było skutecznie poprowadzić dalej.",
       result: "To obniża próg wejścia i sprawia, że kontakt naprawdę coś uruchamia.",
     },
   ],
@@ -220,50 +220,50 @@ const showcaseContent: ShowcaseSectionContent = {
 
 const processContent: ProcessSectionContent = {
   kickerLabel: "JAK TO DZIAŁA?",
-  titleLines: ["Od minimum danych", "do właściwej ścieżki rozmowy"],
+  titleLines: ["Od krótkiego opisu", "do właściwej ścieżki rozmowy"],
   description:
-    "Ta strona ma uprościć start współpracy. Najpierw zbieramy podstawy, potem kwalifikujemy temat i dopiero wtedy wracamy z pytaniami, widełkami albo właściwym kolejnym krokiem.",
+    "Ta strona ma uprościć start współpracy. Najpierw zbieramy podstawy, potem kwalifikujemy sytuację i dopiero wtedy wracamy z pytaniami, widełkami albo właściwym kolejnym krokiem.",
   steps: [
     {
       index: "01",
-      title: "Wysyłasz minimum danych",
+      title: "Wysyłasz krótki opis",
       description:
-        "Wystarczy typ obiektu, lokalizacja, termin i krótki opis sytuacji. Jeśli temat dotyczy wielu punktów albo kilku usług, też to napisz.",
+        "Wystarczy typ obiektu, lokalizacja, termin i kilka zdań o tym, czego dotyczy zgłoszenie.",
     },
     {
       index: "02",
-      title: "Kwalifikujemy temat",
+      title: "Sprawdzamy, jaka ścieżka najlepiej pasuje",
       description:
-        "Sprawdzamy, jaki scenariusz współpracy najlepiej pasuje do tej sytuacji i czego jeszcze potrzeba, żeby ruszyć dalej.",
+        "Oceniamy, czy chodzi o jednorazową realizację, stałą obsługę, kilka lokalizacji czy usługę wymagającą doprecyzowania.",
     },
     {
       index: "03",
-      title: "Wracamy z krótką listą pytań albo właściwą ścieżką",
+      title: "Wracamy z pytaniami albo konkretnym kierunkiem",
       description:
-        "Jeżeli danych jest za mało, doprecyzowujemy tylko to, co naprawdę wpływa na zakres, termin albo wycenę.",
+        "Jeżeli czegoś brakuje, doprecyzowujemy tylko to, co naprawdę wpływa na zakres, termin albo wycenę.",
     },
     {
       index: "04",
-      title: "Przechodzimy do widełek, terminu albo oferty",
+      title: "Przechodzimy do wyceny, terminu albo oferty",
       description:
-        "Po uporządkowaniu sprawy kierujemy temat do kolejnego kroku: wyceny, ustalenia modelu współpracy albo przygotowania oferty.",
+        "Po uporządkowaniu sprawy kierujemy ją do kolejnego kroku: widełek, ustalenia modelu współpracy albo przygotowania oferty.",
     },
   ],
-  ctaLabel: "Wyślij minimum danych",
+  ctaLabel: "Napisz do nas",
 };
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "SKONTAKTUJ SIĘ",
-  title: "Wyślij minimum danych, a my uporządkujemy temat",
+  title: "Napisz, czego potrzebujesz, a poprowadzimy Cię dalej",
   description:
-    "Opisz sytuację jednym zdaniem. Jeśli temat dotyczy jednej lokalizacji, podaj typ obiektu i termin. Jeśli chodzi o sieć, dopisz liczbę punktów i miasta. Zdjęcia mile widziane.",
+    "Opisz sytuację jednym zdaniem. Jeśli chodzi o jedną lokalizację, podaj typ obiektu i termin. Jeśli sprawa dotyczy kilku punktów, dopisz liczbę lokalizacji i miasta. Zdjęcia mile widziane.",
   chips: [
     { label: "Dobór scenariusza" },
     { label: "Jeden kontakt" },
     { label: "Jasna ścieżka" },
     { label: "Szybka kwalifikacja" },
     { label: "Zasięg ogólnopolski" },
-    { label: "Kolejny krok bez chaosu", accent: true },
+    { label: "Konkretna odpowiedź", accent: true },
   ],
   form: {
     emailLabel: "Adres e-mail",
@@ -271,10 +271,10 @@ const contactContent: ContactSectionContent = {
     phoneLabel: "Numer telefonu",
     phonePlaceholder: "Twój numer telefonu",
     topicLabel: "Temat rozmowy",
-    topicPlaceholder: "Jaki obiekt, czego dotyczy temat i na kiedy",
+    topicPlaceholder: "Jaki obiekt, czego dotyczy zgłoszenie i na kiedy",
     consentText:
       "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
-    submitLabel: "Wyślij minimum danych",
+    submitLabel: "Wyślij zgłoszenie",
   },
   meta: {
     avatars: ["A", "B", "C", "D", "E", "F"],
@@ -284,14 +284,14 @@ const contactContent: ContactSectionContent = {
 
 const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "REALIZACJE I REFERENCJE",
-  titleLines: ["Zobacz, jak wygląda", "współpraca po zakwalifikowaniu tematu"],
+  titleLines: ["Zobacz, jak wygląda", "współpraca po pierwszym kontakcie"],
   description:
-    "Przykładowe realizacje i opinie klientów, które pokazują, jak pracujemy po pierwszym kontakcie: od uporządkowania sprawy po doprowadzenie jej do wykonania.",
+    "Przykładowe realizacje i opinie klientów, które pokazują, jak pracujemy po uporządkowaniu zgłoszenia: od pierwszej rozmowy do wykonania usługi.",
   cards: [
     {
       title: "Realizacje",
       description:
-        "Przykłady tematów z różnych scenariuszy: po budowie, w stałej obsłudze, przy witrynach i usługach specjalistycznych.",
+        "Przykłady z różnych scenariuszy: po budowie, w stałej obsłudze, przy witrynach i w usługach specjalistycznych.",
       buttonLabel: "Zobacz realizacje",
       media: {
         type: "image",
@@ -302,7 +302,7 @@ const knowledgeContent: KnowledgeSectionContent = {
     {
       title: "Referencje i opinie",
       description:
-        "Co klienci doceniają po pierwszym kontakcie i w dalszej współpracy. Najczęściej szybkość reakcji, uporządkowanie tematu i jasny kolejny krok.",
+        "Co klienci doceniają po pierwszym kontakcie i w dalszej współpracy. Najczęściej szybkość reakcji, porządek komunikacyjny i jasne dalsze działanie.",
       buttonLabel: "Zobacz referencje",
       media: {
         type: "image",
@@ -321,19 +321,19 @@ const faqContent: FaqSectionContent = {
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
   items: [
     {
-      question: "Czy muszę mieć pełne dane, żeby napisać pierwszą wiadomość?",
+      question: "Czy muszę mieć pełne informacje, żeby napisać pierwszą wiadomość?",
       answer:
         "Nie. Na start wystarczą podstawy: typ obiektu, lokalizacja, termin i krótki opis sytuacji. Jeśli czegoś będzie brakowało, wrócimy z krótką listą pytań.",
     },
     {
-      question: "Jakie informacje najbardziej przyspieszają kwalifikację tematu?",
+      question: "Co najbardziej przyspiesza kwalifikację zgłoszenia?",
       answer:
-        "Najczęściej są to: lokalizacja, typ obiektu, skala, termin i zdjęcia. Jeśli temat dotyczy wielu punktów, warto od razu dopisać liczbę lokalizacji i miasta.",
+        "Najczęściej są to: lokalizacja, typ obiektu, skala, termin i zdjęcia. Jeśli sprawa dotyczy wielu punktów, warto od razu dopisać liczbę lokalizacji i miasta.",
     },
     {
-      question: "Czy mogę zgłosić kilka potrzeb w jednym zapytaniu?",
+      question: "Czy mogę zgłosić kilka potrzeb w jednej wiadomości?",
       answer:
-        "Tak. Jeśli temat dotyczy kilku usług albo kilku etapów, najpierw go porządkujemy, a potem proponujemy właściwy sposób prowadzenia rozmowy i realizacji.",
+        "Tak. Jeśli sprawa dotyczy kilku usług albo kilku etapów, najpierw ją porządkujemy, a potem proponujemy właściwy sposób dalszego działania.",
     },
     {
       question: "Czy działacie w całej Polsce?",
@@ -343,12 +343,12 @@ const faqContent: FaqSectionContent = {
     {
       question: "Jak szybko odpowiadacie?",
       answer:
-        "Po otrzymaniu minimum danych staramy się szybko wrócić z kolejnym krokiem, pytaniami doprecyzowującymi albo orientacyjnymi widełkami, jeśli temat jest dobrze opisany.",
+        "Po otrzymaniu podstawowych informacji staramy się szybko wrócić z kolejnym krokiem, pytaniami doprecyzowującymi albo orientacyjnymi widełkami, jeśli sytuacja jest dobrze opisana.",
     },
     {
       question: "Czy przygotowujecie ofertę do przekazania dalej w firmie?",
       answer:
-        "Tak. Jeśli temat jest gotowy do procedowania, przygotowujemy materiał, który można przekazać do przełożonego, zakupów, zarządu albo innej osoby decyzyjnej.",
+        "Tak. Jeśli zgłoszenie jest gotowe do procedowania, przygotowujemy materiał, który można przekazać do przełożonego, zakupów, zarządu albo innej osoby decyzyjnej.",
     },
     {
       question: "Czy mogę zacząć od jednego punktu albo pilotażu?",
@@ -358,12 +358,12 @@ const faqContent: FaqSectionContent = {
     {
       question: "Skąd mam wiedzieć, która usługa będzie właściwa?",
       answer:
-        "Nie musisz tego rozstrzygać samodzielnie. Wystarczy opisać sytuację, a my pomożemy dobrać właściwy scenariusz i dalszą ścieżkę rozmowy.",
+        "Nie musisz rozstrzygać tego samodzielnie. Wystarczy opisać sytuację, a my pomożemy dobrać właściwy scenariusz i dalszą ścieżkę rozmowy.",
     },
     {
       question: "Czy zdjęcia są konieczne?",
       answer:
-        "Nie zawsze, ale często bardzo przyspieszają rozmowę. Przy tematach po budowie, posadzkach, witrynach i większych zakresach zdjęcia pomagają szybciej ocenić sytuację.",
+        "Nie zawsze, ale często bardzo przyspieszają rozmowę. Przy sprawach po budowie, posadzkach, witrynach i większych zakresach zdjęcia pomagają szybciej ocenić sytuację.",
     },
     {
       question: "Co dostanę po pierwszym kontakcie?",
@@ -379,10 +379,8 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <PagesHero content={defaultContent} />
-        <ContactSection content={contactContent} />
-
         <ProblemsSection content={problemsContent} />
-        {/* <SolutionsSection content={solutionsContent} /> */}
+        <SolutionsSection content={solutionsContent} />
         <CtaSection content={ctaContent} />
         <ShowcaseSection content={showcaseContent} />
         <ProcessSection content={processContent} />

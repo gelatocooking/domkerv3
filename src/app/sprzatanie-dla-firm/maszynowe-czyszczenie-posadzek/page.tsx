@@ -316,6 +316,7 @@ const knowledgeContent: KnowledgeSectionContent = {
 const faqContent: FaqSectionContent = {
   kickerLabel: "NAJCZĘŚCIEJ ZADAWANE PYTANIA",
   title: "Pytania przed zleceniem czyszczenia posadzek",
+  titleLines: ["Pytania przed zleceniem", "czyszczenia posadzek"],
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],

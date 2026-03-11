@@ -8,7 +8,9 @@ export interface HeroContent {
   badge: string;
   titleLines: string[];
   emphasisText?: string;
+  emphasisTexts?: string[];
   emphasisIconName?: IconName;
+  emphasisIconNames?: IconName[];
   emphasisSuffix?: string;
   description: string;
   ctaLabel: string;
@@ -21,6 +23,8 @@ interface HeroProps {
 }
 
 export default function Hero({ content }: HeroProps) {
+  const emphasisText = content.emphasisText ?? content.emphasisTexts?.[0];
+
   return (
     <section className={styles.hero}>
       <div className={styles.grid}>
@@ -35,13 +39,16 @@ export default function Hero({ content }: HeroProps) {
                 {line}
               </span>
             ))}
-            {content.emphasisText ? (
+            {emphasisText ? (
               <HeroHeadline
-                text={content.emphasisText}
+                text={emphasisText}
+                texts={content.emphasisTexts}
+                iconName={content.emphasisIconName}
+                iconNames={content.emphasisIconNames}
                 suffix={content.emphasisSuffix}
                 charsPerSecond={18}
                 startDelayMs={250}
-                loop={false}
+                loop={Boolean(content.emphasisTexts?.length)}
                 cursor={true}
               />
             ) : null}

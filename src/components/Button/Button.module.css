@@ -24,9 +24,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transform: translateX(var(--sp-0));
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.button:hover .icon,
+.button:focus-visible .icon {
+  transform: translateX(var(--sp-4));
 }
 
 .button:focus-visible {
   outline: var(--sp-2) solid var(--c-primary-47_84_235);
   outline-offset: var(--sp-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    transition: none;
+  }
+
+  .button:hover .icon,
+  .button:focus-visible .icon {
+    transform: translateX(var(--sp-0));
+  }
 }

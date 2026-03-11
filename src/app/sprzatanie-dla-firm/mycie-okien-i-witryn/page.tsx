@@ -327,6 +327,7 @@ const contactContent: ContactSectionContent = {
 const faqContent: FaqSectionContent = {
   kickerLabel: "NAJCZĘŚCIEJ ZADAWANE PYTANIA",
   title: "Pytania przed zleceniem mycia okien i witryn",
+  titleLines:["Pytania przed zleceniem", "mycia okien i witryn"],
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],

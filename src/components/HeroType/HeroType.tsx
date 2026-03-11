@@ -3,10 +3,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./HeroType.module.css";
 
-type TypeMode = "typing" | "pause" | "deleting";
+type TypeMode = "typing" | "deleting";
 
 export type TypewriterTimedProps = {
   text: string;
+  texts?: string[];
+  onIndexChange?: (index: number) => void;
   charsPerSecond?: number;
   deleteCharsPerSecond?: number;
   startDelayMs?: number;
@@ -19,10 +21,12 @@ export type TypewriterTimedProps = {
 
 export function TypewriterTimed({
   text,
+  texts,
+  onIndexChange,
   charsPerSecond = 18,
   deleteCharsPerSecond = 26,
   startDelayMs = 0,
-  pauseAfterTypedMs = 900,
+  pauseAfterTypedMs = 2000,
   pauseAfterDeletedMs = 250,
   loop = false,
   cursor = true,
@@ -30,102 +34,88 @@ export function TypewriterTimed({
 }: TypewriterTimedProps) {
   const [count, setCount] = useState(0);
   const [mode, setMode] = useState<TypeMode>("typing");
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const sequence = useMemo(() => {
+    const items = texts?.length ? texts : [text];
+    return items.filter(Boolean);
+  }, [text, texts]);
+  const activeText = sequence[activeIndex] ?? text;
 
   const msPerChar = useMemo(() => 1000 / charsPerSecond, [charsPerSecond]);
   const msPerCharDelete = useMemo(
     () => 1000 / deleteCharsPerSecond,
     [deleteCharsPerSecond]
   );
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const rafId = useRef<number | null>(null);
-  const startT = useRef<number>(0);
-  const baseCount = useRef<number>(0);
-
-  const cancel = () => {
-    if (rafId.current) cancelAnimationFrame(rafId.current);
-    rafId.current = null;
-    startT.current = 0;
+  const clearTimer = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = null;
   };
 
   useEffect(() => {
-    let delayTimer: ReturnType<typeof setTimeout> | null = null;
-    let pauseTimer: ReturnType<typeof setTimeout> | null = null;
+    onIndexChange?.(activeIndex);
+  }, [activeIndex, onIndexChange]);
 
-    cancel();
-    setCount(0);
-    setMode("typing");
-    baseCount.current = 0;
+  useEffect(() => {
+    clearTimer();
 
-    const step = (t: number) => {
-      if (!startT.current) startT.current = t;
-      const elapsed = t - startT.current;
+    const delay = count === 0 && mode === "typing" ? startDelayMs : 0;
 
-      const perChar = mode === "deleting" ? msPerCharDelete : msPerChar;
-      const delta = Math.floor(elapsed / perChar);
+    if (mode === "typing" && count < activeText.length) {
+      timerRef.current = setTimeout(() => {
+        setCount((current) => Math.min(current + 1, activeText.length));
+      }, delay || msPerChar);
+      return () => clearTimer();
+    }
 
-      if (mode === "typing") {
-        const next = Math.min(text.length, baseCount.current + delta);
-        setCount(next);
+    if (mode === "typing" && count >= activeText.length) {
+      if (!loop || sequence.length < 2) return () => clearTimer();
 
-        if (next >= text.length) {
-          cancel();
-          if (loop) {
-            pauseTimer = setTimeout(() => {
-              baseCount.current = text.length;
-              setMode("deleting");
-              startT.current = 0;
-              rafId.current = requestAnimationFrame(step);
-            }, pauseAfterTypedMs);
-          }
-          return;
-        }
-      }
+      timerRef.current = setTimeout(() => {
+        setMode("deleting");
+      }, pauseAfterTypedMs);
+      return () => clearTimer();
+    }
 
-      if (mode === "deleting") {
-        const next = Math.max(0, baseCount.current - delta);
-        setCount(next);
+    if (mode === "deleting" && count > 0) {
+      timerRef.current = setTimeout(() => {
+        setCount((current) => Math.max(current - 1, 0));
+      }, msPerCharDelete);
+      return () => clearTimer();
+    }
 
-        if (next <= 0) {
-          cancel();
-          pauseTimer = setTimeout(() => {
-            baseCount.current = 0;
-            setMode("typing");
-            startT.current = 0;
-            rafId.current = requestAnimationFrame(step);
-          }, pauseAfterDeletedMs);
-          return;
-        }
-      }
-
-      rafId.current = requestAnimationFrame(step);
-    };
-
-    delayTimer = setTimeout(() => {
-      startT.current = 0;
-      baseCount.current = mode === "deleting" ? text.length : 0;
-      rafId.current = requestAnimationFrame(step);
-    }, startDelayMs);
+    if (mode === "deleting" && count === 0) {
+      timerRef.current = setTimeout(() => {
+        setActiveIndex((current) =>
+          sequence.length > 1 ? (current + 1) % sequence.length : current
+        );
+        setMode("typing");
+      }, pauseAfterDeletedMs);
+      return () => clearTimer();
+    }
 
     return () => {
-      if (delayTimer) clearTimeout(delayTimer);
-      if (pauseTimer) clearTimeout(pauseTimer);
-      cancel();
+      clearTimer();
     };
   }, [
-    text,
+    activeText,
+    count,
     loop,
+    mode,
+    sequence.length,
     startDelayMs,
     pauseAfterTypedMs,
     pauseAfterDeletedMs,
     msPerChar,
     msPerCharDelete,
-    mode,
   ]);
 
-  const visible = text.slice(0, count);
+  const visible = activeText.slice(0, count);
 
   return (
-    <span className={className} aria-label={text}>
+    <span className={className} aria-label={activeText}>
       {visible}
       {cursor ? <BlinkCursor /> : null}
     </span>
