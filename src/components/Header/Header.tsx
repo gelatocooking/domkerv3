@@ -68,7 +68,7 @@ const navItems: HeaderNavItem[] = [
     ],
   },
   { label: "Referencje", href: "#", dropdownItems: [] },
-  { label: "Realizacje", href: "#", dropdownItems: [] },
+  { label: "Realizacje", href: "/realizacje", dropdownItems: [] },
   { label: "Cennik", href: "#", dropdownItems: [] },
   { label: "Kontakt", href: "/kontakt", dropdownItems: [] },
 ];
