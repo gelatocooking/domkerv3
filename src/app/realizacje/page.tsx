@@ -58,7 +58,7 @@ const casesContent: CaseSectionContent = {
     },
     {
       typeLabel: "Sprz\u0105tanie cykliczne",
-      title: "Sta\u0142a obs\u0142uga biura ustawiona w przewidywalnym rytmie",
+      title: "Sta\u0142a obs\u0142uga biura ustawiona\n w przewidywalnym rytmie",
       context: [
         "Biuro wymagaj\u0105ce regularnego serwisu bez anga\u017cowania zespo\u0142u w codzienne pilnowanie.",
         "Potrzeba utrzymania sta\u0142ego standardu w cz\u0119\u015bciach wsp\u00f3lnych i strefach pracy.",
@@ -85,7 +85,7 @@ const casesContent: CaseSectionContent = {
     },
     {
       typeLabel: "Maszynowe czyszczenie posadzek",
-      title: "Doczyszczenie nawierzchni dobrane do typu posadzki i zabrudze\u0144",
+      title: "Doczyszczenie nawierzchni dobrane \n do typu posadzki i zabrudze\u0144",
       context: [
         "Obiekt komercyjny z posadzk\u0105 wymagaj\u0105c\u0105 wi\u0119cej ni\u017c standardowego mycia.",
         "Widoczne osady, zabrudzenia eksploatacyjne albo pozosta\u0142o\u015bci po pracach.",
