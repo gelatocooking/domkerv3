@@ -1,6 +1,9 @@
 import CaseSection, {
   type CaseSectionContent,
 } from "@/components/CaseSection/CaseSection";
+import GallerySection, {
+  type GallerySectionContent,
+} from "@/components/GallerySection/GallerySection";
 import ContactSection, {
   type ContactSectionContent,
 } from "../../components/ContactSection/ContactSection";
@@ -112,6 +115,105 @@ const casesContent: CaseSectionContent = {
   ],
 };
 
+const galleryContent: GallerySectionContent = {
+  kickerLabel: "GALERIA REALIZACJI",
+  titleLines: [
+    "Zdj\u0119cia z r\u00f3\u017cnych typ\u00f3w",
+    "realizacji i scenariuszy wej\u015bcia",
+  ],
+  description:
+    "Galeria dzia\u0142a jak szybki przegl\u0105d przypadk\u00f3w z r\u00f3\u017cnych kategorii us\u0142ug. Na start filtrujesz po typie prac, a dalej mo\u017cesz rozwin\u0105\u0107 j\u0105 o pe\u0142ne serie dla konkretnych realizacji.",
+  tags: [
+    { id: "all", label: "Wszystko", iconName: "layoutGrid" },
+    { id: "construction", label: "Po budowie", iconName: "hardHat" },
+    { id: "floors", label: "Posadzki", iconName: "grid3x3" },
+    { id: "cyclical", label: "Cykliczne", iconName: "building2" },
+    { id: "windows", label: "Mycie okien i witryn", iconName: "sparkles" },
+  ],
+  items: [
+    {
+      title: "Lokal przygotowany do finalnego odbioru",
+      categoryLabel: "Po budowie",
+      categoryIconName: "hardHat",
+      description:
+        "Kr\u00f3tka seria zdj\u0119\u0107 pokazuj\u0105ca finalne domkni\u0119cie obiektu przed odbiorem, z naciskiem na przeszklenia, detale i strefy oceniane na ko\u0144cu.",
+      imageSrc: "/tlo.png",
+      imageAlt: "Sprz\u0105tanie po budowie w lokalu us\u0142ugowym",
+      tags: ["construction"],
+    },
+    {
+      title: "Ko\u0144cowe domkni\u0119cie stref krytycznych",
+      categoryLabel: "Po budowie",
+      categoryIconName: "hardHat",
+      description:
+        "Materia\u0142 z realizacji, w kt\u00f3rej liczy\u0142 si\u0119 kr\u00f3tki termin wej\u015bcia i uporz\u0105dkowanie kluczowych stref pod finalny obch\u00f3d inwestora.",
+      imageSrc: "/tlo.png",
+      imageAlt: "Domkni\u0119cie stref po pracach wyko\u0144czeniowych",
+      tags: ["construction"],
+    },
+    {
+      title: "Regularny serwis w rytmie pracy biura",
+      categoryLabel: "Cykliczne",
+      categoryIconName: "building2",
+      description:
+        "Przyk\u0142ad wsp\u00f3\u0142pracy ustawionej tak, \u017ceby utrzyma\u0107 standard czysto\u015bci bez dok\u0142adania zespo\u0142owi codziennego pilnowania wykonawcy.",
+      imageSrc: "/tlo.png",
+      imageAlt: "Obs\u0142uga cykliczna biura",
+      tags: ["cyclical"],
+    },
+    {
+      title: "Sta\u0142y standard w cz\u0119\u015bciach wsp\u00f3lnych",
+      categoryLabel: "Cykliczne",
+      categoryIconName: "building2",
+      description:
+        "Seria uj\u0119\u0107 pokazuj\u0105ca przewidywalny model serwisu, harmonogram i efekt ko\u0144cowy w cz\u0119\u015bciach wsp\u00f3lnych oraz strefach pracy.",
+      imageSrc: "/tlo.png",
+      imageAlt: "Utrzymanie czysto\u015bci w biurze",
+      tags: ["cyclical"],
+    },
+    {
+      title: "Doczyszczenie powierzchni pod efekt ko\u0144cowy",
+      categoryLabel: "Posadzki",
+      categoryIconName: "grid3x3",
+      description:
+        "Case skupiony na doborze metody do typu nawierzchni i skali zabrudze\u0144, bez przypadkowego dzia\u0142ania na materiale.",
+      imageSrc: "/tlo.png",
+      imageAlt: "Maszynowe czyszczenie posadzki",
+      tags: ["floors"],
+    },
+    {
+      title: "Dob\u00f3r procesu do typu nawierzchni i zabrudze\u0144",
+      categoryLabel: "Posadzki",
+      categoryIconName: "grid3x3",
+      description:
+        "Kr\u00f3tki przegl\u0105d realizacji, w kt\u00f3rej liczy\u0142 si\u0119 w\u0142a\u015bciwy dob\u00f3r technologii oraz efekt mo\u017cliwy do osi\u0105gni\u0119cia dla konkretnej posadzki.",
+      imageSrc: "/tlo.png",
+      imageAlt: "Proces doczyszczania posadzek",
+      tags: ["floors"],
+    },
+    {
+      title: "Witryny doprowadzone do czytelnego efektu",
+      categoryLabel: "Mycie okien i witryn",
+      categoryIconName: "sparkles",
+      description:
+        "Zdj\u0119cia z realizacji, w kt\u00f3rej prosty model organizacji i szybka wycena prze\u0142o\u017cy\u0142y si\u0119 na regularny, powtarzalny efekt na witrynach.",
+      imageSrc: "/tlo.png",
+      imageAlt: "Mycie witryn w lokalu",
+      tags: ["windows"],
+    },
+    {
+      title: "Powtarzalny model wej\u015bcia dla przeszkle\u0144",
+      categoryLabel: "Mycie okien i witryn",
+      categoryIconName: "sparkles",
+      description:
+        "Przyk\u0142ad us\u0142ugi prowadzonej tak, \u017ceby logistyka wej\u015bcia by\u0142a dopasowana do obiektu i nie komplikowa\u0142a codziennego dzia\u0142ania lokalu.",
+      imageSrc: "/tlo.png",
+      imageAlt: "Mycie okien i witryn w obiekcie",
+      tags: ["windows"],
+    },
+  ],
+};
+
 const ctaContent: CtaSectionContent = {
   eyebrowText: "MASZ PODOBNY PRZYPADEK?",
   title: "Opisz obiekt, termin i kontekst, a dobierzemy w\u0142a\u015bciwy scenariusz",
@@ -158,6 +260,7 @@ export default function RealizacjePage() {
       <main className={styles.main}>
         <PagesHero content={defaultContent} />
         <CaseSection content={casesContent} />
+        <GallerySection content={galleryContent} />
         <CtaSection content={ctaContent} />
         <ContactSection content={contactContent} />
       </main>

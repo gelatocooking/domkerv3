@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import type { IconName } from "../Icon/Icon";
@@ -32,7 +33,7 @@ const navItems: HeaderNavItem[] = [
     href: "/sprzatanie-dla-firm",
     dropdownItems: [
       {
-        icon: "megaphone",
+        icon: "hardHat",
         title: "Sprzątanie po budowie",
         description: "Sprzątanie po budowie i remoncie dla firm",
         href: "/sprzatanie-dla-firm/sprzatanie-po-budowie",
@@ -48,19 +49,19 @@ const navItems: HeaderNavItem[] = [
         ],
       },
       {
-        icon: "circle",
+        icon: "grid3x3",
         title: "Maszynowe czyszczenie posadzek",
         description: "Profesjonalne czyszczenie posadzek dla firm",
         href: "/sprzatanie-dla-firm/maszynowe-czyszczenie-posadzek",
       },
       {
-        icon: "circle",
+        icon: "sparkles",
         title: "Mycie okien i witryn",
         description: "Mycie okien i witryn dla firm oraz klientów indywidualnych",
         href: "/sprzatanie-dla-firm/mycie-okien-i-witryn",
       },
       {
-        icon: "circle",
+        icon: "building2",
         title: "Sprzątanie cykliczne",
         description: "Stała obsługa sprzątania dla firm",
         href: "/sprzatanie-dla-firm/sprzatanie-cykliczne",
@@ -83,7 +84,7 @@ export default function Header() {
         <div className={styles.logoBox}>
           <div className={styles.logo}>
             <span className={styles.logoMark}>
-              <a href="/">
+              <Link href="/">
                 <Image
                   src="/domker-logo.png"
                   alt="Domker logo"
@@ -91,7 +92,7 @@ export default function Header() {
                   className={styles.logoImage}
                   priority
                 />
-              </a>
+              </Link>
             </span>
           </div>
         </div>
