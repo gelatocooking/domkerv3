@@ -380,12 +380,9 @@ export default function Home() {
       <main className={styles.main}>
         <PagesHero content={defaultContent} />
         <ProblemsSection content={problemsContent} />
-        <SolutionsSection content={solutionsContent} />
         <CtaSection content={ctaContent} />
         <ShowcaseSection content={showcaseContent} />
-        <ProcessSection content={processContent} />
         <ContactSection content={contactContent} />
-        <KnowledgeSection content={knowledgeContent} />
         <FaqSection content={faqContent} />
       </main>
       <Footer />
