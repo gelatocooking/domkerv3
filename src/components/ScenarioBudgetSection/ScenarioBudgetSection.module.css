@@ -41,13 +41,12 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--gap-8);
   margin: var(--sp-0);
   padding: var(--sp-8);
   background: var(--bg-soft);
   border-radius: var(--r-24);
-  align-self: center;
-  justify-content: center;
 }
 
 .serviceListItem {
@@ -57,9 +56,10 @@
 .serviceButton {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--gap-8);
   padding: var(--sp-11) var(--sp-19);
-  border: var(--sp-1) solid var(--bg-transparent);
+  border: none;
   border-radius: var(--r-400);
   background: var(--bg-transparent);
   cursor: pointer;
@@ -67,7 +67,6 @@
 
 .serviceButtonActive {
   background: var(--bg-white);
-  border-color: var(--bg-success-0_12);
 }
 
 .serviceIcon {
@@ -79,6 +78,11 @@
 
 .serviceText {
   composes: t-16-24-400 text-muted from global;
+}
+
+.serviceButton:focus-visible {
+  outline: var(--sp-2) solid var(--c-primary-47_84_235);
+  outline-offset: var(--sp-2);
 }
 
 .card {
@@ -122,19 +126,20 @@
 .levels {
   display: grid;
   gap: var(--gap-12);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .levelButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--sp-20);
+  padding: var(--sp-10);
   background: var(--bg-white);
   border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
   border-radius: var(--r-16);
   cursor: pointer;
   text-align: center;
-  min-height: calc(var(--sp-80) + var(--sp-8));
+  min-height: calc(var(--sp-40) + var(--sp-8));
 }
 
 .levelButtonActive {
@@ -143,7 +148,7 @@
 }
 
 .levelLabel {
-  composes: t-16-24-600 t-strong text-dark from global;
+  composes: t-14-lh-20 t-strong text-dark from global;
 }
 
 .cardGrid {
@@ -165,7 +170,7 @@
 .blockLabel {
   width: fit-content;
   composes: t-12 t-strong from global;
-  padding: var(--sp-8) var(--sp-12);
+  padding: var(--sp-8);
   background: var(--bg-gray-64_64_64-0_12);
   border-radius: var(--r-8);
   color: var(--c-text-34_34_34);
@@ -208,7 +213,7 @@
   background: var(--bg-white);
   border-radius: var(--r-16);
   border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
-  min-height: calc(var(--sp-88) + var(--sp-72));
+  min-height: calc(var(--sp-88) + var(--sp-24));
   align-content: center;
 }
 
@@ -225,25 +230,44 @@
   gap: var(--gap-12);
 }
 
+.factorsBox .blockLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .factorTags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gap-10);
+  gap: var(--gap-8);
 }
 
 .factorTag {
   composes: t-14-lh-20 text-muted from global;
-  padding: var(--sp-8) var(--sp-12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--sp-8);
   background: var(--bg-white);
   border-radius: var(--r-8);
   border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
 }
 
 .cardButton {
-  width: 100%;
+  width: fit-content;
+  padding: var(--sp-8) var(--sp-16);
+  gap: var(--gap-8);
   background: var(--bg-dark);
   color: var(--c-white);
   justify-content: center;
+}
+
+.cardButton > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  line-height: inherit;
 }
 
 .infoBox {
@@ -308,6 +332,11 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .levelButton {
+    padding: var(--sp-12);
+    min-height: calc(var(--sp-40) + var(--sp-24));
+  }
+
   .cardGrid {
     grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     gap: var(--gap-32);
@@ -320,5 +349,18 @@
 
   .cardButton {
     width: fit-content;
+    padding: var(--sp-10) var(--sp-24);
+  }
+
+  .budgetBox {
+    min-height: calc(var(--sp-88) + var(--sp-72));
+  }
+
+  .factorTags {
+    gap: var(--gap-10);
+  }
+
+  .factorTag {
+    padding: var(--sp-8) var(--sp-12);
   }
 }
