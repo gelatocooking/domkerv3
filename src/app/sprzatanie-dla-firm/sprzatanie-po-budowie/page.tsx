@@ -13,14 +13,9 @@ import ProcessSection, {
 } from "@/components/ProcessSection/ProcessSection";
 import FaqSection, { type FaqSectionContent } from "@/components/FaqSection/FaqSection";
 import CtaSection, { type CtaSectionContent } from "../../../components/CtaSection/CtaSection";
-import SolutionsSection, {
-  type SolutionsSectionContent,
-} from "@/components/SolutionsSection/SolutionsSection";
 import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
-import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
-import BenefitsSection from "@/components/BenefitsSection/BenefitsSection";
 
 // /sprzatanie-po-budowie
 
@@ -121,75 +116,6 @@ const problemsContent: ProblemsSectionContent = {
   ],
 };
 
-const solutionsContent: SolutionsSectionContent = {
-  kickerLabel: "JAK TO PROWADZIMY",
-  titleLines: ["Sprzątanie po budowie jako proces", "stref, kolejności i decyzji technologicznych"],
-  description:
-    "Najpierw ustalamy, do jakiego odbioru przygotowujemy obiekt. Potem porządkujemy strefy, dobieramy technologię do materiałów i zgłaszamy gotowość dopiero po kontroli wewnętrznej. Dzięki temu efekt jest sprawdzalny, a nie uznaniowy.",
-  items: [
-    {
-      iconName: "clipboardCheck",
-      label: "Standard odbiorowy",
-      title: "Najpierw ustalamy, jaki efekt ma przejść na końcu",
-      description:
-        "Inwestorski, urzędowy, przekazanie albo otwarcie. Standard końcowy musi być czytelny, żeby zakres i kolejność prac miały sens.",
-      ctaLabel: "Zobacz usługę",
-      mediaAlt: "Sprzątanie po budowie",
-      mediaSrc: "/sprzatanie-po-budowie",
-    },
-    {
-      iconName: "layoutGrid",
-      label: "Strefy krytyczne",
-      title: "Dzielimy obiekt na miejsca, które realnie będą oceniane",
-      description:
-        "Wejścia, komunikacja, przeszklenia, sanitariaty, zaplecza i detale wykończeniowe prowadzimy jako strefy wymagające osobnego podejścia.",
-      ctaLabel: "Wyślij minimum danych",
-      mediaAlt: "Minimum danych do wyceny",
-      mediaSrc: "/kontakt#minimum-danych",
-    },
-    {
-      iconName: "shieldAlert",
-      label: "Technologia pod materiał",
-      title: "Dobór metod wynika z powierzchni i ryzyka, nie z przyzwyczajeń",
-      description:
-        "Posadzki, szkło, armatura, profile mają różne ograniczenia. Dlatego decyzja technologiczna zapada przed wejściem.",
-      ctaLabel: "Standard i bezpieczeństwo",
-      mediaAlt: "Technologia i bezpieczeństwo",
-      mediaSrc: "/sprzatanie-po-budowie#standard",
-    },
-    {
-      iconName: "users",
-      label: "Kontrola wykonania",
-      title: "Gotowość zgłaszamy dopiero po własnej weryfikacji",
-      description:
-        "Realizacja jest sprawdzana checklistą przed przekazaniem. Na końcu przekazujemy protokół i zdjęcia jako materiał do dalszej procedury.",
-      ctaLabel: "Zapytaj (PDF/HTML)",
-      mediaAlt: "Kontakt i oferta",
-      mediaSrc: "/kontakt",
-    },
-    {
-      iconName: "calendarClock",
-      label: "Okno wejścia",
-      title: "Dopasowujemy realizację do realnego rytmu obiektu",
-      description:
-        "Jeśli sytuacja tego wymaga, pracujemy po godzinach albo między innymi robotami, żeby ograniczyć wtórne zabrudzenia i kolizje.",
-      ctaLabel: "Ustal okno wejścia",
-      mediaAlt: "Kontakt telefoniczny",
-      mediaSrc: "tel:+48502992002",
-    },
-    {
-      iconName: "truck",
-      label: "Skala i moce",
-      title: "Zespoły dobieramy do terminu, stanu obiektu i zakresu",
-      description:
-        "Od pojedynczych lokali po większe obiekty. Maksima organizacyjne zależą od warunków wejścia: do 5000 m² dziennie lub do 300 okien dziennie.",
-      ctaLabel: "Sprawdź dostępność",
-      mediaAlt: "Dostępność i termin",
-      mediaSrc: "/kontakt",
-    },
-  ],
-};
-
 const ctaContent: CtaSectionContent = {
   eyebrowText: "MINIMUM DANYCH DO WIDEŁEK I TERMINU",
   title: "Podaj dane, które przyspieszą wycenę i decyzję o wejściu",
@@ -197,57 +123,6 @@ const ctaContent: CtaSectionContent = {
     "Podaj lokalizację, metraż albo skalę obiektu, etap prac, termin i okno wejścia. Jeśli masz zdjęcia oraz informacje o materiałach wrażliwych, szybciej określimy zakres i sposób prowadzenia realizacji.",
   buttonLabel: "Wyślij minimum danych",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
-};
-
-const showcaseContent: ShowcaseSectionContent = {
-  kickerLabel: "FORMALNOŚCI I ODPOWIEDZIALNOŚĆ",
-  titleLines: ["Formalności i odpowiedzialność", "po naszej stronie"],
-  description:
-    "Żeby wejść na obiekt i przeprowadzić realizację bez blokad, liczą się nie tylko ludzie i sprzęt, ale też procedury, dokumenty i jasne rozdzielenie odpowiedzialności.",
-  items: [
-    {
-      tag: "KADRY",
-      title: "Legalne zatrudnienie i przygotowane zespoły",
-      description:
-        "Pracownicy są legalnie zatrudnieni i przygotowani do pracy na obiekcie, co porządkuje logistykę i ogranicza ryzyka organizacyjne.",
-      result: "Efekt: większa przewidywalność wejścia i przebiegu realizacji.",
-    },
-    {
-      tag: "BHP",
-      title: "Szkolenia BHP i analiza zagrożeń przed startem",
-      description:
-        "Przed wejściem ustalamy strefy wyłączone, zasady pracy i ryzyka, żeby realizacja nie zatrzymała się przez procedury w trakcie.",
-      result: "Efekt: płynniejsze wejście i stabilniejsza organizacja prac.",
-    },
-    {
-      tag: "DOKUMENTY",
-      title: "Protokół i zdjęcia jako materiał do dalszego procedowania",
-      description:
-        "Po zakończeniu przekazujemy dokumentację wykonania. Jeżeli w trakcie ujawniają się usterki zastane, od razu je opisujemy i zgłaszamy.",
-      result: "Efekt: krótsza ścieżka odbioru i mniej sporów po realizacji.",
-    },
-    {
-      tag: "OC",
-      title: "Ubezpieczenie OC i jasne ramy odpowiedzialności",
-      description:
-        "Przy końcówce budowy liczy się nie tylko efekt, ale też zabezpieczenie współpracy i czytelne ustalenia dotyczące odpowiedzialności.",
-      result: "Efekt: mniejsze ryzyko organizacyjne po stronie zamawiającego.",
-    },
-    {
-      tag: "POUFNOŚĆ / DOSTĘP",
-      title: "NDA i rejestr wejść, jeśli obiekt tego wymaga",
-      description:
-        "Jeśli obiekt ma dodatkowe formalności, wdrażamy je przed startem, żeby nie tracić okna realizacji przez blokady administracyjne.",
-      result: "Efekt: szybszy start i mniej problemów przy wejściu.",
-    },
-    {
-      tag: "ROZLICZENIA",
-      title: "Umowa i faktura VAT gotowe do akceptacji w firmie",
-      description:
-        "Przekazujemy czytelny zakres i dokumenty do zatwierdzenia oraz rozliczenia, tak aby procedowanie po stronie firmy było prostsze.",
-      result: "Efekt: sprawniejsza decyzja i łatwiejsza finalizacja etapu.",
-    },
-  ],
 };
 
 const processContent: ProcessSectionContent = {
@@ -432,10 +307,9 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <PagesHero content={defaultContent} />
+        <KnowledgeSection content={knowledgeContent2} />
         <ProblemsSection content={problemsContent} />
-        <SolutionsSection content={solutionsContent} />
         <CtaSection content={ctaContent} />
-        {/* <BenefitsSection content={benefitsContent} /> */}
         <ProcessSection content={processContent} />
         <ContactSection content={contactContent} />
         <KnowledgeSection content={knowledgeContent} />
