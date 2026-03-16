@@ -49,16 +49,16 @@ const navItems: HeaderNavItem[] = [
         ],
       },
       {
-        icon: "grid3x3",
-        title: "Maszynowe czyszczenie posadzek",
-        description: "Profesjonalne czyszczenie posadzek dla firm",
-        href: "/sprzatanie-dla-firm/maszynowe-czyszczenie-posadzek",
-      },
-      {
         icon: "sparkles",
         title: "Mycie okien i witryn",
         description: "Mycie okien i witryn dla firm oraz klientów indywidualnych",
         href: "/sprzatanie-dla-firm/mycie-okien-i-witryn",
+      },
+      {
+        icon: "grid3x3",
+        title: "Maszynowe czyszczenie posadzek",
+        description: "Profesjonalne czyszczenie posadzek dla firm",
+        href: "/sprzatanie-dla-firm/maszynowe-czyszczenie-posadzek",
       },
       {
         icon: "building2",
