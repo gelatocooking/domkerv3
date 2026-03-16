@@ -1,0 +1,324 @@
+.section {
+  composes: section from global;
+  padding-left: var(--sp-0);
+  padding-right: var(--sp-0);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-40);
+  composes: padding-global-2 from global;
+}
+
+.headingGroup {
+  composes: title-subtitle-5 from global;
+}
+
+.title {
+  composes: h2 from global;
+  text-align: center;
+}
+
+.titleLine {
+  display: block;
+}
+
+.subtitle {
+  composes: t-16-24-400 text-muted from global;
+  text-align: center;
+  margin: var(--sp-0);
+}
+
+.content {
+  width: 100%;
+  display: grid;
+  gap: var(--gap-24);
+}
+
+.serviceList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+  margin: var(--sp-0);
+  padding: var(--sp-8);
+  background: var(--bg-soft);
+  border-radius: var(--r-24);
+  align-self: center;
+  justify-content: center;
+}
+
+.serviceListItem {
+  display: flex;
+}
+
+.serviceButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-8);
+  padding: var(--sp-11) var(--sp-19);
+  border: var(--sp-1) solid var(--bg-transparent);
+  border-radius: var(--r-400);
+  background: var(--bg-transparent);
+  cursor: pointer;
+}
+
+.serviceButtonActive {
+  background: var(--bg-white);
+  border-color: var(--bg-success-0_12);
+}
+
+.serviceIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.serviceText {
+  composes: t-16-24-400 text-muted from global;
+}
+
+.card {
+  display: grid;
+  gap: var(--gap-24);
+  padding: var(--sp-24);
+  background: var(--bg-soft);
+  border-radius: var(--r-24);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+}
+
+.cardHeader {
+  display: grid;
+  gap: var(--gap-24);
+}
+
+.cardHeaderContent {
+  display: grid;
+  gap: var(--gap-12);
+}
+
+.cardEyebrow {
+  width: fit-content;
+  composes: t-14-lh-20 t-strong from global;
+  padding: var(--sp-8) var(--sp-12);
+  background: var(--bg-success-0_12);
+  border-radius: var(--r-8);
+  color: var(--c-green-deep-0_100_58);
+}
+
+.cardTitle {
+  composes: h3-smaller from global;
+  margin: var(--sp-0);
+}
+
+.cardText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.levels {
+  display: grid;
+  gap: var(--gap-12);
+}
+
+.levelButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-20);
+  background: var(--bg-white);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  border-radius: var(--r-16);
+  cursor: pointer;
+  text-align: center;
+  min-height: calc(var(--sp-80) + var(--sp-8));
+}
+
+.levelButtonActive {
+  border-color: var(--bg-success);
+  background: var(--bg-success-0_12);
+}
+
+.levelLabel {
+  composes: t-16-24-600 t-strong text-dark from global;
+}
+
+.cardGrid {
+  display: grid;
+  gap: var(--gap-24);
+}
+
+.leftColumn,
+.rightColumn {
+  display: grid;
+  gap: var(--gap-20);
+}
+
+.block {
+  display: grid;
+  gap: var(--gap-12);
+}
+
+.blockLabel {
+  width: fit-content;
+  composes: t-12 t-strong from global;
+  padding: var(--sp-8) var(--sp-12);
+  background: var(--bg-gray-64_64_64-0_12);
+  border-radius: var(--r-8);
+  color: var(--c-text-34_34_34);
+}
+
+.blockText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.scopeList {
+  list-style: none;
+  display: grid;
+  gap: var(--gap-10);
+  margin: var(--sp-0);
+  padding: var(--sp-0);
+}
+
+.scopeItem {
+  composes: t-16-24-400 text-muted from global;
+  position: relative;
+  padding-left: var(--sp-20);
+}
+
+.scopeItem::before {
+  content: "";
+  position: absolute;
+  top: var(--sp-10);
+  left: var(--sp-0);
+  width: var(--sp-8);
+  height: var(--sp-8);
+  border-radius: var(--r-100);
+  background: var(--bg-success);
+}
+
+.budgetBox {
+  display: grid;
+  gap: var(--gap-10);
+  padding: var(--sp-20);
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  min-height: calc(var(--sp-88) + var(--sp-72));
+  align-content: center;
+}
+
+.budgetLabel {
+  composes: t-12 t-strong text-muted from global;
+}
+
+.budgetValue {
+  composes: h3 from global;
+}
+
+.factorsBox {
+  display: grid;
+  gap: var(--gap-12);
+}
+
+.factorTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-10);
+}
+
+.factorTag {
+  composes: t-14-lh-20 text-muted from global;
+  padding: var(--sp-8) var(--sp-12);
+  background: var(--bg-white);
+  border-radius: var(--r-8);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+}
+
+.cardButton {
+  width: 100%;
+  background: var(--bg-dark);
+  color: var(--c-white);
+  justify-content: center;
+}
+
+.infoBox {
+  display: grid;
+  gap: var(--gap-10);
+  padding: var(--sp-20);
+  background: var(--bg-white);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+}
+
+.infoTitle {
+  composes: t-16-24-600 t-strong text-dark from global;
+}
+
+.infoText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.footerBox {
+  display: grid;
+  gap: var(--gap-20);
+  padding: var(--sp-24);
+  background: var(--bg-soft);
+  border-radius: var(--r-24);
+}
+
+.footerContent {
+  display: grid;
+  gap: var(--gap-10);
+}
+
+.footerTitle {
+  composes: h3-smaller from global;
+  margin: var(--sp-0);
+}
+
+.footerText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.footerButton {
+  width: fit-content;
+  background: var(--bg-dark);
+  color: var(--c-white);
+}
+
+@media (min-width: 1024px) {
+  .card {
+    padding: var(--sp-40);
+  }
+
+  .cardHeader {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    align-items: start;
+    gap: var(--gap-32);
+  }
+
+  .levels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cardGrid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: var(--gap-32);
+  }
+
+  .footerBox {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .cardButton {
+    width: fit-content;
+  }
+}

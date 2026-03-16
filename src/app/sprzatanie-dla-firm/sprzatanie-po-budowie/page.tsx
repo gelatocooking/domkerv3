@@ -91,7 +91,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "MATERIAŁY",
       title: "Nowe wykończenia nie wybaczają przypadkowej technologii",
       description:
-        "Świeże posadzki, szkło, armatura, profile i fronty wymagają narzędzi oraz chemii dobranych do materiału, nie improwizacji na miejscu.",
+        "Świeże posadzki, szkło, armatura i profile wymagają narzędzi oraz chemii dobranych do materiału, nie improwizacji na miejscu.",
       tone: "risk",
     },
     {

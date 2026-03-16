@@ -80,7 +80,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "RYZYKO",
       title: "Szkoda na wykończeniu potrafi obniżyć zyski i wydłużyć odbiór",
       description:
-        "Posadzki, przeszklenia, profile, fronty i armatura wymagają pracy pod materiał. Błąd technologiczny wraca jako koszt, reklamacja i opóźnienie.",
+        "Posadzki, przeszklenia, profile i armatura wymagają pracy pod materiał. Błąd technologiczny wraca jako koszt, reklamacja i opóźnienie.",
       tone: "risk",
     },
     {
