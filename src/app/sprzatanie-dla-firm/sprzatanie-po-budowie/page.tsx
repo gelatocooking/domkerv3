@@ -152,7 +152,7 @@ const solutionsContent: SolutionsSectionContent = {
       label: "Technologia pod materiał",
       title: "Dobór metod wynika z powierzchni i ryzyka, nie z przyzwyczajeń",
       description:
-        "Posadzki, szkło, armatura, profile i fronty mają różne ograniczenia. Dlatego decyzja technologiczna zapada przed wejściem.",
+        "Posadzki, szkło, armatura, profile mają różne ograniczenia. Dlatego decyzja technologiczna zapada przed wejściem.",
       ctaLabel: "Standard i bezpieczeństwo",
       mediaAlt: "Technologia i bezpieczeństwo",
       mediaSrc: "/sprzatanie-po-budowie#standard",

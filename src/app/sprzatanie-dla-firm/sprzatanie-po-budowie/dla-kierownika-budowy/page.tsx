@@ -125,7 +125,7 @@ const solutionsContent: SolutionsSectionContent = {
       label: "Technologia pod materiał",
       title: "Czyścimy tak, żeby nie tworzyć kolejnych problemów",
       description:
-        "Dobieramy chemię i narzędzia do posadzek, szyb albo okien, armatury, profili i frontów, żeby nie zostawiać rys, zmatowień ani zacieków.",
+        "Dobieramy chemię i narzędzia do posadzek, szyb albo okien, armatury i profili, żeby nie zostawiać rys, zmatowień ani zacieków.",
       ctaLabel: "Wyślij minimum danych",
       mediaAlt: "Bezpieczna technologia sprzątania po budowie",
       mediaSrc: "/kontakt",
