@@ -34,7 +34,7 @@ const defaultContent: HeroContent = {
   emphasisIconName: "lightbulb",
   emphasisSuffix: "",
   description:
-    "Domker to firma sprzątająca dla firm, która myśli procesowo — szczególnie tam, gdzie liczy się termin, standard i sprawna finalizacja etapu. Realizujemy sprzątanie po budowie, utrzymanie czystości biur i lokali handlowo-usługowych, mycie witryn oraz czyszczenie posadzek. Organizujemy wejście, dopasowujemy prace do warunków na obiekcie i zostawiamy przestrzeń gotową do odbioru, otwarcia albo przekazania dalej. Cała Polska.",
+    "Domker to firma sprzątająca dla firm, która myśli procesowo — szczególnie tam, gdzie liczy się termin, standard i sprawna finalizacja etapu. Realizujemy sprzątanie po budowie, utrzymanie czystości biur i lokali handlowo-usługowych, mycie witryn oraz czyszczenie posadzek.  Cała Polska.",
   ctaLabel: "Sprawdź dostępność terminu",
   imageSrc: "/tlo.png",
   imageAlt: "Sprzątanie dla firm",
