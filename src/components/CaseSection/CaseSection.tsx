@@ -12,8 +12,11 @@ export interface CaseSectionMedia {
 export interface CaseSectionItem {
   typeLabel: string;
   title: string;
+  contextLabel: string;
   context: string[];
+  scopeLabel: string;
   scope: string[];
+  resultLabel: string;
   resultLead: string;
   resultText: string;
   ctaLabel: string;
@@ -69,7 +72,7 @@ export default function CaseSection({ content }: CaseSectionProps) {
 
                 <div className={styles.blocks}>
                   <div className={styles.block}>
-                    <span className={styles.blockLabel}>Kontekst</span>
+                    <span className={styles.blockLabel}>{item.contextLabel}</span>
                     <ul className={styles.listItems}>
                       {item.context.map((entry) => (
                         <li key={entry} className={styles.listItem}>
@@ -80,7 +83,7 @@ export default function CaseSection({ content }: CaseSectionProps) {
                   </div>
 
                   <div className={styles.block}>
-                    <span className={styles.blockLabel}>Zakres</span>
+                    <span className={styles.blockLabel}>{item.scopeLabel}</span>
                     <ul className={styles.listItems}>
                       {item.scope.map((entry) => (
                         <li key={entry} className={styles.listItem}>
@@ -91,7 +94,7 @@ export default function CaseSection({ content }: CaseSectionProps) {
                   </div>
 
                   <div className={styles.block}>
-                    <span className={styles.blockLabel}>Rezultat</span>
+                    <span className={styles.blockLabel}>{item.resultLabel}</span>
                     <div className={styles.result}>
                       <p className={styles.resultLead}>{item.resultLead}</p>
                       <p className={styles.resultText}>{item.resultText}</p>

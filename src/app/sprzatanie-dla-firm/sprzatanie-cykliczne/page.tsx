@@ -225,12 +225,14 @@ const casesContent: CaseSectionContent = {
     {
       typeLabel: "Kadra Domker",
       title: "Pracownicy, na których możesz\nzawsze liczyć",
+      contextLabel: "Przebieg rekrutacji",
       context: [
         "Wstępna kwalifikacja umiejętności, doświadczenia i chęci do pracy.",
         "Ustalanie dyspozycyjności i ewentualnych trudności w pracy.",
         "Określenie warunków i zasad współpracy oraz backupu na wypadek nieprzewidzianych zdarzeń i niedyspozycyjności.",
         "Udział w dniu próbnym, szkoleniu wstępnym oraz przekazanie materiałów dotyczących procesów.",
       ],
+      scopeLabel: "Stawiane wymagania i zasady",
       scope: [
         "Prawdomówność i uczciwość dla wzajemnego zaufania i spokoju.",
         "Skrupulatność, aby praca miała zamierzony poziom jakości.",
@@ -238,6 +240,7 @@ const casesContent: CaseSectionContent = {
         "Realizowanie zakresu punkt po punkcie, aby nie robić pustych przebiegów.",
         "Zakończenie współpracy przy przyłapaniu na kłamstwie lub matactwie.",
       ],
+      resultLabel: "Rezultat",
       resultLead:
         "Decydując się na współpracę korzystasz z naszych wypracowanych zasad i procesu rekrutacyjnego.",
       resultText:
@@ -251,11 +254,13 @@ const casesContent: CaseSectionContent = {
     {
       typeLabel: "Zaplecze sprzętowe",
       title: "Odpowiednio dobrany i utrzymany sprzęt to\ngwarancja efektu",
+      contextLabel: "Standardy",
       context: [
         "Każdego pracownika wyposażamy w odpowiedni sprzęt, aby wykonywać zakres zgodnie ze sztuką i z zamierzonym efektem.",
         "Nasz Koordynator odpowiada w czasie rzeczywistym na zgłoszenia zapotrzebowania pracowników, aby uniknąć przestojów lub obniżenia jakości.",
         "Zawsze utrzymujemy zapasowe wyposażenie.",
       ],
+      scopeLabel: "Standardowe wyposażenie",
       scope: [
         "Szorowarka pionowa firmy Aventurier, która gruntownie myje posadzki.",
         "Mopy ręczne z dostosowanymi do rodzaju posadzki wkładami.",
@@ -263,6 +268,7 @@ const casesContent: CaseSectionContent = {
         "Odkurzacze przemysłowe Starmix, Karcher oraz Nilfisk.",
         "Uniformy robocze aby zapewnić profesjonalny i dostosowany ubiór do miejsca pracy.",
       ],
+      resultLabel: "Rezultat",
       resultLead:
         "Nie musisz inwestować w kosztowny sprzęt, aby korzystać z efektów jego pracy na co dzień",
       resultText:

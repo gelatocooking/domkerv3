@@ -32,6 +32,9 @@ const casesContent: CaseSectionContent = {
   ],
   description:
     "Przyk\u0142ady s\u0105 u\u0142o\u017cone w tym samym rytmie: kontekst, zakres, rezultat i dalszy krok. Dzi\u0119ki temu \u0142atwiej por\u00f3wna\u0107 je do w\u0142asnej sytuacji.",
+  contextLabel: "Kontekst",
+  scopeLabel: "Zakres",
+  resultLabel: "Rezultat",
   items: [
     {
       typeLabel: "Sprz\u0105tanie po budowie",
