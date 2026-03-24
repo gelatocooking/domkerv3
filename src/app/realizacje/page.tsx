@@ -32,19 +32,18 @@ const casesContent: CaseSectionContent = {
   ],
   description:
     "Przyk\u0142ady s\u0105 u\u0142o\u017cone w tym samym rytmie: kontekst, zakres, rezultat i dalszy krok. Dzi\u0119ki temu \u0142atwiej por\u00f3wna\u0107 je do w\u0142asnej sytuacji.",
-  contextLabel: "Kontekst",
-  scopeLabel: "Zakres",
-  resultLabel: "Rezultat",
   items: [
     {
       typeLabel: "Sprz\u0105tanie po budowie",
       title: "Lokal us\u0142ugowy przygotowany\n do odbioru i otwarcia",
+      contextLabel: "Kontekst",
       context: [
         "Obiekt po pracach wyko\u0144czeniowych i monta\u017cowych.",
         "Kr\u00f3tkie okno wej\u015bcia przed odbiorem.",
         "Widoczny py\u0142, \u015blady po zabezpieczeniach i zabrudzenia na detalach.",
         "Do dopi\u0119cia przeszklenia, komunikacja i strefy oceniane na ko\u0144cu.",
       ],
+      scopeLabel: "Zakres",
       scope: [
         "Usuni\u0119cie py\u0142u technologicznego.",
         "Doczyszczenie detali wyko\u0144czeniowych.",
@@ -52,6 +51,7 @@ const casesContent: CaseSectionContent = {
         "Usuni\u0119cie \u015blad\u00f3w po foliach i zabezpieczeniach.",
         "Przygotowanie obiektu pod finalny obch\u00f3d.",
       ],
+      resultLabel: "Rezultat",
       resultLead:
         "Obiekt przygotowany do odbioru bez dok\u0142adania chaosu na ko\u0144c\u00f3wce.",
       resultText:
@@ -65,12 +65,14 @@ const casesContent: CaseSectionContent = {
     {
       typeLabel: "Sprz\u0105tanie cykliczne",
       title: "Sta\u0142a obs\u0142uga biura ustawiona\n w przewidywalnym rytmie",
+      contextLabel: "Kontekst",
       context: [
         "Biuro wymagaj\u0105ce regularnego serwisu bez anga\u017cowania zespo\u0142u w codzienne pilnowanie.",
         "Potrzeba utrzymania sta\u0142ego standardu w cz\u0119\u015bciach wsp\u00f3lnych i strefach pracy.",
         "Wa\u017cny przewidywalny harmonogram i prosty kontakt po stronie wykonawcy.",
         "Wsp\u00f3\u0142praca mia\u0142a dzia\u0142a\u0107 w tle, bez ci\u0105g\u0142ego wracania do ustale\u0144.",
       ],
+      scopeLabel: "Zakres",
       scope: [
         "Regularne sprz\u0105tanie stref biurowych.",
         "Utrzymanie cz\u0119\u015bci wsp\u00f3lnych i zaplecza.",
@@ -78,6 +80,7 @@ const casesContent: CaseSectionContent = {
         "Sta\u0142y model wsp\u00f3\u0142pracy i komunikacji.",
         "Bie\u017c\u0105ce reagowanie na potrzeby po stronie klienta.",
       ],
+      resultLabel: "Rezultat",
       resultLead:
         "Serwis, kt\u00f3ry dzia\u0142a regularnie i nie wymaga ci\u0105g\u0142ego przypominania o podstawach.",
       resultText:
@@ -92,12 +95,14 @@ const casesContent: CaseSectionContent = {
     {
       typeLabel: "Maszynowe czyszczenie posadzek",
       title: "Doczyszczenie nawierzchni dobrane \n do typu posadzki i zabrudze\u0144",
+      contextLabel: "Kontekst",
       context: [
         "Obiekt komercyjny z posadzk\u0105 wymagaj\u0105c\u0105 wi\u0119cej ni\u017c standardowego mycia.",
         "Widoczne osady, zabrudzenia eksploatacyjne albo pozosta\u0142o\u015bci po pracach.",
         "Potrzeba poprawy efektu bez ryzyka dla nawierzchni.",
         "Kluczowe by\u0142o w\u0142a\u015bciwe rozpoznanie materia\u0142u i dob\u00f3r procesu.",
       ],
+      scopeLabel: "Zakres",
       scope: [
         "Kwalifikacja typu posadzki.",
         "Ocena rodzaju i skali zabrudze\u0144.",
@@ -105,6 +110,7 @@ const casesContent: CaseSectionContent = {
         "Maszynowe doczyszczanie powierzchni.",
         "Przeprowadzenie us\u0142ugi w warunkach dopasowanych do obiektu.",
       ],
+      resultLabel: "Rezultat",
       resultLead:
         "Posadzka wyra\u017anie poprawiona bez przypadkowego dzia\u0142ania na materiale.",
       resultText:
