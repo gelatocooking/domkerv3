@@ -20,6 +20,12 @@ import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
 import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
+import CoordinatorSection, {
+  type CoordinatorSectionContent,
+} from "@/components/CoordinatorSection/CoordinatorSection";
+import CaseSection, {
+  type CaseSectionContent,
+} from "@/components/CaseSection/CaseSection";
 
 // /sprzatanie-cykliczne
 
@@ -189,6 +195,88 @@ const solutionsContent: SolutionsSectionContent = {
   ],
 };
 
+const coordinatorContent: CoordinatorSectionContent = {
+  kickerLabel: "CZEKAMY NA CIEBIE",
+  titleLines: ["Zyskaj stały dostęp do osoby Koordynującej"],
+  description:
+    "Decydując się na stałą obsługę lokalu otrzymujesz kontakt do osoby koordynującej z Domker, który ma za zadanie utrzymanie ciągłości usługi oraz reagowanie na zgłoszenia i uwagi w czasie rzeczywistym. Jeden kontakt rozwiązujący wszystkie wyzwania komunikacyjne.",
+  imageSrc: "/tlo.png",
+  imageAlt: "Zespół koordynujący Domker",
+  cardTitlePrefix: "Poznaj",
+  cardTitleText: "Maję",
+  cardTitleTexts: ["Maję", "Julię", "Fryderyka"],
+  points: [
+    "Do Twojej dyspozycji w trakcie dyżuru - reaguje na Twoje zgłoszenia",
+    "Regularnie przyjeżdża na miejsce obsługi skontrolować jakość prac",
+    "Jest osobą decyzyjną w sprawach organizacyjnych",
+    "Działa szybko i skutecznie dbając bezpośrednio o Twój biznes",
+  ],
+};
+
+const casesContent: CaseSectionContent = {
+  kickerLabel: "LUDZIE I SPRZĘT STOJĄCY PO TWOJEJ STRONIE",
+  titleLines: [
+    "Za każdą usługą stoi zaplecze,",
+    "które pracuje na wspólny sukces",
+  ],
+  description:
+    "Przykłady są ułożone w tym samym rytmie: kontekst, zakres, rezultat i dalszy krok. Dzięki temu łatwiej porównać je do własnej sytuacji.",
+  items: [
+    {
+      typeLabel: "Kadra Domker",
+      title: "Pracownicy, na których możesz\nzawsze liczyć",
+      context: [
+        "Wstępna kwalifikacja umiejętności, doświadczenia i chęci do pracy.",
+        "Ustalanie dyspozycyjności i ewentualnych trudności w pracy.",
+        "Określenie warunków i zasad współpracy oraz backupu na wypadek nieprzewidzianych zdarzeń i niedyspozycyjności.",
+        "Udział w dniu próbnym, szkoleniu wstępnym oraz przekazanie materiałów dotyczących procesów.",
+      ],
+      scope: [
+        "Prawdomówność i uczciwość dla wzajemnego zaufania i spokoju.",
+        "Skrupulatność, aby praca miała zamierzony poziom jakości.",
+        "Chęć rozwoju, aby podwyższać kompetencje i wartość dla klienta.",
+        "Realizowanie zakresu punkt po punkcie, aby nie robić pustych przebiegów.",
+        "Zakończenie współpracy przy przyłapaniu na kłamstwie lub matactwie.",
+      ],
+      resultLead:
+        "Decydując się na współpracę korzystasz z naszych wypracowanych zasad i procesu rekrutacyjnego.",
+      resultText:
+        "Nasz proces rekrutacji oraz współpracy z kadrą jest nastawiony na dwustronny szacunek i przejrzyste warunki umowy. Inwestycja w stworzenie stabilnego i przystępnego miejsca pracy zwraca się w świadczeniu wysokiej jakości usług u naszych klientów.",
+      ctaLabel: "Wyceń stałą obsługę swojego miejsca",
+      media: {
+        src: "/tlo.png",
+        alt: "Pracownicy Domker przy pracy na wysokości",
+      },
+    },
+    {
+      typeLabel: "Zaplecze sprzętowe",
+      title: "Odpowiednio dobrany i utrzymany sprzęt to\ngwarancja efektu",
+      context: [
+        "Każdego pracownika wyposażamy w odpowiedni sprzęt, aby wykonywać zakres zgodnie ze sztuką i z zamierzonym efektem.",
+        "Nasz Koordynator odpowiada w czasie rzeczywistym na zgłoszenia zapotrzebowania pracowników, aby uniknąć przestojów lub obniżenia jakości.",
+        "Zawsze utrzymujemy zapasowe wyposażenie.",
+      ],
+      scope: [
+        "Szorowarka pionowa firmy Aventurier, która gruntownie myje posadzki.",
+        "Mopy ręczne z dostosowanymi do rodzaju posadzki wkładami.",
+        "Przemysłowa chemia marek Clinex, Kiehl oraz Buzill.",
+        "Odkurzacze przemysłowe Starmix, Karcher oraz Nilfisk.",
+        "Uniformy robocze aby zapewnić profesjonalny i dostosowany ubiór do miejsca pracy.",
+      ],
+      resultLead:
+        "Nie musisz inwestować w kosztowny sprzęt, aby korzystać z efektów jego pracy na co dzień",
+      resultText:
+        "Po naszej stronie jest zakup, konserwacja i serwis, aby zapewnić najwyższą jakość sprzątania.",
+      ctaLabel: "Chcę ustawić stałą obsługę",
+      media: {
+        src: "/tlo.png",
+        alt: "Zaplecze sprzętowe Domker wykorzystywane w realizacjach",
+      },
+      reverseOnDesktop: true,
+    },
+  ],
+};
+
 const ctaContent: CtaSectionContent = {
   eyebrowText: "USTAWMY SERWIS, KTÓRY DZIAŁA W TLE",
   title: "Powiedz, jaki obiekt chcesz objąć stałą obsługą",
@@ -200,7 +288,7 @@ const ctaContent: CtaSectionContent = {
 
 const showcaseContent: ShowcaseSectionContent = {
   kickerLabel: "CO UTRZYMUJE WSPÓŁPRACĘ W RYTMIE",
-  titleLines: ["Przy stałej obsłudze liczy się", "nie tylko zakres, ale też sposób współpracy"],
+  titleLines: ["Przy stałej obsłudze oprócz zakresu", "liczy się też sposób współpracy"],
   description:
     "Sprzątanie cykliczne działa dobrze wtedy, gdy jest przewidywalne i nie wymaga ciągłego pilnowania. Dlatego porządkujemy nie tylko sam zakres, ale też to, co wpływa na stabilność serwisu w dłuższym czasie.",
   items: [
@@ -414,6 +502,8 @@ export default function Home() {
         <ProblemsSection content={problemsContent} />
         <SolutionsSection content={solutionsContent} />
         <KnowledgeSection content={knowledgeContent2} />
+        <CaseSection content={casesContent} />
+        <CoordinatorSection content={coordinatorContent} />
         <CtaSection content={ctaContent} />
         <ShowcaseSection content={showcaseContent} />
         <ProcessSection content={processContent} />

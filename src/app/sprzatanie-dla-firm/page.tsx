@@ -334,6 +334,10 @@ const faqContent: FaqSectionContent = {
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
+  cta: {
+    label: "Przejdź do kontaktu",
+    href: "/kontakt",
+  },
   items: [
     {
       question: "Czym ta strona różni się od stron poszczególnych usług?",
@@ -388,20 +392,61 @@ const faqContent: FaqSectionContent = {
   ],
 };
 
+const WIDOW_KEYS = new Set(["description", "consentText"]);
+
+const fixWidows = (text: string) => {
+  return text.replace(/\b(a|i|o|u|w|z|na|do|od|za|po|we|ze)\s+/gi, "$1\u00A0");
+};
+
+const fixContentDeep = <T,>(value: T, key?: string): T => {
+  if (typeof value === "string") {
+    if (!key || !WIDOW_KEYS.has(key)) {
+      return value;
+    }
+
+    return fixWidows(value) as T;
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((item) => fixContentDeep(item, key)) as T;
+  }
+
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([entryKey, entryValue]) => [
+        entryKey,
+        fixContentDeep(entryValue, entryKey),
+      ])
+    ) as T;
+  }
+
+  return value;
+};
+
+const fixedDefaultContent = fixContentDeep(defaultContent);
+const fixedProblemsContent = fixContentDeep(problemsContent);
+const fixedSolutionsContent = fixContentDeep(solutionsContent);
+const fixedBenefitsContent = fixContentDeep(benefitsContent);
+const fixedProcessContent = fixContentDeep(processContent);
+const fixedCtaContent = fixContentDeep(ctaContent);
+const fixedKnowledgeContent = fixContentDeep(knowledgeContent);
+const fixedContactContent = fixContentDeep(contactContent);
+const fixedFaqContent = fixContentDeep(faqContent);
+
 export default function Home() {
   return (
     <div className={styles.page}>
       <Header />
       <main className={styles.main}>
-        <PagesHero content={defaultContent} />
-        <ProblemsSection content={problemsContent} />
-        <SolutionsSection content={solutionsContent} />
-        <CtaSection content={ctaContent} />
-        {/* <BenefitsSection content={benefitsContent} /> */}
-        <ProcessSection content={processContent} />
-        <ContactSection content={contactContent} />
-        <KnowledgeSection content={knowledgeContent} />
-        <FaqSection content={faqContent} />
+        <PagesHero content={fixedDefaultContent} />
+        <ProblemsSection content={fixedProblemsContent} />
+        <SolutionsSection content={fixedSolutionsContent} />
+        <CtaSection content={fixedCtaContent} />
+        {/* <BenefitsSection content={fixedBenefitsContent} /> */}
+        <ProcessSection content={fixedProcessContent} />
+        <ContactSection content={fixedContactContent} />
+        <KnowledgeSection content={fixedKnowledgeContent} />
+        <FaqSection content={fixedFaqContent} />
       </main>
       <Footer />
     </div>

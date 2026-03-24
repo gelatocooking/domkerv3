@@ -18,6 +18,7 @@
 .title {
   composes: h2 from global;
   text-align: center;
+  text-wrap: balance;
 }
 
 .titleLine {

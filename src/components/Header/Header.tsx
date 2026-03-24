@@ -39,11 +39,11 @@ const navItems: HeaderNavItem[] = [
         href: "/sprzatanie-dla-firm/sprzatanie-po-budowie",
         children: [
           {
-            label: "Dla kierownika budowy",
+            label: "Wybierz jeśli jesteś kierownikiem budowy",
             href: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-kierownika-budowy",
           },
           {
-            label: "Dla zarządcy obiektu",
+            label: "Wybierz jeśli jesteś zarządcą obiektu",
             href: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-zarzadcy-obiektu",
           },
         ],
@@ -68,7 +68,7 @@ const navItems: HeaderNavItem[] = [
       },
     ],
   },
-  { label: "Referencje", href: "#", dropdownItems: [] },
+  { label: "Dla franczyz", href: "/sprzatanie-dla-firm/dla-franczyz", dropdownItems: [] },
   { label: "Realizacje", href: "/realizacje", dropdownItems: [] },
   { label: "Cennik", href: "/cennik", dropdownItems: [] },
   { label: "Kontakt", href: "/kontakt", dropdownItems: [] },

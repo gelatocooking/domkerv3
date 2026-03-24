@@ -27,7 +27,7 @@ import styles from "./page.module.css";
 
 const defaultContent: HeroContent = {
   badge: "SPRZĄTANIE DLA FIRM I SIECI",
-  titleLines: ["Sprzątanie dla firm", "pod odbiory, otwarcia", "i przekazanie obiektu"],
+  titleLines: ["Sprzątanie pod obiory","i przekazanie obiektu" ],
   emphasisText: "na czas",
   emphasisTexts: ["na czas", "bez chaosu", "formalnie"],
   emphasisIconNames: ["calendarClock", "workflow", "clipboardCheck"],
@@ -42,14 +42,14 @@ const defaultContent: HeroContent = {
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE WYZWANIA?",
-  titleLines: ["Jeśli celem jest odbiór, przekazanie", "albo otwarcie, „czysto” to dopiero początek"],
+  titleLines: ["Przy odbiorze, przekazaniu i otwarciu", "liczy się więcej niż samo „czysto”"],
   description:
     "W realizacjach B2B problemem rzadko jest samo wykonanie prac. Najczęściej o wyniku decydują warunki wejścia, koordynacja między ekipami, bezpieczeństwo wykończeń i standard, który da się zweryfikować po stronie firmy.",
   items: [
     {
       iconName: "calendarClock",
       label: "TERMIN",
-      title: "Data odbioru jest stała, a warunki\nna obiekcie zmieniają się do końca",
+      title: "Data odbioru jest stała, a warunki na obiekcie zmieniają się do końca",
       description:
         "Prace się przesuwają, strefy bywają wyłączone, a okno realizacji się skraca. Potrzebujesz wykonawcy, który potrafi działać w realnych warunkach obiektu.",
       tone: "processes",
@@ -99,7 +99,7 @@ const problemsContent: ProblemsSectionContent = {
 
 const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "CO ROBIMY",
-  titleLines: ["Usługi dla firm i sieci,", "które trzeba zorganizować przewidywalnie"],
+  titleLines: ["Usługi dla firm i sieci handlowych,", "trzeba zorganizować przewidywalnie"],
   description:
     "Obsługujemy obiekty komercyjne w modelu, który upraszcza decyzję i porządkuje realizację. Wybierasz właściwą usługę, a my prowadzimy wejście, zakres, standard i finalizację etapu.",
   items: [
@@ -117,7 +117,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "building2",
       label: "Utrzymanie czystości biur i lokali",
-      title: "Stały standard w codziennym działaniu obiektu\n",
+      title: "Stały standard w codziennym działaniu obiektu",
       description:
         "Cykliczna obsługa biur, lokali handlowych i usługowych. Harmonogram, kontrola jakości i ciągłość serwisu, które ograniczają potrzebę ciągłego pilnowania wykonawcy.",
       ctaLabel: "Porozmawiaj o stałej obsłudze",
@@ -247,7 +247,7 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "KONTAKT",
-  title: `Wyślij minimum danych, a wrócimy z jasnym kolejnym krokiem`,
+  title: `Wyślij minimum danych, odpowiemy, czy możemy pomóc Ci w tym zakresie`,
   description:
     "Napisz, jaki to obiekt, jaki jest cel realizacji i na kiedy potrzebujesz wejścia. Jeśli masz zdjęcia, dołącz je. W odpowiedzi potwierdzimy dostępność, doprecyzujemy zakres i przygotujemy ofertę gotową do przekazania w firmie.",
   chips: [
@@ -275,22 +275,61 @@ const contactContent: ContactSectionContent = {
   },
 };
 
+const WIDOW_KEYS = new Set(["description", "consentText"]);
+
+const fixWidows = (text: string) => {
+  return text.replace(/\b(a|i|o|u|w|z|na|do|od|za|po|we|ze)\s+/gi, "$1\u00A0");
+};
+
+const fixContentDeep = <T,>(value: T, key?: string): T => {
+  if (typeof value === "string") {
+    if (!key || !WIDOW_KEYS.has(key)) {
+      return value;
+    }
+
+    return fixWidows(value) as T;
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((item) => fixContentDeep(item, key)) as T;
+  }
+
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([entryKey, entryValue]) => [
+        entryKey,
+        fixContentDeep(entryValue, entryKey),
+      ])
+    ) as T;
+  }
+
+  return value;
+};
+
+const fixedDefaultContent = fixContentDeep(defaultContent);
+const fixedProblemsContent = fixContentDeep(problemsContent);
+const fixedSolutionsContent = fixContentDeep(solutionsContent);
+const fixedShowcaseContent = fixContentDeep(showcaseContent);
+const fixedCtaContent = fixContentDeep(ctaContent);
+const fixedKnowledgeContent = fixContentDeep(knowledgeContent);
+const fixedContactContent = fixContentDeep(contactContent);
+
 export default function Home() {
   return (
     <div className={styles.page}>
       <Header />
       <main className={styles.main}>
-        <Hero content={defaultContent} />
+        <Hero content={fixedDefaultContent} />
         <SocialProof />
-        <ProblemsSection content={problemsContent} />
-        <SolutionsSection content={solutionsContent} />
-        <ShowcaseSection content={showcaseContent} />
-        <CtaSection content={ctaContent} />
+        <ProblemsSection content={fixedProblemsContent} />
+        <SolutionsSection content={fixedSolutionsContent} />
+        <ShowcaseSection content={fixedShowcaseContent} />
+        <CtaSection content={fixedCtaContent} />
         <HighlightsSection />
         {/* <HighlightsSection /> */}
-        <KnowledgeSection content={knowledgeContent} />
+        <KnowledgeSection content={fixedKnowledgeContent} />
         {/* <TestimonialsSection /> */}
-        <ContactSection content={contactContent} />
+        <ContactSection content={fixedContactContent} />
       </main>
       <Footer />
     </div>

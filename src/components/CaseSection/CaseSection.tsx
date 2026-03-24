@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "../Button/Button";
 import SectionKicker from "../SectionKicker/SectionKicker";
+import { stripTrailingListPeriod } from "@/lib/text";
 import styles from "./CaseSection.module.css";
 
 export interface CaseSectionMedia {
@@ -72,7 +73,7 @@ export default function CaseSection({ content }: CaseSectionProps) {
                     <ul className={styles.listItems}>
                       {item.context.map((entry) => (
                         <li key={entry} className={styles.listItem}>
-                          {entry}
+                          {stripTrailingListPeriod(entry)}
                         </li>
                       ))}
                     </ul>
@@ -83,7 +84,7 @@ export default function CaseSection({ content }: CaseSectionProps) {
                     <ul className={styles.listItems}>
                       {item.scope.map((entry) => (
                         <li key={entry} className={styles.listItem}>
-                          {entry}
+                          {stripTrailingListPeriod(entry)}
                         </li>
                       ))}
                     </ul>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+import buttonStyles from "../Button/Button.module.css";
 import Icon from "../Icon/Icon";
 import SectionKicker from "../SectionKicker/SectionKicker";
 import styles from "./FaqSection.module.css";
@@ -15,6 +17,10 @@ export interface FaqSectionContent {
   highlightText: string;
   avatars: string[];
   items: FaqItem[];
+  cta?: {
+    label: string;
+    href: string;
+  };
 }
 
 interface FaqSectionProps {
@@ -67,6 +73,20 @@ export default function FaqSection({ content }: FaqSectionProps) {
             </details>
           ))}
         </div>
+
+        {content.cta ? (
+          <div className={styles.ctaRow}>
+            <Link
+              href={content.cta.href}
+              className={`${buttonStyles.button} ${styles.ctaButton}`}
+            >
+              <span className={buttonStyles.label}>{content.cta.label}</span>
+              <span className={buttonStyles.icon}>
+                <Icon name="arrowRight" size="lg" />
+              </span>
+            </Link>
+          </div>
+        ) : null}
       </div>
     </section>
   );

@@ -21,6 +21,7 @@
   composes: h2 from global;
   text-align: center;
   color: var(--c-white);
+  text-wrap: balance;
 }
 
 .titleLine {

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Button from "../Button/Button";
 import Icon, { type IconName } from "../Icon/Icon";
 import SectionKicker from "../SectionKicker/SectionKicker";
+import { stripTrailingListPeriod } from "@/lib/text";
 import styles from "./ScenarioBudgetSection.module.css";
 
 export interface ScenarioBudgetLevel {
@@ -143,7 +144,7 @@ export default function ScenarioBudgetSection({
                   <ul className={styles.scopeList}>
                     {activeLevel.scopeItems.map((item) => (
                       <li key={item} className={styles.scopeItem}>
-                        {item}
+                        {stripTrailingListPeriod(item)}
                       </li>
                     ))}
                   </ul>
@@ -164,7 +165,7 @@ export default function ScenarioBudgetSection({
                 </div>
 
                 <div className={styles.factorsBox}>
-                  <span className={styles.blockLabel}>
+                  <span className={styles.budgetLabel}>
                     {"Na koszt wp\u0142ywa najbardziej"}
                   </span>
                   <div className={styles.factorTags}>

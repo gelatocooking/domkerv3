@@ -1,5 +1,6 @@
 .section {
-  composes: section-short from global;
+  padding-top: var(--sp-32);
+  padding-bottom: var(--sp-32);
   padding-left: var(--sp-0);
   padding-right: var(--sp-0);
 }

@@ -19,6 +19,7 @@
 .title {
   composes: h2 from global;
   text-align: center;
+  text-wrap: balance;
 }
 
 .titleLine {
@@ -68,6 +69,17 @@
   gap: var(--gap-16);
 }
 
+.ctaRow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ctaButton {
+  background: var(--bg-dark);
+  color: var(--c-white);
+}
+
 .item {
   background: var(--bg-white);
   border-radius: var(--r-16);
@@ -109,6 +121,15 @@
 }
 
 @media (max-width: 767px) {
+  .ctaRow {
+    width: 100%;
+  }
+
+  .ctaButton {
+    width: 100%;
+    justify-content: center;
+  }
+
   .item {
     padding: var(--sp-16);
   }

@@ -1,6 +1,7 @@
-﻿.pagegrid {
+.pagegrid {
   grid-template-columns: 1fr !important;
   justify-items: center;
+  composes: padding-global-2 from global;
 }
 
 .content {
@@ -17,6 +18,7 @@
 
 .heading {
   text-align: center;
+  text-wrap: balance;
 }
 
 .headingRow {

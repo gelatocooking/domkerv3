@@ -66,6 +66,7 @@
 .title {
   composes: h2 from global;
   color: var(--c-white);
+  text-wrap: balance;
 }
 
 .text {

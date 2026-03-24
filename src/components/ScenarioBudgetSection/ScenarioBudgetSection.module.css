@@ -34,7 +34,7 @@
 .content {
   width: 100%;
   display: grid;
-  gap: var(--gap-24);
+  gap: var(--gap-32);
 }
 
 .serviceList {
@@ -87,7 +87,7 @@
 
 .card {
   display: grid;
-  gap: var(--gap-24);
+  gap: var(--gap-32);
   padding: var(--sp-24);
   background: var(--bg-soft);
   border-radius: var(--r-24);
@@ -101,7 +101,7 @@
 
 .cardHeaderContent {
   display: grid;
-  gap: var(--gap-12);
+  gap: var(--gap-16);
 }
 
 .cardEyebrow {
@@ -125,7 +125,7 @@
 
 .levels {
   display: grid;
-  gap: var(--gap-12);
+  gap: var(--gap-8);
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -159,12 +159,12 @@
 .leftColumn,
 .rightColumn {
   display: grid;
-  gap: var(--gap-20);
+  gap: var(--gap-24);
 }
 
 .block {
   display: grid;
-  gap: var(--gap-12);
+  gap: var(--gap-16);
 }
 
 .blockLabel {
@@ -184,7 +184,7 @@
 .scopeList {
   list-style: none;
   display: grid;
-  gap: var(--gap-10);
+  gap: var(--gap-12);
   margin: var(--sp-0);
   padding: var(--sp-0);
 }
@@ -208,7 +208,7 @@
 
 .budgetBox {
   display: grid;
-  gap: var(--gap-10);
+  gap: var(--gap-12);
   padding: var(--sp-20);
   background: var(--bg-white);
   border-radius: var(--r-16);
@@ -218,7 +218,9 @@
 }
 
 .budgetLabel {
+  display: flex;
   composes: t-12 t-strong text-muted from global;
+  align-items: center;
 }
 
 .budgetValue {
@@ -227,14 +229,16 @@
 
 .factorsBox {
   display: grid;
-  gap: var(--gap-12);
 }
 
 .factorsBox .blockLabel {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: var(--sp-0);
+  background: transparent;
+  border-radius: var(--r-0);
 }
 
 .factorTags {
@@ -272,7 +276,7 @@
 
 .infoBox {
   display: grid;
-  gap: var(--gap-10);
+  gap: var(--gap-12);
   padding: var(--sp-20);
   background: var(--bg-white);
   border-radius: var(--r-16);
@@ -323,7 +327,7 @@
   }
 
   .cardHeader {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     align-items: start;
     gap: var(--gap-32);
   }

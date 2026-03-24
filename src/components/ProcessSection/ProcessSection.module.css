@@ -5,10 +5,15 @@
 }
 
 .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: var(--gap-40);
+  composes: padding-global-2 from global;
 }
 
 .card {
-  composes: padding-global-2 from global;
+  width: 100%;
   background: var(--bg-soft);
   border-radius: var(--r-24);
   padding: var(--sp-48);
@@ -25,6 +30,7 @@
 .title {
   composes: h2 from global;
   text-align: center;
+  text-wrap: balance;
 }
 
 .titleLine {
@@ -38,6 +44,7 @@
 }
 
 .steps {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--gap-24);
@@ -51,6 +58,8 @@
   gap: var(--gap-16);
   align-items: flex-start;
   border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  width: 100%;
+  min-width: 0;
 }
 
 .stepBadge {
@@ -63,12 +72,14 @@
   align-items: center;
   justify-content: center;
   composes: t-16-24 t-strong from global;
+  flex-shrink: 0;
 }
 
 .stepContent {
   display: flex;
   flex-direction: column;
   gap: var(--gap-8);
+  min-width: 0;
 }
 
 .stepTitle {
@@ -84,22 +95,27 @@
 .ctaRow {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
-  .stepBadge {
-    width: var(--sp-80);
-    height: var(--sp-40);
-  }
   .card {
-    padding: var(--sp-32);
+    padding: var(--sp-24);
+    gap: var(--gap-32);
   }
 
   .stepCard {
-    padding: var(--sp-20) var(--sp-24);
+    flex-direction: column;
+    gap: var(--gap-12);
+    padding: var(--sp-20);
+  }
+
+  .stepBadge {
+    width: var(--sp-50);
+    height: var(--sp-40);
   }
 
   .ctaRow {
-    width: 100%;
+    justify-content: stretch;
   }
 }

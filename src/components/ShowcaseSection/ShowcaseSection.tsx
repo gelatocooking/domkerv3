@@ -35,9 +35,29 @@ export default function ShowcaseSection({ content }: ShowcaseSectionProps) {
     const styles = getComputedStyle(container);
     const gapValue = parseFloat(styles.columnGap || styles.gap || "0");
     const gap = Number.isNaN(gapValue) ? 0 : gapValue;
+    const step = cardWidth + gap;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const nextScrollLeft = container.scrollLeft + direction * step;
+    const edgeThreshold = step / 2;
+
+    if (direction === 1 && nextScrollLeft >= maxScrollLeft - edgeThreshold) {
+      container.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+      return;
+    }
+
+    if (direction === -1 && nextScrollLeft <= edgeThreshold - step) {
+      container.scrollTo({
+        left: maxScrollLeft,
+        behavior: "smooth",
+      });
+      return;
+    }
 
     container.scrollBy({
-      left: direction * (cardWidth + gap),
+      left: direction * step,
       behavior: "smooth",
     });
   }, []);

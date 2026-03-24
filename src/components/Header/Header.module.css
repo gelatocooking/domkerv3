@@ -154,7 +154,7 @@
   background: var(--bg-white);
   border-radius: var(--r-16);
   border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
-  padding: var(--sp-110) var(--sp-14);
+  padding: var(--sp-20) var(--sp-14);
   visibility: hidden;
   transform: translateY(var(--sp-8));
   pointer-events: none;
@@ -378,7 +378,7 @@
     opacity: 1;
     visibility: visible;
     max-height: none;
-    padding: var(--sp-12);
+    padding: var(--sp-16) var(--sp-12);
     overflow: visible;
     border-radius: var(--r-16);
     transform: translateY(var(--sp-0));

@@ -29,7 +29,7 @@ import styles from "./page.module.css";
 
 const defaultContent: PagesHeroContent = {
   badge: "SPRZĄTANIE PO BUDOWIE DLA ZARZĄDCY OBIEKTU",
-  titleLines: ["Sprzątanie po budowie", "dopasowane do Twojej odpowiedzialności"],
+titleLines: ["Sprzątanie po budowie", "pod obowiązki zarządcy"],
   emphasisIconName: "building2",
   emphasisSuffix: "/",
   description:

@@ -34,7 +34,7 @@ const defaultContent: PagesHeroContent = {
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "KIEDY TO MA SENS?",
-  titleLines: ["Maszynowe czyszczenie posadzek", "ma sens wtedy, gdy zwykłe mycie nie wystarcza"],
+  titleLines: ["Maszynowe czyszczenie posadzek,", "gdy zwykłe mycie nie wystarcza"],
   description:
     "W wielu obiektach problemem nie jest brak sprzątania, tylko źle dobrana metoda. Osady po budowie, zabrudzenia po eksploatacji, strefy ruchu i trudne nawierzchnie wymagają procesu dopasowanego do materiału, a nie jednej uniwersalnej chemii.",
   items: [

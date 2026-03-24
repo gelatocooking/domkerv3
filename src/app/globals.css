@@ -1061,14 +1061,14 @@ h2 {
    These are safe, observed tokens. Use as a layout baseline if you want.
 */
 .section {
-  padding-top: var(--sp-56);
-  padding-bottom: var(--sp-56);
+  padding-top: var(--sp-40);
+  padding-bottom: var(--sp-40);
   padding-left: var(--sp-40);
   padding-right: var(--sp-40);
 }
 .short-section {
-  padding-top: var(--sp-32);
-  padding-bottom: var(--sp-32);
+  padding-top: var(--sp-40);
+  padding-bottom: var(--sp-40);
 }
 
 @media (min-width: 768px) {
@@ -1103,7 +1103,7 @@ h2 {
 }
 
 .title-subtitle-5 {
-  gap: var(--gap-20);
+  gap: var(--gap-24);
   flex-direction: column;
   justify-content: center;
   align-items: center;

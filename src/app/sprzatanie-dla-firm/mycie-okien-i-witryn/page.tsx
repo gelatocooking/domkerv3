@@ -39,7 +39,7 @@ const defaultContent: PagesHeroContent = {
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE SYTUACJE?",
-  titleLines: ["Najczęściej problemem nie jest", "samo mycie, tylko brak prostego modelu"],
+  titleLines: ["Najczęściej problemem nie jest", "samo mycie, tylko brak modelu"],
   description:
     "Witryny i okna szybko tracą efekt, ale nie każdy chce za każdym razem układać usługę od nowa. W firmach liczy się regularność i powtarzalność. W domach i mieszkaniach wygoda, szybki kontakt i jasna wycena.",
   items: [
@@ -181,7 +181,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "users",
       label: "PROSTY KONTAKT",
-      title: "Szybko wiesz, jaki jest kolejny krok",
+      title: "Szybko wiesz, jaki jest kolejny krok w procesie",
       description:
         "Nie trzeba rozbudowanego briefu. Przy tej usłudze najczęściej wystarczą podstawowe dane, zdjęcia i informacja o częstotliwości.",
       tone: "resources",

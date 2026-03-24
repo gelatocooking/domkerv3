@@ -1,0 +1,121 @@
+.section {
+  composes: section from global;
+  padding-left: var(--sp-0);
+  padding-right: var(--sp-0);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: var(--gap-40);
+  composes: padding-global-2 from global;
+}
+
+.headingGroup {
+  composes: title-subtitle-5 from global;
+}
+
+.title {
+  composes: h2 from global;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.titleLine {
+  display: block;
+}
+
+.description {
+  composes: t-16-24-400 text-muted from global;
+  text-align: center;
+  margin: var(--sp-0);
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap-24);
+  align-items: stretch;
+}
+
+.mediaCard,
+.infoCard {
+  border-radius: var(--r-24);
+  overflow: hidden;
+}
+
+.mediaCard {
+  background: var(--bg-soft);
+}
+
+.mediaFrame {
+  position: relative;
+  width: 100%;
+  min-height: calc(var(--sp-210) + var(--sp-88));
+}
+
+.mediaImage {
+  object-fit: cover;
+}
+
+.infoCard {
+  background: var(--bg-soft);
+  padding: var(--sp-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+  justify-content: center;
+}
+
+.cardTitle {
+  composes: h3 from global;
+  margin: var(--sp-0);
+  text-wrap: balance;
+}
+
+.cardTitleAccent {
+  display: inline;
+}
+
+.points {
+  list-style: none;
+  display: grid;
+  gap: var(--gap-16);
+  margin: var(--sp-0);
+  padding: var(--sp-0);
+}
+
+.pointItem {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--gap-12);
+  align-items: start;
+}
+
+.pointIcon {
+  width: var(--sp-32);
+  height: var(--sp-32);
+  border-radius: var(--r-100);
+  background: var(--bg-success);
+  color: var(--c-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--sp-2);
+}
+
+.pointText {
+  composes: t-16-24-400 text-muted from global;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .mediaFrame {
+    min-height: calc(var(--sp-210) + var(--sp-210));
+  }
+}

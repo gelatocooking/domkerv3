@@ -1,4 +1,4 @@
-﻿import Button from "../Button/Button";
+import Button from "../Button/Button";
 import Icon, { type IconName } from "../Icon/Icon";
 import heroStyles from "../Hero/Hero.module.css";
 import styles from "./PagesHero.module.css";
@@ -20,7 +20,7 @@ interface PagesHeroProps {
 export default function PagesHero({ content }: PagesHeroProps) {
   return (
     <section className={heroStyles.hero}>
-      <div className={`${heroStyles.pagegrid} ${styles.grid}`}>
+      <div className={`${styles.pagegrid} ${styles.grid}`}>
         <div className={`${heroStyles.content} ${styles.content}`}>
           <div className={`${heroStyles.badge} ${styles.badge}`}>
             <span className={heroStyles.badgeText}>{content.badge}</span>
