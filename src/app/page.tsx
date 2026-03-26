@@ -56,7 +56,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "calendarClock",
       label: "TERMIN",
-      title: "Data odbioru jest stała, a warunki na obiekcie zmieniają się do końca",
+      title: "Data odbioru jest stała, a\u00A0warunki na\u00A0obiekcie zmieniają się do końca",
       description:
         "Prace się przesuwają, strefy bywają wyłączone, a okno realizacji się skraca. Potrzebujesz wykonawcy, który potrafi działać w realnych warunkach obiektu.",
       tone: "processes",
@@ -214,14 +214,14 @@ const showcaseContent: ShowcaseSectionContent = {
   items: [
     {
       tag: "HARMONOGRAM",
-      title: "Ciągłe zmiany na obiekcie i prace nachodzące na siebie",
+      title: "Ciągłe zmiany na obiekcie i\u00A0prace nachodzące na\u00A0siebie",
       description:
         "Potwierdzamy okno wejścia i realne warunki pracy przed realizacją. Dzięki temu zespół nie startuje w ciemno i nie traci czasu na improwizację na miejscu.",
       result: "Efekt: mniej przestojów i większa przewidywalność przebiegu prac.",
     },
     {
       tag: "DOSTĘP",
-      title: "Procedury obiektu, formalności i ograniczenia wejścia",
+      title: "Procedury obiektu, formalności i\u00A0ograniczenia wejścia",
       description:
         "Zbieramy zasady dostępu, wymagania obiektu i ograniczenia organizacyjne wcześniej, żeby nie blokować realizacji w dniu wejścia.",
       result: "Efekt: szybszy start i stabilniejsza organizacja pracy.",
@@ -235,7 +235,7 @@ const showcaseContent: ShowcaseSectionContent = {
     },
     {
       tag: "ODPOWIEDZIALNOŚĆ",
-      title: "Wątpliwości, co należy do zakresu, a co jest stanem zastanym",
+      title: "Wątpliwości, co należy do zakresu, a\u00A0co jest stanem zastanym",
       description:
         "Jeżeli w trakcie ujawniają się usterki albo ograniczenia, od razu je komunikujemy i porządkujemy informacyjnie po stronie Zleceniodawcy.",
       result: "Efekt: mniej nieporozumień i łatwiejsze dalsze procedowanie.",
@@ -252,7 +252,7 @@ const showcaseContent: ShowcaseSectionContent = {
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "POTRZEBUJESZ SPRAWNIE ZORGANIZOWAĆ TEN ETAP?",
-  title: "Powiedz, jaki obiekt trzeba przygotować i jaki jest cel realizacji",
+  title: "Powiedz, jaki obiekt trzeba przygotować i\u00A0jaki jest cel realizacji",
   description:
     "W krótkiej rozmowie zbierzemy minimum danych, potwierdzimy dostępność i wskażemy właściwą ścieżkę: przed odbiorem inwestorskim, przed otwarciem, przed przekazaniem albo do stałej obsługi.",
   buttonLabel: "Sprawdź dostępność terminu",
