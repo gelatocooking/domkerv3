@@ -5,7 +5,7 @@ import {
   ensureContactRateLimit,
   getClientIp,
   verifyTurnstile,
-} from "@/lib/contact-security";
+} from "../../../lib/contact-security";
 
 export const runtime = "nodejs";
 
