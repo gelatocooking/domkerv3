@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "@/components/PagesHero/PagesHero";
 import ProblemsSection, {
@@ -25,6 +26,12 @@ import FaqSection, { type FaqSectionContent } from "@/components/FaqSection/FaqS
 import Footer from "@/components/Footer/Footer";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Mycie okien i witryn dla firm i sieci | Domker",
+  description:
+    "Mycie witryn dla firm i sieci oraz mycie okien w domach i mieszkaniach. Szybka wycena ze zdjęć, abonament i logistyka po naszej stronie.",
+};
+
 // /mycie-okien-i-witryn
 
 const defaultContent: PagesHeroContent = {
@@ -35,6 +42,7 @@ const defaultContent: PagesHeroContent = {
   description:
     "To usługa dla firm i klientów prywatnych, którą da się łatwo zaplanować. Dla lokali i sieci liczy się regularny efekt, termin i prosta logistyka. Dla domów i mieszkań wygoda, szybka wycena i sprawne ustalenie terminu. W Domker obsługujemy oba scenariusze w jednym, czytelnym modelu.",
   ctaLabel: "Wyślij zdjęcia i minimum danych",
+  ctaHref: "/kontakt",
 };
 
 const problemsContent: ProblemsSectionContent = {
@@ -107,6 +115,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla lokali usługowych, punktów handlowych i firm, które chcą mycia witryn albo okien w przewidywalnych oknach realizacji.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Mycie witryn dla firm",
       mediaSrc: "/kontakt",
     },
@@ -117,6 +126,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla firm, które chcą jednego standardu, jednej organizacji i prostszego zarządzania usługą między punktami.",
       ctaLabel: "Sprawdź model współpracy",
+  ctaHref: "/kontakt",
       mediaAlt: "Mycie witryn dla sieci",
       mediaSrc: "/kontakt",
     },
@@ -127,6 +137,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla klientów prywatnych, którym zależy na wygodzie, szybkiej wycenie ze zdjęć i prostym ustaleniu terminu.",
       ctaLabel: "Wyślij zdjęcia",
+  ctaHref: "/kontakt",
       mediaAlt: "Mycie okien w domu i mieszkaniu",
       mediaSrc: "/kontakt",
     },
@@ -137,6 +148,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Usługę można ustawić jako pojedynczą realizację albo model cykliczny, jeśli zależy Ci na stałym efekcie bez wracania do tematu co chwilę.",
       ctaLabel: "Ustal częstotliwość",
+  ctaHref: "/kontakt",
       mediaAlt: "Jednorazowe i cykliczne mycie okien",
       mediaSrc: "/kontakt",
     },
@@ -147,6 +159,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Liczba szyb, układ okien, witryny narożne albo niestandardowy dostęp wpływają na organizację i sposób wyceny tej usługi.",
       ctaLabel: "Zapytaj o możliwości",
+  ctaHref: "/kontakt",
       mediaAlt: "Dostęp do witryn i okien",
       mediaSrc: "/kontakt",
     },
@@ -157,6 +170,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Przy tej usłudze zdjęcia i kilka podstawowych informacji zwykle wystarczają, żeby szybko wrócić z widełkami albo terminem.",
       ctaLabel: "Wyślij zdjęcia",
+  ctaHref: "/kontakt",
       mediaAlt: "Szybka wycena mycia okien i witryn",
       mediaSrc: "/kontakt",
     },
@@ -169,6 +183,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "Napisz, czy chodzi o lokal, sieć, dom czy mieszkanie. Dopisz, czy interesuje Cię jednorazowe mycie czy model cykliczny. Jeśli masz zdjęcia, dołącz je od razu.",
   buttonLabel: "Wyślij minimum danych",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -261,6 +276,7 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
@@ -274,6 +290,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Przykłady witryn, lokali, domów i mieszkań. Krótkie case’y pokazujące zakres, typ obiektu i sposób organizacji usługi.",
       buttonLabel: "Zobacz realizacje",
+  buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -285,6 +302,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co klienci doceniają przy tej usłudze. Najczęściej prosty kontakt, szybkie ustalenia, regularny efekt i łatwą organizację.",
       buttonLabel: "Zobacz referencje",
+  buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

@@ -1,4 +1,4 @@
-﻿"use client"
+import type { Metadata } from "next";
 import Header from "../components/Header/Header";
 import Hero, { type HeroContent } from "../components/Hero/Hero";
 import SocialProof from "../components/SocialProof/SocialProof";
@@ -23,6 +23,12 @@ import ContactSection, {
 import Footer from "../components/Footer/Footer";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Sprzątanie dla firm i sieci handlowych w Polsce | Domker",
+  description:
+    "Sprzątanie dla firm w całej Polsce: po budowie, cykliczne, witryny i posadzki. Domker działa pod termin, standard i sprawną finalizację etapu.",
+};
+
 // STRONA GŁÓWNA
 
 const defaultContent: HeroContent = {
@@ -35,7 +41,8 @@ const defaultContent: HeroContent = {
   emphasisSuffix: "",
   description:
     "Domker to firma sprzątająca dla firm, która myśli procesowo — szczególnie tam, gdzie liczy się termin, standard i sprawna finalizacja etapu. Realizujemy sprzątanie po budowie, utrzymanie czystości biur i lokali handlowo-usługowych, mycie witryn oraz czyszczenie posadzek.  Cała Polska.",
-  ctaLabel: "Sprawdź dostępność terminu",
+  ctaLabel: "Umów bezpłatną konsultację",
+  ctaHref: "/kontakt",
   imageSrc: "/tlo.png",
   imageAlt: "Sprzątanie dla firm",
 };
@@ -110,6 +117,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Sprzątanie po budowie, remoncie i reficie prowadzone według stref, kolejności prac oraz technologii dobranej do materiałów i warunków na obiekcie.",
       ctaLabel: "Zobacz jak działamy",
+      ctaHref: "/sprzatanie-dla-firm/sprzatanie-po-budowie",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/window.svg",
       illustrationVariant: "zonedCleaningPlan",
@@ -121,6 +129,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Cykliczna obsługa biur, lokali handlowych i usługowych. Harmonogram, kontrola jakości i ciągłość serwisu, które ograniczają potrzebę ciągłego pilnowania wykonawcy.",
       ctaLabel: "Porozmawiaj o stałej obsłudze",
+      ctaHref: "/sprzatanie-dla-firm/sprzatanie-cykliczne",
       mediaAlt: "Utrzymanie czystości",
       mediaSrc: "/window.svg",
       illustrationVariant: "operationalServiceBoard",
@@ -132,6 +141,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Mycie witryn dla firm i sieci oraz mycie okien w domach i mieszkaniach. Jedna usługa, prosta organizacja, czytelne zasady i szybka wycena ze zdjęć.",
       ctaLabel: "Sprawdź usługę",
+      ctaHref: "/sprzatanie-dla-firm/mycie-okien-i-witryn",
       mediaAlt: "Mycie okien i witryn",
       mediaSrc: "/window.svg",
       illustrationVariant: "logisticsServiceBoard",
@@ -143,6 +153,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Doczyszczanie posadzek w obiektach komercyjnych z doborem metody do typu nawierzchni, skali zabrudzeń i oczekiwanego efektu końcowego.",
       ctaLabel: "Zobacz opcje",
+      ctaHref: "/sprzatanie-dla-firm/maszynowe-czyszczenie-posadzek",
       mediaAlt: "Czyszczenie posadzek",
       mediaSrc: "/window.svg",
       illustrationVariant: "surfaceSelectionBoard",
@@ -154,6 +165,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Działamy w wielu miastach i dobieramy zespoły do skali, terminu oraz warunków realizacji. To model dla firm, które chcą prowadzić temat spójnie.",
       ctaLabel: "Sprawdź dostępność",
+      ctaHref: "/kontakt",
       mediaAlt: "Zasięg realizacji",
       mediaSrc: "/window.svg",
       illustrationVariant: "polandNetworkBoard",
@@ -232,7 +244,7 @@ const showcaseContent: ShowcaseSectionContent = {
       tag: "ZASOBY",
       title: "Ryzyko braku ludzi lub sprzętu w kluczowym momencie",
       description:
-        "Planujemy realizację z zapleczem organizacyjnym. Gdy warunki się zmieniają albo okno się skraca, zwiększa to szansę dowiezienia terminu.",
+        "Planujemy realizację z zapleczem organizacyjnym. Gdy warunki się zmieniają albo okno się skraca, zwiększa to szansę na realizację bez opóźnień.",
       result: "Efekt: większa pewność realizacji w wymagającym harmonogramie.",
     },
   ],
@@ -244,6 +256,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "W krótkiej rozmowie zbierzemy minimum danych, potwierdzimy dostępność i wskażemy właściwą ścieżkę: przed odbiorem inwestorskim, przed otwarciem, przed przekazaniem albo do stałej obsługi.",
   buttonLabel: "Sprawdź dostępność terminu",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -258,6 +271,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Przykładowe obiekty, zakresy prac i rezultaty. Krótkie opisy pokazujące warunki realizacji, typ obiektu i to, co było kluczowe dla efektu końcowego.",
       buttonLabel: "Zobacz realizacje",
+      buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -269,6 +283,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co klienci B2B doceniają we współpracy. Najczęściej przewidywalność, komunikację, porządek organizacyjny i sposób prowadzenia realizacji.",
       buttonLabel: "Zobacz referencje",
+      buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

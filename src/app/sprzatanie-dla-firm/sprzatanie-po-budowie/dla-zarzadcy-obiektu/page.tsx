@@ -1,4 +1,5 @@
-﻿import Header from "@/components/Header/Header";
+import type { Metadata } from "next";
+import Header from "@/components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "@/components/PagesHero/PagesHero";
 import ProblemsSection, {
   type ProblemsSectionContent,
@@ -25,6 +26,12 @@ import FaqSection, { type FaqSectionContent } from "@/components/FaqSection/FaqS
 import Footer from "@/components/Footer/Footer";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Sprzątanie po budowie dla zarządcy obiektu | Domker",
+  description:
+    "Dla zarządców i koordynacji sieci: sprzątanie po budowie pod otwarcie, przekazanie i wiele lokalizacji. Jedna koordynacja, ogólnopolska realizacja.",
+};
+
 // /sprzatanie-po-budowie/zarzadca-obiektu
 
 const defaultContent: PagesHeroContent = {
@@ -33,8 +40,9 @@ titleLines: ["Sprzątanie po budowie", "pod obowiązki zarządcy"],
   emphasisIconName: "building2",
   emphasisSuffix: "/",
   description:
-    "Jeśli odpowiadasz za przekazanie obiektu, formalności i komunikację po stronie firmy, potrzebujesz usługi prowadzonej tak, żeby temat dało się sprawnie uruchomić, dopiąć i zamknąć. W Domker porządkujemy zakres, warunki wejścia, dokumenty i końcowe potwierdzenie wykonania.",
+    "Jeśli odpowiadasz za przekazanie obiektu, formalności i komunikację po stronie firmy, potrzebujesz usługi prowadzonej tak, żeby temat dało się sprawnie uruchomić, zrealizować i zamknąć. W Domker porządkujemy zakres, warunki wejścia, dokumenty i końcowe potwierdzenie wykonania.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+  ctaHref: "/kontakt",
 };
 
 const problemsContent: ProblemsSectionContent = {
@@ -72,7 +80,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "FORMALNOŚCI",
       title: "Dostępy, procedury i wymagania obiektu potrafią zatrzymać start prac",
       description:
-        "Jeśli formalności nie są dopięte wcześniej, realizacja potrafi stanąć jeszcze przed rozpoczęciem prac albo generować niepotrzebne opóźnienia.",
+        "Jeśli formalności nie są ustalone wcześniej, realizacja potrafi stanąć jeszcze przed rozpoczęciem prac albo generować niepotrzebne opóźnienia.",
       tone: "risk",
     },
     {
@@ -88,7 +96,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "POTWIERDZENIE",
       title: "Po wykonaniu prac potrzebne są dokumenty, nie tylko informacja o zakończeniu",
       description:
-        "Jeśli temat ma przejść dalej w firmie, potrzebne są zdjęcia, status wykonania i czytelne domknięcie etapu po stronie wykonawcy.",
+        "Jeśli temat ma przejść dalej w firmie, potrzebne są zdjęcia, status wykonania i czytelne sfinalizowanie etapu po stronie wykonawcy.",
       tone: "data",
     },
   ],
@@ -98,7 +106,7 @@ const solutionsContent: SolutionsSectionContent = {
   kickerLabel: "JAK TO PROWADZIMY",
   titleLines: ["Sprzątanie po budowie", "w logice zarządcy obiektu"],
   description:
-    "Prowadzimy ten temat tak, żeby ograniczyć liczbę ustaleń po Twojej stronie. Zbieramy minimum danych, dopinamy warunki wejścia, porządkujemy formalności i przekazujemy końcowe potwierdzenie wykonania w formie gotowej do dalszego procedowania.",
+    "Prowadzimy ten temat tak, żeby ograniczyć liczbę ustaleń po Twojej stronie. Zbieramy minimum danych, ustalamy warunki wejścia, porządkujemy formalności i przekazujemy końcowe potwierdzenie wykonania w formie gotowej do dalszego procedowania.",
   items: [
     {
       iconName: "building2",
@@ -107,6 +115,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Od początku wiesz, kto prowadzi temat, odpowiada za ustalenia i wraca do Ciebie z kolejnym krokiem, statusem oraz dokumentami.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Jeden punkt kontaktu po stronie Domker",
       mediaSrc: "/kontakt",
     },
@@ -117,6 +126,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Opisujemy zakres, wyłączenia, warunki wejścia i sposób wykonania w formie, którą można przesłać do przełożonego, zakupów albo administracji.",
       ctaLabel: "Odbierz ofertę",
+  ctaHref: "/kontakt",
       mediaAlt: "Zakres do zatwierdzenia",
       mediaSrc: "/kontakt",
     },
@@ -125,8 +135,9 @@ const solutionsContent: SolutionsSectionContent = {
       label: "Formalności wejścia",
       title: "Uwzględniamy zasady obiektu jeszcze przed startem realizacji",
       description:
-        "Jeśli potrzebne są dostępy, NDA, rejestr wejść albo inne procedury, dopinamy je wcześniej, żeby nie zatrzymać tematu w dniu wejścia.",
+        "Jeśli potrzebne są dostępy, umowa o zachowaniu poufności, rejestr wejść albo inne procedury, organizujemy je wcześniej, żeby nie zatrzymać tematu w dniu wejścia.",
       ctaLabel: "Ustal warunki wejścia",
+  ctaHref: "/kontakt",
       mediaAlt: "Formalności wejścia na obiekt",
       mediaSrc: "/kontakt",
     },
@@ -135,8 +146,9 @@ const solutionsContent: SolutionsSectionContent = {
       label: "Realizacja i status",
       title: "Prowadzimy usługę tak, żebyś nie musiał ręcznie spinać każdego etapu",
       description:
-        "Po Twojej stronie zostaje decyzja i akceptacja kluczowych ustaleń. Po naszej stronie prowadzenie realizacji, komunikacja i końcowe domknięcie tematu.",
+        "Po Twojej stronie zostaje decyzja i akceptacja kluczowych ustaleń. Po naszej stronie prowadzenie realizacji, komunikacja i finalizacja tematu.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Status i prowadzenie realizacji",
       mediaSrc: "/kontakt",
     },
@@ -147,6 +159,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Zdjęcia, protokół i potwierdzenie wykonania porządkują temat po stronie firmy i ułatwiają rozliczenie albo formalne zamknięcie etapu.",
       ctaLabel: "Zapytaj o dokumenty",
+  ctaHref: "/kontakt",
       mediaAlt: "Dokumenty końcowe po realizacji",
       mediaSrc: "/kontakt",
     },
@@ -157,6 +170,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Jeśli temat dotyczy więcej niż jednej lokalizacji albo kilku etapów, porządkujemy go tak, żeby nie trzeba było układać wszystkiego od nowa.",
       ctaLabel: "Sprawdź dostępność",
+  ctaHref: "/kontakt",
       mediaAlt: "Jedna logika współpracy",
       mediaSrc: "/kontakt",
     },
@@ -165,10 +179,11 @@ const solutionsContent: SolutionsSectionContent = {
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "UPORZĄDKUJMY TEMAT NA STARCIE",
-  title: "Powiedz, jakiego obiektu dotyczy temat i co trzeba dopiąć",
+  title: "Powiedz, jakiego obiektu dotyczy temat i co trzeba wykonać",
   description:
-    "Wystarczy lokalizacja, typ obiektu, termin i krótka informacja, czy chodzi o przekazanie, uruchomienie albo końcowe domknięcie etapu. Jeśli są wymagania organizacyjne, dopisz je od razu.",
+    "Wystarczy lokalizacja, typ obiektu, termin i krótka informacja, czy chodzi o przekazanie, uruchomienie albo końcowe sfinalizowanie etapu. Jeśli są wymagania organizacyjne, dopisz je od razu.",
   buttonLabel: "Wyślij minimum danych",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -205,7 +220,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "database",
       label: "POUFNOŚĆ",
-      title: "Umowe o zachowaniu poufności\n i rejestry wejść dopinamy z wyprzedzeniem",
+      title: "Umowe o zachowaniu poufności\n i rejestry wejść organizujemy z wyprzedzeniem",
       description:
       "Jeżeli obiekt albo firma mają własne procedury, wdrażamy je wcześniej, żeby nie blokować realizacji na starcie.",
       tone: "processes",
@@ -261,6 +276,7 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+  ctaHref: "/kontakt",
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
@@ -274,6 +290,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Zakresy, warunki i efekty z obiektów po budowie i remoncie. Krótkie case’y pokazujące, jak przebiegało przygotowanie i domknięcie tematu.",
       buttonLabel: "Zobacz realizacje",
+  buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -285,6 +302,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co klienci doceniają przy tej ścieżce współpracy. Najczęściej jeden kontakt, sprawną komunikację, dokumenty końcowe i prostsze procedowanie.",
       buttonLabel: "Zobacz referencje",
+  buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

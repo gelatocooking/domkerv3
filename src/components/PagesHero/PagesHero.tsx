@@ -11,6 +11,7 @@ export interface PagesHeroContent {
   emphasisSuffix?: string;
   description: string;
   ctaLabel: string;
+  ctaHref?: string;
 }
 
 interface PagesHeroProps {
@@ -59,6 +60,7 @@ export default function PagesHero({ content }: PagesHeroProps) {
               className={heroStyles.heroCta}
               label={content.ctaLabel}
               iconName="arrowRight"
+              href={content.ctaHref}
             />
           </div>
         </div>

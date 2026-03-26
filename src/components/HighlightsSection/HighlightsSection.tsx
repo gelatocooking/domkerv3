@@ -14,7 +14,7 @@ const bubbles = [
 
 const highlights = [
   {
-    title: "Koordynator na miejscu i domknięcie etapu",
+    title: "Koordynator na miejscu i finalizacja etapu",
     text:
       "Masz jedną osobę odpowiedzialną za realizację i jedną wersję ustaleń. Zbieramy wymagania do odbioru, dzielimy obiekt na strefy i pilnujemy kolejności prac, żeby nie wracał brud po innych ekipach. Na koniec dostajesz komplet: zakres, status, zdjęcia i protokół.",
     visual: "insights",
@@ -22,7 +22,7 @@ const highlights = [
   {
     title: "Dispatching zleceń i dowody wykonania",
     text:
-      "Zamiast telefonów i zgadywania pracujemy na przydziałach i statusach. Każda ekipa ma obiekt, godzinę wejścia, zakres i checklistę, a po robocie zostawia raport i zdjęcia. Mniej pustych przebiegów, szybsze wychwytywanie jakości i łatwiejsze wdrażanie nowych osób.",
+      "Zamiast telefonów i zgadywania pracujemy na przydziałach i statusach. Każda ekipa ma obiekt, godzinę wejścia, zakres i checklistę, a po pracy zostawia raport i zdjęcia. Mniej pustych przebiegów, szybsze wychwytywanie jakości i łatwiejsze wdrażanie nowych osób.",
     visual: "insights",
   },
   {

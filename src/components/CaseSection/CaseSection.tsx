@@ -20,6 +20,7 @@ export interface CaseSectionItem {
   resultLead: string;
   resultText: string;
   ctaLabel: string;
+  ctaHref?: string;
   media: CaseSectionMedia;
   reverseOnDesktop?: boolean;
 }
@@ -106,6 +107,7 @@ export default function CaseSection({ content }: CaseSectionProps) {
                   className={styles.cardButton}
                   label={item.ctaLabel}
                   iconName="arrowRight"
+                  href={item.ctaHref}
                 />
               </div>
             </article>

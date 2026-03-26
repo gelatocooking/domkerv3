@@ -2,6 +2,7 @@
   composes: section from global;
   padding-left: var(--sp-0);
   padding-right: var(--sp-0);
+  scroll-margin-top: var(--sp-80);
 }
 
 .inner {

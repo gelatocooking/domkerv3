@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "@/components/PagesHero/PagesHero";
 import ProblemsSection, {
@@ -25,6 +26,12 @@ import FaqSection, { type FaqSectionContent } from "@/components/FaqSection/FaqS
 import Footer from "@/components/Footer/Footer";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Sprzątanie po budowie dla kierownika budowy | Domker",
+  description:
+    "Dla kierowników budowy: sprzątanie końcówki pod odbiór bez zbędnych powrotów. Strefy krytyczne, kontrola checklistą i szybka oferta do zatwierdzenia.",
+};
+
 // /sprzatanie-po-budowie/kierownik-budowy
 
 const defaultContent: PagesHeroContent = {
@@ -35,6 +42,7 @@ const defaultContent: PagesHeroContent = {
   description:
     "Na końcówce budowy nie potrzebujesz kolejnej ekipy do pilnowania. Potrzebujesz partnera, który przejmie finalizację czystości pod odbiór: w realnym oknie wejścia, bez szkód na wykończeniach, bez rozjechania harmonogramu i bez wracania do tych samych uwag.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+  ctaHref: "/kontakt",
 };
 
 const problemsContent: ProblemsSectionContent = {
@@ -107,6 +115,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Inwestorski, urzędowy, przekazanie, odbiory mieszkań albo części wspólnych. Standard musi być konkretny, żeby zakres był policzalny i sprawdzalny.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Standard odbiorowy po budowie",
       mediaSrc: "/kontakt",
     },
@@ -117,6 +126,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Klatki schodowe, garaże, wejścia, komunikacja, przeszklenia, sanitariaty, części wspólne i detale wykończeniowe traktujemy jako priorytet odbiorowy.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Strefy krytyczne na budowie",
       mediaSrc: "/kontakt",
     },
@@ -127,6 +137,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Dobieramy chemię i narzędzia do posadzek, szyb albo okien, armatury i profili, żeby nie zostawiać rys, zmatowień ani zacieków.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Bezpieczna technologia sprzątania po budowie",
       mediaSrc: "/kontakt",
     },
@@ -137,6 +148,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Zanim powiemy, że etap jest gotowy, robimy kontrolę checklistą i usuwamy własne uwagi wewnętrznie. To ogranicza liczbę powrotów po odbiorze.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Kontrola wewnętrzna przed odbiorem",
       mediaSrc: "/kontakt",
     },
@@ -147,6 +159,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Od pojedynczych lokali po większe obiekty i etapy mieszkaniowe. Maksymalnie do 5000 m² dziennie lub do 300 doczyszczonych okien dziennie zależnie od warunków.",
       ctaLabel: "Sprawdź dostępność",
+  ctaHref: "/kontakt",
       mediaAlt: "Moce przerobowe Domker",
       mediaSrc: "/kontakt",
     },
@@ -157,6 +170,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Działamy ogólnopolsko i układamy wejście pod termin odbioru, dostęp do obiektu, procedury oraz ograniczenia technologiczne.",
       ctaLabel: "Sprawdź dostępność",
+  ctaHref: "/kontakt",
       mediaAlt: "Sprzątanie po budowie w całej Polsce",
       mediaSrc: "/kontakt",
     },
@@ -169,6 +183,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "Wystarczy miasto lub adres inwestycji, metraż, termin odbioru i numer kontaktowy. Jeśli wiesz, które strefy są krytyczne albo gdzie najczęściej wracają uwagi, dopisz to w wiadomości.",
   buttonLabel: "Wyślij minimum danych",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -199,7 +214,7 @@ const benefitsContent: BenefitsSectionContent = {
       label: "DOSTĘP",
       title: "Umowa o zachowaniu poufności i rejestr wejść, jeśli są wymagane",
       description:
-        "Jeżeli inwestycja ma własne procedury wejścia, dopinamy je wcześniej, a nie w dniu realizacji przy ochronie albo na bramie.",
+        "Jeżeli inwestycja ma własne procedury wejścia, ustalamy je wcześniej, a nie w dniu realizacji przy ochronie albo na bramie.",
       tone: "processes",
     },
     {
@@ -261,6 +276,7 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+  ctaHref: "/kontakt",
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
@@ -274,6 +290,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Zakresy i efekty z obiektów pod odbiór. Krótkie case’y pokazujące strefy krytyczne, tryb pracy, ograniczenia i rezultat końcowy.",
       buttonLabel: "Zobacz realizacje",
+  buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -285,6 +302,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co kierownicy budów i klienci B2B doceniają we współpracy. Najczęściej przewidywalność, szybką komunikację i ograniczenie liczby powrotów po odbiorze.",
       buttonLabel: "Zobacz referencje",
+  buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

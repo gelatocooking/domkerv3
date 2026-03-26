@@ -1,4 +1,5 @@
-﻿import Header from "../../components/Header/Header";
+import type { Metadata } from "next";
+import Header from "../../components/Header/Header";
 import ContactSection, {
   type ContactSectionContent,
 } from "../../components/ContactSection/ContactSection";
@@ -29,6 +30,12 @@ import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
 
+export const metadata: Metadata = {
+  title: "Sprzątanie dla firm i sieci handlowych | Domker",
+  description:
+    "Hub usług B2B Domker: sprzątanie po budowie, obsługa sieci, mycie witryn, posadzki i serwis cykliczny. Cała Polska, jedna koordynacja.",
+};
+
 // /sprzatanie-dla-firm
 
 const defaultContent: PagesHeroContent = {
@@ -39,6 +46,7 @@ const defaultContent: PagesHeroContent = {
   description:
     "To hub współpracy B2B. Jeśli temat dotyczy budowy, stałej obsługi, witryn, posadzek albo wielu lokalizacji, tutaj najłatwiej ustalisz, od czego zacząć. Najpierw porządkujemy sytuację, a dopiero potem przechodzimy do właściwej usługi.",
   ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
 };
 
 const problemsContent: ProblemsSectionContent = {
@@ -111,6 +119,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla tematów końcowych: po budowie, po wykończeniach, przed otwarciem punktu albo przed przekazaniem gotowego obiektu dalej.",
       ctaLabel: "Przejdź do usługi",
+      ctaHref: "/sprzatanie-dla-firm/sprzatanie-po-budowie",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/sprzatanie-po-budowie",
     },
@@ -121,6 +130,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla firm, które potrzebują regularnego serwisu, przewidywalnego harmonogramu i wykonawcy, którego nie trzeba stale pilnować.",
       ctaLabel: "Przejdź do usługi",
+      ctaHref: "/sprzatanie-dla-firm/sprzatanie-cykliczne",
       mediaAlt: "Stała obsługa biur i lokali",
       mediaSrc: "/utrzymanie-czystosci",
     },
@@ -131,6 +141,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla lokali, sieci i klientów, którzy chcą mycia witryn albo okien w modelu jednorazowym, cyklicznym albo ryczałtowym.",
       ctaLabel: "Przejdź do usługi",
+      ctaHref: "/sprzatanie-dla-firm/mycie-okien-i-witryn",
       mediaAlt: "Mycie witryn i okien",
       mediaSrc: "/mycie-okien-i-witryn",
     },
@@ -141,6 +152,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla obiektów, w których trzeba dobrać technologię do typu posadzki, zabrudzeń i efektu, a nie tylko wykonać standardowe prace.",
       ctaLabel: "Przejdź do usługi",
+      ctaHref: "/sprzatanie-dla-firm/maszynowe-czyszczenie-posadzek",
       mediaAlt: "Maszynowe czyszczenie posadzek",
       mediaSrc: "/maszynowe-czyszczenie-posadzek",
     },
@@ -151,6 +163,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla firm, które chcą zachować jeden standard, jedną komunikację i prostsze zarządzanie realizacją między lokalizacjami.",
       ctaLabel: "Wyślij minimum danych",
+      ctaHref: "/kontakt",
       mediaAlt: "Obsługa wielu lokalizacji",
       mediaSrc: "/kontakt#minimum-danych",
     },
@@ -161,6 +174,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Jeśli sytuacja łączy kilka usług albo kilka typów obiektów, zaczynamy od uporządkowania tematu i dopiero potem przechodzimy dalej.",
       ctaLabel: "Sprawdź dostępność",
+      ctaHref: "/kontakt",
       mediaAlt: "Dobór scenariusza",
       mediaSrc: "/kontakt",
     },
@@ -256,6 +270,7 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
 };
 
 const ctaContent: CtaSectionContent = {
@@ -264,6 +279,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "Jeśli to jeden obiekt, napisz, czego dotyczy temat i na kiedy jest potrzebny. Jeśli chodzi o kilka lokalizacji albo kilka potrzeb naraz, też to uporządkujemy.",
   buttonLabel: "Wyślij minimum danych",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -278,6 +294,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Zakresy, warunki i efekty z obiektów komercyjnych. Krótkie case’y pokazujące, jak wyglądały różne scenariusze i co było najważniejsze operacyjnie.",
       buttonLabel: "Zobacz realizacje",
+      buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -289,6 +306,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co klienci doceniają w różnych modelach współpracy. Najczęściej jasność ustaleń, przewidywalność i prostsze przejście od zapytania do działania.",
       buttonLabel: "Zobacz referencje",
+      buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

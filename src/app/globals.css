@@ -266,6 +266,7 @@ html {
   font-family: var(--font-sans);
   /* Most of the site resolves to 16px, keep default. */
   font-size: 16px;
+  scroll-behavior: smooth;
   text-size-adjust: 100%;
 }
 

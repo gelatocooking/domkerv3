@@ -16,6 +16,7 @@ export interface SolutionItem {
   title: string;
   description: string;
   ctaLabel: string;
+  ctaHref?: string;
   mediaAlt: string;
   mediaSrc: string;
   illustrationVariant?: SolutionsIllustrationVariant;
@@ -80,6 +81,7 @@ export default function SolutionsSection({ content }: SolutionsSectionProps) {
                 className={styles.cardButton}
                 label={activeItem.ctaLabel}
                 iconName="arrowRight"
+                href={activeItem.ctaHref}
               />
             </div>
             <div className={styles.cardMedia}>

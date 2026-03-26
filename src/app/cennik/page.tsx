@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import SolutionsSection, {
   type SolutionsSectionContent,
 } from "@/components/SolutionsSection/SolutionsSection";
@@ -15,13 +16,20 @@ import Header from "../../components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "../../components/PagesHero/PagesHero";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Cennik usług sprzątania dla firm i witryn | Domker",
+  description:
+    "Orientacyjne widełki cenowe i zasady wyceny usług Domker. Sprawdź, jak liczymy koszt sprzątania po budowie, witryn, posadzek i obsługi cyklicznej.",
+};
+
 const defaultContent: PagesHeroContent = {
   badge: "ORIENTACYJNE BUD\u017bETY I SPOS\u00d3B WYCENY",
   titleLines: ["Jak liczymy cen\u0119", "i kiedy wycena ma sens"],
   emphasisSuffix: "/",
   description:
-    "Podajemy orientacyjne wide\u0142ki, \u017ceby od razu by\u0142o wiadomo, czy temat mie\u015bci si\u0119 w Twojej skali. Ostateczna wycena zale\u017cy od zakresu, logistyki, standardu ko\u0144cowego i terminu realizacji, nie od przypadkowego cennika od.",
+    "Podajemy orientacyjne wide\u0142ki, \u017ceby od razu by\u0142o wiadomo, czy temat mie\u015bci si\u0119 w Twojej skali. Ostateczna wycena zale\u017cy od zakresu, logistyki, standardu ko\u0144cowego i terminu realizacji, nie od przypadkowego cennika.",
   ctaLabel: "Sprawd\u017a, czy to temat w naszej skali",
+      ctaHref: "/realizacje",
 };
 
 const solutionsContent: SolutionsSectionContent = {
@@ -37,6 +45,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Inaczej wycenia si\u0119 lokal przed odbiorem, a inaczej obiekt, na kt\u00f3rym nadal pracuj\u0105 r\u00f3wnoleg\u0142e ekipy. Znaczenie maj\u0105 te\u017c strefy krytyczne, standard ko\u0144cowy i realne okno wej\u015bcia.",
       ctaLabel: "Zobacz realizacje",
+      ctaHref: "/realizacje",
       mediaAlt: "Sprz\u0105tanie po budowie wycena",
       mediaSrc: "/tlo.png",
     },
@@ -47,6 +56,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Typ posadzki, rodzaj zabrudze\u0144 i technologia potrzebna do bezpiecznego doczyszczenia wp\u0142ywaj\u0105 na koszt r\u00f3wnie mocno jak sama powierzchnia.",
       ctaLabel: "Sprawd\u017a przyk\u0142ady",
+  ctaHref: "/kontakt",
       mediaAlt: "Czyszczenie posadzek wycena",
       mediaSrc: "/tlo.png",
     },
@@ -57,6 +67,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Przy sta\u0142ej obs\u0142udze mo\u017cliwy jest model abonamentowy albo rycza\u0142t. Przy jednorazowej realizacji wa\u017cne s\u0105 g\u0142\u00f3wnie liczba przeszkle\u0144, warunki pracy i logistyka wej\u015bcia.",
       ctaLabel: "Zobacz zakresy",
+  ctaHref: "/kontakt",
       mediaAlt: "Mycie witryn wycena",
       mediaSrc: "/tlo.png",
     },
@@ -67,6 +78,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Im lepiej ustalony harmonogram, organizacja wej\u015b\u0107 i oczekiwany standard, tym \u0142atwiej utrzyma\u0107 przewidywalny koszt miesi\u0119czny i spokojną wsp\u00f3\u0142prac\u0119.",
       ctaLabel: "Sprawd\u017a model",
+  ctaHref: "/kontakt",
       mediaAlt: "Sta\u0142a obs\u0142uga wycena",
       mediaSrc: "/tlo.png",
     },
@@ -109,6 +121,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Stopień zapylenia", "Szkło", "Powierzchnie", "Dostępność"],
           ctaLabel: "Zapytaj o podobny zakres",
+  ctaHref: "/kontakt",
         },
         {
           id: "standard",
@@ -130,6 +143,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Ilość szkła", "Rodzaj posadzki", "Strefy krytyczne", "Standard końcowy"],
           ctaLabel: "Poproś o wstępną wycenę",
+  ctaHref: "/kontakt",
         },
         {
           id: "extended",
@@ -151,6 +165,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Trudne zabrudzenia", "Presja terminu", "Poprawki po ekipach", "Elementy specjalne"],
           ctaLabel: "Skonsultuj bardziej wymagający zakres",
+  ctaHref: "/kontakt",
         },
       ],
     },
@@ -181,6 +196,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Rodzaj posadzki", "Metraż", "Stopień zabrudzenia", "Dostępność"],
           ctaLabel: "Zapytaj o posadzkę w podobnym stanie",
+  ctaHref: "/kontakt",
         },
         {
           id: "standard",
@@ -201,6 +217,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Typ zabrudzeń", "Strefy krytyczne", "Metraż", "Tryb realizacji"],
           ctaLabel: "Poproś o orientacyjny koszt dla posadzki",
+  ctaHref: "/kontakt",
         },
         {
           id: "extended",
@@ -221,6 +238,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Charakter zabrudzeń", "Rodzaj materiału", "Czas realizacji", "Skala dopracowania"],
           ctaLabel: "Skonsultuj bardziej wymagającą powierzchnię",
+  ctaHref: "/kontakt",
         },
       ],
     },
@@ -250,6 +268,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Ilość szkła", "Wysokość", "Dostęp", "Częstotliwość"],
           ctaLabel: "Zapytaj o mycie podobnych przeszkleń",
+  ctaHref: "/kontakt",
         },
         {
           id: "standard",
@@ -270,6 +289,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Rozmiar witryn", "Liczba elementów", "Stopień zabrudzenia", "Termin wykonania"],
           ctaLabel: "Poproś o wstępny koszt dla witryn",
+  ctaHref: "/kontakt",
         },
         {
           id: "extended",
@@ -290,6 +310,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Skala przeszkleń", "Dostęp techniczny", "Złożoność frontu", "Pilność realizacji"],
           ctaLabel: "Skonsultuj bardziej wymagający zakres przeszkleń",
+  ctaHref: "/kontakt",
         },
       ],
     },
@@ -319,6 +340,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Częstotliwość", "Liczba stref", "Rodzaj powierzchni", "Dostępność obiektu"],
           ctaLabel: "Zapytaj o regularną obsługę",
+  ctaHref: "/kontakt",
         },
         {
           id: "standard",
@@ -338,6 +360,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Częstotliwość wejść", "Skala obiektu", "Liczba powierzchni", "Oczekiwany standard"],
           ctaLabel: "Poproś o model obsługi dla obiektu",
+  ctaHref: "/kontakt",
         },
         {
           id: "extended",
@@ -358,6 +381,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
           budgetLabel: "Orientacyjny budżet",
           factors: ["Częstotliwość", "Skala obiektu", "Poziom oczekiwań", "Strefy krytyczne"],
           ctaLabel: "Skonsultuj szerszy model współpracy",
+  ctaHref: "/kontakt",
         },
       ],
     },

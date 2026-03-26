@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "@/components/PagesHero/PagesHero";
 import ProblemsSection, {
@@ -25,6 +26,12 @@ import FaqSection, { type FaqSectionContent } from "@/components/FaqSection/FaqS
 import Footer from "@/components/Footer/Footer";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Usługi sprzątania dla franczyz i sieci | Domker",
+  description:
+    "Usługi porządkowe dla franczyz i sieci handlowych w całej Polsce. Jedna koordynacja, powtarzalny standard i obsługa wielu lokalizacji.",
+};
+
 const defaultContent: PagesHeroContent = {
   badge: "USŁUGI DLA SIECI FRANCZYZOWYCH",
   titleLines: [
@@ -37,6 +44,7 @@ const defaultContent: PagesHeroContent = {
   description:
     "Jeśli odpowiadasz za rozwój sieci franczyzowej koordynacja wielu podwykonawców na terenie całego kraju kosztuje więcej czasu i wysiłku. Zlecaj sprzątanie cykliczne i przed otwarciem lub prace konserwacyjne jedną wiadomością e-mail. Resztą zajmie się Twój indywidualny Koordynator w Domker.",
   ctaLabel: "Zamów rozmowę z indywidualnym Koordynatorem",
+  ctaHref: "/kontakt",
 };
 
 const problemsContent: ProblemsSectionContent = {
@@ -77,7 +85,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "DYSPOZYCYJNOŚĆ",
       title: "Szukanie wykonawcy „na cito” podnosi znacząco koszty otwarcia i konserwacji lokalu",
       description:
-        "Aby dowieźć termin otwarcia lokalu ogłoszony w socialach trzeba płacić jak za zboże za wejście lokalnej firmy na już, lub dojazdy dyspozycyjnej firmy z daleka.",
+        "Aby zrealizować termin otwarcia lokalu ogłoszony w socialach trzeba płacić jak za zboże za wejście lokalnej firmy na już, lub dojazdy dyspozycyjnej firmy z daleka.",
       tone: "finance",
     },
     {
@@ -93,7 +101,7 @@ const problemsContent: ProblemsSectionContent = {
       label: "POTWIERDZENIE",
       title: "Po wykonaniu prac potrzebne są dokumenty, nie tylko informacja o zakończeniu",
       description:
-        "Jeśli temat ma przejść dalej w firmie, potrzebne są zdjęcia, status wykonania i czytelne domknięcie etapu po stronie wykonawcy.",
+        "Jeśli temat ma przejść dalej w firmie, potrzebne są zdjęcia, status wykonania i czytelne sfinalizowanie etapu po stronie wykonawcy.",
       tone: "data",
     },
   ],
@@ -115,6 +123,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Od początku wiesz, kto prowadzi temat, odpowiada za ustalenia i wraca do Ciebie z kolejnym krokiem, statusem oraz dokumentami.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Jeden punkt kontaktu po stronie Domker",
       mediaSrc: "/tlo.png",
     },
@@ -125,6 +134,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Na początku współpracy ustalamy ryczałtowy zakres, który jest zawsze i wszędzie, a marginalne, sporadyczne usługi dogadujemy osobno, w prosty i szybki sposób.",
       ctaLabel: "Odbierz ofertę",
+  ctaHref: "/kontakt",
       mediaAlt: "Ryczałtowy zakres usług dla sieci franczyzowych",
       mediaSrc: "/tlo.png",
     },
@@ -135,6 +145,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Stała stawka za określony zakres, bez małego druczku, doliczeń za dojazd i nieprzewidziane zdarzenia.",
       ctaLabel: "Ustal warunki wejścia",
+  ctaHref: "/kontakt",
       mediaAlt: "Ryczałtowe koszty dla sieci franczyzowych",
       mediaSrc: "/tlo.png",
     },
@@ -143,10 +154,11 @@ const solutionsContent: SolutionsSectionContent = {
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "UPORZĄDKUJMY TEMAT NA STARCIE",
-  title: "Powiedz jakiej sieci franczyzowej dotyczy temat i jakie są najbliższe tematy do załatwienia",
+  title: "Powiedz jakiej sieci franczyzowej dotyczy temat i jakie są najbliższe tematy do zorganizowania",
   description:
     "Wystarczy lokalizacje punktów, typy obiektu, terminy i krótka informacja, czy chodzi o nowe otwarcia czy cykliczną obsługę. Jeśli są wymagania organizacyjne, dopisz je od razu.",
   buttonLabel: "Wyślij minimum danych",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F"],
 };
 
@@ -186,7 +198,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "database",
       label: "POUFNOŚĆ",
-      title: "Umowę o zachowaniu poufności i rejestry wejść dopinamy z wyprzedzeniem",
+      title: "Umowę o zachowaniu poufności i rejestry wejść organizujemy z wyprzedzeniem",
       description:
         "Jeżeli obiekt albo firma mają własne procedury, wdrażamy je wcześniej, żeby nie blokować realizacji na starcie.",
       tone: "processes",
@@ -235,7 +247,7 @@ const processContent: ProcessSectionContent = {
       index: "03",
       title: "Potwierdzenie formalności i organizacji wejścia",
       description:
-        "Dopinamy dostęp, procedury, zasady wejścia, osoby kontaktowe i wszystkie elementy potrzebne do spokojnego startu realizacji.",
+        "Ustalamy dostęp, procedury, zasady wejścia, osoby kontaktowe i wszystkie elementy potrzebne do spokojnego startu realizacji.",
     },
     {
       index: "04",
@@ -245,6 +257,7 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+  ctaHref: "/kontakt",
 };
 
 const contactContent: ContactSectionContent = {
@@ -282,13 +295,14 @@ const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "REALIZACJE I REFERENCJE",
   titleLines: ["Zobacz, jak prowadzimy", "tematy po stronie organizacyjnej"],
   description:
-    "Przykłady realizacji i współpracy przy obiektach komercyjnych oraz sieciach punktów. To szybki wgląd w to, jak wygląda temat od pierwszej wiadomości do sprawnego domknięcia po naszej stronie.",
+    "Przykłady realizacji i współpracy przy obiektach komercyjnych oraz sieciach punktów. To szybki wgląd w to, jak wygląda temat od pierwszej wiadomości do sprawnej realizacji po naszej stronie.",
   cards: [
     {
       title: "Realizacje",
       description:
         "Przykłady tematów prowadzonych dla punktów handlowych, lokali i sieci. Krótkie case’y pokazujące zakres, logistykę i sposób koordynacji.",
       buttonLabel: "Zobacz realizacje",
+  buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -300,6 +314,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Jak wygląda organizacja od strony komunikacji, harmonogramu i przekazywania kolejnych kroków przy większej skali współpracy.",
       buttonLabel: "Zobacz, jak to prowadzimy",
+      buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

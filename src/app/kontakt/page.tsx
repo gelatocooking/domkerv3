@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "../../components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "../../components/PagesHero/PagesHero";
 import ContactSection, {
@@ -19,6 +20,12 @@ import SolutionsSection, {
 import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
+
+export const metadata: Metadata = {
+  title: "Kontakt i wycena usług sprzątania | Domker",
+  description:
+    "Wyślij minimum danych i sprawdź dostępność terminu. Domker przygotowuje wycenę oraz ofertę gotową do przekazania dalej w firmie.",
+};
 import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
 
 // /kontakt
@@ -30,6 +37,7 @@ const defaultContent: PagesHeroContent = {
   description:
     "Nie musisz mieć pełnego briefu, żeby zacząć rozmowę. Wystarczy typ obiektu, lokalizacja i termin. Jeśli sprawa dotyczy kilku usług albo wielu punktów, uporządkujemy to i wrócimy z konkretną odpowiedzią.",
   ctaLabel: "Napisz do nas",
+  ctaHref: "#kontakt",
 };
 
 const problemsContent: ProblemsSectionContent = {
@@ -102,6 +110,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla spraw, gdzie znaczenie mają standard końcowy, strefy krytyczne, termin wejścia i sposób prowadzenia realizacji.",
       ctaLabel: "Opisz sytuację",
+  ctaHref: "/kontakt",
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/kontakt",
     },
@@ -112,6 +121,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla współpracy cyklicznej, gdzie ważne są harmonogram, przewidywalny standard i ciągłość obsługi.",
       ctaLabel: "Opisz obiekt",
+  ctaHref: "/kontakt",
       mediaAlt: "Sprzątanie cykliczne",
       mediaSrc: "/kontakt",
     },
@@ -122,6 +132,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla firm i klientów prywatnych, którzy chcą szybko ustalić zakres, model usługi i orientacyjną wycenę.",
       ctaLabel: "Wyślij zdjęcia",
+  ctaHref: "/kontakt",
       mediaAlt: "Mycie okien i witryn",
       mediaSrc: "/kontakt",
     },
@@ -132,6 +143,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "To ścieżka dla spraw, w których liczy się rodzaj nawierzchni, typ zabrudzeń i właściwa metoda działania.",
       ctaLabel: "Opisz powierzchnię",
+  ctaHref: "/kontakt",
       mediaAlt: "Maszynowe czyszczenie posadzek",
       mediaSrc: "/kontakt",
     },
@@ -142,6 +154,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Jeśli sprawa dotyczy kilku rzeczy jednocześnie, najpierw układamy kolejność działań i dopiero potem przechodzimy do szczegółów.",
       ctaLabel: "Opisz całość",
+  ctaHref: "/kontakt",
       mediaAlt: "Kilka usług w jednym zgłoszeniu",
       mediaSrc: "/kontakt",
     },
@@ -152,6 +165,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Pojedynczy obiekt i kilka lokalizacji wymagają innej logiki rozmowy, ale oba scenariusze da się sprawnie uporządkować.",
       ctaLabel: "Podaj skalę",
+  ctaHref: "/kontakt",
       mediaAlt: "Jedna lokalizacja lub wiele punktów",
       mediaSrc: "/kontakt",
     },
@@ -164,6 +178,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "Napisz, czego dotyczy zgłoszenie, jaki to obiekt, w jakiej lokalizacji i na kiedy potrzebujesz działania. Jeśli chodzi o kilka punktów, dopisz miasta i liczbę lokalizacji. Zdjęcia bardzo pomagają.",
   buttonLabel: "Napisz do nas",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -249,7 +264,7 @@ const processContent: ProcessSectionContent = {
         "Po uporządkowaniu sprawy kierujemy ją do kolejnego kroku: widełek, ustalenia modelu współpracy albo przygotowania oferty.",
     },
   ],
-  ctaLabel: "Napisz do nas",
+  ctaLabel: "Napisz do nas", ctaHref: "/kontakt",
 };
 
 const contactContent: ContactSectionContent = {
@@ -293,6 +308,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Przykłady z różnych scenariuszy: po budowie, w stałej obsłudze, przy witrynach i w usługach specjalistycznych.",
       buttonLabel: "Zobacz realizacje",
+  buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -304,6 +320,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co klienci doceniają po pierwszym kontakcie i w dalszej współpracy. Najczęściej szybkość reakcji, porządek komunikacyjny i jasne dalsze działanie.",
       buttonLabel: "Zobacz referencje",
+  buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

@@ -6,6 +6,7 @@ export interface CtaSectionContent {
   title: string;
   description: string;
   buttonLabel: string;
+  buttonHref?: string;
   avatars: string[];
 }
 
@@ -33,6 +34,7 @@ export default function CtaSection({ content }: CtaSectionProps) {
               className={styles.ctaButton}
               label={content.buttonLabel}
               iconName="arrowRight"
+              href={content.buttonHref}
             />
           </div>
         </div>

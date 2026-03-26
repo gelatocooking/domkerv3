@@ -14,6 +14,7 @@ export interface HeroContent {
   emphasisSuffix?: string;
   description: string;
   ctaLabel: string;
+  ctaHref?: string;
   imageSrc: string;
   imageAlt: string;
 }
@@ -60,6 +61,7 @@ export default function Hero({ content }: HeroProps) {
             className={styles.heroCta}
             label={content.ctaLabel}
             iconName="arrowRight"
+            href={content.ctaHref}
           />
         </div>
         <div className={styles.mediaCard}>

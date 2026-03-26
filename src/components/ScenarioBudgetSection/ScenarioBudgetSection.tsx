@@ -18,6 +18,7 @@ export interface ScenarioBudgetLevel {
   budgetLabel: string;
   factors: string[];
   ctaLabel: string;
+  ctaHref?: string;
 }
 
 export interface ScenarioBudgetItem {
@@ -181,6 +182,7 @@ export default function ScenarioBudgetSection({
                   className={styles.cardButton}
                   label={activeLevel.ctaLabel}
                   iconName="arrowRight"
+                  href={activeLevel.ctaHref}
                 />
               </div>
             </div>

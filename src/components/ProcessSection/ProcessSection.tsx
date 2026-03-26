@@ -14,6 +14,7 @@ export interface ProcessSectionContent {
   description: string;
   steps: ProcessStep[];
   ctaLabel: string;
+  ctaHref?: string;
 }
 
 interface ProcessSectionProps {
@@ -50,7 +51,7 @@ export default function ProcessSection({ content }: ProcessSectionProps) {
           </div>
 
           <div className={styles.ctaRow}>
-            <Button label={content.ctaLabel} iconName="arrowRight" />
+            <Button label={content.ctaLabel} iconName="arrowRight" href={content.ctaHref} />
           </div>
         </div>
       </div>

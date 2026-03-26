@@ -1,4 +1,5 @@
-﻿import Header from "../../../components/Header/Header";
+import type { Metadata } from "next";
+import Header from "../../../components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "../../../components/PagesHero/PagesHero";
 import ContactSection, {
   type ContactSectionContent,
@@ -27,6 +28,12 @@ import CaseSection, {
   type CaseSectionContent,
 } from "@/components/CaseSection/CaseSection";
 
+export const metadata: Metadata = {
+  title: "Sprzątanie cykliczne dla firm i biur | Domker",
+  description:
+    "Cykliczne sprzątanie biur i lokali handlowo-usługowych. Harmonogram, kontrola jakości i ciągłość serwisu bez potrzeby ciągłego pilnowania wykonawcy.",
+};
+
 // /sprzatanie-cykliczne
 
 const defaultContent: PagesHeroContent = {
@@ -36,6 +43,7 @@ const defaultContent: PagesHeroContent = {
   description:
     "To usługa dla biur, lokali i obiektów komercyjnych, w których liczy się stały standard, przewidywalny harmonogram i współpraca, do której nie trzeba wracać co tydzień od zera. W Domker ustawiamy regularny serwis tak, żeby działał w tle i nie angażował Cię bardziej, niż trzeba.",
   ctaLabel: "Ustal stałą obsługę",
+  ctaHref: "/kontakt",
 };
 
 const knowledgeContent2: KnowledgeSectionContent = {
@@ -49,6 +57,7 @@ const knowledgeContent2: KnowledgeSectionContent = {
       description:
         "Dla miejsc, w których ważny jest regularny porządek, przewidywalny harmonogram i serwis, który nie wymaga stałej kontroli po stronie firmy.",
       buttonLabel: "Chcę omówić biuro",
+      buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -60,6 +69,7 @@ const knowledgeContent2: KnowledgeSectionContent = {
       description:
         "Dla lokali usługowych, gabinetów i miejsc, które muszą wyglądać dobrze codziennie, a nie tylko po jednorazowym wejściu ekipy.",
       buttonLabel: "Chcę omówić lokal",
+      buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -139,6 +149,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Codziennie, kilka razy w tygodniu albo według konkretnego rytmu obiektu. Stała obsługa działa dobrze tylko wtedy, gdy harmonogram ma sens operacyjny.",
       ctaLabel: "Ustal zakres",
+      ctaHref: "/kontakt",
       mediaAlt: "Zakres i częstotliwość sprzątania cyklicznego",
       mediaSrc: "/kontakt",
     },
@@ -149,6 +160,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Przy tej usłudze nie chodzi o jednorazowy efekt, tylko o powtarzalny poziom czystości, który da się utrzymać tydzień po tygodniu.",
       ctaLabel: "Wyślij minimum danych",
+      ctaHref: "/kontakt",
       mediaAlt: "Standard w sprzątaniu cyklicznym",
       mediaSrc: "/kontakt#minimum-danych",
     },
@@ -159,6 +171,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Biuro, lokal, gabinet czy obiekt komercyjny mają własny rytm. Harmonogram musi wspierać pracę obiektu, a nie ją utrudniać.",
       ctaLabel: "Ustal harmonogram",
+      ctaHref: "/kontakt",
       mediaAlt: "Harmonogram sprzątania cyklicznego",
       mediaSrc: "/kontakt",
     },
@@ -169,6 +182,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Nie trzeba każdej sprawy ustalać od nowa z inną osobą. Stały kontakt porządkuje komunikację i skraca drogę do szybkich decyzji.",
       ctaLabel: "Zapytaj o współpracę",
+      ctaHref: "/kontakt",
       mediaAlt: "Jeden kontakt po stronie Domker",
       mediaSrc: "/kontakt",
     },
@@ -179,6 +193,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Klient nie powinien odczuwać każdej nieobecności czy każdej zmiany organizacyjnej po stronie wykonawcy. Liczy się stabilność współpracy.",
       ctaLabel: "Sprawdź dostępność",
+      ctaHref: "/kontakt",
       mediaAlt: "Ciągłość sprzątania cyklicznego",
       mediaSrc: "/kontakt",
     },
@@ -189,6 +204,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Stała obsługa nie może być sztywna. Zakres, częstotliwość albo dodatkowe prace da się korygować wraz ze zmianami po stronie obiektu.",
       ctaLabel: "Omów potrzeby",
+      ctaHref: "/kontakt",
       mediaAlt: "Rozszerzenie zakresu stałej obsługi",
       mediaSrc: "/kontakt",
     },
@@ -246,6 +262,7 @@ const casesContent: CaseSectionContent = {
       resultText:
         "Nasz proces rekrutacji oraz współpracy z kadrą jest nastawiony na dwustronny szacunek i przejrzyste warunki umowy. Inwestycja w stworzenie stabilnego i przystępnego miejsca pracy zwraca się w świadczeniu wysokiej jakości usług u naszych klientów.",
       ctaLabel: "Wyceń stałą obsługę swojego miejsca",
+      ctaHref: "/kontakt",
       media: {
         src: "/tlo.png",
         alt: "Pracownicy Domker przy pracy na wysokości",
@@ -274,6 +291,7 @@ const casesContent: CaseSectionContent = {
       resultText:
         "Po naszej stronie jest zakup, konserwacja i serwis, aby zapewnić najwyższą jakość sprzątania.",
       ctaLabel: "Chcę ustawić stałą obsługę",
+      ctaHref: "/kontakt",
       media: {
         src: "/tlo.png",
         alt: "Zaplecze sprzętowe Domker wykorzystywane w realizacjach",
@@ -289,6 +307,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "Podaj lokalizację, typ obiektu, orientacyjny metraż i częstotliwość. Jeśli obiekt działa w konkretnych godzinach albo ma własne ograniczenia organizacyjne, dopisz to od razu.",
   buttonLabel: "Wyślij minimum danych",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -375,6 +394,7 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Ustal stałą obsługę",
+  ctaHref: "/kontakt",
 };
 
 const contactContent: ContactSectionContent = {
@@ -418,6 +438,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Przykłady obiektów objętych stałą obsługą. Krótkie case’y pokazujące zakres, częstotliwość i sposób prowadzenia serwisu.",
       buttonLabel: "Zobacz realizacje",
+      buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -429,6 +450,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność, prostą komunikację i serwis, który nie wymaga ciągłego pilnowania.",
       buttonLabel: "Zobacz referencje",
+      buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

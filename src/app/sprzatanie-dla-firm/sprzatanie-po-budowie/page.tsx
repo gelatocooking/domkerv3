@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "../../../components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "../../../components/PagesHero/PagesHero";
 import ContactSection, {
@@ -17,6 +18,12 @@ import KnowledgeSection, {
   type KnowledgeSectionContent,
 } from "@/components/KnowledgeSection/KnowledgeSection";
 
+export const metadata: Metadata = {
+  title: "Sprzątanie po budowie dla firm pod odbiór | Domker",
+  description:
+    "Sprzątanie po budowie pod odbiór, przekazanie lub otwarcie. Praca strefami, technologia pod materiał i realizacje w całej Polsce.",
+};
+
 // /sprzatanie-po-budowie
 
 const defaultContent: PagesHeroContent = {
@@ -26,6 +33,7 @@ const defaultContent: PagesHeroContent = {
   description:
     "To etap, na którym widać wszystko: pył technologiczny, ślady po foliach i klejach, smugi pod światło i niedoczyszczone detale przy listwach, progach i profilach. W Domker prowadzimy sprzątanie po budowie jak zadanie odbiorowe: plan stref, kolejność prac, technologia pod materiał i kontrola przed zgłoszeniem gotowości.",
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+  ctaHref: "/kontakt",
 };
 
 const knowledgeContent2: KnowledgeSectionContent = {
@@ -37,8 +45,9 @@ const knowledgeContent2: KnowledgeSectionContent = {
     {
       title: "Kierownik budowy / wykonawca",
       description:
-        "Dla osób, które chcą domknąć etap pod odbiór bez dodatkowych wejść, powrotów i rozjechania harmonogramu. Tu liczą się strefy odbiorowe, kolejność prac, kontrola checklistą i gotowość do zgłoszenia.",
+        "Dla osób, które chcą zrealizować sprzątanie pod odbiór bez dodatkowych wejść, powrotów i rozjechania harmonogramu. Tu liczą się strefy odbiorowe, kolejność prac, kontrola checklistą i gotowość do zgłoszenia.",
       buttonLabel: "Jestem kierownikiem budowy",
+      buttonHref: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-kierownika-budowy",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -50,6 +59,7 @@ const knowledgeContent2: KnowledgeSectionContent = {
       description:
         "Dla osób, które odpowiadają za procedury, przekazanie, kontakt między stronami i dopięcie tematu organizacyjnie. Tu liczą się formalności, jeden punkt kontaktu, dokumentacja i usługa gotowa do procedowania dalej.",
       buttonLabel: "Odpowiadam za koordynację",
+      buttonHref: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-zarzadcy-obiektu",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -122,6 +132,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "Podaj lokalizację, metraż albo skalę obiektu, etap prac, termin i okno wejścia. Jeśli masz zdjęcia oraz informacje o materiałach wrażliwych, szybciej określimy zakres i sposób prowadzenia realizacji.",
   buttonLabel: "Wyślij minimum danych",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -157,6 +168,7 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
+  ctaHref: "/kontakt",
 };
 
 const contactContent: ContactSectionContent = {
@@ -200,6 +212,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Zakresy, strefy i efekty na obiektach po budowie i wykończeniu. Krótkie case’y pokazujące sposób prowadzenia prac.",
       buttonLabel: "Zobacz realizacje",
+  buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -211,6 +224,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność realizacji, bezpieczeństwo materiałowe i czytelne potwierdzenie wykonania.",
       buttonLabel: "Zobacz referencje",
+  buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

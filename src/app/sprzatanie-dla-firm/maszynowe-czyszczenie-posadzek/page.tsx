@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "../../../components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "../../../components/PagesHero/PagesHero";
 import ContactSection, {
@@ -21,6 +22,12 @@ import KnowledgeSection, {
 } from "@/components/KnowledgeSection/KnowledgeSection";
 import ShowcaseSection, { ShowcaseSectionContent } from "@/components/ShowcaseSection/ShowcaseSection";
 
+export const metadata: Metadata = {
+  title: "Maszynowe czyszczenie posadzek dla firm | Domker",
+  description:
+    "Maszynowe czyszczenie posadzek w obiektach komercyjnych. Dobór technologii do nawierzchni, skali zabrudzeń i oczekiwanego standardu końcowego.",
+};
+
 // /maszynowe-czyszczenie-posadzek
 
 const defaultContent: PagesHeroContent = {
@@ -30,6 +37,7 @@ const defaultContent: PagesHeroContent = {
   description:
     "To nie jest zwykłe mycie podłogi. To usługa technologiczna dla obiektów komercyjnych, w których efekt zależy od rodzaju posadzki, stopnia zabrudzeń i bezpiecznego doboru metody. W Domker kwalifikujemy nawierzchnię, oceniamy ryzyko i dobieramy proces tak, żeby poprawić stan posadzki bez pogarszania jej wykończenia.",
   ctaLabel: "Wyślij zdjęcia i minimum danych",
+  ctaHref: "/kontakt",
 };
 
 const problemsContent: ProblemsSectionContent = {
@@ -102,6 +110,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Typ materiału, jego wykończenie, wiek zabrudzeń i ślady po wcześniejszym użytkowaniu wpływają na dobór metody już od pierwszej decyzji.",
       ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
       mediaAlt: "Kwalifikacja posadzki",
       mediaSrc: "/kontakt",
     },
@@ -112,6 +121,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Inaczej pracuje się z pyłem po budowie, inaczej z osadami codziennymi, a inaczej z zabrudzeniami punktowymi i śladami ruchu.",
       ctaLabel: "Wyślij zdjęcia",
+  ctaHref: "/kontakt",
       mediaAlt: "Rodzaj zabrudzeń na posadzce",
       mediaSrc: "/kontakt#minimum-danych",
     },
@@ -122,6 +132,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Proces ma poprawić stan nawierzchni, a nie stworzyć nowy problem. Dlatego bezpieczeństwo materiału jest częścią decyzji, nie dodatkiem.",
       ctaLabel: "Zapytaj o metodę",
+  ctaHref: "/kontakt",
       mediaAlt: "Technologia czyszczenia posadzek",
       mediaSrc: "/kontakt",
     },
@@ -132,6 +143,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Jeśli posadzka znajduje się w działającym lokalu, biurze albo obiekcie komercyjnym, układamy realizację tak, żeby ograniczyć kolizje z użytkowaniem.",
       ctaLabel: "Ustal warunki wejścia",
+  ctaHref: "/kontakt",
       mediaAlt: "Czyszczenie posadzek na czynnym obiekcie",
       mediaSrc: "/kontakt",
     },
@@ -142,6 +154,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Nie obiecujemy tego samego dla każdej powierzchni. Zakres efektu zależy od materiału, stopnia zabrudzeń i historii użytkowania posadzki.",
       ctaLabel: "Sprawdź możliwości",
+  ctaHref: "/kontakt",
       mediaAlt: "Efekt po czyszczeniu posadzki",
       mediaSrc: "/kontakt",
     },
@@ -152,6 +165,7 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Metraż jest punktem wyjścia, ale ostateczny koszt zależy też od stanu posadzki, zabrudzeń, dostępności stref i zakresu oczekiwanego efektu.",
       ctaLabel: "Poproś o widełki",
+  ctaHref: "/kontakt",
       mediaAlt: "Wycena czyszczenia posadzek",
       mediaSrc: "/kontakt",
     },
@@ -164,6 +178,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "Jeśli masz zdjęcia, dołącz je od razu. Najszybciej kwalifikujemy usługę, gdy widzimy rodzaj nawierzchni, skalę zabrudzeń i wiemy, czy obiekt działa w trakcie realizacji.",
   buttonLabel: "Wyślij minimum danych",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
@@ -250,6 +265,7 @@ const processContent: ProcessSectionContent = {
     },
   ],
   ctaLabel: "Wyślij minimum danych",
+  ctaHref: "/kontakt",
 };
 
 const contactContent: ContactSectionContent = {
@@ -293,6 +309,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Przykłady posadzek po budowie i po eksploatacji. Krótkie case’y pokazujące zakres zabrudzeń, warunki pracy i rezultat procesu.",
       buttonLabel: "Zobacz realizacje",
+  buttonHref: "/realizacje",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -304,6 +321,7 @@ const knowledgeContent: KnowledgeSectionContent = {
       description:
         "Co klienci doceniają przy tej usłudze. Najczęściej trafny dobór metody, czytelną wycenę i bezpieczne podejście do nawierzchni.",
       buttonLabel: "Zobacz referencje",
+  buttonHref: "/kontakt",
       media: {
         type: "image",
         src: "/tlo.png",

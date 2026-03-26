@@ -38,7 +38,7 @@ interface ContactSectionProps {
 
 export default function ContactSection({ content }: ContactSectionProps) {
   return (
-    <section className={styles.section}>
+    <section id='kontakt' className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.grid}>
           <div className={styles.leftCard}>

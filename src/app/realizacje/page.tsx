@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import CaseSection, {
   type CaseSectionContent,
 } from "@/components/CaseSection/CaseSection";
@@ -13,6 +14,12 @@ import Header from "../../components/Header/Header";
 import PagesHero, { type PagesHeroContent } from "../../components/PagesHero/PagesHero";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Realizacje sprzątania dla firm w całej Polsce | Domker",
+  description:
+    "Zobacz realizacje Domker: sprzątanie po budowie, witryny, posadzki i obsługa obiektów B2B. Konkretne zakresy, typy obiektów i efekty prac.",
+};
+
 const defaultContent: PagesHeroContent = {
   badge: "WYBRANE REALIZACJE",
   titleLines: [
@@ -20,8 +27,9 @@ const defaultContent: PagesHeroContent = {
     "z r\u00f3\u017cnych typ\u00f3w obiekt\u00f3w",
   ],
   description:
-    "Poni\u017cej pokazujemy przyk\u0142ady realizacji z r\u00f3\u017cnych typ\u00f3w obiekt\u00f3w i us\u0142ug. Kr\u00f3tko: jaki by\u0142 kontekst, co trzeba by\u0142o zrobi\u0107 i jaki efekt zosta\u0142 dowieziony.",
+    "Poni\u017cej pokazujemy przyk\u0142ady realizacji z r\u00f3\u017cnych typ\u00f3w obiekt\u00f3w i us\u0142ug. Kr\u00f3tko: jaki by\u0142 kontekst, co trzeba by\u0142o zrobi\u0107 i jaki efekt zosta\u0142 dostarczony.",
   ctaLabel: "Om\u00f3w podobny przypadek",
+  ctaHref: "/kontakt",
 };
 
 const casesContent: CaseSectionContent = {
@@ -57,6 +65,7 @@ const casesContent: CaseSectionContent = {
       resultText:
         "Klient dosta\u0142 przestrze\u0144 uporz\u0105dkowan\u0105 pod finalne sprawdzenie, z domkni\u0119tymi strefami krytycznymi i efektem gotowym do dalszego procedowania.",
       ctaLabel: "Mam podobn\u0105 sytuacj\u0119",
+      ctaHref: "/kontakt",
       media: {
         src: "/tlo.png",
         alt: "Realizacja sprz\u0105tania po budowie",
@@ -86,6 +95,7 @@ const casesContent: CaseSectionContent = {
       resultText:
         "Klient zyska\u0142 przewidywaln\u0105 obs\u0142ug\u0119, stabilny poziom wykonania i prostsze zarz\u0105dzanie czysto\u015bci\u0105 w obiekcie.",
       ctaLabel: "Chc\u0119 ustawi\u0107 sta\u0142\u0105 obs\u0142ug\u0119",
+      ctaHref: "/kontakt",
       media: {
         src: "/tlo.png",
         alt: "Realizacja sta\u0142ej obs\u0142ugi biura",
@@ -116,6 +126,7 @@ const casesContent: CaseSectionContent = {
       resultText:
         "Klient dosta\u0142 us\u0142ug\u0119 opart\u0105 na w\u0142a\u015bciwej metodzie, z efektem dopasowanym do stanu nawierzchni i realnych mo\u017cliwo\u015bci jej od\u015bwie\u017cenia.",
       ctaLabel: "Mam podobn\u0105 posadzk\u0119",
+      ctaHref: "/kontakt",
       media: {
         src: "/tlo.png",
         alt: "Realizacja maszynowego czyszczenia posadzek",
@@ -229,6 +240,7 @@ const ctaContent: CtaSectionContent = {
   description:
     "Nie musisz mie\u0107 gotowego briefu. Wystarczy typ obiektu, lokalizacja, termin i kilka zda\u0144 o sytuacji. Je\u015bli masz zdj\u0119cia, do\u0142\u0105cz je od razu.",
   buttonLabel: "Napisz do nas",
+  buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
