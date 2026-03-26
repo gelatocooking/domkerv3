@@ -1,6 +1,9 @@
-﻿import Image from "next/image";
+import Image from "next/image";
+import Link from "next/link";
 import Button from "../Button/Button";
+import Icon from "../Icon/Icon";
 import SectionKicker from "../SectionKicker/SectionKicker";
+import buttonStyles from "../Button/Button.module.css";
 import styles from "./KnowledgeSection.module.css";
 
 export type KnowledgeCardMedia =
@@ -21,6 +24,7 @@ export interface KnowledgeCard {
   title: string;
   description: string;
   buttonLabel: string;
+  buttonHref?: string;
   media: KnowledgeCardMedia;
 }
 
@@ -87,15 +91,23 @@ export default function KnowledgeSection({ content }: KnowledgeSectionProps) {
               )}
               <div className={styles.cardBody}>
                 <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{card.title}</h3>
-                <p className={styles.cardText}>{card.description}</p>
-
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <p className={styles.cardText}>{card.description}</p>
                 </div>
-                <Button
-                  className={styles.cardButton}
-                  label={card.buttonLabel}
-                  iconName="arrowRight"
-                />
+                {card.buttonHref ? (
+                  <Link href={card.buttonHref} className={`${buttonStyles.button} ${styles.cardButton}`}>
+                    <span className={buttonStyles.label}>{card.buttonLabel}</span>
+                    <span className={buttonStyles.icon}>
+                      <Icon name="arrowRight" size="lg" />
+                    </span>
+                  </Link>
+                ) : (
+                  <Button
+                    className={styles.cardButton}
+                    label={card.buttonLabel}
+                    iconName="arrowRight"
+                  />
+                )}
               </div>
             </article>
           ))}

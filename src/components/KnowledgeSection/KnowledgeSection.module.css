@@ -1,7 +1,8 @@
 .section {
   composes: section from global;
-  padding-left: var(--sp-0);
-  padding-right: var(--sp-0);
+  /* padding-left: var(--sp-0); */
+  /* padding-right: var(--sp-0); */
+  composes: padding-global-2 from global;
 }
 
 .inner {
@@ -9,7 +10,6 @@
   flex-direction: column;
   align-items: center;
   grid-row-gap: var(--gap-40);
-  composes: padding-global-2 from global;
 }
 
 .headingGroup {

@@ -161,6 +161,39 @@ const solutionsContent: SolutionsSectionContent = {
   ],
 };
 
+const knowledgeContent2: KnowledgeSectionContent = {
+  kickerLabel: "WYBIERZ ŚCIEŻKĘ",
+  titleLines: ["Dwa modele współpracy", "dla dwóch różnych ról po stronie klienta"],
+  description:
+    "Jeśli prowadzisz temat centralnie dla sieci albo odpowiadasz za konkretny obiekt, dalej chcesz rozmawiać o trochę innym zakresie i innym modelu działania. Dlatego rozdzielamy te dwie ścieżki już na starcie.",
+  cards: [
+    {
+      title: "Usługi porządkowe i techniczne dla sieci franczyzowych",
+      description:
+        "Jedna, scentralizowana usługa porządkowa i techniczna w całej Polsce dla franczyzobiorców i franczyzodawców.",
+      buttonLabel: "Sprawdź rozwiązania dla franczyz",
+      buttonHref: "/sprzatanie-dla-firm/dla-franczyz",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Usługi dla sieci franczyzowych",
+      },
+    },
+    {
+      title: "Wspieranie sieci handlowych w ekspansji",
+      description:
+        "Powtarzalna usługa kompleksowego sprzątania przed otwarciem i po remoncie lokali oraz cykliczne mycie witryn.",
+      buttonLabel: "Zamów rozmowę z indywidualnym koordynatorem",
+      buttonHref: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-zarzadcy-obiektu",
+      media: {
+        type: "image",
+        src: "/tlo.png",
+        alt: "Wsparcie dla zarządcy obiektu",
+      },
+    },
+  ],
+};
+
 const showcaseContent: ShowcaseSectionContent = {
   kickerLabel: "JAK OGRANICZAMY RYZYKA",
   titleLines: ["Co najczęściej wpływa na termin", "i wynik realizacji inwestycji"],
@@ -307,6 +340,7 @@ const fixContentDeep = <T,>(value: T, key?: string): T => {
 };
 
 const fixedDefaultContent = fixContentDeep(defaultContent);
+const fixedKnowledgeContent2 = fixContentDeep(knowledgeContent2);
 const fixedProblemsContent = fixContentDeep(problemsContent);
 const fixedSolutionsContent = fixContentDeep(solutionsContent);
 const fixedShowcaseContent = fixContentDeep(showcaseContent);
@@ -321,6 +355,7 @@ export default function Home() {
       <main className={styles.main}>
         <Hero content={fixedDefaultContent} />
         <SocialProof />
+        <KnowledgeSection content={fixedKnowledgeContent2} />
         <ProblemsSection content={fixedProblemsContent} />
         <SolutionsSection content={fixedSolutionsContent} />
         <ShowcaseSection content={fixedShowcaseContent} />

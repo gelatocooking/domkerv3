@@ -1,12 +1,11 @@
 .social {
-  composes: short-section from global;
+  composes: padding-global-2 short-section from global;
 }
 
 .inner {
   display: flex;
   flex-direction: column;
   grid-row-gap: var(--gap-40);
-  composes: padding-global-2 short-section from global;
 }
 
 .labelRow {
