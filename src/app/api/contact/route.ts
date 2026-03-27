@@ -4,7 +4,6 @@ import {
   ensureAllowedOrigin,
   ensureContactRateLimit,
   getClientIp,
-  verifyTurnstile,
 } from "../../../lib/contact-security";
 
 export const runtime = "nodejs";
@@ -63,7 +62,6 @@ export async function POST(request: Request) {
       consent?: boolean;
       website?: string;
       startedAt?: number | string;
-      turnstileToken?: string;
     };
 
     const email = body.email?.trim().toLowerCase() ?? "";
@@ -72,7 +70,6 @@ export async function POST(request: Request) {
     const consent = Boolean(body.consent);
     const website = body.website?.trim() ?? "";
     const startedAt = Number(body.startedAt);
-    const turnstileToken = body.turnstileToken?.trim() ?? "";
     const now = Date.now();
     const clientIp = getClientIp(request);
     const userAgent = request.headers.get("user-agent") || "";
@@ -171,7 +168,6 @@ export async function POST(request: Request) {
     }
 
     try {
-      await verifyTurnstile(turnstileToken, clientIp);
       await ensureContactRateLimit(`${clientIp}:${email}`, now);
     } catch (error) {
       const message =
@@ -181,9 +177,7 @@ export async function POST(request: Request) {
       const status =
         message.includes("limit") || message.includes("Odczekaj")
           ? 429
-          : message.includes("Brakuje konfiguracji Turnstile")
-            ? 500
-            : 400;
+          : 400;
 
       return NextResponse.json(
         { message },

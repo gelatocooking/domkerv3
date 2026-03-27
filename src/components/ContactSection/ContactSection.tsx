@@ -1,18 +1,9 @@
 "use client";
 
-import Script from "next/script";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import Button from "../Button/Button";
 import SectionKicker from "../SectionKicker/SectionKicker";
 import styles from "./ContactSection.module.css";
-
-declare global {
-  interface Window {
-    turnstile?: {
-      reset: (widgetId?: string) => void;
-    };
-  }
-}
 
 export interface ContactChip {
   label: string;
@@ -49,7 +40,6 @@ interface ContactSectionProps {
 }
 
 export default function ContactSection({ content }: ContactSectionProps) {
-  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
   const [formData, setFormData] = useState({
     email: "",
     phone: "",
@@ -85,22 +75,11 @@ export default function ContactSection({ content }: ContactSectionProps) {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setMessage(null);
-    const form = event.currentTarget;
-    const turnstileToken =
-      new FormData(form).get("cf-turnstile-response")?.toString().trim() ?? "";
 
     if (!formData.email.trim() || !formData.phone.trim() || !formData.topic.trim() || !formData.consent) {
       setMessage({
         type: "error",
-        text: "Uzupełnij e-mail, telefon, wiadomość i zaznacz zgodę.",
-      });
-      return;
-    }
-
-    if (turnstileSiteKey && !turnstileToken) {
-      setMessage({
-        type: "error",
-        text: "Potwierdź zabezpieczenie antyspamowe.",
+        text: "Uzupelnij e-mail, telefon, wiadomosc i zaznacz zgode.",
       });
       return;
     }
@@ -113,25 +92,19 @@ export default function ContactSection({ content }: ContactSectionProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          turnstileToken,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const data = (await response.json()) as { message?: string };
 
       if (!response.ok) {
-        throw new Error(data.message || "Wystąpił błąd podczas wysyłki.");
+        throw new Error(data.message || "Wystapil blad podczas wysylki.");
       }
 
       setMessage({
         type: "success",
-        text: data.message || "Wiadomość została wysłana.",
+        text: data.message || "Wiadomosc zostala wyslana.",
       });
-      if (turnstileSiteKey && typeof window !== "undefined") {
-        window.turnstile?.reset();
-      }
       setFormData({
         email: "",
         phone: "",
@@ -146,11 +119,8 @@ export default function ContactSection({ content }: ContactSectionProps) {
         text:
           error instanceof Error
             ? error.message
-            : "Nie udało się wysłać formularza.",
+            : "Nie udalo sie wyslac formularza.",
       });
-      if (turnstileSiteKey && typeof window !== "undefined") {
-        window.turnstile?.reset();
-      }
     } finally {
       setIsSubmitting(false);
     }
@@ -158,13 +128,6 @@ export default function ContactSection({ content }: ContactSectionProps) {
 
   return (
     <section id="kontakt" className={styles.section}>
-      {turnstileSiteKey ? (
-        <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-          async
-          defer
-        />
-      ) : null}
       <div className={styles.inner}>
         <div className={styles.grid}>
           <div className={styles.leftCard}>
@@ -262,22 +225,11 @@ export default function ContactSection({ content }: ContactSectionProps) {
               />
               <span className={styles.consentText}>{content.form.consentText}</span>
             </label>
-            {turnstileSiteKey ? (
-              <div className={styles.turnstileWrap}>
-                <div
-                  className="cf-turnstile"
-                  data-sitekey={turnstileSiteKey}
-                  data-theme="light"
-                  data-size="flexible"
-                  data-appearance="always"
-                />
-              </div>
-            ) : null}
             <div className={styles.formCta}>
               <Button
                 type="submit"
                 className={styles.formButton}
-                label={isSubmitting ? "Wysyłanie..." : content.form.submitLabel}
+                label={isSubmitting ? "Wysylanie..." : content.form.submitLabel}
                 iconName="arrowRight"
                 disabled={isSubmitting}
               />
