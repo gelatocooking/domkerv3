@@ -269,6 +269,7 @@ export default function ContactSection({ content }: ContactSectionProps) {
                   data-sitekey={turnstileSiteKey}
                   data-theme="light"
                   data-size="flexible"
+                  data-appearance="always"
                 />
               </div>
             ) : null}

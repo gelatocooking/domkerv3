@@ -169,6 +169,12 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: calc(var(--sp-40) + var(--sp-32));
+  padding: var(--sp-8);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  border-radius: var(--r-16);
+  background: var(--bg-white);
 }
 
 .formCta {
