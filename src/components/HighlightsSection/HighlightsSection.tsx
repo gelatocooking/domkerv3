@@ -5,13 +5,6 @@ import Icon from "../Icon/Icon";
 import SectionKicker from "../SectionKicker/SectionKicker";
 import styles from "./HighlightsSection.module.css";
 
-const bubbles = [
-  { text: "Nie wiem, jak...", className: "bubbleLeft" },
-  { text: "Blokuje nas...", className: "bubbleTop" },
-  { text: "Nie da się...", className: "bubbleRight" },
-  { text: "Mamy dość...", className: "bubbleBottom" },
-] as const;
-
 const highlights = [
   {
     title: "Koordynator na miejscu i\u00A0finalizacja etapu",
@@ -34,7 +27,6 @@ const highlights = [
 ] as const;
 
 export default function HighlightsSection() {
-  // Dopasuj do wysokości headera w Twoim layoucie
   const headerOffset = "96px";
 
   return (
@@ -46,13 +38,15 @@ export default function HighlightsSection() {
         <div className={styles.headingGroup}>
           <SectionKicker label="NASZE WYRÓŻNIKI" />
           <h2 className={styles.title}>
-            <span className={styles.titleLine}>
-              Co realnie stoi za przewidywalną  
-            </span>
+            <span className={styles.titleLine}>Co realnie stoi za przewidywalną</span>
             <span className={styles.titleLine}>realizacją, standardem i terminem</span>
           </h2>
           <p className={styles.subtitle}>
-            Skuteczne wdrożenie w sprzątaniu B2B nie opiera się na deklaracjach, tylko na sposobie prowadzenia realizacji. W Domker łączymy koordynację na obiekcie, kontrolę wykonania, sprawny dispatching zleceń i technologię dobraną do materiałów, żeby finalizować etapy bez zbędnych powrotów, bez chaosu organizacyjnego i bez ryzyka dla nowych wykończeń.
+            Skuteczne wdrożenie w sprzątaniu B2B nie opiera się na deklaracjach, tylko
+            na sposobie prowadzenia realizacji. W Domker łączymy koordynację na
+            obiekcie, kontrolę wykonania, sprawny dispatching zleceń i technologię
+            dobraną do materiałów, żeby finalizować etapy bez zbędnych powrotów, bez
+            chaosu organizacyjnego i bez ryzyka dla nowych wykończeń.
           </p>
         </div>
 
@@ -64,11 +58,7 @@ export default function HighlightsSection() {
               <div
                 key={item.title}
                 className={`${styles.cardWrap} ${isLast ? styles.cardWrapLast : ""}`}
-                style={
-                  {
-                    "--stack-z": `${100 + i}`,
-                  } as CSSProperties
-                }
+                style={{ "--stack-z": `${100 + i}` } as CSSProperties}
               >
                 <article className={styles.card}>
                   <div className={styles.textBlock}>
@@ -113,6 +103,7 @@ export default function HighlightsSection() {
                               <Icon name="layoutGrid" size="sm" />
                             </span>
                             <span className={styles.coordinatorPhotoStack} aria-hidden="true">
+                              <span />
                               <span />
                               <span />
                             </span>
@@ -215,7 +206,9 @@ export default function HighlightsSection() {
                                 <span>Wejście potwierdzone</span>
                               </div>
                               <div className={styles.dispatchChecklistItem}>
-                                <span className={`${styles.dispatchCheckDot} ${styles.dispatchCheckDotActive}`}>
+                                <span
+                                  className={`${styles.dispatchCheckDot} ${styles.dispatchCheckDotActive}`}
+                                >
                                   <Icon name="route" size="sm" />
                                 </span>
                                 <span>Zakres w realizacji</span>
@@ -242,7 +235,9 @@ export default function HighlightsSection() {
                                   <span className={styles.dispatchReportIcon}>
                                     <Icon name="fileText" size="sm" />
                                   </span>
-                                  <span className={styles.dispatchReportStatus}>W przygotowaniu</span>
+                                  <span className={styles.dispatchReportStatus}>
+                                    W przygotowaniu
+                                  </span>
                                 </span>
                               </div>
                             </div>
@@ -254,27 +249,103 @@ export default function HighlightsSection() {
 
                   {item.visual === "insights" ? (
                     <div className={styles.visual}>
-                      <div className={styles.trendLine} aria-hidden="true" />
-
-                      <div className={styles.consultation}>
-                        <span className={styles.leafIcon}>
-                          <Icon name="chevronsRight" size="sm" />
-                        </span>
-                        <span className={styles.consultationText}>KONSULTACJA</span>
-                      </div>
-
-                      <div className={styles.callout}>
-                        Wiemy, jak działać i nie mamy blokad w rozwoju
-                      </div>
-
-                      {bubbles.map((bubble) => (
-                        <div
-                          key={bubble.text}
-                          className={`${styles.bubble} ${styles[bubble.className]}`}
-                        >
-                          {bubble.text}
+                      <div className={styles.materialPanel}>
+                        <div className={styles.materialChips}>
+                          <span className={styles.materialChip}>Powierzchnie</span>
+                          <span className={styles.materialChip}>Ryzyko</span>
+                          <span className={styles.materialChip}>Zabezpieczenie</span>
                         </div>
-                      ))}
+
+                        <div className={styles.materialLayout}>
+                          <div className={styles.materialList}>
+                            <div className={`${styles.materialItem} ${styles.materialItemActive}`}>
+                              <span className={styles.materialItemDot}>
+                                <Icon name="grid3x3" size="sm" />
+                              </span>
+                              <span className={styles.materialItemName}>Posadzka</span>
+                              <span className={styles.materialItemTag}>Wrażliwe</span>
+                            </div>
+
+                            <div className={styles.materialItem}>
+                              <span className={styles.materialItemDot}>
+                                <Icon name="sparkles" size="sm" />
+                              </span>
+                              <span className={styles.materialItemName}>Szkło</span>
+                              <span className={styles.materialItemTag}>Standard</span>
+                            </div>
+
+                            <div className={styles.materialItem}>
+                              <span className={styles.materialItemDot}>
+                                <Icon name="clipboardCheck" size="sm" />
+                              </span>
+                              <span className={styles.materialItemName}>Armatura</span>
+                              <span className={styles.materialItemTag}>Zabezpieczyć</span>
+                            </div>
+                          </div>
+
+                          <div className={styles.materialDetail}>
+                            <div className={styles.materialHeader}>
+                              <span className={styles.materialTitle}>Posadzka</span>
+                              <span className={styles.materialState}>Wrażliwe</span>
+                            </div>
+
+                            <div className={styles.materialMetaRow}>
+                              <div className={styles.materialMiniCard}>
+                                <span className={styles.materialSectionLabel}>Powierzchnia</span>
+                                <span className={styles.materialSurfaceLines} aria-hidden="true">
+                                  <span />
+                                  <span />
+                                </span>
+                              </div>
+
+                              <div className={styles.materialMiniCard}>
+                                <span className={styles.materialSectionLabel}>Ryzyko</span>
+                                <span className={styles.materialRiskLines} aria-hidden="true">
+                                  <span />
+                                  <span />
+                                </span>
+                              </div>
+                            </div>
+
+                            <div className={styles.materialTechnologyCard}>
+                              <span className={styles.materialSectionLabel}>
+                                Zalecana technologia
+                              </span>
+                              <span className={styles.materialTechnologyLines} aria-hidden="true">
+                                <span />
+                                <span />
+                                <span />
+                              </span>
+                            </div>
+
+                            <div className={styles.materialBottomRow}>
+                              <div className={styles.materialEvidenceCard}>
+                                <span className={styles.materialSectionLabel}>Zabezpieczenie</span>
+                                <span className={styles.materialProtectionLines} aria-hidden="true">
+                                  <span />
+                                  <span />
+                                </span>
+                              </div>
+
+                              <div className={styles.materialEvidenceCard}>
+                                <span className={styles.materialSectionLabel}>Protokół</span>
+                                <span className={styles.materialReportRow}>
+                                  <span className={styles.materialReportIcon}>
+                                    <Icon name="fileText" size="sm" />
+                                  </span>
+                                  <span
+                                    className={styles.materialReportLines}
+                                    aria-hidden="true"
+                                  >
+                                    <span />
+                                    <span />
+                                  </span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   ) : null}
                 </article>
