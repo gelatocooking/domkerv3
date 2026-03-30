@@ -292,7 +292,7 @@ const contactContent: ContactSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak prowadzimy", "tematy po stronie organizacyjnej"],
   description:
     "Przykłady realizacji i współpracy przy obiektach komercyjnych oraz sieciach punktów. To szybki wgląd w to, jak wygląda temat od pierwszej wiadomości do sprawnej realizacji po naszej stronie.",
@@ -310,15 +310,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Sposób prowadzenia współpracy",
+      title: "Cennik i wycena",
       description:
-        "Jak wygląda organizacja od strony komunikacji, harmonogramu i przekazywania kolejnych kroków przy większej skali współpracy.",
-      buttonLabel: "Zobacz, jak to prowadzimy",
-      buttonHref: "/kontakt",
+        "Sprawdź, jak podchodzimy do wyceny większej skali współpracy i od czego zależą widełki przy sieciach i franczyzach.",
+      buttonLabel: "Zobacz cennik",
+      buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Organizacja współpracy Domker dla franczyz",
+        alt: "Cennik Domker dla franczyz",
       },
     },
   ],

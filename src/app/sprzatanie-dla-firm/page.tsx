@@ -284,10 +284,10 @@ const ctaContent: CtaSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak różnią się", "scenariusze współpracy w praktyce"],
   description:
-    "Przykłady z różnych typów obiektów i modeli działania. Dzięki temu łatwiej zobaczyć, czym różni się końcówka budowy od stałej obsługi, witryn, posadzek albo współpracy sieciowej.",
+    "Przykłady z różnych typów obiektów i modeli działania. Dzięki temu łatwiej zobaczyć, czym różnią się scenariusze współpracy i jak podchodzimy do ich wyceny.",
   cards: [
     {
       title: "Realizacje",
@@ -302,15 +302,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co klienci doceniają w różnych modelach współpracy. Najczęściej jasność ustaleń, przewidywalność i prostsze przejście od zapytania do działania.",
-      buttonLabel: "Zobacz referencje",
-      buttonHref: "/kontakt",
+        "Zobacz orientacyjne widełki i sposób liczenia kosztu dla różnych usług. To najszybszy punkt odniesienia przed dalszą decyzją po Twojej stronie.",
+      buttonLabel: "Zobacz cennik",
+      buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker",
+        alt: "Cennik Domker",
       },
     },
   ],

@@ -40,13 +40,21 @@
 .filters {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   gap: var(--gap-8);
   margin: var(--sp-0);
   padding: var(--sp-8);
   background: var(--bg-soft);
   border-radius: var(--r-24);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
 }
 
 .filterItem {
@@ -58,11 +66,14 @@
   align-items: center;
   justify-content: center;
   gap: var(--gap-8);
-  padding: var(--sp-11) var(--sp-19);
+  min-height: var(--sp-44);
+  padding: var(--sp-10) var(--sp-16);
   background: var(--bg-transparent);
   border: none;
   border-radius: var(--r-400);
   cursor: pointer;
+  white-space: nowrap;
+  scroll-snap-align: start;
 }
 
 .filterButtonActive {
@@ -85,37 +96,184 @@
   outline-offset: var(--sp-2);
 }
 
+.body {
+  display: grid;
+  gap: var(--gap-32);
+  grid-template-areas:
+    "detail"
+    "gallery";
+}
+
+.detailColumn {
+  grid-area: detail;
+  scroll-margin-top: calc(var(--sp-80) + var(--sp-48));
+}
+
+.galleryColumn {
+  grid-area: gallery;
+}
+
+.detailPanel {
+  display: grid;
+  gap: var(--gap-20);
+  padding: var(--sp-20);
+  border-radius: var(--r-24);
+  background: var(--bg-soft);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+}
+
+.detailMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.detailMetaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.detailMetaIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-34_34_34);
+}
+
+.detailMetaText,
+.detailMetaDivider {
+  composes: t-14 text-muted from global;
+}
+
+.detailTitle {
+  composes: h3 from global;
+  margin: var(--sp-0);
+}
+
+.detailInfoList {
+  display: grid;
+  gap: var(--gap-10);
+}
+
+.detailInfoRow {
+  display: grid;
+  gap: var(--gap-4);
+}
+
+.detailInfoLabel,
+.detailBlockLabel {
+  composes: t-12 text-muted from global;
+}
+
+.detailInfoValue {
+  composes: t-14-lh-20 t-medium text-dark from global;
+}
+
+.detailBlock {
+  display: grid;
+  gap: var(--gap-8);
+}
+
+.detailText {
+  composes: t-16-24-400 text-muted from global;
+  margin: var(--sp-0);
+}
+
+.detailResult {
+  display: grid;
+  gap: var(--gap-8);
+  padding-top: var(--sp-4);
+}
+
+.detailResultText {
+  composes: t-16-24-400 t-strong text-dark from global;
+  margin: var(--sp-0);
+}
+
+.detailActions {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: var(--sp-8);
+}
+
+.galleryButton {
+  background: var(--bg-dark);
+  color: var(--c-white);
+  width: 100%;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--gap-32) var(--gap-24);
+  gap: var(--gap-20);
 }
 
 .card {
+  width: 100%;
+  text-align: left;
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: var(--gap-16);
-  height: 100%;
+  gap: var(--gap-12);
+  padding: var(--sp-0);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.cardActive .media {
+  box-shadow: 0 0 0 var(--sp-1) var(--bg-success);
+}
+
+.cardActive .cardBody {
+  padding-left: var(--sp-8);
+  border-left: var(--sp-2) solid var(--bg-success);
+}
+
+.card:focus-visible {
+  outline: var(--sp-2) solid var(--c-primary-47_84_235);
+  outline-offset: var(--sp-4);
+  border-radius: var(--r-24);
 }
 
 .media {
   position: relative;
   width: 100%;
-  min-height: calc(var(--sp-210) + var(--sp-20));
+  min-height: var(--sp-0);
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--r-24);
   background: var(--bg-soft);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.card:hover .media {
+  transform: translateY(calc(var(--sp-1) * -1));
 }
 
 .mediaImage {
   object-fit: cover;
+  transform: rotate(var(--image-rotation, 0deg)) scale(var(--image-scale, 1));
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.card:hover .mediaImage,
+.cardActive .mediaImage {
+  transform: rotate(var(--image-rotation, 0deg))
+    scale(var(--image-hover-scale, 1.02));
 }
 
 .cardBody {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: var(--gap-12);
-  height: 100%;
+  gap: var(--gap-8);
+  transition:
+    padding 160ms ease,
+    border-color 160ms ease;
 }
 
 .meta {
@@ -151,42 +309,309 @@
   overflow: hidden;
 }
 
-.cardDescription {
+.cardProof {
   composes: t-16-24-400 text-muted from global;
   margin: var(--sp-0);
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
-.cardCta {
-  width: fit-content;
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: var(--sp-0);
+  isolation: isolate;
+}
+
+.lightboxBackdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: rgb(10 10 10 / 0.72);
+  cursor: pointer;
+}
+
+.lightboxPanel {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  padding: calc(env(safe-area-inset-top, 0px) + var(--sp-12)) var(--sp-12)
+    calc(env(safe-area-inset-bottom, 0px) + var(--sp-12));
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--gap-12);
+  background: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.lightboxMeta {
+  min-width: 0;
+  display: grid;
+  gap: var(--gap-6);
+}
+
+.lightboxHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap-12);
+  min-width: 0;
+}
+
+.lightboxTitle {
+  composes: t-16-24-400 t-medium text-dark from global;
+}
+
+.lightboxCounter {
+  composes: t-14 text-muted from global;
+}
+
+.lightboxClose {
+  position: relative;
+  min-height: var(--sp-40);
+  border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+  border-radius: var(--r-400);
+  background: rgb(255 255 255 / 0.88);
+  color: var(--c-text-10_10_10);
+  cursor: pointer;
+  padding: 0 var(--sp-12);
   display: inline-flex;
   align-items: center;
-  gap: var(--gap-10);
-  color: var(--c-text-10_10_10);
-  margin-top: auto;
+  justify-content: center;
+  gap: var(--gap-8);
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgb(10 10 10 / 0.08);
 }
 
-.cardCtaText {
-  composes: t-16-24-400 t-strong from global;
+.lightboxCloseLabel {
+  composes: t-14 t-medium text-dark from global;
 }
 
-.cardCtaIcon {
+.lightboxCloseIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
+.lightboxStage {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--gap-8);
+  min-height: 0;
+  height: 100%;
+}
+
+.lightboxViewport {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxMedia {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: min(66dvh, 92vw);
+  overflow: hidden;
+  border-radius: var(--r-16);
+  background: transparent;
+  contain: paint;
+  isolation: isolate;
+}
+
+.lightboxImage {
+  object-fit: cover;
+  transform: rotate(var(--image-rotation, 0deg)) scale(var(--image-scale, 1));
+  backface-visibility: hidden;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.lightboxImageQuarterTurn {
+  inset: 0;
+}
+
+.lightboxNav {
+  position: relative;
+  z-index: 2;
+  width: var(--sp-40);
+  height: var(--sp-40);
+  border: none;
+  border-radius: var(--r-400);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255 255 255 / 0.92);
+  color: var(--c-text-10_10_10);
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgb(10 10 10 / 0.12);
+}
+
+.lightboxPrevIcon {
+  transform: rotate(180deg);
+}
+
+.lightboxThumbs {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-8);
+  overflow-x: auto;
+  padding-bottom: var(--sp-2);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+
+.lightboxThumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.lightboxThumb {
+  position: relative;
+  width: var(--sp-80);
+  height: var(--sp-80);
+  flex: 0 0 auto;
+  padding: var(--sp-0);
+  border: none;
+  overflow: hidden;
+  border-radius: var(--r-12);
+  background: var(--bg-soft);
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.lightboxThumbActive {
+  box-shadow: 0 0 0 var(--sp-2) var(--bg-success);
+}
+
+.lightboxThumbImage {
+  object-fit: cover;
+  transform: rotate(var(--image-rotation, 0deg)) scale(var(--image-scale, 1));
+  transform-origin: center;
+}
+
 @media (min-width: 768px) {
+  .filters {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+
+  .detailPanel {
+    padding: var(--sp-24);
+  }
+
+  .galleryButton {
+    width: auto;
+  }
+
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-24);
   }
 }
 
 @media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .lightbox {
+    padding: var(--sp-32);
+    align-items: center;
+  }
+
+  .lightboxPanel {
+    width: min(72vw, 900px);
+    max-width: 900px;
+    height: min(24dvh, 420px);
+    padding: var(--sp-24);
+    border-radius: var(--r-24);
+    overflow: hidden;
+    gap: var(--gap-16);
+    grid-template-rows: auto 1fr auto;
+    background: transparent;
+  }
+
+  .lightboxHeader {
+    position: relative;
+    padding-right: calc(var(--sp-40) + var(--sp-16));
+  }
+
+  .lightboxClose {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    height: auto;
+    min-height: var(--sp-40);
+    border: var(--sp-1) solid var(--bg-gray-64_64_64-0_12);
+    padding: 0 var(--sp-12);
+    background: rgb(255 255 255 / 0.88);
+    color: var(--c-text-10_10_10);
+    box-shadow: 0 8px 20px rgb(10 10 10 / 0.08);
+  }
+
+  .lightboxStage {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: var(--gap-12);
+    align-items: center;
+    min-height: 0;
+    height: 100%;
+  }
+
+  .lightboxViewport {
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightboxMedia {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: unset;
+    background: transparent;
+  }
+
+  .lightboxNav {
+    width: var(--sp-48);
+    height: var(--sp-48);
+  }
+
+  .lightboxThumb {
+    width: 72px;
+    height: 72px;
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 0.95fr);
+    grid-template-areas: "gallery detail";
+    align-items: start;
+  }
+
+  .detailColumn {
+    position: sticky;
+    top: calc(var(--sp-80) + var(--sp-32));
   }
 }

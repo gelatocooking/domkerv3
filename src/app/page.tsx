@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Header from "../components/Header/Header";
 import Hero, { type HeroContent } from "../components/Hero/Hero";
-import SocialProof from "../components/SocialProof/SocialProof";
+import OperationalStatsSection, {
+  type OperationalStatsSectionContent,
+} from "../components/OperationalStatsSection/OperationalStatsSection";
 import ProblemsSection, {
   type ProblemsSectionContent,
 } from "../components/ProblemsSection/ProblemsSection";
@@ -206,6 +208,27 @@ const knowledgeContent2: KnowledgeSectionContent = {
   ],
 };
 
+const statsContent: OperationalStatsSectionContent = {
+  items: [
+    {
+      value: "16",
+      label: "województw w obsłudze",
+    },
+    {
+      value: "60+",
+      label: "zakontraktowanych współpracowników",
+    },
+    {
+      value: "3",
+      label: "koordynatorów organizujących i kontrolujących jakość",
+    },
+    {
+      value: "40+",
+      label: "stałych punktów w obsłudze",
+    },
+  ],
+};
+
 const showcaseContent: ShowcaseSectionContent = {
   kickerLabel: "JAK OGRANICZAMY RYZYKA",
   titleLines: ["Co najczęściej wpływa na termin", "i wynik realizacji inwestycji"],
@@ -261,10 +284,10 @@ const ctaContent: CtaSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "DOWODY Z REALIZACJI",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak pracujemy", "na obiektach w całej Polsce"],
   description:
-    "Realizacje, zakresy i efekty z różnych scenariuszy B2B. Zobacz, jak wygląda współpraca w praktyce — od pierwszych ustaleń po finalizację etapu.",
+    "Realizacje, zakresy i orientacyjne widełki z różnych scenariuszy B2B. Zobacz, jak wygląda współpraca w praktyce i jak podchodzimy do wyceny na etapie kwalifikacji tematu.",
   cards: [
     {
       title: "Realizacje",
@@ -279,15 +302,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co klienci B2B doceniają we współpracy. Najczęściej przewidywalność, komunikację, porządek organizacyjny i sposób prowadzenia realizacji.",
-      buttonLabel: "Zobacz referencje",
-      buttonHref: "/kontakt",
+        "Orientacyjne widełki i sposób liczenia kosztu. Zobacz, od czego zależy wycena i jak ocenić, czy temat mieści się w Twojej skali.",
+      buttonLabel: "Zobacz cennik",
+      buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker",
+        alt: "Cennik Domker",
       },
     },
   ],
@@ -369,7 +392,7 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <Hero content={fixedDefaultContent} />
-        <SocialProof />
+        <OperationalStatsSection content={statsContent} />
         <KnowledgeSection content={fixedKnowledgeContent2} />
         <ProblemsSection content={fixedProblemsContent} />
         <SolutionsSection content={fixedSolutionsContent} />

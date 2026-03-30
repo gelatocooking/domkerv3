@@ -5,7 +5,7 @@ import styles from "./Footer.module.css";
 const companyLinks = [
   { label: "Zapytaj o wycenę" },
   { label: "Zobacz realizacje" },
-  { label: "Opinie klientów" },
+  { label: "Cennik i wycena" },
   { label: "Usługi dla firm" },
 ];
 
@@ -18,7 +18,7 @@ const servicesLinks = [
 const shortcutLinks = [
   "Strona główna",
   "Realizacje",
-  "Referencje / opinie",
+  "Cennik",
   "Cennik / widełki",
   "Kontakt",
 ];
@@ -44,7 +44,6 @@ export default function Footer() {
                   className={styles.logoImage}
                 />
               </span>
-              <span className={styles.brandName}>Domker</span>
             </div>
             <div className={styles.companyBlock}>
               <p className={styles.companyText}>
@@ -55,8 +54,9 @@ export default function Footer() {
             </div>
             <div className={styles.companyBlock}>
               <p className={styles.companyName}>Fryderyk Ossoliński „Domker”</p>
-              <p className={styles.companyText}>Akacjowa 7/2, 59-100 Polkowice</p>
               <p className={styles.companyText}>NIP: 5020127255, REGON: 528019172</p>
+              <p className={styles.companyText}>ING Bank Śląski</p>
+              <p className={styles.companyText}>PL 92 1050 1748 1000 0090 8351 7152</p>
             </div>
             <p className={styles.companyName}>Bezpośredni kontakt</p>
             <div className={styles.contact}>

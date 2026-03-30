@@ -7,6 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "images:rotate": "node scripts/rotate-realization-images.js",
+    "images:review": "node scripts/generate-rotation-review.js",
+    "images:apply-rotation": "node scripts/apply-rotation-decisions.js",
     "fix:encoding": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/fix-encoding.ps1",
     "check:encoding": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-encoding.ps1"
   },

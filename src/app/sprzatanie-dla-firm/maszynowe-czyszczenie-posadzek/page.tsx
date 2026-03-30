@@ -299,7 +299,7 @@ const contactContent: ContactSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak pracujemy", "z różnymi typami posadzek"],
   description:
     "Przykłady realizacji w obiektach komercyjnych. Zobacz, jak wygląda usługa przy różnych nawierzchniach, typach zabrudzeń i oczekiwanym efekcie końcowym.",
@@ -317,15 +317,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co klienci doceniają przy tej usłudze. Najczęściej trafny dobór metody, czytelną wycenę i bezpieczne podejście do nawierzchni.",
-      buttonLabel: "Zobacz referencje",
-  buttonHref: "/kontakt",
+        "Zobacz, od czego zależy koszt doczyszczania posadzek i jak dobór technologii wpływa na widełki wyceny.",
+      buttonLabel: "Zobacz cennik",
+  buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker przy czyszczeniu posadzek",
+        alt: "Cennik Domker przy czyszczeniu posadzek",
       },
     },
   ],
@@ -338,6 +338,10 @@ const faqContent: FaqSectionContent = {
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
+  cta: {
+    label: "Przejdź do kontaktu",
+    href: "/kontakt",
+  },
   items: [
     {
       question: "Czym maszynowe czyszczenie posadzek różni się od zwykłego mycia?",

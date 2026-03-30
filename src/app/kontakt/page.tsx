@@ -298,10 +298,10 @@ const contactContent: ContactSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak wygląda", "współpraca po pierwszym kontakcie"],
   description:
-    "Przykładowe realizacje i opinie klientów, które pokazują, jak pracujemy po uporządkowaniu zgłoszenia: od pierwszej rozmowy do wykonania usługi.",
+    "Przykładowe realizacje i orientacyjne widełki, które pokazują, jak pracujemy po uporządkowaniu zgłoszenia: od pierwszej rozmowy do wykonania usługi i wyceny.",
   cards: [
     {
       title: "Realizacje",
@@ -316,15 +316,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co klienci doceniają po pierwszym kontakcie i w dalszej współpracy. Najczęściej szybkość reakcji, porządek komunikacyjny i jasne dalsze działanie.",
-      buttonLabel: "Zobacz referencje",
-  buttonHref: "/kontakt",
+        "Sprawdź, jak liczymy koszt i jakie widełki warto przyjąć na starcie. To najszybsza ścieżka, żeby ocenić skalę tematu przed dalszą rozmową.",
+      buttonLabel: "Zobacz cennik",
+  buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker",
+        alt: "Cennik Domker",
       },
     },
   ],
@@ -336,6 +336,10 @@ const faqContent: FaqSectionContent = {
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
+  cta: {
+    label: "Przejdź do kontaktu",
+    href: "/kontakt",
+  },
   items: [
     {
       question: "Czy muszę mieć pełne informacje, żeby napisać pierwszą wiadomość?",
@@ -396,10 +400,10 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <PagesHero content={defaultContent} />
+        <ContactSection content={contactContent} />
         <ProblemsSection content={problemsContent} />
         <CtaSection content={ctaContent} />
         <ShowcaseSection content={showcaseContent} />
-        <ContactSection content={contactContent} />
         <FaqSection content={faqContent} />
       </main>
       <Footer />

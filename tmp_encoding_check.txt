@@ -1,0 +1,10 @@
+import type { Metadata } from "next";
+import CaseSection, {
+  type CaseSectionContent,
+} from "@/components/CaseSection/CaseSection";
+import GallerySection, {
+  type GallerySectionContent,
+} from "@/components/GallerySection/GallerySection";
+import ContactSection, {
+  type ContactSectionContent,
+} f

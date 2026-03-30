@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rotation Review</title>
+  <style>
+    :root {
+      --bg: #f2efe8;
+      --panel: rgba(255,255,255,0.82);
+      --line: rgba(21, 28, 24, 0.12);
+      --text: #151c18;
+      --muted: #5f6c64;
+      --accent: #136f63;
+      --accent-2: #d95d39;
+      --shadow: 0 18px 40px rgba(21, 28, 24, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(217, 93, 57, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(19, 111, 99, 0.16), transparent 24%),
+        linear-gradient(180deg, #f7f2e7 0%, var(--bg) 100%);
+    }
+
+    .shell {
+      width: min(1500px, calc(100vw - 32px));
+      margin: 24px auto 48px;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .toolbarRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .toolbarGroup {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    select, button, textarea {
+      font: inherit;
+    }
+
+    select, button {
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      background: white;
+      color: var(--text);
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    button.warn {
+      background: var(--accent-2);
+      border-color: var(--accent-2);
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.84);
+      box-shadow: var(--shadow);
+    }
+
+    .frame {
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+      padding: 18px;
+      background:
+        linear-gradient(135deg, rgba(19, 111, 99, 0.08), rgba(217, 93, 57, 0.08)),
+        repeating-linear-gradient(45deg, rgba(21, 28, 24, 0.035), rgba(21, 28, 24, 0.035) 8px, transparent 8px, transparent 16px);
+    }
+
+    .frame img {
+      max-width: 100%;
+      max-height: 320px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(21, 28, 24, 0.18);
+      transform: rotate(var(--rotation, 0deg));
+      transition: transform 180ms ease;
+      background: white;
+    }
+
+    .cardBody {
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .meta {
+      display: grid;
+      gap: 4px;
+    }
+
+    .dir {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .file {
+      font-size: 14px;
+      word-break: break-word;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .actions button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .footerPanel {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.84);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 12px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      resize: vertical;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      padding: 14px;
+      background: #fffdfa;
+    }
+
+    .summary {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="toolbar">
+      <div class="toolbarRow">
+        <div>
+          <h1>Review obrotu zdjęć</h1>
+          <div class="hint">Zaznacz tylko błędnie obrócone zdjęcia. Zmiany zapisują się lokalnie w przeglądarce.</div>
+        </div>
+        <div class="toolbarGroup">
+          <button id="clearAll" type="button">Wyczyść zaznaczenia</button>
+          <button id="downloadJson" type="button">Pobierz JSON</button>
+          <button id="copyJson" class="primary" type="button">Kopiuj JSON</button>
+        </div>
+      </div>
+      <div class="toolbarRow">
+        <div class="toolbarGroup">
+          <label for="dirFilter">Katalog</label>
+          <select id="dirFilter"></select>
+          <label for="changedOnly">
+            <input id="changedOnly" type="checkbox" />
+            tylko oznaczone
+          </label>
+        </div>
+        <div class="summary" id="summary"></div>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="footerPanel">
+      <div>Wynik do zapisania jako <code>audit/rotation-decisions.json</code></div>
+      <textarea id="jsonOutput" spellcheck="false"></textarea>
+    </div>
+  </div>
+
+  <script>
+    const items = [{"directory":"0. KUBIAK_webp","fileName":"IMG_0111.webp","relativePath":"public/realizacje/realizacje/0. KUBIAK_webp/IMG_0111.webp"},{"directory":"0. KUBIAK_webp","fileName":"IMG_0205.webp","relativePath":"public/realizacje/realizacje/0. KUBIAK_webp/IMG_0205.webp"},{"directory":"0. KUBIAK_webp","fileName":"IMG_0206.webp","relativePath":"public/realizacje/realizacje/0. KUBIAK_webp/IMG_0206.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"7BC3606B-E504-4CBD-BED9-287E0EB3345E.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/7BC3606B-E504-4CBD-BED9-287E0EB3345E.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"8887A3E3-E8FE-4BA8-A524-2BD82DB49F19.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/8887A3E3-E8FE-4BA8-A524-2BD82DB49F19.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"B5089C2F-8646-4D53-9A5A-CFF38E136144.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/B5089C2F-8646-4D53-9A5A-CFF38E136144.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1082.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1082.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1087.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1087.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1088.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1088.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1089.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1089.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1090.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1090.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1091.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1091.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1092.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1092.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1093.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1093.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1094.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1094.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1095.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1095.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1125.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1125.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1126.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1126.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1130.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1130.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1135.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1135.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1136.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1136.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1138.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1138.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1139.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1139.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1151.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1151.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1152.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1152.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1153.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1153.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1154.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1154.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1155.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1155.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1156.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1156.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1157.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1157.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1158.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1158.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1159.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1159.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1160.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1160.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1161.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1161.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1162.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1162.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1163.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1163.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1164.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1164.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1226.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1226.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1228.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1228.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1229.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1229.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1230.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1230.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1231.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1231.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1232.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1232.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1233.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1233.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1234.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1234.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1235.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1235.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1243.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1243.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1244.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1244.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1245.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1245.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1246.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1246.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1247.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1247.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1272.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1272.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1273.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1273.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1274.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1274.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1276.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1276.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1286.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1286.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1287.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1287.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1288.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1288.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1295.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1295.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1296.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1296.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1297.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1297.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1667.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1667.webp"},{"directory":"1. AQUAPARK BASEN_webp","fileName":"IMG_1669.webp","relativePath":"public/realizacje/realizacje/1. AQUAPARK BASEN_webp/IMG_1669.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4791.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4791.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4798.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4798.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4799.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4799.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4800.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4800.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4801.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4801.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4802.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4802.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4803.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4803.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4805.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4805.webp"},{"directory":"10. Sinsay Pyrzyce_webp","fileName":"IMG_4809.webp","relativePath":"public/realizacje/realizacje/10. Sinsay Pyrzyce_webp/IMG_4809.webp"},{"directory":"11. Usługi dla CCC_webp","fileName":"IMG_3676.webp","relativePath":"public/realizacje/realizacje/11. Usługi dla CCC_webp/IMG_3676.webp"},{"directory":"11. Usługi dla CCC_webp","fileName":"IMG_3683.webp","relativePath":"public/realizacje/realizacje/11. Usługi dla CCC_webp/IMG_3683.webp"},{"directory":"11. Usługi dla CCC_webp","fileName":"IMG_3686.webp","relativePath":"public/realizacje/realizacje/11. Usługi dla CCC_webp/IMG_3686.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6168.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6168.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6169.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6169.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6170.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6170.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6171.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6171.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6180.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6180.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6188.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6188.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6211.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6211.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6212.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6212.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6213.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6213.webp"},{"directory":"12. Rossmann Dobiegniew_webp","fileName":"IMG_6214.webp","relativePath":"public/realizacje/realizacje/12. Rossmann Dobiegniew_webp/IMG_6214.webp"},{"directory":"13. Rossmann Głogów_webp","fileName":"IMG_6273.webp","relativePath":"public/realizacje/realizacje/13. Rossmann Głogów_webp/IMG_6273.webp"},{"directory":"13. Rossmann Głogów_webp","fileName":"IMG_6274.webp","relativePath":"public/realizacje/realizacje/13. Rossmann Głogów_webp/IMG_6274.webp"},{"directory":"13. Rossmann Głogów_webp","fileName":"IMG_6275.webp","relativePath":"public/realizacje/realizacje/13. Rossmann Głogów_webp/IMG_6275.webp"},{"directory":"13. Rossmann Głogów_webp","fileName":"IMG_6279.webp","relativePath":"public/realizacje/realizacje/13. Rossmann Głogów_webp/IMG_6279.webp"},{"directory":"14. Rossmann Legnica Ferio_webp","fileName":"IMG_5735.webp","relativePath":"public/realizacje/realizacje/14. Rossmann Legnica Ferio_webp/IMG_5735.webp"},{"directory":"14. Rossmann Legnica Ferio_webp","fileName":"IMG_5736.webp","relativePath":"public/realizacje/realizacje/14. Rossmann Legnica Ferio_webp/IMG_5736.webp"},{"directory":"14. Rossmann Legnica Ferio_webp","fileName":"IMG_5738.webp","relativePath":"public/realizacje/realizacje/14. Rossmann Legnica Ferio_webp/IMG_5738.webp"},{"directory":"14. Rossmann Legnica Ferio_webp","fileName":"IMG_5745.webp","relativePath":"public/realizacje/realizacje/14. Rossmann Legnica Ferio_webp/IMG_5745.webp"},{"directory":"14. Rossmann Legnica Ferio_webp","fileName":"IMG_5915.webp","relativePath":"public/realizacje/realizacje/14. Rossmann Legnica Ferio_webp/IMG_5915.webp"},{"directory":"14. Rossmann Legnica Ferio_webp","fileName":"IMG_5919.webp","relativePath":"public/realizacje/realizacje/14. Rossmann Legnica Ferio_webp/IMG_5919.webp"},{"directory":"14. Rossmann Legnica Ferio_webp","fileName":"IMG_5920.webp","relativePath":"public/realizacje/realizacje/14. Rossmann Legnica Ferio_webp/IMG_5920.webp"},{"directory":"15. Rossmann Sulechów_webp","fileName":"IMG_6021.webp","relativePath":"public/realizacje/realizacje/15. Rossmann Sulechów_webp/IMG_6021.webp"},{"directory":"15. Rossmann Sulechów_webp","fileName":"IMG_6022.webp","relativePath":"public/realizacje/realizacje/15. Rossmann Sulechów_webp/IMG_6022.webp"},{"directory":"15. Rossmann Sulechów_webp","fileName":"IMG_6025.webp","relativePath":"public/realizacje/realizacje/15. Rossmann Sulechów_webp/IMG_6025.webp"},{"directory":"15. Rossmann Sulechów_webp","fileName":"IMG_6029.webp","relativePath":"public/realizacje/realizacje/15. Rossmann Sulechów_webp/IMG_6029.webp"},{"directory":"15. Rossmann Sulechów_webp","fileName":"IMG_6044.webp","relativePath":"public/realizacje/realizacje/15. Rossmann Sulechów_webp/IMG_6044.webp"},{"directory":"15. Rossmann Sulechów_webp","fileName":"IMG_6052.webp","relativePath":"public/realizacje/realizacje/15. Rossmann Sulechów_webp/IMG_6052.webp"},{"directory":"16. Rossmann Wrocław SkyTower_webp","fileName":"8D5C6EDE-C625-4256-A489-A238030D02C2.webp","relativePath":"public/realizacje/realizacje/16. Rossmann Wrocław SkyTower_webp/8D5C6EDE-C625-4256-A489-A238030D02C2.webp"},{"directory":"16. Rossmann Wrocław SkyTower_webp","fileName":"IMG_5313.webp","relativePath":"public/realizacje/realizacje/16. Rossmann Wrocław SkyTower_webp/IMG_5313.webp"},{"directory":"16. Rossmann Wrocław SkyTower_webp","fileName":"IMG_5314.webp","relativePath":"public/realizacje/realizacje/16. Rossmann Wrocław SkyTower_webp/IMG_5314.webp"},{"directory":"16. Rossmann Wrocław SkyTower_webp","fileName":"IMG_5324.webp","relativePath":"public/realizacje/realizacje/16. Rossmann Wrocław SkyTower_webp/IMG_5324.webp"},{"directory":"16. Rossmann Wrocław SkyTower_webp","fileName":"IMG_5327.webp","relativePath":"public/realizacje/realizacje/16. Rossmann Wrocław SkyTower_webp/IMG_5327.webp"},{"directory":"16. Rossmann Wrocław SkyTower_webp","fileName":"IMG_5329.webp","relativePath":"public/realizacje/realizacje/16. Rossmann Wrocław SkyTower_webp/IMG_5329.webp"},{"directory":"16. Rossmann Wrocław SkyTower_webp","fileName":"IMG_5330.webp","relativePath":"public/realizacje/realizacje/16. Rossmann Wrocław SkyTower_webp/IMG_5330.webp"},{"directory":"17. Sinsay Jawor_webp","fileName":"IMG_0192.webp","relativePath":"public/realizacje/realizacje/17. Sinsay Jawor_webp/IMG_0192.webp"},{"directory":"17. Sinsay Jawor_webp","fileName":"IMG_0193.webp","relativePath":"public/realizacje/realizacje/17. Sinsay Jawor_webp/IMG_0193.webp"},{"directory":"17. Sinsay Jawor_webp","fileName":"IMG_0195.webp","relativePath":"public/realizacje/realizacje/17. Sinsay Jawor_webp/IMG_0195.webp"},{"directory":"17. Sinsay Jawor_webp","fileName":"IMG_0203.webp","relativePath":"public/realizacje/realizacje/17. Sinsay Jawor_webp/IMG_0203.webp"},{"directory":"17. Sinsay Jawor_webp","fileName":"IMG_0204.webp","relativePath":"public/realizacje/realizacje/17. Sinsay Jawor_webp/IMG_0204.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0049.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0049.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0050.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0050.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0069.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0069.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0070.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0070.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0072.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0072.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0078.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0078.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0083.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0083.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0089.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0089.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0094.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0094.webp"},{"directory":"18. Sinsay Milicz_webp","fileName":"IMG_0110.webp","relativePath":"public/realizacje/realizacje/18. Sinsay Milicz_webp/IMG_0110.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_0030.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_0030.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_0031.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_0031.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_0033 3.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_0033 3.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_0165.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_0165.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_0166.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_0166.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6541.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6541.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6542.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6542.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6543.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6543.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6544.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6544.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6545.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6545.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6546.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6546.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6547.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6547.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6548.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6548.webp"},{"directory":"19. Sinsay Nowa Sól_webp","fileName":"IMG_6549.webp","relativePath":"public/realizacje/realizacje/19. Sinsay Nowa Sól_webp/IMG_6549.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"E24A9993-D044-484B-8E7F-3572510B43B8.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/E24A9993-D044-484B-8E7F-3572510B43B8.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2123.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2123.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2158.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2158.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2235.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2235.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2236.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2236.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2238.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2238.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2244.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2244.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2256.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2256.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2259.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2259.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2263.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2263.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2275.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2275.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2276.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2276.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2286.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2286.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2296.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2296.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2297.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2297.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2298.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2298.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2300.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2300.webp"},{"directory":"2. MAŁOMICE_webp","fileName":"IMG_2301.webp","relativePath":"public/realizacje/realizacje/2. MAŁOMICE_webp/IMG_2301.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_5946.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_5946.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_5964.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_5964.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_5973.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_5973.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_5976.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_5976.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_5988.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_5988.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_6109.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_6109.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_6110.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_6110.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_6116.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_6116.webp"},{"directory":"20. Bateko Doczyszczanie i polimeryzacja posadzki_webp","fileName":"IMG_6125.webp","relativePath":"public/realizacje/realizacje/20. Bateko Doczyszczanie i polimeryzacja posadzki_webp/IMG_6125.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5360.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5360.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5361.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5361.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5362.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5362.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5365.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5365.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5367.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5367.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5368.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5368.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5369.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5369.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5387.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5387.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5388.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5388.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5403.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5403.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5427.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5427.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5439.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5439.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5462.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5462.webp"},{"directory":"21. SOR Legnica_webp","fileName":"IMG_5463.webp","relativePath":"public/realizacje/realizacje/21. SOR Legnica_webp/IMG_5463.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_0907.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_0907.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_0914.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_0914.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_0915.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_0915.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_0916.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_0916.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_0927.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_0927.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_1180.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_1180.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_1188.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_1188.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_1192.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_1192.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"IMG_1196.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/IMG_1196.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"PHOTO-2026-03-16-15-32-44.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/PHOTO-2026-03-16-15-32-44.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"PHOTO-2026-03-16-15-36-17.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/PHOTO-2026-03-16-15-36-17.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"PHOTO-2026-03-23-11-42-07.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/PHOTO-2026-03-23-11-42-07.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"PHOTO-2026-03-23-11-42-13.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/PHOTO-2026-03-23-11-42-13.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"WhatsApp Image 2026-03-26 at 15.02.52 (1).webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/WhatsApp Image 2026-03-26 at 15.02.52 (1).webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"WhatsApp Image 2026-03-26 at 15.02.52.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/WhatsApp Image 2026-03-26 at 15.02.52.webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"WhatsApp Image 2026-03-26 at 15.02.53 (1).webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/WhatsApp Image 2026-03-26 at 15.02.53 (1).webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"WhatsApp Image 2026-03-26 at 15.02.53 (2).webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/WhatsApp Image 2026-03-26 at 15.02.53 (2).webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"WhatsApp Image 2026-03-26 at 15.02.53 (3).webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/WhatsApp Image 2026-03-26 at 15.02.53 (3).webp"},{"directory":"22. Lubin Chocianowska_webp","fileName":"WhatsApp Image 2026-03-26 at 15.02.53.webp","relativePath":"public/realizacje/realizacje/22. Lubin Chocianowska_webp/WhatsApp Image 2026-03-26 at 15.02.53.webp"},{"directory":"23. Urbex Złotoryja_webp","fileName":"IMG_0927.webp","relativePath":"public/realizacje/realizacje/23. Urbex Złotoryja_webp/IMG_0927.webp"},{"directory":"23. Urbex Złotoryja_webp","fileName":"IMG_0928.webp","relativePath":"public/realizacje/realizacje/23. Urbex Złotoryja_webp/IMG_0928.webp"},{"directory":"23. Urbex Złotoryja_webp","fileName":"IMG_0933.webp","relativePath":"public/realizacje/realizacje/23. Urbex Złotoryja_webp/IMG_0933.webp"},{"directory":"23. Urbex Złotoryja_webp","fileName":"IMG_0939.webp","relativePath":"public/realizacje/realizacje/23. Urbex Złotoryja_webp/IMG_0939.webp"},{"directory":"23. Urbex Złotoryja_webp","fileName":"IMG_0943.webp","relativePath":"public/realizacje/realizacje/23. Urbex Złotoryja_webp/IMG_0943.webp"},{"directory":"23. Urbex Złotoryja_webp","fileName":"IMG_0945.webp","relativePath":"public/realizacje/realizacje/23. Urbex Złotoryja_webp/IMG_0945.webp"},{"directory":"23. Urbex Złotoryja_webp","fileName":"IMG_0946.webp","relativePath":"public/realizacje/realizacje/23. Urbex Złotoryja_webp/IMG_0946.webp"},{"directory":"23. Urbex Złotoryja_webp","fileName":"IMG_0969.webp","relativePath":"public/realizacje/realizacje/23. Urbex Złotoryja_webp/IMG_0969.webp"},{"directory":"3. PERŁOWA_webp","fileName":"IMG_2946.webp","relativePath":"public/realizacje/realizacje/3. PERŁOWA_webp/IMG_2946.webp"},{"directory":"3. PERŁOWA_webp","fileName":"IMG_2959.webp","relativePath":"public/realizacje/realizacje/3. PERŁOWA_webp/IMG_2959.webp"},{"directory":"3. PERŁOWA_webp","fileName":"IMG_2960.webp","relativePath":"public/realizacje/realizacje/3. PERŁOWA_webp/IMG_2960.webp"},{"directory":"3. PERŁOWA_webp","fileName":"IMG_2977.webp","relativePath":"public/realizacje/realizacje/3. PERŁOWA_webp/IMG_2977.webp"},{"directory":"3. PERŁOWA_webp","fileName":"IMG_3509.webp","relativePath":"public/realizacje/realizacje/3. PERŁOWA_webp/IMG_3509.webp"},{"directory":"4. Straż Pożarna_webp","fileName":"IMG_4097.webp","relativePath":"public/realizacje/realizacje/4. Straż Pożarna_webp/IMG_4097.webp"},{"directory":"4. Straż Pożarna_webp","fileName":"IMG_4098.webp","relativePath":"public/realizacje/realizacje/4. Straż Pożarna_webp/IMG_4098.webp"},{"directory":"4. Straż Pożarna_webp","fileName":"IMG_4281.webp","relativePath":"public/realizacje/realizacje/4. Straż Pożarna_webp/IMG_4281.webp"},{"directory":"4. Straż Pożarna_webp","fileName":"IMG_4299.webp","relativePath":"public/realizacje/realizacje/4. Straż Pożarna_webp/IMG_4299.webp"},{"directory":"4. Straż Pożarna_webp","fileName":"IMG_4323.webp","relativePath":"public/realizacje/realizacje/4. Straż Pożarna_webp/IMG_4323.webp"},{"directory":"5. IMPREZA MASOWA_webp","fileName":"8A5568F8-A3CD-46BB-AAC2-8E3E0817B236.webp","relativePath":"public/realizacje/realizacje/5. IMPREZA MASOWA_webp/8A5568F8-A3CD-46BB-AAC2-8E3E0817B236.webp"},{"directory":"5. IMPREZA MASOWA_webp","fileName":"IMG_2359.webp","relativePath":"public/realizacje/realizacje/5. IMPREZA MASOWA_webp/IMG_2359.webp"},{"directory":"5. IMPREZA MASOWA_webp","fileName":"IMG_2364.webp","relativePath":"public/realizacje/realizacje/5. IMPREZA MASOWA_webp/IMG_2364.webp"},{"directory":"5. IMPREZA MASOWA_webp","fileName":"IMG_2365.webp","relativePath":"public/realizacje/realizacje/5. IMPREZA MASOWA_webp/IMG_2365.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"E9A90118-5ACC-4D32-B0D1-49992A4A6607.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/E9A90118-5ACC-4D32-B0D1-49992A4A6607.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4013.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4013.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4014.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4014.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4016.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4016.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4170.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4170.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4171.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4171.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4172.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4172.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4184.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4184.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4198.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4198.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4205.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4205.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4218.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4218.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4348.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4348.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4351.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4351.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4363.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4363.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4365.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4365.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4366.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4366.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4387.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4387.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4397.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4397.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4399.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4399.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4433.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4433.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4434.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4434.webp"},{"directory":"7. Sinsay Borek_webp","fileName":"IMG_4435.webp","relativePath":"public/realizacje/realizacje/7. Sinsay Borek_webp/IMG_4435.webp"},{"directory":"8. Kłodzko Mohito_webp","fileName":"WhatsApp Image 2026-03-26 at 20.17.18 (1).webp","relativePath":"public/realizacje/realizacje/8. Kłodzko Mohito_webp/WhatsApp Image 2026-03-26 at 20.17.18 (1).webp"},{"directory":"8. Kłodzko Mohito_webp","fileName":"WhatsApp Image 2026-03-26 at 20.17.18 (2).webp","relativePath":"public/realizacje/realizacje/8. Kłodzko Mohito_webp/WhatsApp Image 2026-03-26 at 20.17.18 (2).webp"},{"directory":"8. Kłodzko Mohito_webp","fileName":"WhatsApp Image 2026-03-26 at 20.17.18 (3).webp","relativePath":"public/realizacje/realizacje/8. Kłodzko Mohito_webp/WhatsApp Image 2026-03-26 at 20.17.18 (3).webp"},{"directory":"8. Kłodzko Mohito_webp","fileName":"WhatsApp Image 2026-03-26 at 20.17.18 (4).webp","relativePath":"public/realizacje/realizacje/8. Kłodzko Mohito_webp/WhatsApp Image 2026-03-26 at 20.17.18 (4).webp"},{"directory":"8. Kłodzko Mohito_webp","fileName":"WhatsApp Image 2026-03-26 at 20.17.18.webp","relativePath":"public/realizacje/realizacje/8. Kłodzko Mohito_webp/WhatsApp Image 2026-03-26 at 20.17.18.webp"},{"directory":"9. Mohito Gorzów Wlkp_webp","fileName":"IMG_5695.webp","relativePath":"public/realizacje/realizacje/9. Mohito Gorzów Wlkp_webp/IMG_5695.webp"},{"directory":"9. Mohito Gorzów Wlkp_webp","fileName":"IMG_5697.webp","relativePath":"public/realizacje/realizacje/9. Mohito Gorzów Wlkp_webp/IMG_5697.webp"},{"directory":"9. Mohito Gorzów Wlkp_webp","fileName":"IMG_5698.webp","relativePath":"public/realizacje/realizacje/9. Mohito Gorzów Wlkp_webp/IMG_5698.webp"},{"directory":"9. Mohito Gorzów Wlkp_webp","fileName":"IMG_5705.webp","relativePath":"public/realizacje/realizacje/9. Mohito Gorzów Wlkp_webp/IMG_5705.webp"},{"directory":"9. Mohito Gorzów Wlkp_webp","fileName":"IMG_5716.webp","relativePath":"public/realizacje/realizacje/9. Mohito Gorzów Wlkp_webp/IMG_5716.webp"}];
+    const STORAGE_KEY = "rotation-review-decisions-v1";
+    const rotations = ["0", "-90", "90", "180"];
+    const rotationLabels = {
+      "0": "OK",
+      "-90": "90° w lewo",
+      "90": "90° w prawo",
+      "180": "180°"
+    };
+
+    const state = {
+      filter: "all",
+      changedOnly: false,
+      decisions: loadDecisions()
+    };
+
+    const grid = document.getElementById("grid");
+    const dirFilter = document.getElementById("dirFilter");
+    const changedOnly = document.getElementById("changedOnly");
+    const jsonOutput = document.getElementById("jsonOutput");
+    const summary = document.getElementById("summary");
+
+    function loadDecisions() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+      } catch {
+        return {};
+      }
+    }
+
+    function saveDecisions() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.decisions));
+    }
+
+    function getKey(item) {
+      return item.relativePath;
+    }
+
+    function getExportPayload() {
+      const entries = Object.entries(state.decisions)
+        .filter(([, angle]) => String(angle) !== "0")
+        .map(([relativePath, angle]) => ({ relativePath, angle: Number(angle) }))
+        .sort((a, b) => a.relativePath.localeCompare(b.relativePath, "pl"));
+
+      return {
+        generatedAt: new Date().toISOString(),
+        decisions: entries
+      };
+    }
+
+    function refreshExport() {
+      const payload = getExportPayload();
+      jsonOutput.value = JSON.stringify(payload, null, 2);
+      summary.textContent = "Oznaczone zdjęcia: " + payload.decisions.length + " / " + items.length;
+      saveDecisions();
+    }
+
+    function createFilterOptions() {
+      const dirs = ["all", ...new Set(items.map((item) => item.directory))];
+      dirFilter.innerHTML = "";
+
+      for (const dir of dirs) {
+        const option = document.createElement("option");
+        option.value = dir;
+        option.textContent = dir === "all" ? "Wszystkie" : dir;
+        dirFilter.appendChild(option);
+      }
+    }
+
+    function render() {
+      grid.innerHTML = "";
+
+      const filtered = items.filter((item) => {
+        const key = getKey(item);
+        const hasDecision = state.decisions[key] && String(state.decisions[key]) !== "0";
+
+        if (state.filter !== "all" && item.directory !== state.filter) {
+          return false;
+        }
+
+        if (state.changedOnly && !hasDecision) {
+          return false;
+        }
+
+        return true;
+      });
+
+      for (const item of filtered) {
+        const key = getKey(item);
+        const current = String(state.decisions[key] ?? "0");
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const actions = rotations.map((rotation) => {
+          const activeClass = current === rotation ? "active" : "";
+          return '<button type="button" class="' + activeClass + '" data-key="' + key + '" data-rotation="' + rotation + '">' + rotationLabels[rotation] + "</button>";
+        }).join("");
+
+        card.innerHTML = [
+          '<div class="frame"><img loading="lazy" src="../' + item.relativePath.replace(/"/g, "&quot;") + '" alt="' + item.fileName.replace(/"/g, "&quot;") + '" style="--rotation:' + current + 'deg" /></div>',
+          '<div class="cardBody">',
+          '<div class="meta">',
+          '<div class="dir">' + item.directory + "</div>",
+          '<div class="file">' + item.fileName + "</div>",
+          "</div>",
+          '<div class="actions">' + actions + "</div>",
+          "</div>"
+        ].join("");
+
+        grid.appendChild(card);
+      }
+
+      refreshExport();
+    }
+
+    grid.addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-key]");
+      if (!button) {
+        return;
+      }
+
+      const key = button.dataset.key;
+      const rotation = button.dataset.rotation;
+
+      if (rotation === "0") {
+        delete state.decisions[key];
+      } else {
+        state.decisions[key] = Number(rotation);
+      }
+
+      render();
+    });
+
+    dirFilter.addEventListener("change", () => {
+      state.filter = dirFilter.value;
+      render();
+    });
+
+    changedOnly.addEventListener("change", () => {
+      state.changedOnly = changedOnly.checked;
+      render();
+    });
+
+    document.getElementById("clearAll").addEventListener("click", () => {
+      state.decisions = {};
+      render();
+    });
+
+    document.getElementById("copyJson").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(jsonOutput.value);
+    });
+
+    document.getElementById("downloadJson").addEventListener("click", () => {
+      const blob = new Blob([jsonOutput.value], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "rotation-decisions.json";
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+
+    createFilterOptions();
+    render();
+  </script>
+</body>
+</html>

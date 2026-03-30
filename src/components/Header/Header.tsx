@@ -186,7 +186,7 @@ export default function Header() {
               })}
             </ul>
           </nav>
-          <Button label="Bezpłatna konsultacja" iconName="arrowRight" />
+          <Button label="Pobierz wstępną ofertę" iconName="arrowRight" />
         </div>
         <button
           className={styles.menuIcon}

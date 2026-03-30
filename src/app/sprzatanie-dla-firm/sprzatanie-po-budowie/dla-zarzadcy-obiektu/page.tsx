@@ -280,7 +280,7 @@ const processContent: ProcessSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak prowadzimy", "tematy po stronie organizacyjnej"],
   description:
     "Przykłady realizacji i współpracy przy obiektach komercyjnych. Zobacz, jak wygląda temat od pierwszego kontaktu przez ustalenia i formalności aż po końcowe przekazanie dokumentacji.",
@@ -298,15 +298,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co klienci doceniają przy tej ścieżce współpracy. Najczęściej jeden kontakt, sprawną komunikację, dokumenty końcowe i prostsze procedowanie.",
-      buttonLabel: "Zobacz referencje",
-  buttonHref: "/kontakt",
+        "Zobacz orientacyjne widełki i logikę wyceny przy tematach pod otwarcie, przekazanie i organizację wielu lokalizacji.",
+      buttonLabel: "Zobacz cennik",
+  buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker dla zarządcy obiektu",
+        alt: "Cennik Domker dla zarządcy obiektu",
       },
     },
   ],
@@ -349,6 +349,10 @@ const faqContent: FaqSectionContent = {
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
+  cta: {
+    label: "Przejdź do kontaktu",
+    href: "/kontakt",
+  },
   items: [
     {
       question: "Czy mogę zacząć bez pełnego briefu?",

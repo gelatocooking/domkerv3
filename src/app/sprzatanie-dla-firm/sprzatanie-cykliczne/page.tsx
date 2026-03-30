@@ -57,7 +57,7 @@ const knowledgeContent2: KnowledgeSectionContent = {
       description:
         "Dla miejsc, w których ważny jest regularny porządek, przewidywalny harmonogram i serwis, który nie wymaga stałej kontroli po stronie firmy.",
       buttonLabel: "Chcę omówić biuro",
-      buttonHref: "/kontakt",
+      buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -69,7 +69,7 @@ const knowledgeContent2: KnowledgeSectionContent = {
       description:
         "Dla lokali usługowych, gabinetów i miejsc, które muszą wyglądać dobrze codziennie, a nie tylko po jednorazowym wejściu ekipy.",
       buttonLabel: "Chcę omówić lokal",
-      buttonHref: "/kontakt",
+      buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
@@ -428,10 +428,10 @@ const contactContent: ContactSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak wygląda", "stała obsługa w praktyce"],
   description:
-    "Przykładowe realizacje dla biur, lokali i obiektów komercyjnych. Zobacz, jak prowadzimy stały serwis i co klienci doceniają przy współpracy długofalowej.",
+    "Przykładowe realizacje dla biur, lokali i obiektów komercyjnych. Zobacz, jak prowadzimy stały serwis i jak podchodzimy do wyceny współpracy długofalowej.",
   cards: [
     {
       title: "Realizacje",
@@ -446,15 +446,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność, prostą komunikację i serwis, który nie wymaga ciągłego pilnowania.",
-      buttonLabel: "Zobacz referencje",
-      buttonHref: "/kontakt",
+        "Sprawdź orientacyjne widełki i model liczenia kosztu stałej obsługi biur, lokali i obiektów komercyjnych.",
+      buttonLabel: "Zobacz cennik",
+      buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker przy sprzątaniu cyklicznym",
+        alt: "Cennik Domker przy sprzątaniu cyklicznym",
       },
     },
   ],
@@ -467,6 +467,10 @@ const faqContent: FaqSectionContent = {
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
+  cta: {
+    label: "Przejdź do kontaktu",
+    href: "/kontakt",
+  },
   items: [
     {
       question: "Jakie obiekty obsługujecie cyklicznie?",

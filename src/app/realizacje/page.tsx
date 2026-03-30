@@ -22,110 +22,104 @@ export const metadata: Metadata = {
 
 const defaultContent: PagesHeroContent = {
   badge: "WYBRANE REALIZACJE",
-  titleLines: [
-    "Scenariusze wsp\u00f3\u0142pracy",
-    "z r\u00f3\u017cnych typ\u00f3w obiekt\u00f3w",
-  ],
+  titleLines: ["Scenariusze współpracy", "z różnych typów obiektów"],
   description:
-    "Poni\u017cej pokazujemy przyk\u0142ady realizacji z r\u00f3\u017cnych typ\u00f3w obiekt\u00f3w i us\u0142ug. Kr\u00f3tko: jaki by\u0142 kontekst, co trzeba by\u0142o zrobi\u0107 i jaki efekt zosta\u0142 dostarczony.",
-  ctaLabel: "Om\u00f3w podobny przypadek",
+    "Poniżej pokazujemy przykłady realizacji z różnych typów obiektów i usług. Krótko: jaki był kontekst, co trzeba było zrobić i jaki efekt został dostarczony.",
+  ctaLabel: "Omów podobny przypadek",
   ctaHref: "/kontakt",
 };
 
 const casesContent: CaseSectionContent = {
   kickerLabel: "WYBRANE REALIZACJE",
-  titleLines: [
-    "Wybrane realizacje",
-    "z r\u00f3\u017cnych scenariuszy wsp\u00f3\u0142pracy",
-  ],
+  titleLines: ["Wybrane realizacje", "z różnych scenariuszy współpracy"],
   description:
-    "Przyk\u0142ady s\u0105 u\u0142o\u017cone w tym samym rytmie: kontekst, zakres, rezultat i dalszy krok. Dzi\u0119ki temu \u0142atwiej por\u00f3wna\u0107 je do w\u0142asnej sytuacji.",
+    "Przykłady są ułożone w tym samym rytmie: kontekst, zakres, rezultat i dalszy krok. Dzięki temu łatwiej porównać je do własnej sytuacji.",
   items: [
     {
-      typeLabel: "Sprz\u0105tanie po budowie",
-      title: "Lokal us\u0142ugowy przygotowany\n do odbioru i otwarcia",
+      typeLabel: "Sprzątanie po budowie",
+      title: "Lokal usługowy przygotowany\n do odbioru i otwarcia",
       contextLabel: "Kontekst",
       context: [
-        "Obiekt po pracach wyko\u0144czeniowych i monta\u017cowych.",
-        "Kr\u00f3tkie okno wej\u015bcia przed odbiorem.",
-        "Widoczny py\u0142, \u015blady po zabezpieczeniach i zabrudzenia na detalach.",
-        "Do dopi\u0119cia przeszklenia, komunikacja i strefy oceniane na ko\u0144cu.",
+        "Obiekt po pracach wykończeniowych i montażowych.",
+        "Krótkie okno wejścia przed odbiorem.",
+        "Widoczny pył, ślady po zabezpieczeniach i zabrudzenia na detalach.",
+        "Do dopięcia przeszklenia, komunikacja i strefy oceniane na końcu.",
       ],
       scopeLabel: "Zakres",
       scope: [
-        "Usuni\u0119cie py\u0142u technologicznego.",
-        "Doczyszczenie detali wyko\u0144czeniowych.",
-        "Mycie przeszkle\u0144 i element\u00f3w pod \u015bwiat\u0142o.",
-        "Usuni\u0119cie \u015blad\u00f3w po foliach i zabezpieczeniach.",
-        "Przygotowanie obiektu pod finalny obch\u00f3d.",
+        "Usunięcie pyłu technologicznego.",
+        "Doczyszczenie detali wykończeniowych.",
+        "Mycie przeszkleń i elementów pod światło.",
+        "Usunięcie śladów po foliach i zabezpieczeniach.",
+        "Przygotowanie obiektu pod finalny obchód.",
       ],
       resultLabel: "Rezultat",
       resultLead:
-        "Obiekt przygotowany do odbioru bez dok\u0142adania chaosu na ko\u0144c\u00f3wce.",
+        "Obiekt przygotowany do odbioru bez dokładania chaosu na końcówce.",
       resultText:
-        "Klient dosta\u0142 przestrze\u0144 uporz\u0105dkowan\u0105 pod finalne sprawdzenie, z domkni\u0119tymi strefami krytycznymi i efektem gotowym do dalszego procedowania.",
-      ctaLabel: "Mam podobn\u0105 sytuacj\u0119",
+        "Klient dostał przestrzeń uporządkowaną pod finalne sprawdzenie, z domkniętymi strefami krytycznymi i efektem gotowym do dalszego procedowania.",
+      ctaLabel: "Mam podobną sytuację",
       ctaHref: "/kontakt",
       media: {
         src: "/tlo.png",
-        alt: "Realizacja sprz\u0105tania po budowie",
+        alt: "Realizacja sprzątania po budowie",
       },
     },
     {
-      typeLabel: "Sprz\u0105tanie cykliczne",
-      title: "Sta\u0142a obs\u0142uga biura ustawiona\n w przewidywalnym rytmie",
+      typeLabel: "Sprzątanie cykliczne",
+      title: "Stała obsługa biura ustawiona\n w przewidywalnym rytmie",
       contextLabel: "Kontekst",
       context: [
-        "Biuro wymagaj\u0105ce regularnego serwisu bez anga\u017cowania zespo\u0142u w codzienne pilnowanie.",
-        "Potrzeba utrzymania sta\u0142ego standardu w cz\u0119\u015bciach wsp\u00f3lnych i strefach pracy.",
-        "Wa\u017cny przewidywalny harmonogram i prosty kontakt po stronie wykonawcy.",
-        "Wsp\u00f3\u0142praca mia\u0142a dzia\u0142a\u0107 w tle, bez ci\u0105g\u0142ego wracania do ustale\u0144.",
+        "Biuro wymagające regularnego serwisu bez angażowania zespołu w codzienne pilnowanie.",
+        "Potrzeba utrzymania stałego standardu w częściach wspólnych i strefach pracy.",
+        "Ważny przewidywalny harmonogram i prosty kontakt po stronie wykonawcy.",
+        "Współpraca miała działać w tle, bez ciągłego wracania do ustaleń.",
       ],
       scopeLabel: "Zakres",
       scope: [
-        "Regularne sprz\u0105tanie stref biurowych.",
-        "Utrzymanie cz\u0119\u015bci wsp\u00f3lnych i zaplecza.",
+        "Regularne sprzątanie stref biurowych.",
+        "Utrzymanie części wspólnych i zaplecza.",
         "Harmonogram dopasowany do rytmu pracy obiektu.",
-        "Sta\u0142y model wsp\u00f3\u0142pracy i komunikacji.",
-        "Bie\u017c\u0105ce reagowanie na potrzeby po stronie klienta.",
+        "Stały model współpracy i komunikacji.",
+        "Bieżące reagowanie na potrzeby po stronie klienta.",
       ],
       resultLabel: "Rezultat",
       resultLead:
-        "Serwis, kt\u00f3ry dzia\u0142a regularnie i nie wymaga ci\u0105g\u0142ego przypominania o podstawach.",
+        "Serwis, który działa regularnie i nie wymaga ciągłego przypominania o podstawach.",
       resultText:
-        "Klient zyska\u0142 przewidywaln\u0105 obs\u0142ug\u0119, stabilny poziom wykonania i prostsze zarz\u0105dzanie czysto\u015bci\u0105 w obiekcie.",
-      ctaLabel: "Chc\u0119 ustawi\u0107 sta\u0142\u0105 obs\u0142ug\u0119",
+        "Klient zyskał przewidywalną obsługę, stabilny poziom wykonania i prostsze zarządzanie czystością w obiekcie.",
+      ctaLabel: "Chcę ustawić stałą obsługę",
       ctaHref: "/kontakt",
       media: {
         src: "/tlo.png",
-        alt: "Realizacja sta\u0142ej obs\u0142ugi biura",
+        alt: "Realizacja stałej obsługi biura",
       },
       reverseOnDesktop: true,
     },
     {
       typeLabel: "Maszynowe czyszczenie posadzek",
-      title: "Doczyszczenie nawierzchni dobrane \n do typu posadzki i zabrudze\u0144",
+      title: "Doczyszczenie nawierzchni dobrane \n do typu posadzki i zabrudzeń",
       contextLabel: "Kontekst",
       context: [
-        "Obiekt komercyjny z posadzk\u0105 wymagaj\u0105c\u0105 wi\u0119cej ni\u017c standardowego mycia.",
-        "Widoczne osady, zabrudzenia eksploatacyjne albo pozosta\u0142o\u015bci po pracach.",
+        "Obiekt komercyjny z posadzką wymagającą więcej niż standardowego mycia.",
+        "Widoczne osady, zabrudzenia eksploatacyjne albo pozostałości po pracach.",
         "Potrzeba poprawy efektu bez ryzyka dla nawierzchni.",
-        "Kluczowe by\u0142o w\u0142a\u015bciwe rozpoznanie materia\u0142u i dob\u00f3r procesu.",
+        "Kluczowe było właściwe rozpoznanie materiału i dobór procesu.",
       ],
       scopeLabel: "Zakres",
       scope: [
         "Kwalifikacja typu posadzki.",
-        "Ocena rodzaju i skali zabrudze\u0144.",
-        "Dob\u00f3r technologii do nawierzchni.",
+        "Ocena rodzaju i skali zabrudzeń.",
+        "Dobór technologii do nawierzchni.",
         "Maszynowe doczyszczanie powierzchni.",
-        "Przeprowadzenie us\u0142ugi w warunkach dopasowanych do obiektu.",
+        "Przeprowadzenie usługi w warunkach dopasowanych do obiektu.",
       ],
       resultLabel: "Rezultat",
       resultLead:
-        "Posadzka wyra\u017anie poprawiona bez przypadkowego dzia\u0142ania na materiale.",
+        "Posadzka wyraźnie poprawiona bez przypadkowego działania na materiale.",
       resultText:
-        "Klient dosta\u0142 us\u0142ug\u0119 opart\u0105 na w\u0142a\u015bciwej metodzie, z efektem dopasowanym do stanu nawierzchni i realnych mo\u017cliwo\u015bci jej od\u015bwie\u017cenia.",
-      ctaLabel: "Mam podobn\u0105 posadzk\u0119",
+        "Klient dostał usługę opartą na właściwej metodzie, z efektem dopasowanym do stanu nawierzchni i realnych możliwości jej odświeżenia.",
+      ctaLabel: "Mam podobną posadzkę",
       ctaHref: "/kontakt",
       media: {
         src: "/tlo.png",
@@ -138,11 +132,11 @@ const casesContent: CaseSectionContent = {
 const galleryContent: GallerySectionContent = {
   kickerLabel: "GALERIA REALIZACJI",
   titleLines: [
-    "Zdj\u0119cia z r\u00f3\u017cnych typ\u00f3w",
-    "realizacji i scenariuszy wej\u015bcia",
+    "Wybrane wejścia, które pokazują",
+    "jak pracujemy pod termin i standard",
   ],
   description:
-    "Galeria dzia\u0142a jak szybki przegl\u0105d przypadk\u00f3w z r\u00f3\u017cnych kategorii us\u0142ug. Na start filtrujesz po typie prac, a dalej mo\u017cesz rozwin\u0105\u0107 j\u0105 o pe\u0142ne serie dla konkretnych realizacji.",
+    "To nie jest pełna galeria wszystkich zdjęć, tylko kuratorowany przegląd realizacji z różnych kategorii usług. Filtrujesz po typie prac i od razu widzisz, w jakich warunkach prowadziliśmy wejście, jaki był zakres i co trzeba było dowieźć na końcu.",
   tags: [
     { id: "all", label: "Wszystko", iconName: "layoutGrid" },
     { id: "construction", label: "Po budowie", iconName: "hardHat" },
@@ -152,125 +146,316 @@ const galleryContent: GallerySectionContent = {
   ],
   items: [
     {
-      title: "Lokal przygotowany do finalnego odbioru",
-      categoryLabel: "Po budowie",
-      categoryIconName: "hardHat",
-      description:
-        "Kr\u00f3tka seria zdj\u0119\u0107 pokazuj\u0105ca finalne domkni\u0119cie obiektu przed odbiorem, z naciskiem na przeszklenia, detale i strefy oceniane na ko\u0144cu.",
-      imageSrc: "/tlo.png",
-      imageAlt: "Sprz\u0105tanie po budowie w lokalu us\u0142ugowym",
-      tags: ["construction"],
-    },
-    {
-      title: "Ko\u0144cowe domkni\u0119cie stref krytycznych",
-      categoryLabel: "Po budowie",
-      categoryIconName: "hardHat",
-      description:
-        "Materia\u0142 z realizacji, w kt\u00f3rej liczy\u0142 si\u0119 kr\u00f3tki termin wej\u015bcia i uporz\u0105dkowanie kluczowych stref pod finalny obch\u00f3d inwestora.",
-      imageSrc: "/tlo.png",
-      imageAlt: "Domkni\u0119cie stref po pracach wyko\u0144czeniowych",
-      tags: ["construction"],
-    },
-    {
-      title: "Regularny serwis w rytmie pracy biura",
-      categoryLabel: "Cykliczne",
-      categoryIconName: "building2",
-      description:
-        "Przyk\u0142ad wsp\u00f3\u0142pracy ustawionej tak, \u017ceby utrzyma\u0107 standard czysto\u015bci bez dok\u0142adania zespo\u0142owi codziennego pilnowania wykonawcy.",
-      imageSrc: "/tlo.png",
-      imageAlt: "Obs\u0142uga cykliczna biura",
-      tags: ["cyclical"],
-    },
-    {
-      title: "Sta\u0142y standard w cz\u0119\u015bciach wsp\u00f3lnych",
-      categoryLabel: "Cykliczne",
-      categoryIconName: "building2",
-      description:
-        "Seria uj\u0119\u0107 pokazuj\u0105ca przewidywalny model serwisu, harmonogram i efekt ko\u0144cowy w cz\u0119\u015bciach wsp\u00f3lnych oraz strefach pracy.",
-      imageSrc: "/tlo.png",
-      imageAlt: "Utrzymanie czysto\u015bci w biurze",
-      tags: ["cyclical"],
-    },
-    {
-      title: "Doczyszczenie powierzchni pod efekt ko\u0144cowy",
-      categoryLabel: "Posadzki",
-      categoryIconName: "grid3x3",
-      description:
-        "Case skupiony na doborze metody do typu nawierzchni i skali zabrudze\u0144, bez przypadkowego dzia\u0142ania na materiale.",
-      imageSrc: "/tlo.png",
-      imageAlt: "Maszynowe czyszczenie posadzki",
-      tags: ["floors"],
-    },
-    {
-      title: "Dob\u00f3r procesu do typu nawierzchni i zabrudze\u0144",
-      categoryLabel: "Posadzki",
-      categoryIconName: "grid3x3",
-      description:
-        "Kr\u00f3tki przegl\u0105d realizacji, w kt\u00f3rej liczy\u0142 si\u0119 w\u0142a\u015bciwy dob\u00f3r technologii oraz efekt mo\u017cliwy do osi\u0105gni\u0119cia dla konkretnej posadzki.",
-      imageSrc: "/tlo.png",
-      imageAlt: "Proces doczyszczania posadzek",
-      tags: ["floors"],
-    },
-    {
-      title: "Witryny doprowadzone do czytelnego efektu",
+      id: "kubiak-okna-odbior",
+      slug: "kubiak-mycie-okien-przed-odbiorami",
+      title: "Kubiak — mycie okien przed odbiorami mieszkań",
       categoryLabel: "Mycie okien i witryn",
       categoryIconName: "sparkles",
       description:
-        "Zdj\u0119cia z realizacji, w kt\u00f3rej prosty model organizacji i szybka wycena prze\u0142o\u017cy\u0142y si\u0119 na regularny, powtarzalny efekt na witrynach.",
-      imageSrc: "/tlo.png",
-      imageAlt: "Mycie witryn w lokalu",
-      tags: ["windows"],
+        "216 skrzydeł okiennych do domknięcia w trzy dni, z pracą od świtu do zmierzchu i wieczornym doczyszczaniem detali.",
+      imageSrc: "/realizacje/covers/kubiak.webp",
+      imageAlt: "Mycie okien po budowie przed odbiorami mieszkań",
+      tags: ["construction", "windows"],
+      gallery: [
+        { src: "/realizacje/gallery/kubiak/1.webp", alt: "Kubiak — zdjęcie 1" },
+        { src: "/realizacje/gallery/kubiak/2.webp", alt: "Kubiak — zdjęcie 2" },
+        { src: "/realizacje/gallery/kubiak/3.webp", alt: "Kubiak — zdjęcie 3" },
+      ],
+      detail: {
+        clientLabel: "Usługi Ogólnobudowlane Damian Kubiak",
+        dateLabel: "03.2024",
+        orderTypeLabel: "Mycie okien po budowie",
+        summary:
+          "Realizacja pod bardzo krótki, trzydniowy termin odbiorów mieszkań. Pracę zorganizowaliśmy od świtu do zmierzchu, a po zmroku domykaliśmy zadania niewymagające światła dziennego.",
+        scopeLabel:
+          "Obustronne mycie szyb i ram, usuwanie klejów, tynków, farb i taśm po budowie na 216 skrzydłach okiennych.",
+        effectLabel:
+          "Klient utrzymał termin przekazywania mieszkań, a realizacja otworzyła dalszą współpracę przy obsłudze jego biura.",
+      },
     },
     {
-      title: "Powtarzalny model wej\u015bcia dla przeszkle\u0144",
+      id: "aquapark-standard-sanitarny",
+      slug: "aquapark-wejscie-pod-sanitarny-standard-odbioru",
+      title: "Aquapark — wejście pod sanitarny standard odbioru",
+      categoryLabel: "Po budowie",
+      categoryIconName: "hardHat",
+      description:
+        "Obiekt basenowy prowadzony równolegle z poprawkami budowlanymi, pod wysokie wymagania higieniczne i presję odbiorów.",
+      imageSrc: "/realizacje/covers/aquapark.webp",
+      imageAlt: "Sprzątanie po remoncie aquaparku przed odbiorem",
+      tags: ["construction", "floors"],
+      gallery: [
+        { src: "/realizacje/gallery/aquapark/1.webp", alt: "Aquapark — zdjęcie 1" },
+        { src: "/realizacje/gallery/aquapark/2.webp", alt: "Aquapark — zdjęcie 2" },
+        { src: "/realizacje/gallery/aquapark/3.webp", alt: "Aquapark — zdjęcie 3" },
+        { src: "/realizacje/gallery/aquapark/4.webp", alt: "Aquapark — zdjęcie 4" },
+        { src: "/realizacje/gallery/aquapark/5.webp", alt: "Aquapark — zdjęcie 5" },
+        { src: "/realizacje/gallery/aquapark/6.webp", alt: "Aquapark — zdjęcie 6" },
+      ],
+      detail: {
+        clientLabel: "Warbud S.A.",
+        dateLabel: "06–07.2024",
+        orderTypeLabel: "Sprzątanie po remoncie aquaparku",
+        summary:
+          "Prace prowadziliśmy równolegle z poprawkami budowlanymi. Technologię usuwania fugi epoksydowej konsultowaliśmy z producentem, a wejścia organizowaliśmy w zmianach porannych i nocnych.",
+        scopeLabel:
+          "Doczyszczanie gresu z zabrudzeń pobudowlanych, czyszczenie niecki basenowej oraz mycie lamp na wysokości około 7 metrów.",
+        effectLabel:
+          "Generalny wykonawca oddał czysty obiekt basenowy przygotowany do odbiorów sanitarnych i obsługi klientów.",
+      },
+    },
+    {
+      id: "malomice-trzy-bloki",
+      slug: "malomice-etapowe-sprzatanie-trzech-blokow",
+      title: "Małomice — etapowe sprzątanie 3 bloków",
+      categoryLabel: "Po budowie",
+      categoryIconName: "hardHat",
+      description:
+        "Etapowe wejścia tylko do gotowych mieszkań, stały kontakt z inwestorem i bezpieczny dobór chemii do trudnych zabrudzeń.",
+      imageSrc: "/realizacje/covers/malomice.webp",
+      imageAlt: "Sprzątanie po budowie osiedla Małomice w Lubinie",
+      tags: ["construction", "windows"],
+      gallery: [
+        { src: "/realizacje/gallery/malomice/1.webp", alt: "Małomice — zdjęcie 1" },
+        { src: "/realizacje/gallery/malomice/2.webp", alt: "Małomice — zdjęcie 2" },
+        { src: "/realizacje/gallery/malomice/3.webp", alt: "Małomice — zdjęcie 3" },
+        { src: "/realizacje/gallery/malomice/4.webp", alt: "Małomice — zdjęcie 4" },
+        { src: "/realizacje/gallery/malomice/5.webp", alt: "Małomice — zdjęcie 5" },
+        { src: "/realizacje/gallery/malomice/6.webp", alt: "Małomice — zdjęcie 6" },
+      ],
+      detail: {
+        clientLabel: "ZUW Urbex Sp. z o.o.",
+        dateLabel: "08.2024",
+        orderTypeLabel: "Sprzątanie po budowie — 3 bloki, os. Małomice",
+        summary:
+          "Prace prowadziliśmy etapami, wchodząc wyłącznie do mieszkań gotowych do realizacji. W tle była bieżąca koordynacja z inwestorem i dobór bezpiecznej chemii do ram, klatek oraz farby lateksowej.",
+        scopeLabel:
+          "Mycie okien i ram, usuwanie zabrudzeń poremontowych, doczyszczanie klatek, komórek i pomieszczeń technicznych oraz mycie drzwi w 68 mieszkaniach.",
+        effectLabel:
+          "Deweloper mógł terminowo rozpocząć przekazywanie mieszkań, a realizacja przełożyła się na dalszą współpracę przy kolejnych inwestycjach.",
+      },
+    },
+    {
+      id: "sor-legnica-odbior",
+      slug: "sor-legnica-przygotowanie-oddzialu-do-odbioru",
+      title: "SOR Legnica — przygotowanie oddziału do odbioru",
+      categoryLabel: "Po budowie",
+      categoryIconName: "hardHat",
+      description:
+        "Mocna presja czasu, większy zespół w wydłużonych godzinach i technologia dobrana bezpiecznie do wykładziny PCV.",
+      imageSrc: "/realizacje/covers/sor-legnica.webp",
+      imageAlt: "Przygotowanie SOR w Legnicy do odbioru",
+      tags: ["construction", "floors", "windows"],
+      gallery: [
+        { src: "/realizacje/gallery/sor-legnica/1.webp", alt: "SOR Legnica — zdjęcie 1" },
+        { src: "/realizacje/gallery/sor-legnica/2.webp", alt: "SOR Legnica — zdjęcie 2" },
+        { src: "/realizacje/gallery/sor-legnica/3.webp", alt: "SOR Legnica — zdjęcie 3" },
+        { src: "/realizacje/gallery/sor-legnica/4.webp", alt: "SOR Legnica — zdjęcie 4" },
+        { src: "/realizacje/gallery/sor-legnica/5.webp", alt: "SOR Legnica — zdjęcie 5" },
+        { src: "/realizacje/gallery/sor-legnica/6.webp", alt: "SOR Legnica — zdjęcie 6" },
+      ],
+      detail: {
+        clientLabel: "ZUW Urbex Sp. z o.o.",
+        dateLabel: "08.2025",
+        orderTypeLabel: "Przygotowanie SOR w Legnicy do odbioru",
+        summary:
+          "Pod bardzo mocny termin zaangażowaliśmy większy zespół pracujący w wydłużonych godzinach. Kluczowe było doczyszczenie dużych powierzchni PCV bez ryzyka uszkodzenia materiału.",
+        scopeLabel:
+          "Mycie okien i ram, doczyszczenie wejścia do SOR, około 2000 m² wykładziny PCV, mycie drzwi, parapetów, grzejników, kontaktów i przygotowanie całego oddziału do odbioru.",
+        effectLabel:
+          "SOR został terminowo przekazany i oddany do użytkowania, co wsparło pozytywny odbiór inwestycji przez szpital.",
+      },
+    },
+    {
+      id: "psp-zary-przeszklenia",
+      slug: "psp-zary-doczyszczenie-duzych-przeszklen",
+      title: "Komenda PSP — doczyszczenie dużych przeszkleń",
       categoryLabel: "Mycie okien i witryn",
       categoryIconName: "sparkles",
       description:
-        "Przyk\u0142ad us\u0142ugi prowadzonej tak, \u017ceby logistyka wej\u015bcia by\u0142a dopasowana do obiektu i nie komplikowa\u0142a codziennego dzia\u0142ania lokalu.",
-      imageSrc: "/tlo.png",
-      imageAlt: "Mycie okien i witryn w obiekcie",
-      tags: ["windows"],
+        "Duże przeszklenia po budowie, praca na wysokości i wejście z wykorzystaniem zwyżki oraz zespołu z uprawnieniami.",
+      imageSrc: "/realizacje/covers/psp-zary.webp",
+      imageAlt: "Doczyszczanie dużych przeszkleń w komendzie PSP",
+      tags: ["construction", "windows"],
+      gallery: [
+        { src: "/realizacje/gallery/psp-zary/1.webp", alt: "PSP Żary — zdjęcie 1" },
+        { src: "/realizacje/gallery/psp-zary/2.webp", alt: "PSP Żary — zdjęcie 2" },
+        { src: "/realizacje/gallery/psp-zary/3.webp", alt: "PSP Żary — zdjęcie 3" },
+        { src: "/realizacje/gallery/psp-zary/4.webp", alt: "PSP Żary — zdjęcie 4" },
+        { src: "/realizacje/gallery/psp-zary/5.webp", alt: "PSP Żary — zdjęcie 5" },
+      ],
+      detail: {
+        clientLabel: "Państwowa Straż Pożarna w Żarach",
+        dateLabel: "04.2025",
+        orderTypeLabel: "Doczyszczanie okien po budowie komendy PSP",
+        summary:
+          "Standardowe wejście z drabiny byłoby zbyt wolne i mniej bezpieczne. Zamówiliśmy zwyżkę i skierowaliśmy przeszkolony zespół z badaniami wysokościowymi oraz szkoleniami BHP.",
+        scopeLabel:
+          "Obustronne mycie okien i ram po budowie oraz usuwanie klejów, tynków, farb i taśm z dużych przeszkleń.",
+        effectLabel:
+          "Nowy budynek PSP został przekazany z estetycznie doczyszczoną fasadą, co podniosło odbiór całego obiektu.",
+      },
+    },
+    {
+      id: "event-ccc-obsluga",
+      slug: "event-ccc-obsluga-czystosci-podczas-imprezy-masowej",
+      title: "Event CCC — czystość dla 800 uczestników",
+      categoryLabel: "Cykliczne",
+      categoryIconName: "building2",
+      description:
+        "Obsługa wydarzenia masowego z zapleczem sanitarnym, logistyką odpadów i zespołem reagującym na bieżąco przez cały event.",
+      imageSrc: "/realizacje/covers/event-ccc.webp",
+      imageAlt: "Obsługa czystości podczas imprezy masowej",
+      tags: ["cyclical"],
+      gallery: [
+        { src: "/realizacje/gallery/event-ccc/1.webp", alt: "Event CCC — zdjęcie 1" },
+        { src: "/realizacje/gallery/event-ccc/2.webp", alt: "Event CCC — zdjęcie 2" },
+        { src: "/realizacje/gallery/event-ccc/3.webp", alt: "Event CCC — zdjęcie 3" },
+        { src: "/realizacje/gallery/event-ccc/4.webp", alt: "Event CCC — zdjęcie 4" },
+      ],
+      detail: {
+        clientLabel: "Agencja reklamowa Goody dla wydarzenia w CCC",
+        dateLabel: "09.2024",
+        orderTypeLabel: "Obsługa czystości podczas imprezy masowej",
+        summary:
+          "Dla wydarzenia na około 800 osób zabezpieczyliśmy zaplecze sanitarne, teren imprezy i logistykę odpadów. Zespół przez cały czas reagował na potrzeby gości i opróżniał pojemniki.",
+        scopeLabel:
+          "Utrzymanie czystości w strefie wydarzenia, obsługa sanitariatów, pojemników 120 l i kontenera 10 m³ oraz sprzątanie przed i po imprezie.",
+        effectLabel:
+          "Wydarzenie przebiegło w uporządkowanym otoczeniu bez dokładania chaosu organizatorowi w trakcie trwania imprezy.",
+      },
+    },
+    {
+      id: "retail-otwarcia-caly-kraj",
+      slug: "sieci-retail-szybkie-wejscia-pod-otwarcia",
+      title: "Sieci retail — szybkie wejścia pod otwarcia",
+      categoryLabel: "Po budowie",
+      categoryIconName: "hardHat",
+      description:
+        "Model współpracy dla salonów sieciowych: wejścia w krótkich oknach, często w nocy, z powtarzalnym standardem przygotowania sklepu.",
+      imageSrc: "/realizacje/covers/retail-ccc.webp",
+      imageAlt: "Przygotowanie salonu sieciowego do otwarcia",
+      tags: ["construction", "cyclical", "windows"],
+      gallery: [
+        { src: "/realizacje/gallery/retail-ccc/1.webp", alt: "Retail CCC — zdjęcie 1" },
+        { src: "/realizacje/gallery/retail-ccc/2.webp", alt: "Retail CCC — zdjęcie 2" },
+        { src: "/realizacje/gallery/retail-ccc/3.webp", alt: "Retail CCC — zdjęcie 3" },
+      ],
+      detail: {
+        clientLabel: "Sieci retail we współpracy z generalnymi wykonawcami",
+        dateLabel: "Lata współpracy",
+        orderTypeLabel: "Przygotowanie salonów sieciowych do otwarcia",
+        summary:
+          "Realizujemy wejścia w całej Polsce, często nocą i w krótkich oknach czasowych. Łączymy prace po budowie z przygotowaniem sklepów do otwarcia pod ujednolicony standard.",
+        scopeLabel:
+          "Trzyetapowe sprzątanie przed otwarciami: posadzki, zaplecza, przymierzalnie, lustra, meble, oświetlenie i witryny.",
+        effectLabel:
+          "Sieć dostaje powtarzalny model wejścia i jednolity standard przygotowania salonów niezależnie od miasta.",
+      },
+    },
+    {
+      id: "retail-witryny-standard",
+      slug: "sieci-retail-cykliczne-witryny-i-jednolity-standard",
+      title: "Sieci retail — witryny i standard w działających sklepach",
+      categoryLabel: "Mycie okien i witryn",
+      categoryIconName: "sparkles",
+      description:
+        "Cykliczne wejścia do działających salonów z powtarzalnym myciem witryn i szybkim reagowaniem na potrzeby wielu lokalizacji.",
+      imageSrc: "/realizacje/covers/retail-rossmann.webp",
+      imageAlt: "Cykliczne mycie witryn w sieci retail",
+      tags: ["cyclical", "windows"],
+      gallery: [
+        { src: "/realizacje/gallery/retail-rossmann/1.webp", alt: "Retail Rossmann — zdjęcie 1" },
+        { src: "/realizacje/gallery/retail-rossmann/2.webp", alt: "Retail Rossmann — zdjęcie 2" },
+        { src: "/realizacje/gallery/retail-rossmann/3.webp", alt: "Retail Rossmann — zdjęcie 3" },
+        { src: "/realizacje/gallery/retail-rossmann/4.webp", alt: "Retail Rossmann — zdjęcie 4" },
+        { src: "/realizacje/gallery/retail-rossmann/5.webp", alt: "Retail Rossmann — zdjęcie 5" },
+        { src: "/realizacje/gallery/retail-rossmann/6.webp", alt: "Retail Rossmann — zdjęcie 6" },
+      ],
+      detail: {
+        clientLabel: "Sieci retail: Rossmann, LPP, CCC",
+        dateLabel: "Lata współpracy",
+        orderTypeLabel: "Cykliczne mycie witryn i bieżąca obsługa",
+        summary:
+          "Dzięki sieci współpracowników, ujednoliconemu sprzętowi i prostym procedurom zapewniamy powtarzalny efekt witryn i szybkie wejścia nawet w 24 godziny.",
+        scopeLabel:
+          "Cykliczne mycie witryn, mycie witryn po budowie oraz bieżące wejścia uzupełniające w działających lokalach handlowych.",
+        effectLabel:
+          "Marka utrzymuje spójny standard ekspozycji i czystości witryn w wielu lokalizacjach bez rozbijania tego na lokalne ustalenia.",
+      },
+    },
+    {
+      id: "bateko-posadzka-polimer",
+      slug: "bateko-doczyszczanie-posadzki-i-polimeryzacja",
+      title: "BatEko — doczyszczanie posadzki i polimeryzacja",
+      categoryLabel: "Posadzki",
+      categoryIconName: "grid3x3",
+      description:
+        "Wieloletnie zabrudzenia i pył grafitowy wymagały specjalistycznej chemii, maszynowego doczyszczenia i zabezpieczenia powierzchni.",
+      imageSrc: "/realizacje/covers/bateko.webp",
+      imageAlt:
+        "Maszynowe doczyszczanie posadzki i polimeryzacja w obiekcie przemysłowym",
+      tags: ["floors", "cyclical"],
+      gallery: [
+        { src: "/realizacje/gallery/bateko/1.webp", alt: "BatEko — zdjęcie 1" },
+        { src: "/realizacje/gallery/bateko/2.webp", alt: "BatEko — zdjęcie 2" },
+        { src: "/realizacje/gallery/bateko/3.webp", alt: "BatEko — zdjęcie 3" },
+        { src: "/realizacje/gallery/bateko/4.webp", alt: "BatEko — zdjęcie 4" },
+        { src: "/realizacje/gallery/bateko/5.webp", alt: "BatEko — zdjęcie 5" },
+        { src: "/realizacje/gallery/bateko/6.webp", alt: "BatEko — zdjęcie 6" },
+      ],
+      detail: {
+        clientLabel: "BatEko Sp. z o.o.",
+        dateLabel: "10.2025",
+        orderTypeLabel: "Maszynowe czyszczenie posadzki i polimeryzacja",
+        summary:
+          "W obiekcie z przetwórstwem baterii mierzyliśmy się z mocno osadzonym pyłem grafitowym i wieloletnimi zabrudzeniami. Kluczowy był dobór chemii, procesu i późniejszego zabezpieczenia.",
+        scopeLabel:
+          "Maszynowe doczyszczanie posadzki oraz nałożenie warstwy polimeru zabezpieczającego pod dalszą eksploatację.",
+        effectLabel:
+          "Klient zyskał wyraźnie odświeżoną posadzkę i łatwiejsze codzienne utrzymanie obiektu, co rozszerzyło współpracę o stały serwis.",
+      },
     },
   ],
 };
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "MASZ PODOBNY PRZYPADEK?",
-  title: "Opisz obiekt, termin i kontekst, a dobierzemy w\u0142a\u015bciwy scenariusz",
+  title: "Opisz obiekt, termin i kontekst, a dobierzemy właściwy scenariusz",
   description:
-    "Nie musisz mie\u0107 gotowego briefu. Wystarczy typ obiektu, lokalizacja, termin i kilka zda\u0144 o sytuacji. Je\u015bli masz zdj\u0119cia, do\u0142\u0105cz je od razu.",
+    "Nie musisz mieć gotowego briefu. Wystarczy typ obiektu, lokalizacja, termin i kilka zdań o sytuacji. Jeśli masz zdjęcia, dołącz je od razu.",
   buttonLabel: "Napisz do nas",
   buttonHref: "#kontakt",
   avatars: ["A", "B", "C", "D", "E", "F", "G"],
 };
 
 const contactContent: ContactSectionContent = {
-  kickerLabel: "SKONTAKTUJ SI\u0118",
-  title: "Napisz, czego dotyczy temat, a poprowadzimy Ci\u0119 dalej",
+  kickerLabel: "SKONTAKTUJ SIĘ",
+  title: "Napisz, czego dotyczy temat, a poprowadzimy Cię dalej",
   description:
-    "Opisz sytuacj\u0119 jednym zdaniem. Je\u015bli chodzi o jeden obiekt, podaj typ, lokalizacj\u0119 i termin. Je\u015bli temat dotyczy kilku punkt\u00f3w, dopisz liczb\u0119 lokalizacji i miasta.",
+    "Opisz sytuację jednym zdaniem. Jeśli chodzi o jeden obiekt, podaj typ, lokalizację i termin. Jeśli temat dotyczy kilku punktów, dopisz liczbę lokalizacji i miasta.",
   chips: [
-    { label: "Dob\u00f3r scenariusza" },
+    { label: "Dobór scenariusza" },
     { label: "Jeden kontakt" },
-    { label: "Jasna \u015bcie\u017cka" },
+    { label: "Jasna ścieżka" },
     { label: "Szybka kwalifikacja" },
-    { label: "Zasi\u0119g og\u00f3lnopolski" },
-    { label: "Konkretna odpowied\u017a", accent: true },
+    { label: "Zasięg ogólnopolski" },
+    { label: "Konkretna odpowiedź", accent: true },
   ],
   form: {
     emailLabel: "Adres e-mail",
-    emailPlaceholder: "Tw\u00f3j adres e-mail",
+    emailPlaceholder: "Twój adres e-mail",
     phoneLabel: "Numer telefonu",
-    phonePlaceholder: "Tw\u00f3j numer telefonu",
+    phonePlaceholder: "Twój numer telefonu",
     topicLabel: "Temat rozmowy",
-    topicPlaceholder: "Jaki obiekt, czego dotyczy zg\u0142oszenie i na kiedy",
+    topicPlaceholder: "Jaki obiekt, czego dotyczy zgłoszenie i na kiedy",
     consentText:
-      "Wyra\u017cam zgod\u0119 na przetwarzanie moich danych osobowych w celu obs\u0142ugi zg\u0142oszenia oraz na kontakt handlowy drog\u0105 elektroniczn\u0105 na podany adres e-mail. Polityka prywatno\u015bci.",
-    submitLabel: "Wy\u015blij zg\u0142oszenie",
+      "Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zgłoszenia oraz na kontakt handlowy drogą elektroniczną na podany adres e-mail. Polityka prywatności.",
+    submitLabel: "Wyślij zgłoszenie",
   },
   meta: {
     avatars: ["A", "B", "C", "D", "E", "F"],
-    text: "Zesp\u00f3\u0142 operacyjny po stronie Domker",
+    text: "Zespół operacyjny po stronie Domker",
   },
 };
 

@@ -280,7 +280,7 @@ const processContent: ProcessSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak pracujemy", "na końcówkach budów"],
   description:
     "Przykładowe realizacje z obiektów komercyjnych i etapów odbiorowych. Zobacz, jak wygląda współpraca od pierwszego kontaktu po finalizację realizacji pod odbiór.",
@@ -298,15 +298,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co kierownicy budów i klienci B2B doceniają we współpracy. Najczęściej przewidywalność, szybką komunikację i ograniczenie liczby powrotów po odbiorze.",
-      buttonLabel: "Zobacz referencje",
-  buttonHref: "/kontakt",
+        "Sprawdź, jak liczymy koszt końcówki budowy pod odbiór i które elementy zakresu najmocniej wpływają na wycenę.",
+      buttonLabel: "Zobacz cennik",
+  buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker po budowie",
+        alt: "Cennik Domker po budowie",
       },
     },
   ],
@@ -349,6 +349,10 @@ const faqContent: FaqSectionContent = {
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
+  cta: {
+    label: "Przejdź do kontaktu",
+    href: "/kontakt",
+  },
   items: [
     {
       question: "Czy wejdziecie na już, jeśli odbiór jest blisko?",

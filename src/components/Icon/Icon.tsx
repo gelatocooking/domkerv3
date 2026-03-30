@@ -38,6 +38,7 @@ import {
   Route,
   Star,
   Truck,
+  X,
   Youtube,
 } from "lucide-react";
 import styles from "./Icon.module.css";
@@ -82,6 +83,7 @@ const icons = {
   route: Route,
   star: Star,
   truck: Truck,
+  x: X,
   youtube: Youtube,
 };
 

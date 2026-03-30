@@ -202,7 +202,7 @@ const contactContent: ContactSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak pracujemy", "przy realizacjach po budowie"],
   description:
     "Przykładowe realizacje z obiektów komercyjnych. Zobacz, jak wygląda usługa w praktyce: od kwalifikacji zakresu po finalizację etapu i przekazanie dokumentacji.",
@@ -220,15 +220,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co klienci doceniają przy tej usłudze. Najczęściej przewidywalność realizacji, bezpieczeństwo materiałowe i czytelne potwierdzenie wykonania.",
-      buttonLabel: "Zobacz referencje",
-  buttonHref: "/kontakt",
+        "Sprawdź, od czego zależy koszt sprzątania po budowie i jak oceniamy zakres na etapie kwalifikacji tematu pod odbiór.",
+      buttonLabel: "Zobacz cennik",
+  buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker",
+        alt: "Cennik Domker po budowie",
       },
     },
   ],

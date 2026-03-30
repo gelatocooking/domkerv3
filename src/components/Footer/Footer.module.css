@@ -38,17 +38,14 @@
 }
 
 .logoMark {
+  display: inline-block;
   position: relative;
-  width: var(--sp-40);
-  height: var(--sp-40);
+  width: 120px;
+  height: 50px;
 }
 
 .logoImage {
   object-fit: contain;
-}
-
-.brandName {
-  composes: t-20 t-strong text-dark from global;
 }
 
 .companyBlock {

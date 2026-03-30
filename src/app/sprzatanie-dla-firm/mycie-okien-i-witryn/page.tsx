@@ -280,7 +280,7 @@ const processContent: ProcessSectionContent = {
 };
 
 const knowledgeContent: KnowledgeSectionContent = {
-  kickerLabel: "REALIZACJE I REFERENCJE",
+  kickerLabel: "REALIZACJE I CENNIK",
   titleLines: ["Zobacz, jak wygląda ta usługa", "w lokalach, sieciach, domach i mieszkaniach"],
   description:
     "Przykłady realizacji dla firm i klientów prywatnych. Zobacz, jak wygląda mycie witryn, okien w punktach handlowych oraz okien w domach i mieszkaniach.",
@@ -298,15 +298,15 @@ const knowledgeContent: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Referencje i opinie",
+      title: "Cennik i wycena",
       description:
-        "Co klienci doceniają przy tej usłudze. Najczęściej prosty kontakt, szybkie ustalenia, regularny efekt i łatwą organizację.",
-      buttonLabel: "Zobacz referencje",
-  buttonHref: "/kontakt",
+        "Sprawdź orientacyjne widełki dla witryn i okien oraz to, od czego zależy koszt jednorazowej albo stałej obsługi.",
+      buttonLabel: "Zobacz cennik",
+  buttonHref: "/cennik",
       media: {
         type: "image",
         src: "/tlo.png",
-        alt: "Referencje Domker przy myciu okien i witryn",
+        alt: "Cennik Domker przy myciu okien i witryn",
       },
     },
   ],
@@ -349,6 +349,10 @@ const faqContent: FaqSectionContent = {
   description: "Masz więcej pytań? Po prostu",
   highlightText: "skontaktuj się z nami",
   avatars: ["A", "B", "C", "D", "E", "F", "G", "H"],
+  cta: {
+    label: "Przejdź do kontaktu",
+    href: "/kontakt",
+  },
   items: [
     {
       question: "Czy obsługujecie firmy i klientów prywatnych?",
