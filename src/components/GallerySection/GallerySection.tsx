@@ -295,7 +295,7 @@ export default function GallerySection({ content }: GallerySectionProps) {
 
               <div className={styles.galleryColumn}>
                 <div className={styles.grid}>
-                  {visibleItems.map((item) => {
+                  {visibleItems.map((item, index) => {
                     const itemKey = getItemKey(item);
                     const isActive = itemKey === activeItemKey;
                     const coverRotation = getImageRotation(item.imageSrc);
@@ -316,6 +316,9 @@ export default function GallerySection({ content }: GallerySectionProps) {
                             alt={item.imageAlt}
                             fill
                             sizes="(min-width: 1024px) 26vw, (min-width: 768px) 44vw, 92vw"
+                            quality={72}
+                            priority={index < 2}
+                            loading={index < 2 ? "eager" : "lazy"}
                             className={styles.mediaImage}
                             style={coverStyle}
                           />
@@ -403,7 +406,9 @@ export default function GallerySection({ content }: GallerySectionProps) {
                     src={activeGalleryImage.src}
                     alt={activeGalleryImage.alt}
                     fill
-                    sizes="100vw"
+                    sizes="(min-width: 1024px) 72vw, 92vw"
+                    quality={78}
+                    priority
                     className={`${styles.lightboxImage} ${
                       isQuarterTurn(activeGalleryRotation) ? styles.lightboxImageQuarterTurn : ""
                     }`}
@@ -445,6 +450,8 @@ export default function GallerySection({ content }: GallerySectionProps) {
                         alt=""
                         fill
                         sizes="80px"
+                        quality={45}
+                        loading="lazy"
                         className={styles.lightboxThumbImage}
                         style={thumbStyle}
                       />

@@ -20,6 +20,7 @@ export interface SolutionItem {
   mediaAlt: string;
   mediaSrc: string;
   illustrationVariant?: SolutionsIllustrationVariant;
+  mobileCentered?: boolean;
 }
 
 export interface SolutionsSectionContent {
@@ -36,6 +37,77 @@ interface SolutionsSectionProps {
 export default function SolutionsSection({ content }: SolutionsSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeItem = content.items[activeIndex];
+  const resolvedIllustrationVariant =
+    activeItem.illustrationVariant ??
+    (activeItem.iconName === "mapPin" &&
+      activeItem.description.includes("układać wszystkiego od nowa")
+      ? "scalableOrderBoard"
+      : activeItem.iconName === "building2" &&
+          activeItem.description.includes("przewidywalnych oknach realizacji")
+        ? "regularWindowsBoard"
+      : activeItem.iconName === "clipboardList" &&
+          activeItem.description.includes("między punktami")
+        ? "multiPointSystemBoard"
+      : activeItem.iconName === "sparkles" &&
+          activeItem.description.includes("szybkiej wycenie ze zdjęć")
+        ? "quickBookingFlowBoard"
+      : activeItem.iconName === "clipboardCheck" &&
+          activeItem.description.includes("wykończenie")
+        ? "floorQualificationBoard"
+      : activeItem.iconName === "sparkles" &&
+          activeItem.description.includes("śladami ruchu")
+        ? "soilClassificationBoard"
+      : activeItem.iconName === "shieldAlert" &&
+          activeItem.description.includes("bezpieczeństwo materiału")
+        ? "safeMethodFlowBoard"
+      : activeItem.iconName === "building2" &&
+          activeItem.description.includes("ograniczyć kolizje z użytkowaniem")
+        ? "activeFacilityBoard"
+      : activeItem.iconName === "clipboardList" &&
+          activeItem.description.includes("historii użytkowania posadzki")
+        ? "realResultBoard"
+      : activeItem.iconName === "mapPin" &&
+          activeItem.description.includes("Metraż jest punktem wyjścia")
+        ? "pricingRangeFlowBoard"
+      : activeItem.iconName === "clipboardCheck" &&
+          activeItem.description.includes("harmonogram ma sens operacyjny")
+        ? "cyclicalSetupBoard"
+      : activeItem.iconName === "layoutGrid" &&
+          activeItem.description.includes("tydzień po tygodniu")
+        ? "serviceLevelBoard"
+      : activeItem.iconName === "shieldAlert" &&
+          activeItem.description.includes("wspierać pracę obiektu")
+        ? "serviceRhythmFlowBoard"
+      : activeItem.iconName === "users" &&
+          activeItem.description.includes("Stały kontakt porządkuje komunikację")
+        ? "singleContactGridBoard"
+      : activeItem.iconName === "calendarClock" &&
+          activeItem.description.includes("stabilność współpracy")
+        ? "serviceStabilityBoard"
+      : activeItem.iconName === "truck" &&
+          activeItem.description.includes("dodatkowe prace da się korygować")
+        ? "flexibleScopeFlowBoard"
+      : activeItem.iconName === "grid3x3" &&
+          activeItem.description.includes("stałym efekcie")
+        ? "recurringModelBoard"
+      : activeItem.iconName === "shieldAlert" &&
+          activeItem.description.includes("układ okien")
+        ? "glassAccessBoard"
+      : activeItem.iconName === "mapPin" &&
+          activeItem.description.includes("widełkami albo terminem")
+        ? "quickEstimateFlowBoard"
+      : activeItem.iconName === "mapPin" && activeItem.description.includes("ogólnopolsko")
+        ? "polandEntryBoard"
+      : activeItem.iconName === "shieldAlert" &&
+          activeItem.description.includes("rejestr")
+        ? "entryReadyBoard"
+        : activeItem.iconName === "sparkles" &&
+            activeItem.description.includes("finalizacja")
+          ? "operationalLeadBoard"
+          : activeItem.iconName === "clipboardCheck" &&
+              activeItem.description.includes("protok")
+            ? "handoffDocumentsBoard"
+        : undefined);
 
   return (
     <section className={styles.section}>
@@ -73,21 +145,39 @@ export default function SolutionsSection({ content }: SolutionsSectionProps) {
             ))}
           </ul>
 
-          <div className={styles.card}>
-            <div className={styles.cardBody}>
+          <div
+            className={`${styles.card} ${
+              activeItem.mobileCentered ? styles.cardMobileCentered : ""
+            }`}
+          >
+            <div
+              className={`${styles.cardBody} ${
+                activeItem.mobileCentered ? styles.cardBodyMobileCentered : ""
+              }`}
+            >
               <h3 className={styles.cardTitle}>{activeItem.title}</h3>
               <p className={styles.cardText}>{activeItem.description}</p>
               <Button
-                className={styles.cardButton}
+                className={`${styles.cardButton} ${
+                  activeItem.mobileCentered ? styles.cardButtonMobileCentered : ""
+                }`}
                 label={activeItem.ctaLabel}
                 iconName="arrowRight"
                 href={activeItem.ctaHref}
               />
             </div>
-            <div className={styles.cardMedia}>
-              <div className={styles.mediaFrame}>
-                {activeItem.illustrationVariant ? (
-                  <SolutionsIllustration variant={activeItem.illustrationVariant} />
+            <div
+              className={`${styles.cardMedia} ${
+                activeItem.mobileCentered ? styles.cardMediaMobileCentered : ""
+              }`}
+            >
+              <div
+                className={`${styles.mediaFrame} ${
+                  activeItem.mobileCentered ? styles.mediaFrameMobileCentered : ""
+                }`}
+              >
+                {resolvedIllustrationVariant ? (
+                  <SolutionsIllustration variant={resolvedIllustrationVariant} />
                 ) : (
                   <Image
                     src={activeItem.mediaSrc}

@@ -3,11 +3,90 @@
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  gap: var(--gap-16);
-  padding: var(--sp-20);
+  gap: var(--gap-12);
+  padding: var(--sp-10);
+  align-items: stretch;
+  justify-items: stretch;
+  align-content: stretch;
   background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-soft) 100%);
   border: var(--sp-1) solid var(--bg-gray-227_229_234);
   border-radius: var(--r-16);
+}
+
+.toolbar,
+.reviewFlowToolbar,
+.capacityToolbar,
+.entryToolbar,
+.acceptanceToolbar,
+.priorityToolbar,
+.entryReadyToolbar,
+.leadToolbar,
+.documentsToolbar,
+.scalableToolbar,
+.windowsRegularToolbar,
+.multiPointToolbar,
+.quickBookingToolbar,
+.recurringToolbar,
+.glassAccessToolbar,
+.quickEstimateToolbar,
+.plan,
+.entryBoard,
+.acceptanceGrid,
+.priorityMap,
+.materialBoard,
+.reviewFlowBoard,
+.capacityGrid,
+.entryReadyGrid,
+.leadBoard,
+.documentsGrid,
+.scalableGrid,
+.windowsRegularGrid,
+.multiPointBoard,
+.quickBookingBoard,
+.recurringGrid,
+.glassAccessBoard,
+.quickEstimateBoard,
+.floorQualificationGrid,
+.soilClassificationBoard,
+.safeMethodBoard,
+.activeFacilityGrid,
+.realResultBoard,
+.pricingRangeBoard,
+.cyclicalSetupGrid,
+.serviceLevelBoard,
+.serviceRhythmBoard,
+.singleContactGrid,
+.serviceStabilityBoard,
+.flexibleScopeBoard {
+  grid-row: 2;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  max-height: 100%;
+  margin: 0;
+  justify-self: stretch;
+  align-self: center;
+}
+
+.toolbar,
+.reviewFlowToolbar,
+.capacityToolbar,
+.entryToolbar,
+.acceptanceToolbar,
+.priorityToolbar,
+.entryReadyToolbar,
+.leadToolbar,
+.documentsToolbar,
+.scalableToolbar,
+.windowsRegularToolbar,
+.multiPointToolbar,
+.quickBookingToolbar,
+.recurringToolbar,
+.glassAccessToolbar,
+.quickEstimateToolbar {
+  display: none;
 }
 
 .toolbar {
@@ -21,6 +100,11 @@
   padding: var(--sp-8) var(--sp-12);
   background: var(--bg-white);
   border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .plan {
@@ -560,6 +644,9 @@
 .logisticsFooter {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   gap: var(--gap-12);
 }
 
@@ -872,6 +959,2038 @@
   composes: t-12 text-muted from global;
 }
 
+.entryToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.entryChip {
+  composes: t-12 text-muted round-400 from global;
+  padding: var(--sp-8) var(--sp-12);
+  background: var(--bg-white);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.entryBoard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: var(--gap-8);
+  height: 100%;
+}
+
+.entryMap {
+  width: 100%;
+  max-width: calc(var(--sp-80) + var(--sp-48));
+  height: auto;
+  margin: 0 auto;
+}
+
+.entryOutline {
+  fill: var(--bg-soft);
+  stroke: var(--bg-gray-227_229_234);
+  stroke-width: 2;
+}
+
+.entryModules {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.entryModule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-4);
+  min-height: calc(var(--sp-24) + var(--sp-20));
+  padding: var(--sp-8);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+}
+
+.entryModuleIcon {
+  width: var(--sp-20);
+  height: var(--sp-20);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.entryModuleLabel {
+  composes: t-10 from global;
+  color: var(--c-text-10_10_10);
+  text-align: center;
+}
+
+.acceptanceToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.acceptanceChip {
+  composes: t-12 text-muted round-400 from global;
+  padding: var(--sp-8) var(--sp-12);
+  background: var(--bg-white);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.acceptanceGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-10);
+  min-height: calc(var(--sp-88) + var(--sp-88));
+}
+
+.acceptanceTile {
+  position: relative;
+  min-height: calc(var(--sp-72) + var(--sp-10));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--sp-12);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+  overflow: hidden;
+}
+
+.acceptanceTileInvestor {
+  background: var(--bg-success-0_12);
+}
+
+.acceptanceTileOffice {
+  background: var(--bg-blue-0_12);
+}
+
+.acceptanceTileApartments {
+  background: var(--bg-gold-0_16);
+}
+
+.acceptanceTileShared {
+  background: var(--bg-purple-0_12);
+}
+
+.acceptanceTileIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  color: var(--c-text-10_10_10);
+  background: var(--bg-white);
+}
+
+.acceptanceTileDetail {
+  width: calc(var(--sp-24) + var(--sp-24));
+  height: var(--sp-6);
+  border-radius: var(--r-400);
+  background: rgb(10 10 10 / 0.12);
+}
+
+.acceptanceTileLabel {
+  composes: t-12 from global;
+  color: var(--c-text-10_10_10);
+}
+
+.acceptanceCenterBadge {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: var(--sp-40);
+  height: var(--sp-40);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-dark);
+  color: var(--c-white);
+  box-shadow:
+    0 0 0 var(--sp-4) rgb(255 255 255 / 0.9),
+    0 10px 24px rgb(10 10 10 / 0.12);
+}
+
+.priorityToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.priorityChip {
+  composes: t-12 text-muted round-400 from global;
+  padding: var(--sp-8) var(--sp-12);
+  background: var(--bg-white);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.priorityMap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "entrances glass"
+    "traffic shared";
+  gap: var(--gap-8);
+  min-height: 0;
+  height: 100%;
+}
+
+.priorityZone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  padding: var(--sp-10);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+  overflow: hidden;
+}
+
+.priorityZoneEntrances {
+  grid-area: entrances;
+  background: var(--bg-success-0_12);
+}
+
+.priorityZoneGlass {
+  grid-area: glass;
+  background: var(--bg-blue-0_12);
+}
+
+.priorityZoneTraffic {
+  grid-area: traffic;
+  background: var(--bg-purple-0_12);
+}
+
+.priorityZoneShared {
+  grid-area: shared;
+  background: var(--bg-gold-0_16);
+}
+
+.priorityZoneBadge {
+  position: absolute;
+  top: var(--sp-8);
+  right: var(--sp-8);
+  min-width: fit-content;
+  height: var(--sp-20);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--sp-8);
+  border-radius: var(--r-100);
+  background: var(--bg-dark);
+  color: var(--c-white);
+  font-size: var(--fs-10);
+  line-height: 1;
+  font-weight: var(--fw-500);
+}
+
+.priorityZoneIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-white);
+  color: var(--c-text-10_10_10);
+}
+
+.priorityZoneDetail {
+  width: calc(var(--sp-24) + var(--sp-12));
+  height: var(--sp-6);
+  border-radius: var(--r-400);
+  background: rgb(10 10 10 / 0.12);
+}
+
+.priorityZoneLabel {
+  composes: t-12 from global;
+  color: var(--c-text-10_10_10);
+}
+
+.priorityZoneStairs,
+.priorityZoneSanitary,
+.priorityZoneGarage,
+.priorityRail {
+  display: none;
+}
+
+.materialBoard {
+  grid-row: 1 / -1;
+  position: relative;
+  min-height: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: var(--sp-12) 0;
+}
+
+.materialGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+  min-height: 0;
+  width: 100%;
+  margin: auto;
+  max-width: calc(var(--sp-80) + var(--sp-80) + var(--sp-48));
+  align-content: center;
+  justify-content: center;
+}
+
+.materialTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap-6);
+  min-height: calc(var(--sp-48) + var(--sp-12));
+  padding: var(--sp-10);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+  min-width: 0;
+}
+
+.materialTileActive {
+  background: var(--bg-success-0_12);
+}
+
+.materialTileIcon {
+  width: var(--sp-24);
+  height: var(--sp-24);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.materialTileSurface,
+.materialTileGlass,
+.materialTileFixture,
+.materialTileProfile {
+  width: calc(var(--sp-24) + var(--sp-8));
+  height: var(--sp-14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: var(--r-400);
+  background: rgb(10 10 10 / 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.materialTileSurface::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      to right,
+      rgb(10 10 10 / 0.08) 0 var(--sp-1),
+      transparent var(--sp-1)
+    ),
+    linear-gradient(
+      to bottom,
+      rgb(10 10 10 / 0.08) 0 var(--sp-1),
+      transparent var(--sp-1)
+    );
+  background-size: var(--sp-6) var(--sp-6);
+}
+
+.materialTileGlassLine {
+  width: 100%;
+  height: var(--sp-1);
+  background: rgb(10 10 10 / 0.14);
+}
+
+.materialTileFixtureDot {
+  width: var(--sp-6);
+  height: var(--sp-6);
+  margin-left: var(--sp-6);
+  border-radius: var(--r-100);
+  background: rgb(10 10 10 / 0.18);
+  box-shadow: calc(var(--sp-8) + var(--sp-2)) 0 0 rgb(10 10 10 / 0.1);
+}
+
+.materialTileProfileCorner {
+  width: var(--sp-12);
+  height: var(--sp-12);
+  margin-left: var(--sp-4);
+  border-top: var(--sp-2) solid rgb(10 10 10 / 0.16);
+  border-left: var(--sp-2) solid rgb(10 10 10 / 0.16);
+  border-top-left-radius: var(--r-8);
+}
+
+.materialTileLabel {
+  composes: t-12 from global;
+  color: var(--c-text-10_10_10);
+  overflow-wrap: anywhere;
+}
+
+.materialHub {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.materialHubBadge {
+  width: var(--sp-20);
+  height: var(--sp-20);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-dark);
+  color: var(--c-white);
+  box-shadow:
+    0 0 0 var(--sp-3) rgb(255 255 255 / 0.92),
+    0 8px 20px rgb(10 10 10 / 0.12);
+}
+
+.materialDetail {
+  display: none;
+}
+
+.reviewFlowToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.reviewFlowChip {
+  composes: t-12 text-muted round-400 from global;
+  padding: var(--sp-8) var(--sp-12);
+  background: var(--bg-white);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.reviewFlowBoard {
+  height: auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-8);
+}
+
+.reviewFlowStep {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-10);
+  padding: var(--sp-12);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+}
+
+.reviewFlowStepSuccess {
+  background: var(--bg-success-0_12);
+}
+
+.reviewFlowStepIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.reviewFlowStepLabel {
+  composes: t-12 from global;
+  color: var(--c-text-10_10_10);
+}
+
+.capacityToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.capacityChip {
+  composes: t-12 text-muted round-400 from global;
+  padding: var(--sp-8) var(--sp-12);
+  background: var(--bg-white);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.capacityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+  min-height: 0;
+  height: 100%;
+}
+
+.capacityTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap-6);
+  min-height: calc(var(--sp-48) + var(--sp-12));
+  padding: var(--sp-10);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+  min-width: 0;
+}
+
+.capacityTileAccent {
+  background: var(--bg-success-0_12);
+}
+
+.capacityTileIcon {
+  width: var(--sp-24);
+  height: var(--sp-24);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.capacityTileDetail {
+  width: calc(var(--sp-24) + var(--sp-12));
+  height: var(--sp-6);
+  border-radius: var(--r-400);
+  background: rgb(10 10 10 / 0.12);
+}
+
+.capacityTileLabel,
+.capacityTileMetric {
+  composes: t-12 from global;
+  color: var(--c-text-10_10_10);
+}
+
+.capacityTileMetric {
+  font-weight: var(--fw-600);
+}
+
+.capacityTileMicro {
+  display: flex;
+  gap: var(--gap-4);
+}
+
+.capacityTileMicro span {
+  width: var(--sp-10);
+  height: var(--sp-10);
+  border-radius: var(--r-4);
+  background: rgb(255 255 255 / 0.82);
+  border: var(--sp-1) solid rgb(10 10 10 / 0.08);
+}
+
+.entryReadyToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.entryReadyChip {
+  composes: t-12 text-muted round-400 from global;
+  min-height: 1.875rem;
+  border-radius: var(--r-999);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-8) var(--sp-12);
+  color: var(--c-text-10_10_10);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.entryReadyGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.entryReadyTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.entryReadyTileAccess {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.entryReadyTileNda {
+  background: rgba(204, 228, 255, 0.2);
+}
+
+.entryReadyTileRegister {
+  background: rgba(245, 234, 186, 0.28);
+}
+
+.entryReadyTileRules {
+  background: rgba(232, 226, 255, 0.28);
+}
+
+.entryReadyTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: var(--r-999);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.entryReadyTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.06);
+}
+
+.entryReadyTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.leadToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.leadChip {
+  composes: t-12 text-muted round-400 from global;
+  min-height: 1.875rem;
+  border-radius: var(--r-999);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-8) var(--sp-12);
+  color: var(--c-text-10_10_10);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.leadBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: var(--gap-8);
+  align-items: center;
+}
+
+.leadMinorTile,
+.leadMainTile {
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+}
+
+.leadMinorTile {
+  min-height: 4.5rem;
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.leadMainTile {
+  min-height: 6.625rem;
+  padding: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.leadMinorIcon,
+.leadMainIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  border-radius: var(--r-999);
+  background: rgba(255, 255, 255, 0.94);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.leadMinorLabel,
+.leadMainLabel {
+  font-size: var(--fs-11);
+  line-height: 1.15;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.leadMainDetail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+}
+
+.leadMainDetail span {
+  display: block;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.leadMainDetail span:first-child {
+  width: 2.75rem;
+}
+
+.leadMainDetail span:last-child {
+  width: 2rem;
+}
+
+.documentsToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.documentsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.documentsTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.documentsTilePhotos {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.documentsTileProtocol {
+  background: rgba(204, 228, 255, 0.2);
+}
+
+.documentsTileConfirmation {
+  background: rgba(245, 234, 186, 0.28);
+}
+
+.documentsTileClosure {
+  background: rgba(232, 226, 255, 0.28);
+}
+
+.documentsTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.documentsTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.06);
+}
+
+.documentsTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.scalableToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.scalableGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.scalableTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.scalableTileObject {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.scalableTileLocations {
+  background: rgba(204, 228, 255, 0.2);
+}
+
+.scalableTileStages {
+  background: rgba(245, 234, 186, 0.28);
+}
+
+.scalableTileSystem {
+  background: rgba(232, 226, 255, 0.28);
+}
+
+.scalableTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.scalableTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.06);
+}
+
+.scalableTileLocations .scalableTileDetail {
+  display: flex;
+  gap: var(--gap-4);
+  background: transparent;
+}
+
+.scalableTileLocations .scalableTileDetail span {
+  display: block;
+  width: 0.625rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.06);
+}
+
+.scalableTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.windowsRegularToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.windowsRegularGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.windowsRegularTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.windowsRegularTileLocal {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.windowsRegularTileRetail {
+  background: rgba(204, 228, 255, 0.2);
+}
+
+.windowsRegularTileGlass {
+  background: rgba(245, 234, 186, 0.28);
+}
+
+.windowsRegularTileWindows {
+  background: rgba(232, 226, 255, 0.28);
+}
+
+.windowsRegularTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.windowsRegularTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.06);
+}
+
+.windowsRegularTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.multiPointToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.multiPointBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: var(--gap-8);
+  align-items: stretch;
+}
+
+.multiPointList {
+  display: grid;
+  gap: var(--gap-8);
+}
+
+.multiPointItem {
+  min-height: 3rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.multiPointItemIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.multiPointItemLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.multiPointSystem {
+  min-height: 100%;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(92, 198, 190, 0.16);
+  padding: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.multiPointSystemIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.multiPointSystemDetail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-4);
+}
+
+.multiPointSystemDetail span {
+  display: block;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.multiPointSystemDetail span:first-child {
+  width: 2.25rem;
+}
+
+.multiPointSystemDetail span:last-child {
+  width: 1.625rem;
+}
+
+.multiPointSystemLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.quickBookingToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.quickBookingBoard {
+  height: auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-8);
+}
+
+.quickBookingStep {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-10);
+  padding: var(--sp-12);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+}
+
+.quickBookingStepAccent {
+  background: var(--bg-success-0_12);
+}
+
+.quickBookingStepIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.quickBookingStepLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.recurringToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.recurringGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.recurringTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.recurringTileSingle {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.recurringTileRecurring {
+  background: rgba(204, 228, 255, 0.2);
+}
+
+.recurringTileEffect {
+  background: rgba(245, 234, 186, 0.28);
+}
+
+.recurringTileRhythm {
+  background: rgba(232, 226, 255, 0.28);
+}
+
+.recurringTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.recurringTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.06);
+}
+
+.recurringTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.glassAccessToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.glassAccessBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--gap-10);
+  align-items: stretch;
+}
+
+.glassAccessList {
+  display: grid;
+  gap: var(--gap-8);
+}
+
+.glassAccessItem {
+  min-height: 2.75rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.glassAccessItemIcon {
+  width: 1.375rem;
+  height: 1.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.glassAccessItemLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.glassAccessMain {
+  min-height: 100%;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(92, 198, 190, 0.16);
+  padding: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.glassAccessMainIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.glassAccessMainDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.glassAccessMainLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.quickEstimateToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.quickEstimateBoard {
+  height: auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-10);
+}
+
+.quickEstimateStep {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-10);
+  padding: var(--sp-12);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+}
+
+.quickEstimateStepIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.quickEstimateStepLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.floorQualificationToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.floorQualificationGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.floorQualificationTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap-6);
+}
+
+.floorQualificationTileSurface {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.floorQualificationTileFinish {
+  background: rgba(227, 239, 255, 0.72);
+}
+
+.floorQualificationTileDirt {
+  background: rgba(255, 245, 214, 0.72);
+}
+
+.floorQualificationTileMarks {
+  background: rgba(241, 235, 255, 0.72);
+}
+
+.floorQualificationTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.floorQualificationTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.floorQualificationTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.soilClassificationToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.soilClassificationBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--gap-10);
+  align-items: stretch;
+}
+
+.soilClassificationList {
+  display: grid;
+  gap: var(--gap-8);
+}
+
+.soilClassificationItem {
+  min-height: 3.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.soilClassificationItemIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.soilClassificationItemLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.soilClassificationMain {
+  min-height: 100%;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(92, 198, 190, 0.16);
+  padding: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.soilClassificationMainIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.soilClassificationMainDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.soilClassificationMainLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.safeMethodToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.safeMethodBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-10);
+}
+
+.safeMethodStep {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-10);
+  padding: var(--sp-12);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+}
+
+.safeMethodStepAccent {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.safeMethodStepIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.safeMethodStepLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.activeFacilityToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.activeFacilityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.activeFacilityTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap-6);
+}
+
+.activeFacilityTileConditions {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.activeFacilityTileZones {
+  background: rgba(227, 239, 255, 0.72);
+}
+
+.activeFacilityTileRhythm {
+  background: rgba(255, 245, 214, 0.72);
+}
+
+.activeFacilityTileTraffic {
+  background: rgba(241, 235, 255, 0.72);
+}
+
+.activeFacilityTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.activeFacilityTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.activeFacilityTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.realResultToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.realResultBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--gap-10);
+  align-items: stretch;
+}
+
+.realResultList {
+  display: grid;
+  gap: var(--gap-8);
+}
+
+.realResultItem {
+  min-height: 3.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.realResultItemIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.realResultItemLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.realResultMain {
+  min-height: 100%;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(92, 198, 190, 0.16);
+  padding: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.realResultMainIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.realResultMainDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.realResultMainLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.pricingRangeToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.pricingRangeBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-10);
+}
+
+.pricingRangeStep {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-10);
+  padding: var(--sp-12);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+}
+
+.pricingRangeStepAccent {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.pricingRangeStepIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.pricingRangeStepLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.cyclicalSetupToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.cyclicalSetupGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.cyclicalSetupTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap-6);
+}
+
+.cyclicalSetupTileScope {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.cyclicalSetupTileRhythm {
+  background: rgba(227, 239, 255, 0.72);
+}
+
+.cyclicalSetupTileFrequency {
+  background: rgba(255, 245, 214, 0.72);
+}
+
+.cyclicalSetupTilePlan {
+  background: rgba(241, 235, 255, 0.72);
+}
+
+.cyclicalSetupTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.cyclicalSetupTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.cyclicalSetupTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.serviceLevelToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.serviceLevelBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--gap-10);
+  align-items: stretch;
+}
+
+.serviceLevelList {
+  display: grid;
+  gap: var(--gap-8);
+}
+
+.serviceLevelItem {
+  min-height: 3.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.serviceLevelItemIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.serviceLevelItemLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.serviceLevelMain {
+  min-height: 100%;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(92, 198, 190, 0.16);
+  padding: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.serviceLevelMainIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.serviceLevelMainDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.serviceLevelMainLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.serviceRhythmToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.serviceRhythmBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-10);
+}
+
+.serviceRhythmStep {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-10);
+  padding: var(--sp-12);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+}
+
+.serviceRhythmStepAccent {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.serviceRhythmStepIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.serviceRhythmStepLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.singleContactGridToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.singleContactGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap-8);
+}
+
+.singleContactGridTile {
+  min-height: 4.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--gap-6);
+}
+
+.singleContactGridTileContact {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.singleContactGridTileDialog {
+  background: rgba(227, 239, 255, 0.72);
+}
+
+.singleContactGridTileDecisions {
+  background: rgba(255, 245, 214, 0.72);
+}
+
+.singleContactGridTileOrder {
+  background: rgba(241, 235, 255, 0.72);
+}
+
+.singleContactGridTileIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.singleContactGridTileDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.singleContactGridTileLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.serviceStabilityToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.serviceStabilityBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--gap-10);
+  align-items: stretch;
+}
+
+.serviceStabilityList {
+  display: grid;
+  gap: var(--gap-8);
+}
+
+.serviceStabilityItem {
+  min-height: 3.5rem;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--sp-10);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-8);
+}
+
+.serviceStabilityItemIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.serviceStabilityItemLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.serviceStabilityMain {
+  min-height: 100%;
+  border-radius: var(--r-16);
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: rgba(92, 198, 190, 0.16);
+  padding: var(--sp-12);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.serviceStabilityMainIcon {
+  width: 1.625rem;
+  height: 1.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-10_10_10);
+}
+
+.serviceStabilityMainDetail {
+  width: 2rem;
+  height: 0.4rem;
+  border-radius: var(--r-999);
+  background: rgba(16, 16, 16, 0.08);
+}
+
+.serviceStabilityMainLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
+.flexibleScopeToolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-8);
+}
+
+.flexibleScopeBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap-10);
+}
+
+.flexibleScopeStep {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--gap-10);
+  padding: var(--sp-12);
+  border-radius: var(--r-16);
+  border: var(--sp-1) solid var(--bg-gray-227_229_234);
+  background: var(--bg-white);
+}
+
+.flexibleScopeStepAccent {
+  background: rgba(92, 198, 190, 0.16);
+}
+
+.flexibleScopeStepIcon {
+  width: var(--sp-28);
+  height: var(--sp-28);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-100);
+  background: var(--bg-soft);
+  color: var(--c-text-10_10_10);
+}
+
+.flexibleScopeStepLabel {
+  composes: t-12 from global;
+  line-height: 1.2;
+  font-weight: var(--fw-500);
+  color: var(--c-text-10_10_10);
+}
+
 @media (max-width: 767px) {
   .flowFooter {
     grid-template-columns: 1fr;
@@ -880,4 +2999,43 @@
   .phoneMockup {
     max-width: 100%;
   }
+
+  .materialBoard {
+    grid-template-columns: 1fr;
+  }
+
+  .materialConnector {
+    display: none;
+  }
+}
+
+.toolbar,
+.reviewFlowToolbar,
+.capacityToolbar,
+.entryToolbar,
+.acceptanceToolbar,
+.priorityToolbar,
+.entryReadyToolbar,
+.leadToolbar,
+.documentsToolbar,
+.scalableToolbar,
+.windowsRegularToolbar,
+.multiPointToolbar,
+.quickBookingToolbar,
+.recurringToolbar,
+.glassAccessToolbar,
+.quickEstimateToolbar,
+.floorQualificationToolbar,
+.soilClassificationToolbar,
+.safeMethodToolbar,
+.activeFacilityToolbar,
+.realResultToolbar,
+.pricingRangeToolbar,
+.cyclicalSetupToolbar,
+.serviceLevelToolbar,
+.serviceRhythmToolbar,
+.singleContactGridToolbar,
+.serviceStabilityToolbar,
+.flexibleScopeToolbar {
+  display: none;
 }

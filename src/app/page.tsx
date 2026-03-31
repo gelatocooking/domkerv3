@@ -123,6 +123,7 @@ const solutionsContent: SolutionsSectionContent = {
       mediaAlt: "Sprzątanie po budowie",
       mediaSrc: "/window.svg",
       illustrationVariant: "zonedCleaningPlan",
+      mobileCentered: true,
     },
     {
       iconName: "building2",

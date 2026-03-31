@@ -115,9 +115,11 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Inwestorski, urzędowy, przekazanie, odbiory mieszkań albo części wspólnych. Standard musi być konkretny, żeby zakres był policzalny i sprawdzalny.",
       ctaLabel: "Wyślij minimum danych",
-  ctaHref: "/kontakt",
+      ctaHref: "/kontakt",
       mediaAlt: "Standard odbiorowy po budowie",
       mediaSrc: "/kontakt",
+      illustrationVariant: "acceptanceStandardBoard",
+      mobileCentered: true,
     },
     {
       iconName: "clipboardList",
@@ -126,9 +128,11 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Klatki schodowe, garaże, wejścia, komunikacja, przeszklenia, sanitariaty, części wspólne i detale wykończeniowe traktujemy jako priorytet odbiorowy.",
       ctaLabel: "Wyślij minimum danych",
-  ctaHref: "/kontakt",
+      ctaHref: "/kontakt",
       mediaAlt: "Strefy krytyczne na budowie",
       mediaSrc: "/kontakt",
+      illustrationVariant: "acceptancePriorityMap",
+      mobileCentered: true,
     },
     {
       iconName: "building2",
@@ -137,9 +141,11 @@ const solutionsContent: SolutionsSectionContent = {
       description:
         "Dobieramy chemię i narzędzia do posadzek, szyb albo okien, armatury i profili, żeby nie zostawiać rys, zmatowień ani zacieków.",
       ctaLabel: "Wyślij minimum danych",
-  ctaHref: "/kontakt",
+      ctaHref: "/kontakt",
       mediaAlt: "Bezpieczna technologia sprzątania po budowie",
       mediaSrc: "/kontakt",
+      illustrationVariant: "materialMethodBoard",
+      mobileCentered: true,
     },
     {
       iconName: "sparkles",
@@ -151,6 +157,8 @@ const solutionsContent: SolutionsSectionContent = {
   ctaHref: "/kontakt",
       mediaAlt: "Kontrola wewnętrzna przed odbiorem",
       mediaSrc: "/kontakt",
+      illustrationVariant: "internalReviewFlowBoard",
+      mobileCentered: true,
     },
     {
       iconName: "grid3x3",
@@ -162,6 +170,8 @@ const solutionsContent: SolutionsSectionContent = {
   ctaHref: "/kontakt",
       mediaAlt: "Moce przerobowe Domker",
       mediaSrc: "/kontakt",
+      illustrationVariant: "capacityScaleBoard",
+      mobileCentered: true,
     },
     {
       iconName: "mapPin",
