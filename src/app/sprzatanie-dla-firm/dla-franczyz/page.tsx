@@ -59,7 +59,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "workflow",
       label: "ROZPROSZENIE",
-      title: "Za dużo ustaleń między stronami, a za mało jednej odpowiedzialnej ścieżki",
+      title: "Za dużo ustaleń między stronami, a\u00A0za mało jednej odpowiedzialnej ścieżki",
       description:
         "Gdy temat jest powielany w kilku różnych punktach na terenie województw i kraju z różnymi podwykonawcami trzeba stale powtarzać te same ustalenia.",
       tone: "processes",
@@ -75,7 +75,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "users",
       label: "KOMUNIKACJA",
-      title: "Bez jednego punktu kontaktu temat zaczyna wracać w kilku miejscach naraz",
+      title: "Bez jednego punktu kontaktu temat zaczyna wracać w\u00A0kilku miejscach naraz",
       description:
         "Zamiast zbierać informacje z różnych stron, lepiej mieć jedną osobę, która prowadzi realizację i zamyka temat od początku do końca.",
       tone: "resources",
@@ -83,7 +83,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "truck",
       label: "DYSPOZYCYJNOŚĆ",
-      title: "Szukanie wykonawcy „na cito” podnosi znacząco koszty otwarcia i konserwacji lokalu",
+      title: "Szukanie wykonawcy „na cito” podnosi znacząco koszty otwarcia i\u00A0konserwacji lokalu",
       description:
         "Aby zrealizować termin otwarcia lokalu ogłoszony w socialach trzeba płacić jak za zboże za wejście lokalnej firmy na już, lub dojazdy dyspozycyjnej firmy z daleka.",
       tone: "finance",
@@ -91,7 +91,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "calendarClock",
       label: "TERMIN",
-      title: "Obiekt ma zostać przekazany albo uruchomiony w konkretnym oknie czasowym",
+      title: "Obiekt ma zostać przekazany albo uruchomiony w\u00A0konkretnym oknie czasowym",
       description:
         "Tylko niedoświadczone, raczkujące firmy zarezerwują tydzień lub dwa tygodnie, aby wykonać usługę w oknie. Jest to zbędne ryzyko w procesie otwarciowym.",
       tone: "risk",
@@ -99,7 +99,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "clipboardCheck",
       label: "POTWIERDZENIE",
-      title: "Po wykonaniu prac potrzebne są dokumenty, nie tylko informacja o zakończeniu",
+      title: "Po wykonaniu prac potrzebne są dokumenty, nie\u00A0tylko informacja o zakończeniu",
       description:
         "Jeśli temat ma przejść dalej w firmie, potrzebne są zdjęcia, status wykonania i czytelne sfinalizowanie etapu po stronie wykonawcy.",
       tone: "data",
@@ -174,7 +174,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "users",
       label: "JEDEN KONTAKT",
-      title: "Wiesz, kto prowadzi temat i do kogo wrócić po decyzję albo status",
+      title: "Wiesz, kto prowadzi temat i\u00A0do kogo wrócić po decyzję albo status",
       description:
         "To skraca ścieżkę ustaleń i ogranicza sytuacje, w których jedna sprawa wraca równolegle przez kilka osób.",
       tone: "resources",
@@ -190,7 +190,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "fileText",
       label: "B2B",
-      title: "Umowa i faktura VAT wpisują się w standardowy proces firmowy",
+      title: "Umowa i faktura VAT wpisują się w\u00A0standardowy proces firmowy",
       description:
         "Dokumenty są przygotowane tak, żeby łatwo przejść przez akceptację, księgowość i dalsze procedowanie po stronie firmy.",
       tone: "technology",
@@ -198,7 +198,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "database",
       label: "POUFNOŚĆ",
-      title: "Umowę o zachowaniu poufności i rejestry wejść organizujemy z wyprzedzeniem",
+      title: "Umowę o zachowaniu poufności i\u00A0rejestry wejść organizujemy z\u00A0wyprzedzeniem",
       description:
         "Jeżeli obiekt albo firma mają własne procedury, wdrażamy je wcześniej, żeby nie blokować realizacji na starcie.",
       tone: "processes",

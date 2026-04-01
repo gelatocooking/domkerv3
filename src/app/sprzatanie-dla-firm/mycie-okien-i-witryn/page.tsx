@@ -54,7 +54,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "calendarClock",
       label: "REGULARNOŚĆ",
-      title: "Efekt znika szybciej, niż jest czas znowu o tym myśleć",
+      title: "Efekt znika szybciej, niż jest czas znowu o\u00A0tym myśleć",
       description:
         "W lokalach i witrynach widać to od razu. W domach i mieszkaniach temat odkłada się zwykle do momentu, gdy okna są już wyraźnie zabrudzone.",
       tone: "processes",
@@ -62,7 +62,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "workflow",
       label: "ORGANIZACJA",
-      title: "Nie każdy chce za każdym razem zaczynać od nowa ustalanie zakresu",
+      title: "Nie każdy chce za każdym razem zaczynać od\u00A0nowa ustalanie zakresu",
       description:
         "Przy jednej usłudze liczy się prosty kontakt. Przy kilku punktach albo modelu cyklicznym jeszcze ważniejsza jest powtarzalna organizacja.",
       tone: "processes",
@@ -70,7 +70,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "layoutGrid",
       label: "SKALA",
-      title: "Jedno mieszkanie, lokal i kilka punktów to trzy różne sposoby korzystania z usługi",
+      title: "Jedno mieszkanie, lokal i kilka punktów to trzy różne sposoby korzystania z\u00A0usługi",
       description:
         "Dlatego inaczej podchodzi się do domu, inaczej do pojedynczego lokalu, a inaczej do witryn w kilku lokalizacjach.",
       tone: "data",
@@ -78,7 +78,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "truck",
       label: "LOGISTYKA",
-      title: "Przy firmach liczy się prosty harmonogram, a przy prywatnych wygodny termin",
+      title: "Przy firmach liczy się prosty harmonogram, a\u00A0przy prywatnych wygodny termin",
       description:
         "Usługa ma być łatwa do umówienia i przewidywalna, niezależnie od tego, czy chodzi o jednorazowe mycie, czy cykliczne wejścia.",
       tone: "resources",
@@ -86,7 +86,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "shieldAlert",
       label: "DOSTĘP",
-      title: "Nie każda witryna i nie każde okno mają ten sam poziom trudności",
+      title: "Nie każda witryna i\u00A0nie każde okno mają ten sam poziom trudności",
       description:
         "Liczba szyb, wysokość, sposób dostępu i stopień zabrudzenia wpływają na zakres, czas pracy i sposób wyceny.",
       tone: "risk",
@@ -111,7 +111,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "building2",
       label: "Lokale i firmy",
-      title: "Gdy liczy się regularny efekt i prosty model współpracy",
+      title: "Gdy liczy się regularny efekt i\u00A0prosty model współpracy",
       description:
         "To ścieżka dla lokali usługowych, punktów handlowych i firm, które chcą mycia witryn albo okien w przewidywalnych oknach realizacji.",
       ctaLabel: "Wyślij minimum danych",
@@ -179,7 +179,7 @@ const solutionsContent: SolutionsSectionContent = {
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "WYŚLIJ ZDJĘCIA I OPISZ TEMAT",
-  title: "Podaj liczbę szyb albo witryn, lokalizację i tryb usługi",
+  title: "Podaj liczbę szyb albo witryn, lokalizację\u00A0i tryb usługi",
   description:
     "Napisz, czy chodzi o lokal, sieć, dom czy mieszkanie. Dopisz, czy interesuje Cię jednorazowe mycie czy model cykliczny. Jeśli masz zdjęcia, dołącz je od razu.",
   buttonLabel: "Wyślij minimum danych",
@@ -212,7 +212,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "database",
       label: "ZDJĘCIA",
-      title: "Zdjęcia bardzo przyspieszają wycenę i kwalifikację",
+      title: "Zdjęcia bardzo przyspieszają wycenę i\u00A0kwalifikację",
       description:
         "Przy tej usłudze to najszybszy sposób, żeby określić liczbę szyb, poziom zabrudzeń i sensowny wariant realizacji.",
       tone: "processes",
@@ -228,7 +228,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "clipboardCheck",
       label: "LOGISTYKA",
-      title: "Przy wielu punktach porządkujemy częstotliwość i organizację",
+      title: "Przy wielu punktach porządkujemy częstotliwość i\u00A0organizację",
       description:
         "W sieciach i kilku lokalizacjach najważniejsze są prosty harmonogram, jedna ścieżka kontaktu i powtarzalny standard.",
       tone: "finance",

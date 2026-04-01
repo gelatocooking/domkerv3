@@ -51,7 +51,7 @@ const defaultContent: PagesHeroContent = {
 
 const problemsContent: ProblemsSectionContent = {
   kickerLabel: "ZNASZ TE SYTUACJE?",
-  titleLines: ["Najwięcej czasu nie znika", "na realizacji, tylko na złym starcie"],
+  titleLines: ["Najwięcej czasu nie znika", "na realizacji, tylko na\u00A0złym starcie"],
   description:
     "W firmach problem często nie polega na braku wykonawcy, tylko na tym, że temat jest źle nazwany na początku. Jedno zapytanie miesza kilka potrzeb, a później rośnie liczba pytań, korekt i niepotrzebnych ustaleń.",
   items: [
@@ -74,7 +74,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "layoutGrid",
       label: "SKALA",
-      title: "Jeden obiekt i sieć punktów nie powinny być prowadzone tak samo",
+      title: "Jeden obiekt i\u00A0sieć punktów nie\u00A0powinny być\u00A0prowadzone tak\u00A0samo",
       description:
         "Przy kilku miastach albo wielu lokalizacjach potrzebna jest inna organizacja, inne pytania wejściowe i inny sposób koordynacji.",
       tone: "data",
@@ -82,7 +82,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "truck",
       label: "ZASOBY",
-      title: "Sam termin nie wystarczy, żeby dobrze ustalić zakres",
+      title: "Sam termin nie wystarczy, żeby\u00A0dobrze ustalić zakres",
       description:
         "Przy jednym obiekcie pytania będą inne niż przy sieci lokali albo stałej obsłudze. Najpierw trzeba wiedzieć, czego dokładnie dotyczy temat.",
       tone: "resources",
@@ -90,7 +90,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "shieldAlert",
       label: "RÓŻNE RYZYKA",
-      title: "Nie każdy temat prowadzi się w ten sam sposób",
+      title: "Nie każdy temat prowadzi się w\u00A0ten\u00A0sam\u00A0sposób",
       description:
         "Inaczej pracuje się przy odbiorze po budowie, inaczej przy stałej obsłudze biura, a inaczej przy posadzkach albo witrynach.",
       tone: "risk",
@@ -98,7 +98,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "fileText",
       label: "DECYZJA",
-      title: "Łatwiej ruszyć, gdy od początku wiadomo, od czego zacząć",
+      title: "Łatwiej ruszyć, gdy\u00A0od\u00A0początku wiadomo, od\u00A0czego zacząć",
       description:
         "Zamiast zaczynać od złej usługi albo zbyt ogólnego zapytania, lepiej od razu ustalić właściwy scenariusz i kolejny krok.",
       tone: "technology",
@@ -125,7 +125,7 @@ const solutionsContent: SolutionsSectionContent = {
     },
     {
       iconName: "building2",
-      label: "Stała obsługa biura lub lokalu",
+      label: "Stała obsługa biura lub\u00A0lokalu",
       title: "Gdy nie chodzi o jeden etap, tylko o stały standard",
       description:
         "To ścieżka dla firm, które potrzebują regularnego serwisu, przewidywalnego harmonogramu i wykonawcy, którego nie trzeba stale pilnować.",
@@ -137,7 +137,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "sparkles",
       label: "Witryny / okna / abonament",
-      title: "Gdy liczy się regularny efekt i prosta logistyka",
+      title: "Gdy liczy się regularny efekt i\u00A0prosta logistyka",
       description:
         "To ścieżka dla lokali, sieci i klientów, którzy chcą mycia witryn albo okien w modelu jednorazowym, cyklicznym albo ryczałtowym.",
       ctaLabel: "Przejdź do usługi",
@@ -159,7 +159,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "clipboardList",
       label: "Wiele punktów / kilka miast / jedna koordynacja",
-      title: "Gdy temat dotyczy sieci albo współpracy w skali",
+      title: "Gdy temat dotyczy sieci albo\u00A0współpracy w\u00A0skali",
       description:
         "To ścieżka dla firm, które chcą zachować jeden standard, jedną komunikację i prostsze zarządzanie realizacją między lokalizacjami.",
       ctaLabel: "Wyślij minimum danych",
@@ -170,7 +170,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "mapPin",
       label: "Temat mieszany / kilka potrzeb naraz",
-      title: "Gdy nie wiesz jeszcze, od czego najlepiej zacząć",
+      title: "Gdy nie wiesz jeszcze, od\u00A0czego najlepiej zacząć",
       description:
         "Jeśli sytuacja łączy kilka usług albo kilka typów obiektów, zaczynamy od uporządkowania tematu i dopiero potem przechodzimy dalej.",
       ctaLabel: "Sprawdź dostępność",
@@ -190,7 +190,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "users",
       label: "TYP POTRZEBY",
-      title: "Ustalasz, czy temat jest jednorazowy, cykliczny czy mieszany",
+      title: "Ustalasz, czy temat jest jednorazowy, cykliczny czy\u00A0mieszany",
       description:
         "To podstawowa różnica, która wpływa na dalszy sposób rozmowy, wyceny i prowadzenia współpracy.",
       tone: "resources",
@@ -198,7 +198,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "shieldAlert",
       label: "SKALA",
-      title: "Rozdzielasz jeden obiekt od sieci albo kilku lokalizacji",
+      title: "Rozdzielasz jeden obiekt od\u00A0sieci albo\u00A0kilku lokalizacji",
       description:
         "Dzięki temu od początku wiadomo, czy mówimy o lokalnym zakresie, czy o współpracy wymagającej innej koordynacji.",
       tone: "risk",
@@ -206,7 +206,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "database",
       label: "ZAKRES",
-      title: "Od razu wiesz, czy chodzi o stałą obsługę, jednorazowe wejście czy usługę specjalistyczną",
+      title: "Od razu wiesz, czy chodzi o\u00A0stałą obsługę, jednorazowe wejście czy\u00A0usługę specjalistyczną",
       description:
         "To pozwala szybciej przejść do właściwych pytań, zamiast mieszać kilka różnych tematów w jednym zapytaniu.",
       tone: "processes",
@@ -214,7 +214,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "clipboardCheck",
       label: "KOLEJNY KROK",
-      title: "Wiesz, jakie minimum danych ma sens dla tej konkretnej sytuacji",
+      title: "Wiesz, jakie minimum danych ma\u00A0sens dla\u00A0tej konkretnej sytuacji",
       description:
         "Nie potrzebujesz od razu pełnego briefu. Wystarczy właściwy punkt startu i krótki opis tego, czego temat realnie dotyczy.",
       tone: "data",
@@ -222,7 +222,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "clipboardCheck",
       label: "PROCEDOWANIE",
-      title: "Łatwiej przekazujesz temat dalej po stronie firmy",
+      title: "Łatwiej przekazujesz temat dalej po\u00A0stronie firmy",
       description:
         "Gdy scenariusz jest dobrze nazwany, łatwiej uzgodnić kolejny krok z przełożonym, operacjami, zakupami albo administracją.",
       tone: "finance",
@@ -230,7 +230,7 @@ const benefitsContent: BenefitsSectionContent = {
     {
       iconName: "fileText",
       label: "OSZCZĘDNOŚĆ CZASU",
-      title: "Nie zaczynasz rozmowy od niewłaściwej usługi",
+      title: "Nie zaczynasz rozmowy od\u00A0nie właściwej usługi",
       description:
         "To ogranicza liczbę niepotrzebnych pytań, skraca drogę do decyzji i porządkuje współpracę już od pierwszego kontaktu.",
       tone: "technology",
@@ -246,25 +246,25 @@ const processContent: ProcessSectionContent = {
   steps: [
     {
       index: "01",
-      title: "Opisujesz sytuację w najprostszy możliwy sposób",
+      title: "Opisujesz sytuację w\u00A0najprostszy możliwy sposób",
       description:
         "Wystarczy typ obiektu, miasto, termin i krótka informacja, czego temat dotyczy albo co ma zostać uporządkowane.",
     },
     {
       index: "02",
-      title: "Rozdzielamy, jaki to typ potrzeby",
+      title: "Rozdzielamy, jaki to\u00A0typ potrzeby",
       description:
         "Ustalamy, czy chodzi o końcówkę budowy, stałą obsługę, witryny, posadzki, wiele lokalizacji albo temat łączący kilka scenariuszy.",
     },
     {
       index: "03",
-      title: "Wskazujemy właściwą usługę albo model działania",
+      title: "Wskazujemy właściwą usługę albo\u00A0model działania",
       description:
         "Pokazujemy najkrótszą ścieżkę i kierujemy Cię do strony, która odpowiada tej konkretnej sytuacji operacyjnej.",
     },
     {
       index: "04",
-      title: "Dalej przechodzimy już do właściwych ustaleń",
+      title: "Dalej przechodzimy już do\u00A0właściwych ustaleń",
       description:
         "Dopiero na tym etapie doprecyzowujemy zakres, wycenę, warunki wejścia, model współpracy i kolejny krok po stronie firmy.",
     },
@@ -275,7 +275,7 @@ const processContent: ProcessSectionContent = {
 
 const ctaContent: CtaSectionContent = {
   eyebrowText: "NIE MUSISZ ZACZYNAĆ OD NAZWY USŁUGI",
-  title: "Opisz sytuację, a pomożemy ustalić właściwy punkt startu",
+  title: "Opisz sytuację, a\u00A0pomożemy ustalić właściwy punkt startu",
   description:
     "Jeśli to jeden obiekt, napisz, czego dotyczy temat i na kiedy jest potrzebny. Jeśli chodzi o kilka lokalizacji albo kilka potrzeb naraz, też to uporządkujemy.",
   buttonLabel: "Wyślij minimum danych",
@@ -285,7 +285,7 @@ const ctaContent: CtaSectionContent = {
 
 const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "REALIZACJE I CENNIK",
-  titleLines: ["Zobacz, jak różnią się", "scenariusze współpracy w praktyce"],
+  titleLines: ["Zobacz, jak różnią się", "scenariusze współpracy w\u00A0praktyce"],
   description:
     "Przykłady z różnych typów obiektów i modeli działania. Dzięki temu łatwiej zobaczyć, czym różnią się scenariusze współpracy i jak podchodzimy do ich wyceny.",
   cards: [
@@ -358,7 +358,7 @@ const faqContent: FaqSectionContent = {
   },
   items: [
     {
-      question: "Czym ta strona różni się od stron poszczególnych usług?",
+      question: "Czym ta strona różni się od\u00A0stron poszczególnych usług?",
       answer:
         "To hub współpracy B2B. Nie opisuje jednej usługi, tylko pomaga ustalić, od jakiej ścieżki zacząć i która usługa najlepiej pasuje do Twojej sytuacji.",
     },

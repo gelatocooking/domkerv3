@@ -968,7 +968,14 @@
     padding: var(--sp-32);
   }
 
+  .visual {
+    aspect-ratio: auto;
+    min-height: calc(var(--sp-210) + var(--sp-120));
+    align-items: flex-start;
+  }
+
   .coordinatorPanel {
+    height: auto;
     padding: var(--sp-16);
   }
 
@@ -996,6 +1003,7 @@
   }
 
   .dispatchPanel {
+    height: auto;
     padding: var(--sp-16);
   }
 
@@ -1004,6 +1012,7 @@
   }
 
   .materialPanel {
+    height: auto;
     padding: var(--sp-16);
   }
 

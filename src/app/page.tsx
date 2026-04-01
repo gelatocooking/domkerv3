@@ -58,7 +58,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "calendarClock",
       label: "TERMIN",
-      title: "Data odbioru jest stała, a\u00A0warunki na\u00A0obiekcie zmieniają się do końca",
+      title: "Data odbioru jest stała, a\u00A0warunki na\u00A0obiekcie zmieniają się do\u00A0końca",
       description:
         "Prace się przesuwają, strefy bywają wyłączone, a okno realizacji się skraca. Potrzebujesz wykonawcy, który potrafi działać w realnych warunkach obiektu.",
       tone: "processes",
@@ -66,7 +66,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "workflow",
       label: "KOORDYNACJA",
-      title: "Wiele ekip i wiele decyzji zwiększa ryzyko chaosu na finiszu",
+      title: "Wiele ekip i wiele decyzji zwiększa ryzyko chaosu na\u00A0finiszu",
       description:
         "Gdy każdy odpowiada tylko za swój fragment, łatwo o wtórne zabrudzenia, brak kolejności prac i rozmycie odpowiedzialności za efekt końcowy.",
       tone: "processes",
@@ -74,7 +74,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "shieldAlert",
       label: "WYKOŃCZENIA",
-      title: "Nowe powierzchnie wymagają technologii dobranej do materiału",
+      title: "Nowe powierzchnie wymagają technologii dobranej do\u00A0materiału",
       description:
         "Posadzki, szyby albo okna i armatura nie wybaczają przypadkowych narzędzi ani rozwiązań doraźnych. Na końcu liczy się bezpieczeństwo materiałowe.",
       tone: "risk",
@@ -82,7 +82,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "truck",
       label: "ZASOBY",
-      title: "Brak ludzi albo sprzętu pojawia się w najgorszym momencie",
+      title: "Brak ludzi albo sprzętu pojawia się w\u00A0najgorszym momencie",
       description:
         "Kiedy termin jest blisko, nie ma miejsca na szukanie nowej ekipy. Potrzebna jest organizacja, która ma zasoby i potrafi szybko wejść do pracy.",
       tone: "resources",
@@ -90,7 +90,7 @@ const problemsContent: ProblemsSectionContent = {
     {
       iconName: "clipboardCheck",
       label: "STANDARD",
-      title: "Efekt końcowy musi być czytelny dla odbioru, a nie uznaniowy",
+      title: "Efekt końcowy musi być czytelny dla odbioru, a\u00A0nie uznaniowy",
       description:
         "Bez ustalonego standardu jedna strona widzi gotowość, a druga listę uwag. To wydłuża finalizację i komplikuje przekazanie obiektu dalej.",
       tone: "data",
@@ -114,7 +114,7 @@ const solutionsContent: SolutionsSectionContent = {
   items: [
     {
       iconName: "hardHat",
-      label: "Sprzątanie po budowie i po pracach wykończeniowych",
+      label: "Sprzątanie po budowie i\u00A0po\u00A0pracach\u00A0wykończeniowych",
       title: "Przygotowanie obiektu pod odbiór, przekazanie i otwarcie",
       description:
         "Sprzątanie po budowie, remoncie i reficie prowadzone według stref, kolejności prac oraz technologii dobranej do materiałów i warunków na obiekcie.",
@@ -127,7 +127,7 @@ const solutionsContent: SolutionsSectionContent = {
     },
     {
       iconName: "building2",
-      label: "Utrzymanie czystości biur i lokali",
+      label: "Utrzymanie czystości biur i\u00A0lokali",
       title: "Stały standard w codziennym działaniu obiektu",
       description:
         "Cykliczna obsługa biur, lokali handlowych i usługowych. Harmonogram, kontrola jakości i ciągłość serwisu, które ograniczają potrzebę ciągłego pilnowania wykonawcy.",
@@ -140,7 +140,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "sparkles",
       label: "Mycie okien i witryn",
-      title: "Regularny efekt i logistyka dopasowana do obiektu",
+      title: "Regularny efekt i\u00A0logistyka dopasowana do\u00A0obiektu",
       description:
         "Mycie witryn dla firm i sieci oraz mycie okien w domach i mieszkaniach. Jedna usługa, prosta organizacja, czytelne zasady i szybka wycena ze zdjęć.",
       ctaLabel: "Sprawdź usługę",
@@ -152,7 +152,7 @@ const solutionsContent: SolutionsSectionContent = {
     {
       iconName: "grid3x3",
       label: "Maszynowe czyszczenie posadzek",
-      title: "Technologia dobrana do nawierzchni i zabrudzeń",
+      title: "Technologia dobrana do\u00A0nawierzchni i\u00A0zabrudzeń",
       description:
         "Doczyszczanie posadzek w obiektach komercyjnych z doborem metody do typu nawierzchni, skali zabrudzeń i oczekiwanego efektu końcowego.",
       ctaLabel: "Zobacz opcje",
@@ -163,7 +163,7 @@ const solutionsContent: SolutionsSectionContent = {
     },
     {
       iconName: "mapPin",
-      label: "Cała Polska i jedna koordynacja",
+      label: "Cała Polska i\u00A0jedna koordynacja",
       title: "Jedna współpraca zamiast wielu lokalnych ustaleń",
       description:
         "Działamy w wielu miastach i dobieramy zespoły do skali, terminu oraz warunków realizacji. To model dla firm, które chcą prowadzić temat spójnie.",
@@ -178,12 +178,12 @@ const solutionsContent: SolutionsSectionContent = {
 
 const knowledgeContent2: KnowledgeSectionContent = {
   kickerLabel: "WYBIERZ ŚCIEŻKĘ",
-  titleLines: ["Dwa modele współpracy", "dla dwóch różnych ról po stronie klienta"],
+  titleLines: ["Dwa modele współpracy", "dla dwóch różnych ról po\u00A0stronie klienta"],
   description:
     "Jeśli prowadzisz temat centralnie dla sieci albo odpowiadasz za konkretny obiekt, dalej chcesz rozmawiać o trochę innym zakresie i innym modelu działania. Dlatego rozdzielamy te dwie ścieżki już na starcie.",
   cards: [
     {
-      title: "Usługi porządkowe i techniczne dla sieci franczyzowych",
+      title: "Usługi porządkowe i\u00A0techniczne dla\u00A0sieci franczyzowych",
       description:
         "Jedna, scentralizowana usługa porządkowa i techniczna w całej Polsce dla franczyzobiorców i franczyzodawców.",
       buttonLabel: "Sprawdź rozwiązania dla franczyz",
@@ -195,10 +195,10 @@ const knowledgeContent2: KnowledgeSectionContent = {
       },
     },
     {
-      title: "Wspieranie sieci handlowych w ekspansji",
+      title: "Wspieranie sieci handlowych w\u00A0ekspansji",
       description:
         "Powtarzalna usługa kompleksowego sprzątania przed otwarciem i po remoncie lokali oraz cykliczne mycie witryn.",
-      buttonLabel: "Zamów rozmowę z indywidualnym koordynatorem",
+      buttonLabel: "Zamów rozmowę z\u00A0indywidualnym koordynatorem",
       buttonHref: "/sprzatanie-dla-firm/sprzatanie-po-budowie/dla-zarzadcy-obiektu",
       media: {
         type: "image",
@@ -213,7 +213,7 @@ const statsContent: OperationalStatsSectionContent = {
   items: [
     {
       value: "16",
-      label: "województw w obsłudze",
+      label: "województw w\u00A0obsłudze",
     },
     {
       value: "60+",
@@ -221,11 +221,11 @@ const statsContent: OperationalStatsSectionContent = {
     },
     {
       value: "3",
-      label: "koordynatorów organizujących i kontrolujących jakość",
+      label: "koordynatorów organizujących i\u00A0kontrolujących jakość",
     },
     {
       value: "40+",
-      label: "stałych punktów w obsłudze",
+      label: "stałych punktów w\u00A0obsłudze",
     },
   ],
 };
@@ -238,7 +238,7 @@ const showcaseContent: ShowcaseSectionContent = {
   items: [
     {
       tag: "HARMONOGRAM",
-      title: "Ciągłe zmiany na obiekcie i\u00A0prace nachodzące na\u00A0siebie",
+      title: "Ciągłe zmiany\u00A0na obiekcie i\u00A0prace nachodzące na\u00A0siebie",
       description:
         "Potwierdzamy okno wejścia i realne warunki pracy przed realizacją. Dzięki temu zespół nie startuje w ciemno i nie traci czasu na improwizację na miejscu.",
       result: "Efekt: mniej przestojów i większa przewidywalność przebiegu prac.",
@@ -259,14 +259,14 @@ const showcaseContent: ShowcaseSectionContent = {
     },
     {
       tag: "ODPOWIEDZIALNOŚĆ",
-      title: "Wątpliwości, co należy do zakresu, a\u00A0co jest stanem zastanym",
+      title: "Wątpliwości, co należy do\u00A0zakresu, a\u00A0co\u00A0jest stanem zastanym",
       description:
         "Jeżeli w trakcie ujawniają się usterki albo ograniczenia, od razu je komunikujemy i porządkujemy informacyjnie po stronie Zleceniodawcy.",
       result: "Efekt: mniej nieporozumień i łatwiejsze dalsze procedowanie.",
     },
     {
       tag: "ZASOBY",
-      title: "Ryzyko braku ludzi lub sprzętu w kluczowym momencie",
+      title: "Ryzyko braku ludzi lub\u00A0sprzętu w\u00A0kluczowym momencie",
       description:
         "Planujemy realizację z zapleczem organizacyjnym. Gdy warunki się zmieniają albo okno się skraca, zwiększa to szansę na realizację bez opóźnień.",
       result: "Efekt: większa pewność realizacji w wymagającym harmonogramie.",
@@ -286,7 +286,7 @@ const ctaContent: CtaSectionContent = {
 
 const knowledgeContent: KnowledgeSectionContent = {
   kickerLabel: "REALIZACJE I CENNIK",
-  titleLines: ["Zobacz, jak pracujemy", "na obiektach w całej Polsce"],
+  titleLines: ["Zobacz, jak pracujemy", "na\u00A0obiektach w\u00A0całej Polsce"],
   description:
     "Realizacje, zakresy i orientacyjne widełki z różnych scenariuszy B2B. Zobacz, jak wygląda współpraca w praktyce i jak podchodzimy do wyceny na etapie kwalifikacji tematu.",
   cards: [
@@ -319,7 +319,7 @@ const knowledgeContent: KnowledgeSectionContent = {
 
 const contactContent: ContactSectionContent = {
   kickerLabel: "KONTAKT",
-  title: `Wyślij minimum danych, odpowiemy, czy możemy pomóc Ci w tym zakresie`,
+  title: `Wyślij minimum danych, odpowiemy, czy\u00A0możemy pomóc\u00A0Ci\u00A0w\u00A0tym zakresie`,
   description:
     "Napisz, jaki to obiekt, jaki jest cel realizacji i na kiedy potrzebujesz wejścia. Jeśli masz zdjęcia, dołącz je. W odpowiedzi potwierdzimy dostępność, doprecyzujemy zakres i przygotujemy ofertę gotową do przekazania w firmie.",
   chips: [
