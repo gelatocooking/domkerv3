@@ -154,12 +154,18 @@
 .cardGrid {
   display: grid;
   gap: var(--gap-24);
+  align-items: start;
 }
 
 .leftColumn,
 .rightColumn {
   display: grid;
   gap: var(--gap-24);
+}
+
+.rightColumn {
+  align-content: start;
+  align-self: start;
 }
 
 .block {
@@ -229,6 +235,7 @@
 
 .factorsBox {
   display: grid;
+  gap: var(--gap-12);
 }
 
 .factorsBox .blockLabel {

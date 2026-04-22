@@ -140,16 +140,18 @@ export default function ScenarioBudgetSection({
                   <p className={styles.blockText}>{activeLevel.description}</p>
                 </div>
 
-                <div className={styles.block}>
-                  <span className={styles.blockLabel}>{activeLevel.scopeTitle}</span>
-                  <ul className={styles.scopeList}>
-                    {activeLevel.scopeItems.map((item) => (
-                      <li key={item} className={styles.scopeItem}>
-                        {stripTrailingListPeriod(item)}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {activeLevel.scopeItems?.length > 0 ? (
+                  <div className={styles.block}>
+                    <span className={styles.blockLabel}>{activeLevel.scopeTitle}</span>
+                    <ul className={styles.scopeList}>
+                      {activeLevel.scopeItems.map((item) => (
+                        <li key={item} className={styles.scopeItem}>
+                          {stripTrailingListPeriod(item)}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
 
                 <div className={styles.block}>
                   <span className={styles.blockLabel}>
