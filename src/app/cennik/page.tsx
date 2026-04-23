@@ -148,7 +148,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
         {
           id: "extended",
           label: "Punkty sieciowe",
-          budget: "do ustalenia indywidualnie (netto)",
+          budget: "do ustalenia indywidualnie",
           description:
             "Sprzątanie przed otwarciem nowego punktu sieciowego wykonywane jest w stałym, określonym zakresie na podstawie przedstawionego harmonogramu. Zlecane jest poprzez e-mail startowy, a zamawiający ma pewność jednolitej, powtarzalnej usługi na terenie całego kraju bez względu na metraż i lokalizację.",
           scopeTitle: "Najczęściej obejmuje",
@@ -379,7 +379,7 @@ const scenarioBudgetContent: ScenarioBudgetSectionContent = {
         {
           id: "extended",
           label: "Inne obiekty",
-          budget: "ustalane indywidualnie (netto)",
+          budget: "ustalane indywidualnie",
           description:
             "Specyficzne obiekty wymagają indywidualnego podejścia, dlatego usługa obejmuje zaprojektowanie indywidualnego systemu sprzątania i planu higieny.",
           scopeTitle: "Najczęściej obejmuje",
